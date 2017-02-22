@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for example.addIDProtect.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file example.addIDProtect.php</h1>
+<p>Documentation is available at <a href="../default/_enom_example_addIDProtect_php.html">example.addIDProtect.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a><span class="src-comm">//</span></li>
+<li><a name="a3"></a><span class="src-comm">// +-----------------------------------+</span></li>
+<li><a name="a4"></a><span class="src-comm">// |          Enom API v 1.0           |</span></li>
+<li><a name="a5"></a><span class="src-comm">// |      http://www.SysTurn.com       |</span></li>
+<li><a name="a6"></a><span class="src-comm">// +-----------------------------------+</span></li>
+<li><a name="a7"></a><span class="src-comm">//</span></li>
+<li><a name="a8"></a><span class="src-comm">//</span></li>
+<li><a name="a9"></a><span class="src-comm">//   This program is free software; you can redistribute it and/or modify</span></li>
+<li><a name="a10"></a><span class="src-comm">//   it under the terms of the ISLAMIC RULES and GNU Lesser General Public</span></li>
+<li><a name="a11"></a><span class="src-comm">//   License either version 2, or (at your option) any later version.</span></li>
+<li><a name="a12"></a><span class="src-comm">//</span></li>
+<li><a name="a13"></a><span class="src-comm">//   ISLAMIC RULES should be followed and respected if they differ</span></li>
+<li><a name="a14"></a><span class="src-comm">//   than terms of the GNU LESSER GENERAL PUBLIC LICENSE</span></li>
+<li><a name="a15"></a><span class="src-comm">//</span></li>
+<li><a name="a16"></a><span class="src-comm">//   This program is distributed in the hope that it will be useful,</span></li>
+<li><a name="a17"></a><span class="src-comm">//   but WITHOUT ANY WARRANTY; without even the implied warranty of</span></li>
+<li><a name="a18"></a><span class="src-comm">//   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></li>
+<li><a name="a19"></a><span class="src-comm">//   GNU General Public License for more details.</span></li>
+<li><a name="a20"></a><span class="src-comm">//</span></li>
+<li><a name="a21"></a><span class="src-comm">//   You should have received a copy of the license with this software;</span></li>
+<li><a name="a22"></a><span class="src-comm">//   If not, please contact support @ S y s T u r n .com to receive a copy.</span></li>
+<li><a name="a23"></a><span class="src-comm">//</span></li>
+<li><a name="a24"></a>&nbsp;</li>
+<li><a name="a23"></a>&nbsp;</li>
+<li><a name="a24"></a>&nbsp;</li>
+<li><a name="a25"></a><span class="src-inc">require_once</span><span class="src-sym">(</span><span class="src-str">'class.EnomService.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a26"></a>&nbsp;</li>
+<li><a name="a27"></a><span class="src-var">$enom </span>= <span class="src-key">new </span><span class="src-id"><a href="../EnomService/EnomService.html">EnomService</a></span><span class="src-sym">(</span><span class="src-str">'username'</span><span class="src-sym">, </span><span class="src-str">'********'</span><span class="src-sym">, </span><span class="src-id">false</span><span class="src-sym">, </span><span class="src-id">true</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a28"></a><span class="src-var">$enom</span><span class="src-sym">-&gt;</span><span class="src-id">debug </span>= <span class="src-id">true</span><span class="src-sym">;</span></li>
+<li><a name="a29"></a>&nbsp;</li>
+<li><a name="a30"></a><span class="src-var">$result </span>= <span class="src-var">$enom</span><span class="src-sym">-&gt;</span><span class="src-id">addIDProtectService</span><span class="src-sym">(</span><span class="src-str">'systurn.com'</span><span class="src-sym">, </span><span class="src-str">'1'</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a31"></a>&nbsp;</li>
+<li><a name="a32"></a>echo <span class="src-str">'&lt;pre&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a33"></a><a href="http://www.php.net/var_dump">var_dump</a><span class="src-sym">(</span><span class="src-var">$result</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a34"></a>echo <span class="src-str">'&lt;/pre&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a35"></a>&nbsp;</li>
+<li><a name="a36"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:33:25 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</body>
+</html>

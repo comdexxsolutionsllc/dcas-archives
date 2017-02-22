@@ -1,0 +1,14 @@
+.hide {
+  display: none;
+}
+.show {
+  display: inline;
+  border-bottom: dotted thin;
+}
+
+.show2 {
+  display: inline;
+  background-color: #FEFF9F;
+  padding: 0 3px 0 3px;
+  font-size: .9em;
+}

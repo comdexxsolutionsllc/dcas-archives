@@ -1,0 +1,322 @@
+/**
+* real one
+*/
+body {
+	font-size: 12px;
+	font-family: Verdana;
+	background-color: #ffffff;
+	color: #333333;
+}
+
+div.path {
+	position: absolute;
+	top: 50px;
+	left: 10px;
+	height: 52px;
+	width: 993px;
+	border-bottom: 1px dashed #000099;
+	border-top: 1px dashed #000099;
+}
+
+div.path span:first-child {
+	color: #333333;
+	margin-left: 10px;
+	font-weight: bold;
+	font-decoration: none;
+	font-size: 14px;
+}
+
+div.content {
+	padding: 10px;
+	position: absolute;
+	top: 110px;
+	left: 300px;
+	width: 600px;
+	background-color: #dddddd;
+	border : 1px solid #990000;
+	overflow: auto;
+}
+
+div.content div.code{
+	display: none;
+	margin: 10px;
+	border: 1px solid #ff9933;
+	background-color: #dddddd;
+	width: 500px;
+	height: 300px;
+	overflow: auto;
+}
+
+div.content span.name {
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: underline;
+	color: #ff0000;
+}
+
+div.content span.definition {
+	font-size: 10px;
+	font-weight: bold;
+}
+
+span.definition em.methodParams {
+	font-style: italic;
+	font-size: 10px;
+	font-weight: normal;
+}
+
+div.content span.file {
+	font-size: 10px;
+}
+
+div.content span.owns ul {
+	font-size: 10px;
+	text-decoration: underline;
+}
+
+div.content span.owns ul li {
+	list-style-position: inside;
+	margin-left: 10px;
+	font-size: 10px;
+	color: #000099;
+}
+
+div.content span.label {
+	color: #000099;
+	font-weight: bold;
+	font-size: 10px;
+	text-transform: uppercase;
+}
+
+div.content span.comments {
+	font-style: italic;
+	font-size: 10px;
+	white-space: pre;
+}
+
+div.content span.owner {
+	font-size: 10px;
+}
+
+div.content span.returns {
+	color: #ee6600;
+	font-size: 10px;
+}
+
+div.content span.params {
+	color: #ee6600;
+	font-size: 10px;
+}
+
+div.content span.constname {
+	color: #0000BB;
+}
+
+div.content span.constdeclaration {
+	color: #007700;
+}
+
+div.content span.consttype {
+	color: #007700;
+}
+
+div.content span.constvalue {
+	color: #D30000;
+}
+
+div.content span.constantes {
+	color: #ee6600;
+	font-size: 10px;
+}
+
+div.content span.modifiers {
+	font-size: 10px;
+}
+
+div.content span.default {
+	font-size: 10px;
+}
+
+div.menu {
+	position: absolute;
+	top: 110px;
+	left: 10px;
+	width: 200px;
+	border: 1px solid #ff9933;
+	background-color: #eeeeee;
+}
+
+div.menu ul, div.menudoc ul {
+	color: #666666;
+	font-weight: bold;
+}
+
+div.menu li, div.menudoc li{
+	color: #990000;
+	font-weight: bold;
+	font-style: italic;
+}
+
+div.menudoc a.other:link{
+	color: #000099;
+
+}
+
+div.menudoc a.other:visited {
+	color: #000099;
+
+}
+
+div.menudoc a.other:hover {
+	color: #990000;
+
+}
+
+div.menudoc a.other:active {
+	color: #000099;
+
+}
+
+a.current:link {
+	color: #ff0000;
+
+}
+
+a.current:visited {
+	color: #ff0000;
+
+}
+
+a.current:hover {
+	color: #ff0000;
+
+}
+
+a.current:active {
+	color: #ff0000;
+
+}
+
+a.other:link {
+	font-size: 10px;
+	color: #000099;
+
+}
+
+a.other:visited {
+	font-size: 10px;
+	color: #000099;
+
+}
+
+a.other:hover {
+	font-size: 10px;
+	color: #990000;
+
+}
+
+a.other:active {
+	font-size: 10px;
+	color: #000099;
+
+}
+
+h2.titre {
+	width: 100%;
+	text-align: center;
+	color: #990000;
+}
+
+h2.titre em {
+	font-size: 14px;
+}
+
+div.menudoc {
+	position: absolute;
+	top: 80px;
+	left: 0px;
+}
+
+div.formcontent {
+	position: absolute;
+	top: 100px;
+	left: 250px;
+}
+
+div.cls {
+	padding: 5px;
+	border: 1px solid #000099;
+	top: 0px;
+	left: 0px;
+}
+
+div.func {
+	padding: 5px;
+	border: 1px solid #000099;
+	top: 0px;
+	left: 0px;
+}
+
+div.formcontent form fieldset {
+	width: 350px;
+	border: 1px solid #990000;
+	background-color: #eeeeee;
+}
+
+div.formcontent form legend {
+	font-style: italic;
+	color: #000099;
+	font-weight: bold;
+}
+
+div.formcontent form input {
+	font-size: 10px;
+}
+
+div.formcontent form input[type="submit"] {
+	cursor: pointer;
+}
+
+div.error {
+	color: #ff0000;
+	font-weight: bold;
+	font-size: 12px;
+	position: absolute;
+	top: 70px;
+	left: 250px;
+}
+
+span.acc {
+	font-size: 12px;
+	font-weight: bold;
+	color: #990000;
+}
+
+span.acc a.acc:link {
+	color: #990000;
+}
+
+span.acc a.acc:visited {
+	color: #990000;
+}
+
+span.acc a.acc:hover {
+	color: #000000;
+}
+
+span.acc a.acc:active {
+	color: #990000;
+}
+
+div.locale {
+	position: absolute;
+	width: 80px;
+	top: 5px;
+	left: 5px;
+}
+
+div.locale input {
+	font-size: 9px;
+	cursor: pointer;
+}
+

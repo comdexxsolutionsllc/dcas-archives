@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for hash_check.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file hash_check.php</h1>
+<p>Documentation is available at <a href="../default/_class_hash_hash_check_php.html">hash_check.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a><span class="src-comm">// Test for  hash</span></li>
+<li><a name="a3"></a><span class="src-inc">require_once</span><span class="src-sym">(</span><span class="src-str">&quot;class_hash.inc.php&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a4"></a><span class="src-inc">require_once</span><span class="src-sym">(</span><span class="src-str">&quot;biblio_www.inc.php&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a5"></a>&nbsp;</li>
+<li><a name="a6"></a><span class="src-var">$hash</span>=<span class="src-id">www_get_param</span><span class="src-sym">(</span><span class="src-str">&quot;hash&quot;</span><span class="src-sym">,</span><span class="src-str">&quot;&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a7"></a><span class="src-var">$item</span>=<span class="src-id">www_get_param</span><span class="src-sym">(</span><span class="src-str">&quot;item&quot;</span><span class="src-sym">,</span><span class="src-str">&quot;&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a8"></a>&nbsp;</li>
+<li><a name="a9"></a><span class="src-comm">// private data not to be known. Can be login / password for example. The same</span></li>
+<li><a name="a10"></a><span class="src-var">$data_server</span>=<span class="src-str">&quot;a private data from the server&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a11"></a><span class="src-var">$data_site</span>=<span class="src-str">&quot;a private string of the site&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a12"></a>&nbsp;</li>
+<li><a name="a13"></a>echo <span class="src-str">&quot;</span><span class="src-id">Here is the </span><a href="http://www.php.net/hash">hash</a> <span class="src-id">created</span>: <span class="src-var">$hash</span>&lt;<span class="src-id">br</span>&gt;\n<span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a14"></a>echo <span class="src-str">&quot;</span><span class="src-id">Item to be verified</span>: <span class="src-var">$item</span>&lt;<span class="src-id">br</span>&gt;\n<span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a15"></a>echo <span class="src-str">&quot;&lt;br&gt;\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a16"></a>&nbsp;</li>
+<li><a name="a17"></a><span class="src-var">$h</span>=<span class="src-key">new </span><a href="http://www.php.net/hash">hash</a><span class="src-sym">(</span><span class="src-var">$data_server</span><span class="src-sym">,</span><span class="src-var">$data_site</span><span class="src-sym">,</span><span class="src-num">5</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a18"></a>&nbsp;</li>
+<li><a name="a19"></a><span class="src-var">$res</span>=<span class="src-var">$h</span><span class="src-sym">-&gt;</span><span class="src-id">check_hash</span><span class="src-sym">(</span><span class="src-var">$hash</span><span class="src-sym">,</span><span class="src-var">$item</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a20"></a><span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$res</span><span class="src-sym">)</span></li>
+<li><a name="a21"></a>  echo <span class="src-str">&quot;&lt;font color=#0000FF&gt;Check ok!&lt;/a&gt;&lt;br&gt;\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a22"></a><span class="src-key">else</span></li>
+<li><a name="a23"></a>  echo <span class="src-str">&quot;&lt;font color=#FF0000&gt;Check not ok!&lt;br&gt;&lt;/a&gt;\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a24"></a>echo <span class="src-str">&quot;&lt;br&gt;\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a25"></a>echo <span class="src-str">&quot;</span>&lt;<span class="src-id">a href</span>=<span class="src-id">hash_check</span>.<span class="src-id">php</span>?<a href="http://www.php.net/hash">hash</a>=<span class="src-var">$hash</span>&amp;<span class="src-id">item</span>=<span class="src-var">$item</span>&gt;<span class="src-id">Refresh</span>&lt;/<span class="src-id">a</span>&gt;&lt;<span class="src-id">br</span>&gt;\n<span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a26"></a>echo <span class="src-str">&quot;&lt;a href=hash_start.php&gt;back&lt;/a&gt;&lt;br&gt;\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a27"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:34:03 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</body>
+</html>

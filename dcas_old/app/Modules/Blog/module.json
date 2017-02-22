@@ -1,0 +1,9 @@
+{
+	"name": "Blog",
+	"slug": "blog",
+	"namespace": "Blog",
+	"version": "1.0",
+	"author": "Sarah Renner",
+	"license": "MIT",
+	"description": "DCAS Blog Module"
+}

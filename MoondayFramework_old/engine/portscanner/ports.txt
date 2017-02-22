@@ -1,0 +1,15 @@
+80||HTTPd
+21||FTPd
+22||SSH
+23||Telnet
+513||Rlogin
+25||SMTP
+143||IMAP
+110||POP3
+3306||MySQL
+53||Named
+6666||IRCd
+6667||IRCd
+6668||IRCd
+6669||IRCd
+7000||IRCd

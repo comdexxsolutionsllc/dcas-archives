@@ -1,0 +1,3 @@
+<!-- Start Page::View(home-mainpanel) -->
+<table border="2"> <tr> <td><span> <?php var_dump($_GET); ?> </span> </td> </tr> </table>
+<!-- Emd Page::View(home-mainpanel) -->

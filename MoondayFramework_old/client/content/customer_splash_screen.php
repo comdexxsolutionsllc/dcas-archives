@@ -1,0 +1,238 @@
+<?php error_reporting(E_ALL); session_start();
+if(!@$_SESSION['loggedin']) header("Location: logout.php");
+/* Include for login to work */
+require_once('../../engine/coreEngine.php');
+$coreEngine = new coreEngine;
+$coreEngine->init();
+
+if(!empty($_GET['reason']) && $_GET['reason'] == "loggedout")
+{
+    session_unset();
+    session_destroy();
+    header("location:index.php?reason=not_authorized_admin");
+    exit;
+}
+
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>MyDediServer</title>
+<!--<link href="style.css" rel="stylesheet" type="text/css" />-->
+<?php echo $coreEngine->fileObject->loadCSS('default.css', 'client', $coreEngine->sRU); ?>
+</head>
+
+<body>
+<table width="958" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="13" height="90" background="images/header_left_slice.gif" class="bg_fixed" ><img src="images/spacer.gif" width="13" height="1"  /></td>
+    <td background="images/header_bg_slice.gif"><table width="100%" height="90" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="50%"><img src="images/spacer.gif" width="20" /><img src="images/logo.gif" width="265" height="50" /></td>
+        <td width="50%"><table width="300" border="0" align="right" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="70" align="center"><a href="#"><img src="images/btn_home.gif" width="36" height="30" border="0" /></a></td>
+            <td width="70" align="center"><a href="#"><img src="images/btn_mydediserver.gif" width="82" height="30" border="0" /></a></td>
+            <td width="70" align="center"><a href="#"><img src="images/btn_support.gif" width="53" height="30" border="0" /></a></td>
+            <td width="70" align="center"><a href="#"><img src="images/btn_mini.gif" width="28" height="30" border="0" /></a></td>
+            <td width="70" align="center">&nbsp;</td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+    <td width="13" height="90" background="images/header_right_slice.gif" class="bg_fixed"><img src="images/spacer.gif" width="13" height="1" /></td>
+  </tr>
+</table><table width="958" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="34" background="images/nav_bar_bg.gif"><table border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><a href="#"><img src="images/btn_administrative.gif" width="118" height="34" border="0" /></a></td>
+        <td><a href="#"><img src="images/btn_support0.gif" width="91" height="34" border="0" /></a></td>
+        <td><a href="#"><img src="images/btn_security.gif" width="87" height="34" border="0" /></a></td>
+        <td><a href="#"><img src="images/btn_hardware.gif" width="101" height="34" border="0" /></a></td>
+        <td><a href="#"><img src="images/btn_software.gif" width="91" height="34" border="0" /></a></td>
+        <td><a href="#"><img src="images/btn_publicnetwork.gif" width="129" height="34" border="0" /></a></td>
+        <td><a href="#"><img src="images/btn_privatework.gif" width="124" height="34" border="0" /></a></td>
+        <td><a href="#"><img src="images/btn_sales.gif" width="100" height="34" border="0" /></a></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="960" border="0" align="center" cellpadding="0" cellspacing="0"><tr>
+  <td height="42" background="images/customer_splash_heading_bg.jpg" class="bg_fixed"><span class="text_login_h2"><img src="images/spacer.gif" width="34" height="1" />Welcome To MydediServer (PDF) </span></td>
+</tr><tr>
+  <td height="42" background="images/customer_splash_heading_bg2.gif" class="bg_fixed"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="50%"><span class="text_login_h3_RED"><img src="images/spacer.gif" width="34" height="15" />New Account Security Requirements </span></td>
+      <td width="50%" rowspan="2" align="right" class="text_login_h">CUSTOMER PORTAL HOME<img src="images/spacer.gif" width="10" height="2" /> </td>
+    </tr>
+    <tr>
+      <td><span class="text_login_h2"><img src="images/spacer.gif" width="34" height="13" /></span><span class="text_rights"><strong>Click to Open/Close</strong></span> </td>
+      </tr>
+  </table></td>
+</tr><tr>
+  <td height="40" class="text_login_h_green"><span class="text_login_h2"><img src="images/spacer.gif" width="34" height="1" /></span>Welcome to MyDediServer Customer Login Portal</td>
+</tr>
+  <tr>
+    <td height="590" align="left" valign="top" class="bg_fixed_repeat_y"><table border="0" align="left" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="34"><span class="text_login_h_green"><span class="text_login_h2"><img src="images/spacer.gif" width="34" height="1" /></span></span></td>
+        <td width="256" align="left" valign="top"><table width="254" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="31" background="images/head_bg.gif" class="bg_fixed"><span class="text_login_h_white"><img src="images/spacer.gif" width="15" height="2" />Customer Information</span></td>
+          </tr>
+          <tr>
+            <td height="8"></td>
+          </tr>
+          <tr>
+            <td height="139" align="center" valign="middle" bgcolor="#CCCCCC"><table width="252" height="137" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td bgcolor="#FFFFFF">&nbsp;</td>
+              </tr>
+            </table></td>
+          </tr>
+        </table>
+          <br />
+          <table width="254" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="31" background="images/head_bg.gif" class="bg_fixed"><span class="text_login_h_white"><img src="images/spacer.gif" width="15" height="2" />BillingInformation</span></td>
+          </tr>
+          <tr>
+            <td height="8"></td>
+          </tr>
+          <tr>
+            <td height="139" align="center" valign="middle" bgcolor="#CCCCCC"><table width="252" height="137" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td bgcolor="#FFFFFF">&nbsp;</td>
+              </tr>
+            </table></td>
+          </tr>
+        </table>
+          <br />
+          <table width="254" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="31" background="images/head_bg.gif" class="bg_fixed"><span class="text_login_h_white"><img src="images/spacer.gif" width="15" height="2" />Tickets</span></td>
+          </tr>
+          <tr>
+            <td height="8"></td>
+          </tr>
+          <tr>
+            <td height="139" align="center" valign="middle" bgcolor="#CCCCCC"><table width="252" height="137" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td bgcolor="#FFFFFF">&nbsp;</td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+        <td width="12">&nbsp;</td>
+        <td width="307" align="left" valign="top"><table width="302" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="31" background="images/head_bg2.gif" class="bg_fixed"><span class="text_login_h_grey"><img src="images/spacer.gif" width="15" height="2" />Server Bandwidth </span></td>
+          </tr>
+          <tr>
+            <td height="8"></td>
+          </tr>
+          <tr>
+            <td height="90" align="center" valign="middle" bgcolor="#CCCCCC"><table width="300" height="88" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td bgcolor="#FFFFFF">&nbsp;</td>
+                </tr>
+            </table></td>
+          </tr>
+        </table>
+          <br />
+          <table width="302" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td height="31" background="images/head_bg2.gif" class="bg_fixed"><span class="text_login_h_grey"><img src="images/spacer.gif" width="15" height="2" />Server Monitering </span></td>
+            </tr>
+            <tr>
+              <td height="8"></td>
+            </tr>
+            <tr>
+              <td height="90" align="center" valign="middle" bgcolor="#CCCCCC"><table width="300" height="88" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#FFFFFF">&nbsp;</td>
+                  </tr>
+              </table></td>
+            </tr>
+          </table>
+          <br />
+          <table width="302" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td height="31" background="images/head_bg2.gif" class="bg_fixed"><span class="text_login_h_grey"><img src="images/spacer.gif" width="15" height="2" />MyDediServer Name Server </span></td>
+            </tr>
+            <tr>
+              <td height="8"></td>
+            </tr>
+            <tr>
+              <td height="90" align="center" valign="middle" bgcolor="#CCCCCC"><table width="300" height="88" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#FFFFFF">&nbsp;</td>
+                  </tr>
+              </table></td>
+            </tr>
+          </table>
+          <br />
+          <table width="302" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td height="31" background="images/head_bg2.gif" class="bg_fixed"><span class="text_login_h_grey"><img src="images/spacer.gif" width="15" height="2" />PTR - Reverse DNS </span></td>
+            </tr>
+            <tr>
+              <td height="8"></td>
+            </tr>
+            <tr>
+              <td height="90" align="center" valign="middle" bgcolor="#CCCCCC"><table width="300" height="88" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#FFFFFF">&nbsp;</td>
+                  </tr>
+              </table></td>
+            </tr>
+          </table></td>
+        <td width="12">&nbsp;</td>
+        <td width="325" align="left" valign="top"><table width="302" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="31" background="images/head_bg2.gif" class="bg_fixed"><span class="text_login_h_grey"><img src="images/spacer.gif" width="15" height="2" />Reboot Server  </span></td>
+          </tr>
+          <tr>
+            <td height="8"></td>
+          </tr>
+          <tr>
+            <td height="90" align="center" valign="middle" bgcolor="#CCCCCC"><table width="300" height="88" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td bgcolor="#FFFFFF">&nbsp;</td>
+                </tr>
+            </table></td>
+          </tr>
+        </table>
+          <br />
+          <table width="302" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td height="26" class="bg_fixed"><a href="#"><img src="images/head_bt_1.gif" width="115" height="26" border="0" /></a><a href="#"><img src="images/head_bt_2.gif" width="187" height="26" border="0" /></a></td>
+            </tr>
+
+            <tr>
+              <td height="400" align="center" valign="top" bgcolor="#CCCCCC"><table width="300" height="399" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td bgcolor="#FFFFFF">&nbsp;</td>
+                  </tr>
+              </table></td>
+            </tr>
+          </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr >
+    <td height="53" valign="middle" background="images/login_slic_bt2.gif" class="bg_fixed"><table width="400" border="0" align="left" cellpadding="0" cellspacing="0">
+
+      <tr>
+        <td height="30" class="text_rights"><img src="images/spacer.gif" width="20" height="10" /><strong>products  |  services  |  network datacenter  |  aboutsoflayer  | sitemap</strong></td>
+      </tr><tr>
+        <td align="left" class="text_rights"><span class="text_login_h2"><img src="images/spacer.gif" width="20" height="10" /></span>Copyrights &copy; 2008 MyDediServer All rights reserved.</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

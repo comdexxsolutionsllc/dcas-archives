@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for gunit.class.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file gunit.class.php</h1>
+<p>Documentation is available at <a href="../GUnit/_gunit_gunit_class_php.html">gunit.class.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a><span class="src-doc">/**</span></li>
+<li><a name="a3"></a><span class="src-doc">* </span><span class="src-doc-coretag">@package</span><span class="src-doc"> GUnit</span></li>
+<li><a name="a4"></a><span class="src-doc">* </span><span class="src-doc-coretag">@author</span><span class="src-doc"> Joshua Abbott, WiseGene Project (NKommunikation)</span></li>
+<li><a name="a5"></a><span class="src-doc">* </span><span class="src-doc-coretag">@copyright</span><span class="src-doc"> (C) 2006 NKommunikation. All Rights Reserved.</span></li>
+<li><a name="a6"></a><span class="src-doc">* </span><span class="src-doc-tag">@desc</span><span class="src-doc"> Contains the Tester class from the GiMb framework.</span></li>
+<li><a name="a7"></a><span class="src-doc">* </span><span class="src-doc-coretag">@uses</span></li>
+<li><a name="a8"></a><span class="src-doc">* </span><span class="src-doc-coretag">@example</span></li>
+<li><a name="a9"></a><span class="src-doc">* </span><span class="src-doc-tag">@files</span></li>
+<li><a name="a10"></a><span class="src-doc">*/</span></li>
+<li><a name="a11"></a>&nbsp;</li>
+<li><a name="a12"></a><span class="src-doc">/**</span></li>
+<li><a name="a13"></a><span class="src-doc">* GUnit class</span></li>
+<li><a name="a14"></a><span class="src-doc">*</span></li>
+<li><a name="a15"></a><span class="src-doc">* Tests all other classes from the GiMb framework to assure that they all work from build to build.&lt;br /&gt;</span></li>
+<li><a name="a16"></a><span class="src-doc">* Example:</span></li>
+<li><a name="a17"></a><span class="src-doc">* &lt;code&gt;</span></li>
+<li><a name="a18"></a><span class="src-doc">* require_once 'alerter.class.php';</span></li>
+<li><a name="a19"></a><span class="src-doc">* require_once 'tester.class.php';</span></li>
+<li><a name="a20"></a><span class="src-doc">*</span></li>
+<li><a name="a21"></a><span class="src-doc">* class alerterTest extends GUnit {</span></li>
+<li><a name="a22"></a><span class="src-doc">*     function testAlert(){</span></li>
+<li><a name="a23"></a><span class="src-doc">*        $o = new alerter;</span></li>
+<li><a name="a24"></a><span class="src-doc">*        $result = $o-&gt;setLogfile( 'e:\temp\log.txt' );</span></li>
+<li><a name="a25"></a><span class="src-doc">*        return ( $result == true ) ? true : false;</span></li>
+<li><a name="a26"></a><span class="src-doc">*    }</span></li>
+<li><a name="a27"></a><span class="src-doc">    </span></li>
+<li><a name="a28"></a><span class="src-doc">*     function testStaticAlert() {</span></li>
+<li><a name="a29"></a><span class="src-doc">*        $result = alerter::Alert( ' error message ', false, 'log.txt' );</span></li>
+<li><a name="a30"></a><span class="src-doc">*        return ( $result == true ) ? true : false;</span></li>
+<li><a name="a31"></a><span class="src-doc">*    }</span></li>
+<li><a name="a32"></a><span class="src-doc">* }</span></li>
+<li><a name="a33"></a><span class="src-doc">*</span></li>
+<li><a name="a34"></a><span class="src-doc">* $o = new alerterTest;</span></li>
+<li><a name="a35"></a><span class="src-doc">* $o-&gt;runTests();</span></li>
+<li><a name="a36"></a><span class="src-doc">*&lt;/code&gt;</span></li>
+<li><a name="a37"></a><span class="src-doc">*/</span></li>
+<li><a name="a38"></a><span class="src-key">class </span><a href="../GUnit/GUnit.html">GUnit</a> <span class="src-sym">{</span></li>
+<li><a name="a39"></a>     <span class="src-doc">/**</span></li>
+<li><a name="a40"></a><span class="src-doc">    * Script time execution function</span></li>
+<li><a name="a41"></a><span class="src-doc">    */</span></li>
+<li><a name="a42"></a>    <span class="src-key">function </span><a href="../GUnit/GUnit.html#methodmicrot">microt</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a43"></a>        list<span class="src-sym">(</span><span class="src-var">$usec</span><span class="src-sym">, </span><span class="src-var">$sec</span><span class="src-sym">) </span>= <a href="http://www.php.net/explode">explode</a><span class="src-sym">(</span><span class="src-str">&quot; &quot;</span><span class="src-sym">, </span><a href="http://www.php.net/microtime">microtime</a><span class="src-sym">(</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+<li><a name="a44"></a>        <span class="src-key">return </span><span class="src-sym">(</span>(float)<span class="src-var">$usec </span>+ (float)<span class="src-var">$sec</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a45"></a>    <span class="src-sym">}</span></li>
+<li><a name="a46"></a>&nbsp;</li>
+<li><a name="a47"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a48"></a><span class="src-doc">    * Run all tests and draw a table with the results</span></li>
+<li><a name="a49"></a><span class="src-doc">    *</span></li>
+<li><a name="a50"></a><span class="src-doc">    * Runs all test* functions, defined in the [Unit]test class, gets their input and flushesh it if &lt;br /&gt;</span></li>
+<li><a name="a51"></a><span class="src-doc">    * unexpected variable is returned. Generates a HTML page and draws a table with the results of the &lt;br /&gt;</span></li>
+<li><a name="a52"></a><span class="src-doc">    * tests and error messages on failed tests.</span></li>
+<li><a name="a53"></a><span class="src-doc">    *</span></li>
+<li><a name="a54"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">void </span></li>
+<li><a name="a55"></a><span class="src-doc">    */</span></li>
+<li><a name="a56"></a>    <span class="src-key">function </span><a href="../GUnit/GUnit.html#methodrunTests">runTests</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a57"></a>         <span class="src-var">$c </span>= <a href="http://www.php.net/get_class">get_class</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a58"></a>        <span class="src-var">$o </span>= <span class="src-key">new </span><span class="src-var">$c</span><span class="src-sym">;</span></li>
+<li><a name="a59"></a>        <span class="src-var">$s </span>= <span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a60"></a>         <a href="http://www.php.net/ob_start">ob_start</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a61"></a>         <span class="src-var">$results </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a62"></a>        <span class="src-var">$functions </span>= <a href="http://www.php.net/get_class_methods">get_class_methods</a><span class="src-sym">( </span><span class="src-var">$o </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a63"></a>         <span class="src-key">foreach </span><span class="src-sym">( </span><span class="src-var">$functions </span><span class="src-key">as </span><span class="src-var">$function </span><span class="src-sym">)</span></li>
+<li><a name="a64"></a>             <span class="src-key">if</span><span class="src-sym">( </span><a href="http://www.php.net/strpos">strpos</a><span class="src-sym">( </span><span class="src-var">$function</span><span class="src-sym">, </span><span class="src-str">'test' </span><span class="src-sym">) </span>!== <span class="src-id">false </span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a65"></a>                 <span class="src-var">$time_start </span>= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../GUnit/GUnit.html#methodmicrot">microt</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a66"></a>                 <span class="src-var">$result </span>= <a href="http://www.php.net/call_user_func">call_user_func</a><span class="src-sym">( </span><span class="src-key">array</span><span class="src-sym">( </span><span class="src-var">$o</span><span class="src-sym">, </span><span class="src-var">$function</span><span class="src-sym">) )</span><span class="src-sym">;</span></li>
+<li><a name="a67"></a>                <span class="src-var">$time_end </span>= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../GUnit/GUnit.html#methodmicrot">microt</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a68"></a>                <span class="src-var">$r</span><span class="src-sym">[</span><span class="src-str">'time'</span><span class="src-sym">] </span>= <a href="http://www.php.net/substr">substr</a><span class="src-sym">( </span>(string) <span class="src-sym">(</span><span class="src-var">$time_end </span>- <span class="src-var">$time_start</span><span class="src-sym">)</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-num">6 </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a69"></a>                 <span class="src-var">$r</span><span class="src-sym">[</span><span class="src-str">'function'</span><span class="src-sym">] </span>= <span class="src-var">$function</span><span class="src-sym">;</span></li>
+<li><a name="a70"></a>                 <span class="src-var">$r</span><span class="src-sym">[</span><span class="src-str">'status'</span><span class="src-sym">] </span>= <span class="src-sym">( </span><span class="src-var">$result </span>=== <span class="src-id">true </span><span class="src-sym">) </span>? <span class="src-id">true </span>: <span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a71"></a>                 <span class="src-var">$r</span><span class="src-sym">[</span><span class="src-str">'note'</span><span class="src-sym">] </span>= <span class="src-sym">( </span><span class="src-var">$result </span>=== <span class="src-id">true </span><span class="src-sym">) </span>? <span class="src-str">'' </span>: <a href="http://www.php.net/ob_get_contents">ob_get_contents</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a72"></a>                 <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$result </span>=== <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a73"></a>                     <span class="src-var">$s</span>++<span class="src-sym">;</span></li>
+<li><a name="a74"></a>                 <span class="src-var">$results</span><span class="src-sym">[</span><span class="src-sym">] </span>= <span class="src-var">$r</span><span class="src-sym">;</span></li>
+<li><a name="a75"></a>                 <a href="http://www.php.net/ob_clean">ob_clean</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a76"></a>            <span class="src-sym">}</span></li>
+<li><a name="a77"></a>        <a href="http://www.php.net/ob_get_clean">ob_get_clean</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a78"></a>        <span class="src-var">$html </span>= <span class="src-str">'</span></li>
+<li><a name="a79"></a><span class="src-str">&lt;html&gt;</span></li>
+<li><a name="a80"></a><span class="src-str">&lt;head&gt;</span></li>
+<li><a name="a81"></a><span class="src-str">    &lt;title&gt;GiMb Unit Tester&lt;/title&gt;</span></li>
+<li><a name="a82"></a><span class="src-str">&lt;/head&gt;</span></li>
+<li><a name="a83"></a><span class="src-str">&lt;body&gt;</span></li>
+<li><a name="a84"></a><span class="src-str">&lt;font face=&quot;Times New Roman, Verdana&quot;&gt;</span></li>
+<li><a name="a85"></a><span class="src-str">&lt;table width=&quot;450px&quot; style=&quot;position: absolute; top: 50px; left: 50%; margin-left: -225px;&quot; bgcolor=&quot;#A71821&quot; border=0&gt;</span></li>
+<li><a name="a86"></a><span class="src-str">    &lt;tr&gt;</span></li>
+<li><a name="a87"></a><span class="src-str">        &lt;td align=&quot;center&quot; colspan=4&gt;</span></li>
+<li><a name="a88"></a><span class="src-str">        &lt;b&gt;&lt;font color=&quot;#ffffff&quot;&gt;</span></li>
+<li><a name="a89"></a><span class="src-str">            Unit Testing - '</span>.<span class="src-var">$c</span>.<span class="src-str">'</span></li>
+<li><a name="a90"></a><span class="src-str">        &lt;/font&gt;&lt;/b&gt;</span></li>
+<li><a name="a91"></a><span class="src-str">        &lt;/td&gt;</span></li>
+<li><a name="a92"></a><span class="src-str">    &lt;tr&gt;</span></li>
+<li><a name="a93"></a><span class="src-str">        &lt;td&gt;</span></li>
+<li><a name="a94"></a><span class="src-str">            &lt;table rules=&quot;groups&quot; align=&quot;center&quot; width=&quot;100%&quot; bgcolor=&quot;#FFFFFF&quot;&gt;</span></li>
+<li><a name="a95"></a><span class="src-str">                &lt;tr&gt;</span></li>
+<li><a name="a96"></a><span class="src-str">                    &lt;td align=&quot;center&quot;&gt;</span></li>
+<li><a name="a97"></a><span class="src-str">                        &lt;b&gt;</span></li>
+<li><a name="a98"></a><span class="src-str">                            No.</span></li>
+<li><a name="a99"></a><span class="src-str">                        &lt;/b&gt;</span></li>
+<li><a name="a100"></a><span class="src-str">                    &lt;/td&gt;</span></li>
+<li><a name="a101"></a><span class="src-str">                    &lt;td align=&quot;center&quot;&gt;</span></li>
+<li><a name="a102"></a><span class="src-str">                        &lt;b&gt;</span></li>
+<li><a name="a103"></a><span class="src-str">                            Function</span></li>
+<li><a name="a104"></a><span class="src-str">                        &lt;/b&gt;</span></li>
+<li><a name="a105"></a><span class="src-str">                    &lt;/td&gt;</span></li>
+<li><a name="a106"></a><span class="src-str">                    &lt;td align=&quot;center&quot;&gt;</span></li>
+<li><a name="a107"></a><span class="src-str">                        &lt;b&gt;</span></li>
+<li><a name="a108"></a><span class="src-str">                            Status</span></li>
+<li><a name="a109"></a><span class="src-str">                        &lt;/b&gt;</span></li>
+<li><a name="a110"></a><span class="src-str">                    &lt;/td&gt;</span></li>
+<li><a name="a111"></a><span class="src-str">                    &lt;td align=&quot;center&quot;&gt;</span></li>
+<li><a name="a112"></a><span class="src-str">                        &lt;b&gt;</span></li>
+<li><a name="a113"></a><span class="src-str">                            Time</span></li>
+<li><a name="a114"></a><span class="src-str">                        &lt;/b&gt;</span></li>
+<li><a name="a115"></a><span class="src-str">                    &lt;/td&gt;</span></li>
+<li><a name="a116"></a><span class="src-str">                    &lt;td align=&quot;center&quot;&gt;</span></li>
+<li><a name="a117"></a><span class="src-str">                        &lt;b&gt;</span></li>
+<li><a name="a118"></a><span class="src-str">                            Note</span></li>
+<li><a name="a119"></a><span class="src-str">                        &lt;/b&gt;</span></li>
+<li><a name="a120"></a><span class="src-str">                    &lt;/td&gt;</span></li>
+<li><a name="a121"></a><span class="src-str">                &lt;/tr&gt;</span></li>
+<li><a name="a122"></a><span class="src-str">                    '</span><span class="src-sym">;</span></li>
+<li><a name="a123"></a>    <span class="src-key">if </span><span class="src-sym">( </span><span class="src-sym">!</span><span class="src-key">empty </span><span class="src-sym">( </span><span class="src-var">$results </span><span class="src-sym">) ) </span><span class="src-sym">{</span></li>
+<li><a name="a124"></a>         <span class="src-var">$bgtd </span>= <span class="src-str">'#EBEBEB'</span><span class="src-sym">;</span></li>
+<li><a name="a125"></a>         <span class="src-var">$i </span>= <span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a126"></a>         <span class="src-var">$cr </span>= <a href="http://www.php.net/count">count</a><span class="src-sym">( </span><span class="src-var">$results </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a127"></a>        <span class="src-key">foreach </span><span class="src-sym">( </span><span class="src-var">$results </span><span class="src-key">as </span><span class="src-var">$key </span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a128"></a>        <span class="src-var">$bgtd </span>= <span class="src-sym">( </span><span class="src-var">$bgtd</span>==<span class="src-str">'#FFFFFF' </span><span class="src-sym">) </span>? <span class="src-str">'#EBEBEB' </span>: <span class="src-str">'#FFFFFF'</span><span class="src-sym">;</span></li>
+<li><a name="a129"></a>            <span class="src-var">$html </span>.= <span class="src-str">'&lt;tr bgcolor='</span>.<span class="src-var">$bgtd</span>.<span class="src-str">'&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a130"></a>            <span class="src-var">$html </span>.= <span class="src-str">'    &lt;td align=&quot;center&quot;&gt; '</span>.<span class="src-var">$i</span>.<span class="src-str">' &lt;/td&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a131"></a>            <span class="src-var">$html </span>.= <span class="src-str">'    &lt;td align=&quot;center&quot;&gt; '</span>.<span class="src-var">$key</span><span class="src-sym">[</span><span class="src-str">'function'</span><span class="src-sym">]</span>.<span class="src-str">' &lt;/td&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a132"></a>            <span class="src-var">$html </span>.= <span class="src-str">'    &lt;td align=&quot;center&quot; &gt;&lt;b&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a133"></a>            <span class="src-var">$html </span>.= <span class="src-sym">( </span><span class="src-var">$key</span><span class="src-sym">[</span><span class="src-str">'status'</span><span class="src-sym">] </span>== <span class="src-id">true </span><span class="src-sym">) </span>? <span class="src-str">'&lt;font color = &quot;#368F39&quot;&gt;success&lt;/font&gt;' </span>: <span class="src-str">'&lt;font color = &quot;#A71821&quot;&gt;failure&lt;/font&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a134"></a>            <span class="src-var">$html </span>.= <span class="src-str">'    &lt;/b&gt;&lt;td align=&quot;center&quot;&gt; '</span>.<span class="src-var">$key</span><span class="src-sym">[</span><span class="src-str">'time'</span><span class="src-sym">]</span>.<span class="src-str">' &lt;/td&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a135"></a>            <span class="src-var">$html </span>.= <span class="src-str">'    &lt;/b&gt;&lt;td align=&quot;center&quot;&gt; '</span>.<span class="src-var">$key</span><span class="src-sym">[</span><span class="src-str">'note'</span><span class="src-sym">]</span>.<span class="src-str">' &lt;/td&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a136"></a>            <span class="src-var">$html </span>.= <span class="src-str">'&lt;/tr&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a137"></a>            <span class="src-var">$i</span>++<span class="src-sym">;</span></li>
+<li><a name="a138"></a>        <span class="src-sym">}</span></li>
+<li><a name="a139"></a>    <span class="src-sym">}</span></li>
+<li><a name="a140"></a>    <span class="src-key">else</span></li>
+<li><a name="a141"></a>        <span class="src-var">$html </span>.= <span class="src-str">'    &lt;tr&gt;</span></li>
+<li><a name="a142"></a><span class="src-str">                        &lt;td colspan=4 align=&quot;center&quot;&gt;No tests performed&lt;/td&gt;</span></li>
+<li><a name="a143"></a><span class="src-str">                    &lt;/tr&gt;'</span><span class="src-sym">; </span></li>
+<li><a name="a144"></a>&nbsp;</li>
+<li><a name="a145"></a>    <span class="src-var">$html </span>.= <span class="src-str">'</span></li>
+<li><a name="a146"></a><span class="src-str">            &lt;/table&gt;</span></li>
+<li><a name="a147"></a><span class="src-str">        &lt;/td&gt;</span></li>
+<li><a name="a148"></a><span class="src-str">    &lt;/tr&gt;</span></li>
+<li><a name="a149"></a><span class="src-str">    &lt;tr&gt;</span></li>
+<li><a name="a150"></a><span class="src-str">        &lt;td&gt;</span></li>
+<li><a name="a151"></a><span class="src-str">            &lt;table align=&quot;center&quot; width=&quot;100%&quot; bgcolor=&quot;#FFFFFF&quot;&gt;</span></li>
+<li><a name="a152"></a><span class="src-str">                &lt;tr&gt;</span></li>
+<li><a name="a153"></a><span class="src-str">                    &lt;td colspan=4 align=&quot;center&quot;&gt;</span></li>
+<li><a name="a154"></a><span class="src-str">                        &lt;b&gt;</span></li>
+<li><a name="a155"></a><span class="src-str">                            '</span>.<span class="src-var">$cr</span>.<span class="src-str">' tests passed. '</span>.<span class="src-var">$s</span>.<span class="src-str">' of them were successful and '</span>.<span class="src-sym">(</span><span class="src-var">$cr</span>-<span class="src-var">$s</span><span class="src-sym">)</span>.<span class="src-str">' failed.</span></li>
+<li><a name="a156"></a><span class="src-str">                        &lt;/b&gt;</span></li>
+<li><a name="a157"></a><span class="src-str">                    &lt;/td&gt;</span></li>
+<li><a name="a158"></a><span class="src-str">                &lt;/tr&gt;</span></li>
+<li><a name="a159"></a><span class="src-str">            &lt;/table&gt;</span></li>
+<li><a name="a160"></a><span class="src-str">        &lt;/td&gt;</span></li>
+<li><a name="a161"></a><span class="src-str">    &lt;/tr&gt;</span></li>
+<li><a name="a162"></a><span class="src-str">    &lt;tr&gt;</span></li>
+<li><a name="a163"></a><span class="src-str">        &lt;td&gt;</span></li>
+<li><a name="a164"></a><span class="src-str">            &lt;table align=&quot;center&quot; width=&quot;100%&quot; bgcolor=&quot;#FFFFFF&quot;&gt;</span></li>
+<li><a name="a165"></a><span class="src-str">                &lt;tr&gt;</span></li>
+<li><a name="a166"></a><span class="src-str">                    &lt;td colspan=4 align=&quot;center&quot; style=&quot;font-size: 12px&quot;&gt;</span></li>
+<li><a name="a167"></a><span class="src-str">                            GiMb Unit Tester 2006 - author: Georgi Momchilov (gmomchilov at gmail dot com)</span></li>
+<li><a name="a168"></a><span class="src-str">                    &lt;/td&gt;</span></li>
+<li><a name="a169"></a><span class="src-str">                &lt;/tr&gt;</span></li>
+<li><a name="a170"></a><span class="src-str">            &lt;/table&gt;</span></li>
+<li><a name="a171"></a><span class="src-str">        &lt;/td&gt;</span></li>
+<li><a name="a172"></a><span class="src-str">    &lt;/tr&gt;</span></li>
+<li><a name="a173"></a><span class="src-str">&lt;/table&gt;</span></li>
+<li><a name="a174"></a><span class="src-str">&lt;/font&gt;</span></li>
+<li><a name="a175"></a><span class="src-str">&lt;/body&gt;</span></li>
+<li><a name="a176"></a><span class="src-str">&lt;/html&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a177"></a>    echo <span class="src-var">$html</span><span class="src-sym">;</span></li>
+<li><a name="a178"></a>    <span class="src-sym">}</span></li>
+<li><a name="a179"></a><span class="src-sym">}</span></li>
+<li><a name="a180"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:33:56 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</body>
+</html>

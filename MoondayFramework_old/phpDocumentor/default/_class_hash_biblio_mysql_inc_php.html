@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs for page biblio_mysql.inc.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="file-name">/class_hash/biblio_mysql.inc.php</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-functions">Functions</a>
+			</div>
+	<div class="info-box-body">	
+		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">filesource:</span> <a href="..//__filesource/fsource_default__class_hashbiblio_mysql.inc.php.html">Source Code for this file</a></li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">uses:</span> <a href="../default/.html"></a></li>
+				<li><span class="field">copyright:</span> (C) 2006 NKommunikation. All Rights Reserved.</li>
+				<li><span class="field">author:</span> Joshua Abbott, WiseGene Project (NKommunikation)</li>
+			</ul>
+		
+			</div>
+</div>
+		
+
+	
+	
+	
+	<a name="sec-functions"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Functions</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<span class="disabled">Functions</span>
+		</div>
+		<div class="info-box-body">	
+			<a name="functionmysql_delete" id="functionmysql_delete"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">mysql_delete</span> (line <span class="line-number"><a href="..//__filesource/fsource_default__class_hashbiblio_mysql.inc.php.html#a122">122</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">mysql_delete()			: make a mysql delete</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			mysql_delete
+		</span>
+					(<span class="var-type">$db_base</span>&nbsp;<span class="var-name">$db_base</span>, <span class="var-type">$table</span>&nbsp;<span class="var-name">$table</span>, <span class="var-type">$where</span>&nbsp;<span class="var-name">$where</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$db_base</span>
+				<span class="var-name">$db_base</span><span class="var-description">: : database to access</span>			</li>
+					<li>
+				<span class="var-type">$table</span>
+				<span class="var-name">$table</span><span class="var-description">: : name of the table</span>			</li>
+					<li>
+				<span class="var-type">$where</span>
+				<span class="var-name">$where</span><span class="var-description">: : where condition</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionmysql_insert" id="functionmysql_insert"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">mysql_insert</span> (line <span class="line-number"><a href="..//__filesource/fsource_default__class_hashbiblio_mysql.inc.php.html#a85">85</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">mysql_insert()				: make a mysql insert</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			mysql_insert
+		</span>
+					(<span class="var-type">$table</span>&nbsp;<span class="var-name">$db_base</span>, <span class="var-type">$liste_champs</span>&nbsp;<span class="var-name">$table</span>, <span class="var-type">$liste_valeur</span>&nbsp;<span class="var-name">$liste_champs</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$liste_valeur</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$table</span>
+				<span class="var-name">$db_base</span><span class="var-description">: : name of the table</span>			</li>
+					<li>
+				<span class="var-type">$liste_champs</span>
+				<span class="var-name">$table</span><span class="var-description">: : array of the field to insert</span>			</li>
+					<li>
+				<span class="var-type">$liste_valeur</span>
+				<span class="var-name">$liste_champs</span><span class="var-description">: : array of the valued of the field to insert</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionmysql_next_index" id="functionmysql_next_index"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">mysql_next_index</span> (line <span class="line-number"><a href="..//__filesource/fsource_default__class_hashbiblio_mysql.inc.php.html#a138">138</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">mysql_next_index()	: find the most free little index of the table</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			mysql_next_index
+		</span>
+					(<span class="var-type">$db_base</span>&nbsp;<span class="var-name">$db_base</span>, <span class="var-type">$index</span>&nbsp;<span class="var-name">$index</span>, <span class="var-type">$table</span>&nbsp;<span class="var-name">$table</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$db_base</span>
+				<span class="var-name">$db_base</span><span class="var-description">: : database to access</span>			</li>
+					<li>
+				<span class="var-type">$index</span>
+				<span class="var-name">$index</span><span class="var-description">: : the name of the index column</span>			</li>
+					<li>
+				<span class="var-type">$table</span>
+				<span class="var-name">$table</span><span class="var-description">: : name of the table</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionmysql_rawquery" id="functionmysql_rawquery"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">mysql_rawquery</span> (line <span class="line-number"><a href="..//__filesource/fsource_default__class_hashbiblio_mysql.inc.php.html#a37">37</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">mysql_rawquery()   : make a mysql query</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			mysql_rawquery
+		</span>
+					(<span class="var-type">$db_base</span>&nbsp;<span class="var-name">$db_base</span>, <span class="var-type">$query</span>&nbsp;<span class="var-name">$query</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$db_base</span>
+				<span class="var-name">$db_base</span><span class="var-description">: : database to access</span>			</li>
+					<li>
+				<span class="var-type">$query</span>
+				<span class="var-name">$query</span><span class="var-description">: : query to launch</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionmysql_select" id="functionmysql_select"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">mysql_select</span> (line <span class="line-number"><a href="..//__filesource/fsource_default__class_hashbiblio_mysql.inc.php.html#a67">67</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">mysql_select()     : make a mysql select</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			mysql_select
+		</span>
+					(<span class="var-type">$db_base</span>&nbsp;<span class="var-name">$db_base</span>, <span class="var-type">$fields</span>&nbsp;<span class="var-name">$fields</span>, <span class="var-type">$tables</span>&nbsp;<span class="var-name">$tables</span>, [<span class="var-type">$where</span>&nbsp;<span class="var-name">$where</span> = <span class="var-default">""</span>], [<span class="var-type">$order_by</span>&nbsp;<span class="var-name">$order_by</span> = <span class="var-default">""</span>], [<span class="var-type">$group_by</span>&nbsp;<span class="var-name">$group_by</span> = <span class="var-default">""</span>], [<span class="var-type">$having</span>&nbsp;<span class="var-name">$having</span> = <span class="var-default">""</span>], [<span class="var-type">$limit</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">""</span>])
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$db_base</span>
+				<span class="var-name">$db_base</span><span class="var-description">: : database to access</span>			</li>
+					<li>
+				<span class="var-type">$fields</span>
+				<span class="var-name">$fields</span><span class="var-description">: : list of field to select</span>			</li>
+					<li>
+				<span class="var-type">$tables</span>
+				<span class="var-name">$tables</span><span class="var-description">: : list names of the tables</span>			</li>
+					<li>
+				<span class="var-type">$where</span>
+				<span class="var-name">$where</span><span class="var-description">: : where condition</span>			</li>
+					<li>
+				<span class="var-type">$order_by</span>
+				<span class="var-name">$order_by</span><span class="var-description">: : fields to be ordered by</span>			</li>
+					<li>
+				<span class="var-type">$group_by</span>
+				<span class="var-name">$group_by</span><span class="var-description">: : fields to be groupered by</span>			</li>
+					<li>
+				<span class="var-type">$having</span>
+				<span class="var-name">$having</span><span class="var-description">: : having condition</span>			</li>
+					<li>
+				<span class="var-type">$limit</span>
+				<span class="var-name">$limit</span><span class="var-description">: : limit clause</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionmysql_select_diff" id="functionmysql_select_diff"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">mysql_select_diff</span> (line <span class="line-number"><a href="..//__filesource/fsource_default__class_hashbiblio_mysql.inc.php.html#a162">162</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">mysql_select_diff()	: make a select a,b,c,d from table1 where (a not in select a from table2 where ())and/or()</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			mysql_select_diff
+		</span>
+					(<span class="var-type">$db_base</span>&nbsp;<span class="var-name">$db_base</span>, <span class="var-type">$query_plus</span>&nbsp;<span class="var-name">$query_plus</span>, <span class="var-type">$query_moins:</span>&nbsp;<span class="var-name">$query_moins</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$db_base</span>
+				<span class="var-name">$db_base</span><span class="var-description">: : database to access</span>			</li>
+					<li>
+				<span class="var-type">$query_plus</span>
+				<span class="var-name">$query_plus</span><span class="var-description">: : select of the lines we want</span>			</li>
+					<li>
+				<span class="var-type">$query_moins:</span>
+				<span class="var-name">$query_moins</span><span class="var-description">: !! select of the lines we don't want (!! 1 column only)</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionmysql_select_value" id="functionmysql_select_value"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">mysql_select_value</span> (line <span class="line-number"><a href="..//__filesource/fsource_default__class_hashbiblio_mysql.inc.php.html#a194">194</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">mysql_select_value()</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> valeur retourn�e en ligne 0 de la requete.</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">la</span>
+		<span class="method-name">
+			mysql_select_value
+		</span>
+					(<span class="var-type">$db_base</span>&nbsp;<span class="var-name">$db_base</span>, <span class="var-type">$query:</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type">$default:</span>&nbsp;<span class="var-name">$default</span> = <span class="var-default">""</span>])
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$db_base</span>
+				<span class="var-name">$db_base</span><span class="var-description">: : database to access</span>			</li>
+					<li>
+				<span class="var-type">$query:</span>
+				<span class="var-name">$query</span><span class="var-description">: la requete avec seuleument 1 colonne selectionn�e!!</span>			</li>
+					<li>
+				<span class="var-type">$default:</span>
+				<span class="var-name">$default</span><span class="var-description">: default value to return if query return null result</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionmysql_update" id="functionmysql_update"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">mysql_update</span> (line <span class="line-number"><a href="..//__filesource/fsource_default__class_hashbiblio_mysql.inc.php.html#a104">104</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">mysql_update()				: make a mysql update</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			mysql_update
+		</span>
+					(<span class="var-type">$table</span>&nbsp;<span class="var-name">$db_base</span>, <span class="var-type">$liste_champs</span>&nbsp;<span class="var-name">$table</span>, <span class="var-type">$liste_valeur</span>&nbsp;<span class="var-name">$liste_champs</span>, <span class="var-type">$where</span>&nbsp;<span class="var-name">$liste_valeur</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$where</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$table</span>
+				<span class="var-name">$db_base</span><span class="var-description">: : name of the table</span>			</li>
+					<li>
+				<span class="var-type">$liste_champs</span>
+				<span class="var-name">$table</span><span class="var-description">: : array of the field to update</span>			</li>
+					<li>
+				<span class="var-type">$liste_valeur</span>
+				<span class="var-name">$liste_champs</span><span class="var-description">: : array of the valued of the field to update</span>			</li>
+					<li>
+				<span class="var-type">$where</span>
+				<span class="var-name">$liste_valeur</span><span class="var-description">: : where condition</span>			</li>
+				</ul>
+		
+	
+</div>
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:31:12 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</div></body>
+</html>

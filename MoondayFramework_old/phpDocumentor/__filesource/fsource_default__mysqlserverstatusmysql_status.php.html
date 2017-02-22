@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for mysql_status.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file mysql_status.php</h1>
+<p>Documentation is available at <a href="../default/_mysqlserverstatus_mysql_status_php.html">mysql_status.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a0"></a><span class="src-php">&lt;?php</span><span class="src-comm">// Test for MySQLStatus</span></li>
+<li><a name="a0"></a><span class="src-comm">// replace the next line with your own connect scripts        </span><span class="src-inc">include_once</span><span class="src-sym">(</span><span class="src-str">'config/connect.php'</span><span class="src-sym">)</span><span class="src-sym">;        </span><span class="src-comm">// include the class    </span><span class="src-inc">include</span><span class="src-sym">(</span><span class="src-str">'mysql_status.inc'</span><span class="src-sym">)</span><span class="src-sym">;    </span><span class="src-comm">// create a new instance of the class    </span><span class="src-var">$ServerStatus </span>= <span class="src-key">new </span><span class="src-id"><a href="../MySQLServerStatus/MySQLServerStatus.html">MySQLServerStatus</a></span><span class="src-sym">;    </span><span class="src-var">$current_status </span>= <span class="src-var">$ServerStatus</span><span class="src-sym">-&gt;</span><span class="src-id">GetServerStatus</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;    </span><span class="src-comm">// use : GetServerStatus()</span></li>
+<li><a name="a0"></a><span class="src-comm">// returns an array of the MySQL Server Status values    // see the MySQL documentation to get a list of the parameters    // example    //        $status=GetServerStatus()    //        $uptime=$status['Uptime'];    //        $bytes_rcvd=$status['Bytes_received'];    // combine them with the Formatbytes function:    //        $value=Formatbytes($status['Bytes_received'];    //        $value=$ServerStatus-&gt;Formatbytes($current_status['Bytes_received'],3);    //        echo $value['value'] . &quot; &quot; . $value['format'];                </span><span class="src-var">$value</span>=<span class="src-var">$ServerStatus</span><span class="src-sym">-&gt;</span><span class="src-id">Formatbytes</span><span class="src-sym">(</span><span class="src-var">$current_status</span><span class="src-sym">[</span><span class="src-str">'Bytes_received'</span><span class="src-sym">]</span><span class="src-sym">,</span><span class="src-num">3</span><span class="src-sym">)</span><span class="src-sym">;    </span><span class="src-comm">// use :  Formatbytes(the value, number of decimal places)</span></li>
+<li><a name="a0"></a><span class="src-comm">// byte value = $value['value']    // Format:    //    TB = Terabyte    //     GB = Gigabyte    //    MB = Megabyte    //    KB = Kilobyte    // $value['format']                </span><span class="src-var">$value</span>=<span class="src-var">$ServerStatus</span><span class="src-sym">-&gt;</span><span class="src-id">TimeSpanFormat</span><span class="src-sym">(</span><span class="src-var">$current_status</span><span class="src-sym">[</span><span class="src-str">'Uptime'</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;    </span><span class="src-comm">// use : TimeSpanFormat(number of seconds)</span></li>
+<li><a name="a1"></a><span class="src-comm">// days = $value['Days']    // hours = $value['Hours']    // minutes = $value['Minutes']    // seconds =  $value['Seconds']</span><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:34:34 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</body>
+</html>

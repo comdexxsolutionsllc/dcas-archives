@@ -1,0 +1,81 @@
+<?php session_start();
+/* Include for login to work */
+require_once('engine/coreEngine.php');
+$coreEngine = new coreEngine;
+$coreEngine->init();
+
+if(!empty($_GET['reason']) && $_GET['reason'] == "loggedout")
+{
+    session_unset();
+    session_destroy();
+    header("location:index.php?reason=not_authorized_admin");
+    exit;
+}
+
+?>
+
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">.
+<head>
+
+<!-- Start META Inclusion -->
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1" />
+<meta name = "description" content = ""/>
+<meta name = "keywords" content = ""/>
+<meta name = "robots" content = "all"/>
+<meta name="generator" content=
+"HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+<!-- End   META Inclusion -->
+
+<!-- Start LINK Inclusion -->
+
+<?php echo $coreEngine->fileObject->loadCSS('default.css', 'client'); ?>
+<link rel="Alternate" href="?translation=es" hreflang="es" title="Spanish Translation" />
+<link rel="Alternate" href="?translation=fr" hreflang="fr" title="French Translation" />
+<link rel="Alternate" href="?translation=gm" hreflang="gm" title="German Translation" />
+<link rel="Alternate" href="?translation=it" hreflang="it" title="Italian Translation" />
+<link rel="Bookmark" href="" />
+<link rel="Contents" href="Web Hosting Control Panel: ParagonPanel" />
+<link rel="Copyright" href="2007, Comdexx Software LLC" />
+<link rel="Help" href="?action=help" />
+<link rel="Index" href="index.php" />
+<link rel="Next" href="?action=next" />
+<link rel="Prev" href="?action=prev" />
+<link rel="Start" href="?page=login" />
+<!-- End   LINK Inclusion -->
+
+<title><?php print configObject::$title; ?></title><!--<title>::ParagonPanel::Login::</title>-->
+</head>
+<body>
+<!-- Start LOGIN Box -->
+<div id="logo"></div>
+<div class="sidebox" id="login">
+<div class="boxheaderleft"></div>
+<div class="boxheaderright"></div>
+<div class="boxheader">Login</div>
+<div class="boxbody">
+<form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post">
+<div>
+<label>Username:</label><br/>
+<input type="text" name="username"/><br/>
+<br \>
+<br \>
+<label>Password:</label><br/>
+<input type="password" name="password"/><br/>
+<br \>
+</div>
+<input type="submit" value="Login"/>
+</form><br/><br/>
+<img src="client/images/bar.gif" width="250" height="6" alt="--------------"/><br/>
+<span>
+Logged IP: <span class="bluebold">165.198.30.25</span><br/>
+Version Number: <span class="bluebold">2.04</span><br/>
+</span>
+</div>
+</div>
+<!-- End   LOGIN Box -->
+</body>
+</html>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for ACH_core.class.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file ACH_core.class.php</h1>
+<p>Documentation is available at <a href="../ACH_core/_ach_ACH_core_class_php.html">ACH_core.class.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a><span class="src-doc">/**</span></li>
+<li><a name="a3"></a><span class="src-doc">* </span><span class="src-doc-coretag">@package</span><span class="src-doc"> ACH_core</span></li>
+<li><a name="a4"></a><span class="src-doc">* </span><span class="src-doc-coretag">@author</span><span class="src-doc"> Joshua Abbott, WiseGene Project (NKommunikation)</span></li>
+<li><a name="a5"></a><span class="src-doc">* </span><span class="src-doc-coretag">@copyright</span><span class="src-doc"> (C) 2006 NKommunikation. All Rights Reserved.</span></li>
+<li><a name="a6"></a><span class="src-doc">* </span><span class="src-doc-tag">@desc</span><span class="src-doc">            PHP class / curl for raw_post method</span></li>
+<li><a name="a7"></a><span class="src-doc">* </span><span class="src-doc-coretag">@uses</span><span class="src-doc"> PHP 4.0.2+ &amp; cURL</span></li>
+<li><a name="a8"></a><span class="src-doc">* </span><span class="src-doc-coretag">@example</span><span class="src-doc">     //edit default vars in the ACH.class.php</span></li>
+<li><a name="a9"></a><span class="src-doc">*            //modify getDisplayText() method in ACH.class.php (not necessary for testing but do it before you go live)</span></li>
+<li><a name="a10"></a><span class="src-doc">*            //include both classes in your script:</span></li>
+<li><a name="a11"></a><span class="src-doc">* </span></li>
+<li><a name="a12"></a><span class="src-doc">*            require ('path/to/class/ACH_core.class.php');</span></li>
+<li><a name="a13"></a><span class="src-doc">*            require ('path/to/class/ACH.class.php');</span></li>
+<li><a name="a14"></a><span class="src-doc">*           </span></li>
+<li><a name="a15"></a><span class="src-doc">*            $payment = new ACH('your_merchant_id','your_password','assoc array of fields','array of keys to not send');</span></li>
+<li><a name="a16"></a><span class="src-doc">* </span></li>
+<li><a name="a17"></a><span class="src-doc">*            echo $payment-&gt;getDisplayText('assoc array of links for footer left','assoc array of links for footer right');</span></li>
+<li><a name="a18"></a><span class="src-doc">* </span></li>
+<li><a name="a19"></a><span class="src-doc">*            // also see ach_test.php</span></li>
+<li><a name="a20"></a><span class="src-doc">* </span><span class="src-doc-tag">@files</span></li>
+<li><a name="a21"></a><span class="src-doc">*        ACH_core.class.php (core transaction processor)</span></li>
+<li><a name="a22"></a><span class="src-doc">*        ACH.class.php (extends core)</span></li>
+<li><a name="a23"></a><span class="src-doc">*/</span></li>
+<li><a name="a24"></a>    </li>
+<li><a name="a25"></a><span class="src-key">class </span><a href="../ACH_core/ACH_core.html">ACH_core</a> <span class="src-sym">{</span></li>
+<li><a name="a26"></a>    </li>
+<li><a name="a27"></a>    <span class="src-key">var </span><a href="../ACH_core/ACH_core.html#var$t_properties">$t_properties</a> = <span class="src-key">array </span><span class="src-sym">(</span></li>
+<li><a name="a28"></a>        <span class="src-str">'pg_merchant_id'                 </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'pg_password'                     </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a29"></a>        <span class="src-str">'pg_transaction_type'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'pg_total_amount'                 </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a30"></a>        <span class="src-str">'pg_sales_tax_amount'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a31"></a>        <span class="src-comm">// MERCHANT DATA</span></li>
+<li><a name="a31"></a>        </li>
+<li><a name="a32"></a>        <span class="src-str">'pg_merchant_data_1'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'pg_merchant_data_2'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a33"></a>        <span class="src-str">'pg_merchant_data_3'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'pg_merchant_data_4'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a34"></a>        <span class="src-str">'pg_merchant_data_5'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'pg_merchant_data_6'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a35"></a>        <span class="src-str">'pg_merchant_data_7'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'pg_merchant_data_8'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a36"></a>        <span class="src-str">'pg_merchant_data_9'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a37"></a>        <span class="src-comm">// EFT</span></li>
+<li><a name="a37"></a>        </li>
+<li><a name="a38"></a>        <span class="src-str">'ecom_payment_check_trn'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'ecom_payment_check_account'        </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a39"></a>        <span class="src-str">'ecom_payment_check_account_type'    </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'ecom_payment_check_checkno'        </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a40"></a>        <span class="src-comm">// CREDIT</span></li>
+<li><a name="a40"></a>        </li>
+<li><a name="a41"></a>        <span class="src-str">'ecom_payment_card_type'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'ecom_payment_card_name'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a42"></a>        <span class="src-str">'ecom_payment_card_number'        </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'ecom_payment_card_expdate_month'    </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a43"></a>        <span class="src-str">'ecom_payment_card_expdate_year'    </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'ecom_payment_card_verification'    </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a44"></a>        <span class="src-str">'ecom_procurement_card'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'ecom_customer_acct_code'        </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a45"></a>        <span class="src-str">'pg_cc_swipe_data'                </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'pg_mail_or_phone_order'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a46"></a>        <span class="src-comm">// IDs</span></li>
+<li><a name="a46"></a>        </li>
+<li><a name="a47"></a>        <span class="src-str">'pg_consumer_id'                </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'ecom_consumerorderid'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a48"></a>        <span class="src-comm">// BILLING INFO</span></li>
+<li><a name="a48"></a>        </li>
+<li><a name="a49"></a>        <span class="src-str">'ecom_walletid'                </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'pg_billto_postal_name_company'    </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a50"></a>        <span class="src-str">'ecom_billto_postal_name_first'    </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'ecom_billto_postal_name_last'    </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a51"></a>        <span class="src-str">'ecom_billto_postal_street_line1'    </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'ecom_billto_postal_street_line2'    </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a52"></a>        <span class="src-str">'ecom_billto_postal_city'        </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'ecom_billto_postal_stateprov'    </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a53"></a>        <span class="src-str">'ecom_billto_postal_postalcode'    </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'ecom_billto_postal_countrycode'    </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a54"></a>        <span class="src-str">'ecom_billto_telecom_phone_number'    </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'ecom_billto_online_email'        </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a55"></a>        <span class="src-str">'pg_billto_ssn'                </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'pg_billto_dl_number'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a56"></a>        <span class="src-str">'pg_billto_dl_state'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span></li>
+<li><a name="a57"></a>        <span class="src-comm">// RECURRING FIELDS</span></li>
+<li><a name="a57"></a>        </li>
+<li><a name="a58"></a>        <span class="src-str">'pg_schedule_quantity'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'pg_schedule_frequency'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a59"></a>        <span class="src-str">'pg_schedule_recurring_amount'    </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'pg_schedule_start_date'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a60"></a>        <span class="src-comm">//MISC FIELDS</span></li>
+<li><a name="a60"></a>        </li>
+<li><a name="a61"></a>        <span class="src-str">'pg_customer_ip_address'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'pg_preauth_no_decline_on_fail'    </span>=&gt; <span class="src-str">&quot;FALSE&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a62"></a>        <span class="src-str">'pg_preauth_decline_on_noanswer'    </span>=&gt; <span class="src-str">&quot;FALSE&quot;</span><span class="src-sym">,    </span><span class="src-str">'pg_avs_method'                </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a63"></a>        <span class="src-comm">//ADMIN FIELDS</span></li>
+<li><a name="a63"></a>        </li>
+<li><a name="a64"></a>        <span class="src-str">'pg_original_trace_number'        </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,        </span><span class="src-str">'pg_original_authorization_code'    </span>=&gt; <span class="src-str">&quot;&quot;</span></li>
+<li><a name="a65"></a>    <span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a66"></a>    </li>
+<li><a name="a67"></a>    <span class="src-key">var </span><a href="../ACH_core/ACH_core.html#var$r_properties">$r_properties</a> = <span class="src-key">array </span><span class="src-sym">(</span></li>
+<li><a name="a68"></a>        <span class="src-str">'pg_response_type'                 </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,    </span><span class="src-str">'pg_response_code'                 </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a69"></a>        <span class="src-str">'pg_response_description'        </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,    </span><span class="src-str">'pg_trace_number'                 </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a70"></a>        <span class="src-str">'pg_merchant_id'                </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,    </span><span class="src-str">'pg_transaction_type'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a71"></a>        <span class="src-str">'pg_consumer_id'                </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,    </span><span class="src-str">'ecom_consumerorderid'            </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a72"></a>        <span class="src-str">'ecom_billto_postal_name_first'    </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,    </span><span class="src-str">'ecom_billto_postal_name_last'    </span>=&gt; <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a73"></a>        <span class="src-str">'ecom_billto_online_email'        </span>=&gt; <span class="src-str">&quot;&quot;</span></li>
+<li><a name="a74"></a>    <span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a75"></a>    </li>
+<li><a name="a76"></a>    <span class="src-key">var </span><a href="../ACH_core/ACH_core.html#var$posturl">$posturl</a>         = <span class="src-str">&quot;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a77"></a>    <span class="src-key">var </span><a href="../ACH_core/ACH_core.html#var$message">$message</a>         = <span class="src-str">&quot;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a78"></a>    <span class="src-key">var </span><a href="../ACH_core/ACH_core.html#var$responseText">$responseText</a>     = <span class="src-str">&quot;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a79"></a>    <span class="src-key">var </span><a href="../ACH_core/ACH_core.html#var$trans">$trans</a>         = <span class="src-str">&quot;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a80"></a>    </li>
+<li><a name="a81"></a>    <span class="src-key">function </span><a href="../ACH_core/ACH_core.html#methodACH_core">ACH_core</a><span class="src-sym">(</span><span class="src-var">$usr</span><span class="src-sym">,</span><span class="src-var">$ps</span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a82"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$t_properties">t_properties</a><span class="src-sym">[</span><span class="src-str">'pg_merchant_id'</span><span class="src-sym">]</span>=<span class="src-var">$usr</span><span class="src-sym">;</span></li>
+<li><a name="a83"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$t_properties">t_properties</a><span class="src-sym">[</span><span class="src-str">'pg_password'</span><span class="src-sym">]</span>=<span class="src-var">$ps</span><span class="src-sym">;</span></li>
+<li><a name="a84"></a>    <span class="src-sym">}</span></li>
+<li><a name="a85"></a>    </li>
+<li><a name="a86"></a>    <span class="src-comm">// $props (assoc array) = $HTTP_POST_VARS or $_POST for 4.1+ or $_GET if you're so inclined or any associative array</span></li>
+<li><a name="a87"></a>    <span class="src-comm">// $exceptions (array) = variable names to remove from $props</span></li>
+<li><a name="a87"></a>    </li>
+<li><a name="a88"></a>    <span class="src-key">function </span><a href="../ACH_core/ACH_core.html#methodsetFields">setFields</a> <span class="src-sym">(</span><span class="src-var">$props</span><span class="src-sym">, </span><span class="src-var">$exceptions</span>=<span class="src-str">&quot;&quot;</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a89"></a>        <span class="src-key">if </span><span class="src-sym">(</span><a href="http://www.php.net/is_array">is_array</a><span class="src-sym">(</span><span class="src-var">$props</span><span class="src-sym">))</span><span class="src-sym">{</span></li>
+<li><a name="a90"></a>            <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-key">empty</span><span class="src-sym">(</span><span class="src-var">$props</span><span class="src-sym">))</span><span class="src-sym">{</span></li>
+<li><a name="a91"></a>                <span class="src-key">foreach</span><span class="src-sym">(</span><span class="src-var">$props </span><span class="src-key">as </span><span class="src-var">$k</span>=&gt;<span class="src-var">$v</span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a92"></a>                    <span class="src-key">if </span><span class="src-sym">(</span><a href="http://www.php.net/is_array">is_array</a><span class="src-sym">(</span><span class="src-var">$exceptions</span><span class="src-sym">))</span><span class="src-sym">{</span></li>
+<li><a name="a93"></a>                        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><a href="http://www.php.net/in_array">in_array</a><span class="src-sym">(</span><span class="src-var">$k</span><span class="src-sym">,</span><span class="src-var">$exceptions</span><span class="src-sym">))</span><span class="src-sym">{</span></li>
+<li><a name="a94"></a>                            <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$t_properties">t_properties</a><span class="src-sym">[</span><span class="src-var">$k</span><span class="src-sym">]</span>=<span class="src-var">$v</span><span class="src-sym">;</span></li>
+<li><a name="a95"></a>                        <span class="src-sym">}</span></li>
+<li><a name="a96"></a>                    <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a97"></a>                        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$t_properties">t_properties</a><span class="src-sym">[</span><span class="src-var">$k</span><span class="src-sym">]</span>=<span class="src-var">$v</span><span class="src-sym">;</span></li>
+<li><a name="a98"></a>                    <span class="src-sym">}</span></li>
+<li><a name="a99"></a>                <span class="src-sym">}</span></li>
+<li><a name="a100"></a>                <span class="src-key">return </span><span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a101"></a>            <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a102"></a>                echo <span class="src-str">&quot;&lt;b&gt;AHH!  I NEED DATA TO SEND!&lt;/b&gt;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a103"></a>                <span class="src-key">return </span><span class="src-num">0</span><span class="src-sym">;    </span></li>
+<li><a name="a104"></a>            <span class="src-sym">}</span></li>
+<li><a name="a105"></a>        <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a106"></a>            echo <span class="src-str">&quot;&lt;b&gt;AHH!  I NEED DATA TO SEND!&lt;/b&gt;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a107"></a>            <span class="src-key">return </span><span class="src-num">0</span><span class="src-sym">;    </span></li>
+<li><a name="a108"></a>        <span class="src-sym">}</span></li>
+<li><a name="a109"></a>    <span class="src-sym">}</span></li>
+<li><a name="a110"></a>    </li>
+<li><a name="a111"></a>    <span class="src-comm">// SET TRANSACTION MESSAGE PROPERTIES</span></li>
+<li><a name="a111"></a>    </li>
+<li><a name="a112"></a>    <span class="src-key">function </span><a href="../ACH_core/ACH_core.html#methodsetTProperty">setTProperty</a> <span class="src-sym">(</span><span class="src-var">$prop</span><span class="src-sym">,</span><span class="src-var">$val</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a113"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$prop </span>&amp;&amp; <span class="src-var">$val</span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a114"></a>            <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$t_properties">t_properties</a><span class="src-sym">[</span><span class="src-var">$prop</span><span class="src-sym">]</span>=<span class="src-var">$val</span><span class="src-sym">;</span></li>
+<li><a name="a115"></a>            <span class="src-key">return </span><span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a116"></a>        <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a117"></a>            <span class="src-key">return </span><span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a118"></a>        <span class="src-sym">}</span></li>
+<li><a name="a119"></a>    <span class="src-sym">}</span></li>
+<li><a name="a120"></a>    </li>
+<li><a name="a121"></a>    <span class="src-comm">// SET RESPONSE MESSAGE PROPERTIES</span></li>
+<li><a name="a121"></a>    </li>
+<li><a name="a122"></a>    <span class="src-key">function </span><a href="../ACH_core/ACH_core.html#methodsetRProperty">setRProperty</a> <span class="src-sym">(</span><span class="src-var">$prop</span><span class="src-sym">,</span><span class="src-var">$val</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a123"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$prop </span>&amp;&amp; <span class="src-var">$val</span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a124"></a>            <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$r_properties">r_properties</a><span class="src-sym">[</span><span class="src-var">$prop</span><span class="src-sym">]</span>=<span class="src-var">$val</span><span class="src-sym">;</span></li>
+<li><a name="a125"></a>            <span class="src-key">return </span><span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a126"></a>        <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a127"></a>            <span class="src-key">return </span><span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a128"></a>        <span class="src-sym">}</span></li>
+<li><a name="a129"></a>    <span class="src-sym">}</span></li>
+<li><a name="a130"></a>    </li>
+<li><a name="a131"></a>    <span class="src-comm">// BUILD THE MESSAGE USING TRANSACTION PROPERTIES</span></li>
+<li><a name="a131"></a>    </li>
+<li><a name="a132"></a>    <span class="src-key">function </span><a href="../ACH_core/ACH_core.html#methodsetMessage">setMessage</a> <span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a133"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-key">empty</span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$t_properties">t_properties</a><span class="src-sym">))</span><span class="src-sym">{</span></li>
+<li><a name="a134"></a>            <span class="src-key">if </span><span class="src-sym">(</span><a href="http://www.php.net/is_array">is_array</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$t_properties">t_properties</a><span class="src-sym">))</span><span class="src-sym">{</span></li>
+<li><a name="a135"></a>                <span class="src-key">foreach</span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$t_properties">t_properties</a> <span class="src-key">as </span><span class="src-var">$k</span>=&gt;<span class="src-var">$v</span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a136"></a>                    <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$v</span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a137"></a>                        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$message">message</a>.=<span class="src-var">$k</span>.<span class="src-str">&quot;=&quot;</span>.<a href="http://www.php.net/urlencode">urlencode</a><span class="src-sym">(</span><span class="src-var">$v</span><span class="src-sym">)</span>.<span class="src-str">&quot;&amp;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a138"></a>                    <span class="src-sym">}</span></li>
+<li><a name="a139"></a>                <span class="src-sym">}</span></li>
+<li><a name="a140"></a>                <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$message">message</a>.=<span class="src-str">&quot;endofdata&amp;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a141"></a>                <span class="src-key">return </span><span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a142"></a>            <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{ </span><span class="src-key">return </span><span class="src-num">0</span><span class="src-sym">; </span><span class="src-sym">}</span></li>
+<li><a name="a143"></a>        <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{ </span><span class="src-key">return </span><span class="src-num">0</span><span class="src-sym">; </span><span class="src-sym">}</span></li>
+<li><a name="a144"></a>    <span class="src-sym">}</span></li>
+<li><a name="a145"></a>    </li>
+<li><a name="a146"></a>    <span class="src-comm">//  UMM... RUN THE TRANSACTION</span></li>
+<li><a name="a146"></a>    </li>
+<li><a name="a147"></a>    <span class="src-key">function </span><a href="../ACH_core/ACH_core.html#methodrunTransaction">runTransaction</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a148"></a>        <a href="http://www.php.net/ob_start">ob_start</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a149"></a>    </li>
+<li><a name="a150"></a>        <span class="src-comm">// setup curl</span></li>
+<li><a name="a151"></a>            <span class="src-var">$ch </span>= <span class="src-id">curl_init </span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$posturl">posturl</a><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a152"></a>        <span class="src-comm">// set curl to use verbose output</span></li>
+<li><a name="a153"></a>            <span class="src-id">curl_setopt </span><span class="src-sym">(</span><span class="src-var">$ch</span><span class="src-sym">, </span><span class="src-id">CURLOPT_VERBOSE</span><span class="src-sym">, </span><span class="src-num">1</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a154"></a>        <span class="src-comm">// set curl to use HTTP POST</span></li>
+<li><a name="a155"></a>            <span class="src-id">curl_setopt </span><span class="src-sym">(</span><span class="src-var">$ch</span><span class="src-sym">, </span><span class="src-id">CURLOPT_POST</span><span class="src-sym">, </span><span class="src-num">1</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a156"></a>        <span class="src-comm">// set POST output</span></li>
+<li><a name="a157"></a>            <span class="src-id">curl_setopt </span><span class="src-sym">(</span><span class="src-var">$ch</span><span class="src-sym">, </span><span class="src-id">CURLOPT_POSTFIELDS</span><span class="src-sym">, </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$message">message</a><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a158"></a>        <span class="src-comm">//execute curl and return result to STDOUT</span></li>
+<li><a name="a159"></a>            <span class="src-var">$suc </span>= <span class="src-id">curl_exec </span><span class="src-sym">(</span><span class="src-var">$ch</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a160"></a>        <span class="src-comm">//close curl connection</span></li>
+<li><a name="a161"></a>            <span class="src-id">curl_close </span><span class="src-sym">(</span><span class="src-var">$ch</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a162"></a>    </li>
+<li><a name="a163"></a>        <span class="src-comm">// set variable eq to output buffer</span></li>
+<li><a name="a164"></a>        <span class="src-var">$result </span>= <a href="http://www.php.net/ob_get_contents">ob_get_contents</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a165"></a>        <a href="http://www.php.net/ob_end_clean">ob_end_clean</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a166"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$suc</span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a167"></a>            <span class="src-key">return </span><span class="src-var">$result</span><span class="src-sym">;</span></li>
+<li><a name="a168"></a>        <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a169"></a>            <span class="src-key">return </span><span class="src-num">0</span><span class="src-sym">; </span><span class="src-comm">//return '0' on curl_exec failure (arbitrary connection error)</span></li>
+<li><a name="a170"></a>        <span class="src-sym">}</span></li>
+<li><a name="a171"></a>    <span class="src-sym">}</span></li>
+<li><a name="a172"></a>    </li>
+<li><a name="a173"></a>    <span class="src-comm">// PARSE RESPONSE</span></li>
+<li><a name="a173"></a>    </li>
+<li><a name="a174"></a>    <span class="src-key">function </span><a href="../ACH_core/ACH_core.html#methodparseResponse">parseResponse</a><span class="src-sym">(</span><span class="src-var">$rsps</span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a175"></a>        <span class="src-comm">// clean response data of whitespace, convert newline to ampersand for parse_str function and trim off endofdata</span></li>
+<li><a name="a176"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$rsps</span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a177"></a>            <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$responseText">responseText</a> = <a href="http://www.php.net/str_replace">str_replace</a><span class="src-sym">(</span><span class="src-str">&quot;\n&quot;</span><span class="src-sym">,</span><span class="src-str">&quot;&amp;&quot;</span><span class="src-sym">,</span><a href="http://www.php.net/trim">trim</a><span class="src-sym">(</span><a href="http://www.php.net/str_replace">str_replace</a><span class="src-sym">(</span><span class="src-str">&quot;endofdata&quot;</span><span class="src-sym">, </span><span class="src-str">&quot;&quot;</span><span class="src-sym">, </span><a href="http://www.php.net/trim">trim</a><span class="src-sym">(</span><span class="src-var">$rsps</span><span class="src-sym">))))</span><span class="src-sym">;</span></li>
+<li><a name="a178"></a>            <a href="http://www.php.net/parse_str">parse_str</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$responseText">responseText</a><span class="src-sym">,</span><span class="src-var">$arr</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a179"></a>            <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-key">empty</span><span class="src-sym">(</span><span class="src-var">$arr</span><span class="src-sym">))</span><span class="src-sym">{</span></li>
+<li><a name="a180"></a>                <span class="src-key">foreach</span><span class="src-sym">(</span><span class="src-var">$arr </span><span class="src-key">as </span><span class="src-var">$k</span>=&gt;<span class="src-var">$v</span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a181"></a>                    <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$r_properties">r_properties</a><span class="src-sym">[</span><span class="src-var">$k</span><span class="src-sym">]</span>=<span class="src-var">$v</span><span class="src-sym">;</span></li>
+<li><a name="a182"></a>                <span class="src-sym">}</span></li>
+<li><a name="a183"></a>                <span class="src-key">return </span><span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a184"></a>            <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a185"></a>                <span class="src-key">return </span><span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a186"></a>            <span class="src-sym">}</span></li>
+<li><a name="a187"></a>        <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a188"></a>            <span class="src-key">return </span><span class="src-num">0</span><span class="src-sym">;    </span></li>
+<li><a name="a189"></a>        <span class="src-sym">}</span></li>
+<li><a name="a190"></a>    <span class="src-sym">}</span></li>
+<li><a name="a191"></a>    </li>
+<li><a name="a192"></a>    <span class="src-key">function </span><a href="../ACH_core/ACH_core.html#methodgetResponseField">getResponseField</a><span class="src-sym">(</span><span class="src-var">$field</span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a193"></a>        <span class="src-key">return </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$r_properties">r_properties</a><span class="src-sym">[</span><span class="src-var">$field</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a194"></a>    <span class="src-sym">}</span></li>
+<li><a name="a195"></a>    </li>
+<li><a name="a196"></a>    <span class="src-key">function </span><a href="../ACH_core/ACH_core.html#methodsetTransactionDescription">setTransactionDescription</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a197"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$r_properties">r_properties</a><span class="src-sym">[</span><span class="src-str">'pg_transaction_type'</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a198"></a>            <span class="src-key">switch</span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$r_properties">r_properties</a><span class="src-sym">[</span><span class="src-str">'pg_transaction_type'</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a199"></a>                <span class="src-key">case </span><span class="src-str">'10'</span>: <span class="src-key">case </span><span class="src-str">'20'</span>: <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$trans">trans</a>=<span class="src-str">'SALE'</span><span class="src-sym">; </span><span class="src-key">break</span><span class="src-sym">;    </span></li>
+<li><a name="a200"></a>                <span class="src-key">case </span><span class="src-str">'11'</span>: <span class="src-key">case </span><span class="src-str">'21'</span>: <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$trans">trans</a>=<span class="src-str">'AUTH ONLY'</span><span class="src-sym">; </span><span class="src-key">break</span><span class="src-sym">; </span></li>
+<li><a name="a201"></a>                <span class="src-key">case </span><span class="src-str">'12'</span>: <span class="src-key">case </span><span class="src-str">'22'</span>: <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$trans">trans</a>=<span class="src-str">'CAPTURE'</span><span class="src-sym">; </span><span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a202"></a>                <span class="src-key">case </span><span class="src-str">'13'</span>: <span class="src-key">case </span><span class="src-str">'23'</span>: <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$trans">trans</a>=<span class="src-str">'CREDIT'</span><span class="src-sym">; </span><span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a203"></a>                <span class="src-key">case </span><span class="src-str">'14'</span>: <span class="src-key">case </span><span class="src-str">'24'</span>: <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$trans">trans</a>=<span class="src-str">'VOID'</span><span class="src-sym">; </span><span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a204"></a>                <span class="src-key">case </span><span class="src-str">'15'</span>: <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$trans">trans</a>=<span class="src-str">'PRE-AUTH'</span><span class="src-sym">; </span><span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a205"></a>                <span class="src-key">case </span><span class="src-str">'20'</span>: <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$trans">trans</a>=<span class="src-str">'SALE'</span><span class="src-sym">; </span><span class="src-key">break</span><span class="src-sym">;    </span></li>
+<li><a name="a206"></a>                <span class="src-key">case </span><span class="src-str">'25'</span>: <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$trans">trans</a>=<span class="src-str">'FORCE'</span><span class="src-sym">; </span><span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a207"></a>                <span class="src-key">case </span><span class="src-str">'26'</span>: <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$trans">trans</a>=<span class="src-str">'VERIFY ONLY'</span><span class="src-sym">; </span><span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a208"></a>                <span class="src-key">case </span><span class="src-str">'40'</span>: <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$trans">trans</a>=<span class="src-str">'SUSPEND'</span><span class="src-sym">; </span><span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a209"></a>                <span class="src-key">case </span><span class="src-str">'41'</span>: <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$trans">trans</a>=<span class="src-str">'ACTIVATE'</span><span class="src-sym">; </span><span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a210"></a>                <span class="src-key">case </span><span class="src-str">'42'</span>: <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$trans">trans</a>=<span class="src-str">'DELETE'</span><span class="src-sym">; </span><span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a211"></a>                <span class="src-key">default </span>:</li>
+<li><a name="a212"></a>                    <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../ACH_core/ACH_core.html#var$trans">trans</a>=<span class="src-str">'UNKNOWN TRANSACTION TYPE'</span><span class="src-sym">;</span></li>
+<li><a name="a213"></a>            <span class="src-sym">}</span></li>
+<li><a name="a214"></a>            <span class="src-key">return </span><span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a215"></a>        <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a216"></a>            <span class="src-key">return </span><span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a217"></a>        <span class="src-sym">}</span></li>
+<li><a name="a218"></a>    <span class="src-sym">}</span></li>
+<li><a name="a219"></a><span class="src-sym">}</span></li>
+<li><a name="a220"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:30:52 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</body>
+</html>

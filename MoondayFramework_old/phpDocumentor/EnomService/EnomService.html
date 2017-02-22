@@ -1,0 +1,956 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class EnomService</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class EnomService</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">EnomService class</p>
+<p class="description"><p>This class contains all the functions which will translate their passed parametrs into commands to be executed on Enom's servers.</p></p>
+	<ul class="tags">
+				<li><span class="field">extends:</span> EnomInterface</li>
+				<li><span class="field">version:</span> 1.0.2   17 August 2006</li>
+				<li><span class="field">author:</span> Bakr Alsharif &lt;<a href="mailto:bakr">AT systurn DOT com bakr AT systurn DOT com</a>&gt;</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_enom_class_EnomService_php.html">/enom/class.EnomService.php</a> (line <span class="field"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a47">47</a></span>)
+		</p>
+		
+				
+		<pre><a href="../EnomInterface/EnomInterface.html">EnomInterface</a>
+   |
+   --EnomService</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+								
+				<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#addIDProtectService" title="details" class="method-name">addIDProtectService</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$numYears</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#checkDomain" title="details" class="method-name">checkDomain</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sld</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$tld</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$spinner</span> = <span class="var-default">false</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$allowDash</span> = <span class="var-default">true</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$word1</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$word2</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$word3</span> = <span class="var-default">''</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getDomainContacts" title="details" class="method-name">getDomainContacts</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getDomainHosts" title="details" class="method-name">getDomainHosts</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">long</span>
+										<a href="#getDomainNameID" title="details" class="method-name">getDomainNameID</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getEmailForwarders" title="details" class="method-name">getEmailForwarders</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getExpiryDate" title="details" class="method-name">getExpiryDate</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getNameMyPhone" title="details" class="method-name">getNameMyPhone</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getNameServers" title="details" class="method-name">getNameServers</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#getRegistrarLock" title="details" class="method-name">getRegistrarLock</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">long</span>
+										<a href="#registerDomain" title="details" class="method-name">registerDomain</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$numYears</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$contacts</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$nameServers</span> = <span class="var-default">null</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$regLock</span> = <span class="var-default">true</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">long</span>
+										<a href="#renewDomain" title="details" class="method-name">renewDomain</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$numYears</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#setDomainContacts" title="details" class="method-name">setDomainContacts</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$contacts</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#setDomainHosts" title="details" class="method-name">setDomainHosts</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$domainHosts</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#setEmailForwarders" title="details" class="method-name">setEmailForwarders</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$emailForwarders</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#setNameMyPhone" title="details" class="method-name">setNameMyPhone</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$phone</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$hostName</span> = <span class="var-default">'phone'</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$serviceID</span> = <span class="var-default">NAMEMYPHONE_SERVICE_ATANDT</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$templateID</span> = <span class="var-default">NAMEMYPHONE_TEMPLATE_WESTERN</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$emailAlias</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$ccEmail1</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$ccEmail2</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$ccEmail3</span> = <span class="var-default">''</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">$hostname</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#setNameServers" title="details" class="method-name">setNameServers</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$nameServers</span> = <span class="var-default">null</span>], <span class="var-type">array</span>&nbsp;<span class="var-name">$nameservers</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#setRegistrarLock" title="details" class="method-name">setRegistrarLock</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, <span class="var-type">bool</span>&nbsp;<span class="var-name">$unlockRegistrar</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">long</span>
+										<a href="#transferDomain" title="details" class="method-name">transferDomain</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$contacts</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$authCode</span> = <span class="var-default">null</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$regLock</span> = <span class="var-default">true</span>])
+									</div>
+							</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../EnomInterface/EnomInterface.html">EnomInterface</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../EnomInterface/EnomInterface.html#var$debug">EnomInterface::$debug</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../EnomInterface/EnomInterface.html#var$dieOnError">EnomInterface::$dieOnError</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../EnomInterface/EnomInterface.html#var$isError">EnomInterface::$isError</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../EnomInterface/EnomInterface.html#var$isLive">EnomInterface::$isLive</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../EnomInterface/EnomInterface.html#var$params">EnomInterface::$params</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../EnomInterface/EnomInterface.html#var$pass">EnomInterface::$pass</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../EnomInterface/EnomInterface.html#var$rawRequest">EnomInterface::$rawRequest</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../EnomInterface/EnomInterface.html#var$rawResponse">EnomInterface::$rawResponse</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../EnomInterface/EnomInterface.html#var$response">EnomInterface::$response</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../EnomInterface/EnomInterface.html#var$user">EnomInterface::$user</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../EnomInterface/EnomInterface.html#var$useSSL">EnomInterface::$useSSL</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodaddIDProtectService" id="addIDProtectService"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addIDProtectService</span> (line <span class="line-number"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a548">548</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add ID Protect service to a domain name</p>
+<p class="description"><p>Executes the 'PurchaseServices' command on Enom's servers, to add the ID Protect service to an active  domain name that belongs to your Enom Account.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Order ID, or false if failed.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			addIDProtectService
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$numYears</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$domainName</span><span class="var-description">: Must be active and belongs to your Enom account.</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$numYears</span><span class="var-description">: Number of years to subscribe to ID Protect. Permitted values are 1 to 10.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodcheckDomain" id="checkDomain"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">checkDomain</span> (line <span class="line-number"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a72">72</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check domain availability</p>
+<p class="description"><p>Executes the 'Check' command on Enom's servers to check domain availability.  Top-level domain name (extension) Permitted values are: <ul><li>Any single TLD, for example, com</li><li>*  returns 11 of the most commonly used TLDs</li><li>*1 returns com, net, org, info, biz, us, ws</li><li>*2 returns com, net, org, info, biz, us</li><li>@  returns com, net, org</li><li>A comma-delimited list of TLDs to check, up to 30 names. Do not use with DomainSpinner.</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An associative array containing the domain name as a key and a bool (true if domain is available, false otherwise) as a value. On error, it returns false</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			checkDomain
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sld</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$tld</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$spinner</span> = <span class="var-default">false</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$allowDash</span> = <span class="var-default">true</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$word1</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$word2</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$word3</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sld</span><span class="var-description">: Second-level Domain</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tld</span><span class="var-description">: Top-level Domain (also known as Domain Extension).</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$spinner</span><span class="var-description">: If true, DomainSpinner (Domain Suggestion) will be enabled</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$allowDash</span><span class="var-description">: If DomainSpinner is enabled and $allowDash set to true, Suggested domain names may contain Dashes</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$word1</span><span class="var-description">: If DomainSpinner is enabled and $word1 is set, Suggested domain names may contain this word</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$word2</span><span class="var-description">: If DomainSpinner is enabled and $word2 is set, Suggested domain names may contain this word</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$word3</span><span class="var-description">: If DomainSpinner is enabled and $word3 is set, Suggested domain names may contain this word</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodgetDomainContacts" id="getDomainContacts"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getDomainContacts</span> (line <span class="line-number"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a588">588</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get domain contacts for a domain name.</p>
+<p class="description"><p>Executes the 'GetContacts' command on Enom's servers, to retrive the contacts information  for a domain name that is active and belongs to your Enom account.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Associative array containing contacts information.</li>
+				<li><span class="field">see:</span> <a href="../EnomService/EnomService.html#methodsetDomainContacts">EnomService::setDomainContacts()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getDomainContacts
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$domainName</span><span class="var-description">: Must be active and belongs to your Enom account.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodgetDomainHosts" id="getDomainHosts"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getDomainHosts</span> (line <span class="line-number"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a897">897</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get domain hosts (records) for a domain name.</p>
+<p class="description"><p>Executes the 'GetHosts' command on Enom's servers, to get domain hosts (records)  for a domain name that is active and belongs to your Enom account.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Associative array containing all Hosts being set. Array keys are name, type, address and pref.</li>
+				<li><span class="field">see:</span> <a href="../EnomService/EnomService.html#methodsetDomainHosts">EnomService::setDomainHosts()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getDomainHosts
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$domainName</span><span class="var-description">: Must be active and belongs to your Enom account.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodgetDomainNameID" id="getDomainNameID"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getDomainNameID</span> (line <span class="line-number"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a1068">1068</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get domain name ID for a domain name.</p>
+<p class="description"><p>Executes the 'GetDomainNameID' command on Enom's servers, to get the domain name ID number  for a domain name that belongs to your Enom account. Can be used to verify that domain name  belongs to your Enom's account.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Domain name ID number, or false if failed.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">long</span>
+		<span class="method-name">
+			getDomainNameID
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$domainName</span><span class="var-description">: Must be valid and belongs to your Enom account.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodgetEmailForwarders" id="getEmailForwarders"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getEmailForwarders</span> (line <span class="line-number"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a822">822</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get email forwarders for a domain name.</p>
+<p class="description"><p>Executes the 'GetForwarding' command on Enom's servers, to get email forwarders  for a domain name that is active and belongs to your Enom account.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Associative array containing 'Email account' as the key, and 'Forward To' as the value.</li>
+				<li><span class="field">see:</span> <a href="../EnomService/EnomService.html#methodsetEmailForwarders">EnomService::setEmailForwarders()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getEmailForwarders
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$domainName</span><span class="var-description">: Must be active and belongs to your Enom account.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodgetExpiryDate" id="getExpiryDate"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getExpiryDate</span> (line <span class="line-number"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a516">516</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get expiry date for a domain name</p>
+<p class="description"><p>Executes the 'GetDomainExp' command on Enom's servers, to retrive the expiration date  of a domain name that is active and belongs to your Enom account.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Expiration date, or false on fail</li>
+				<li><span class="field">see:</span> <a href="../EnomService/EnomService.html#methodgetDomainNameID">EnomService::getDomainNameID()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getExpiryDate
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$domainName</span><span class="var-description">: Must be active and belongs to your Enom account.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodgetNameMyPhone" id="getNameMyPhone"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getNameMyPhone</span> (line <span class="line-number"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a983">983</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the current name-my-phone settings.</p>
+<p class="description"><p>Executes the 'GetDomainPhone' command on Enom's servers, to get current name-my-phone settings  for a domain name that is active and belongs to your Enom account.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Associative array containing name-my-phone settings.</li>
+				<li><span class="field">see:</span> <a href="../EnomService/EnomService.html#methodsetNameMyPhone">EnomService::setNameMyPhone()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getNameMyPhone
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$domainName</span><span class="var-description">: Must be valid and belongs to your Enom account.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodgetNameServers" id="getNameServers"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getNameServers</span> (line <span class="line-number"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a737">737</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get name servers for a domain name.</p>
+<p class="description"><p>Executes the 'GetDNS' command on Enom's servers, to retrive the name servers  for a domain name that is active and belongs to your Enom account.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An array containing name servers. If using Enom's name servers, the array will be empty.</li>
+				<li><span class="field">see:</span> <a href="../EnomService/EnomService.html#methodgetNameServers">EnomService::getNameServers()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getNameServers
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$domainName</span><span class="var-description">: Must be active and belongs to your Enom account.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodgetRegistrarLock" id="getRegistrarLock"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRegistrarLock</span> (line <span class="line-number"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a438">438</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get registrar lock status for a domain name</p>
+<p class="description"><p>Executes the 'GetRegLock' command on Enom's servers.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if not locked, false otherwise. You should check for $this-&gt;isError if returned false, to make sure it's not an error flag not the registrar lock status.</li>
+				<li><span class="field">see:</span> <a href="../EnomService/EnomService.html#methodsetRegistrarLock">EnomService::setRegistrarLock()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			getRegistrarLock
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$domainName</span><span class="var-description">: Must be active and belongs to your Enom account.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodregisterDomain" id="registerDomain"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">registerDomain</span> (line <span class="line-number"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a152">152</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Register a new domain name</p>
+<p class="description"><p>Executes the 'Purchase' command on Enom's servers to register a new domain.  Note that this command to not fail, it must meet the following requirements: <ul><li>Your Enom account must have enough credits to cover the order amount.</li><li>The domain name must be valid and available.</li><li>Number of years must not be less than the minimum number of years required for the specified TLD.</li><li>Name Servers must be valid and registered.</li><li>Name servers for .us names must be located in the United States.</li><li>RegistrantJobTitle and RegistrantFax are required in the contacts array if RegistrantOrganizationName is set.</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Order ID, or false if failed.</li>
+				<li><span class="field">see:</span> <a href="../EnomService/EnomService.html#methodtransferDomain">EnomService::transferDomain()</a></li>
+				<li><span class="field">see:</span> <a href="../EnomService/EnomService.html#methodrenewDomain">EnomService::renewDomain()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">long</span>
+		<span class="method-name">
+			registerDomain
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$numYears</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$contacts</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$nameServers</span> = <span class="var-default">null</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$regLock</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$domainName</span><span class="var-description">: Must be a valid domain name, that is currently available</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$numYears</span><span class="var-description">: Some TLDs like .co.uk requires minimum of 2 years, Another may require 10 years</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$contacts</span><span class="var-description">: Associative array containing Contacts as key and value.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$nameServers</span><span class="var-description">: If not set, Enom's Default name servers will be used instead.</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$regLock</span><span class="var-description">: A flag that specifies if the domain should be locked or not. Default is true.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodrenewDomain" id="renewDomain"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">renewDomain</span> (line <span class="line-number"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a272">272</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Renew a domain name that belongs to your Enom account</p>
+<p class="description"><p>Executes the 'Extend' command on Enom's servers to renew a domain name which was previously registered or transfered to your Enom account.  Note that this command to not fail, it must meet the following requirements: <ul><li>Your Enom account must have enough credits to cover the order amount.</li><li>The domain name must be valid and active and belongs to your Enom account.</li><li>The new expiration date cannot be more than 10 years in the future.</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Renewal Order ID, or false if failed.</li>
+				<li><span class="field">see:</span> <a href="../EnomService/EnomService.html#methodtransferDomain">EnomService::transferDomain()</a></li>
+				<li><span class="field">see:</span> <a href="../EnomService/EnomService.html#methodregisterDomain">EnomService::registerDomain()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">long</span>
+		<span class="method-name">
+			renewDomain
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$numYears</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$domainName</span><span class="var-description">: Must be a valid and active domain name.</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$numYears</span><span class="var-description">: The new expiration date cannot be more than 10 years in the future.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodsetDomainContacts" id="setDomainContacts"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setDomainContacts</span> (line <span class="line-number"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a651">651</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set domain contacts for a domain name.</p>
+<p class="description"><p>Executes the 'Contacts' command on Enom's servers, to set the contacts information  for a domain name that is active and belongs to your Enom account.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if succeed and false if failed.</li>
+				<li><span class="field">see:</span> <a href="../EnomService/EnomService.html#methodgetDomainContacts">EnomService::getDomainContacts()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			setDomainContacts
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$contacts</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$domainName</span><span class="var-description">: Must be active and belongs to your Enom account.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$contacts</span><span class="var-description">: Associative array containing contacts information.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodsetDomainHosts" id="setDomainHosts"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setDomainHosts</span> (line <span class="line-number"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a942">942</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set domain hosts (records) for a domain name.</p>
+<p class="description"><p>Executes the 'SetHosts' command on Enom's servers, to set domain hosts (records)  for a domain name that is active and belongs to your Enom account.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if succeed and False if failed.</li>
+				<li><span class="field">see:</span> <a href="../EnomService/EnomService.html#methodgetDomainHosts">EnomService::getDomainHosts()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			setDomainHosts
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$domainHosts</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$domainName</span><span class="var-description">: Must be active and belongs to your Enom account.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$domainHosts</span><span class="var-description">: Associative array containing all Hosts to set. Array keys are name, type, address and pref.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodsetEmailForwarders" id="setEmailForwarders"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setEmailForwarders</span> (line <span class="line-number"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a859">859</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set email forwarders for a domain name.</p>
+<p class="description"><p>Executes the 'Forwarding' command on Enom's servers, to set email forwarders  for a domain name that is active and belongs to your Enom account.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if succeed and False if failed.</li>
+				<li><span class="field">see:</span> <a href="../EnomService/EnomService.html#methodgetEmailForwarders">EnomService::getEmailForwarders()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			setEmailForwarders
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$emailForwarders</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$domainName</span><span class="var-description">: Must be active and belongs to your Enom account.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$emailForwarders</span><span class="var-description">: Associative array containing 'Email account' as the key, and 'Forward To' as the value.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodsetNameMyPhone" id="setNameMyPhone"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setNameMyPhone</span> (line <span class="line-number"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a1021">1021</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set name-my-phone settings for a domain name.</p>
+<p class="description"><p>Executes the 'SetDomainPhone' command on Enom's servers, to set name-my-phone settings  for a domain name that belongs to your Enom account.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if succeed and False if failed.</li>
+				<li><span class="field">see:</span> <a href="../EnomService/EnomService.html#methodsetNameMyPhone">EnomService::setNameMyPhone()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			setNameMyPhone
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$phone</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$hostName</span> = <span class="var-default">'phone'</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$serviceID</span> = <span class="var-default">NAMEMYPHONE_SERVICE_ATANDT</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$templateID</span> = <span class="var-default">NAMEMYPHONE_TEMPLATE_WESTERN</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$emailAlias</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$ccEmail1</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$ccEmail2</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$ccEmail3</span> = <span class="var-default">''</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">$hostname</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$domainName</span><span class="var-description">: Must be valid and belongs to your Enom account.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$phone</span><span class="var-description">: Phone number. Required format is +CountryCode.PhoneNumber, where CountryCode and PhoneNumber use only numeric characters.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$hostname</span><span class="var-description">: Name for your host (default is phone).</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$serviceID</span><span class="var-description">: ID of service (default is AT and T).</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$templateID</span><span class="var-description">: Template used to view the service. (default is Western template).</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$emailAlias</span><span class="var-description">: Flag to set up email forwarding alias.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$ccEmail1</span><span class="var-description">: CC to email #1 (only if $emailAlias is enabled).</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$ccEmail2</span><span class="var-description">: CC to email #2 (only if $emailAlias is enabled).</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$ccEmail3</span><span class="var-description">: CC to email #3 (only if $emailAlias is enabled).</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodsetNameServers" id="setNameServers"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setNameServers</span> (line <span class="line-number"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a780">780</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set name servers for a domain name.</p>
+<p class="description"><p>Executes the 'ModifyNS' command on Enom's servers, to set the name servers  for a domain name that is active and belongs to your Enom account.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if succeed and false if failed.</li>
+				<li><span class="field">see:</span> <a href="../EnomService/EnomService.html#methodgetNameServers">EnomService::getNameServers()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			setNameServers
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$nameServers</span> = <span class="var-default">null</span>], <span class="var-type">array</span>&nbsp;<span class="var-name">$nameservers</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$domainName</span><span class="var-description">: Must be active and belongs to your Enom account.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$nameservers</span><span class="var-description">: Array containing name servers. If not set, default Enom name servers will be used.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodsetRegistrarLock" id="setRegistrarLock"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setRegistrarLock</span> (line <span class="line-number"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a470">470</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set registrar lock status for a domain name</p>
+<p class="description"><p>Executes the 'SetRegLock' command on Enom's servers.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if succeed, false on fail.</li>
+				<li><span class="field">see:</span> <a href="../EnomService/EnomService.html#methodgetRegistrarLock">EnomService::getRegistrarLock()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			setRegistrarLock
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, <span class="var-type">bool</span>&nbsp;<span class="var-name">$unlockRegistrar</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$domainName</span><span class="var-description">: Must be active and belongs to your Enom account.</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$unlockRegistrar</span><span class="var-description">: If set to true, the domain will be unlocked.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodtransferDomain" id="transferDomain"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">transferDomain</span> (line <span class="line-number"><a href="..//__filesource/fsource_EnomService__enomclass.EnomService.php.html#a321">321</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Transfer a domain name to your Enom account</p>
+<p class="description"><p>Executes the 'TP_CreateOrder' command on Enom's servers to transfer a domain name to your Enom account.  Note that this command to not fail, it must meet the following requirements: <ul><li>Your Enom account must have enough credits to cover the order amount.</li><li>The domain name must be valid and already registered and not locked.</li><li>To transfer EPP names, the query must include the authorization key from the Registrar.
+       On enom.com, the authorization key is displayed at the bottom of the Contact/WhoIs Information page,
+       accessed from the Domain Control Panel.</li><li>RegistrantJobTitle and RegistrantFax are required in the contacts array if RegistrantOrganizationName is set.
+       If $contacts is not set, existing WhoIs contacts will be used when the transfer is complete</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Transfer Order ID, or false if failed.</li>
+				<li><span class="field">see:</span> <a href="../EnomService/EnomService.html#methodrenewDomain">EnomService::renewDomain()</a></li>
+				<li><span class="field">see:</span> <a href="../EnomService/EnomService.html#methodregisterDomain">EnomService::registerDomain()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">long</span>
+		<span class="method-name">
+			transferDomain
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$domainName</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$contacts</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$authCode</span> = <span class="var-default">null</span>], [<span class="var-type">bool</span>&nbsp;<span class="var-name">$regLock</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$domainName</span><span class="var-description">: Must be a valid domain name, that is currently available</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$contacts</span><span class="var-description">: Associative array containing Contacts as key and value.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$authCode</span><span class="var-description">: Authorization key from the Registrar. Required for EPP names.</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$regLock</span><span class="var-description">: A flag that specifies if the domain should be locked or not. Default is true.</span>			</li>
+				</ul>
+		
+		
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../EnomInterface/EnomInterface.html">EnomInterface</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../EnomInterface/EnomInterface.html#methodEnomInterface">EnomInterface::EnomInterface()</a></span><br>
+													<span class="method-name"><a href="../EnomInterface/EnomInterface.html#methodaddParam">EnomInterface::addParam()</a></span><br>
+													<span class="method-name"><a href="../EnomInterface/EnomInterface.html#methodprocess">EnomInterface::process()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:31:30 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</div></body>
+</html>

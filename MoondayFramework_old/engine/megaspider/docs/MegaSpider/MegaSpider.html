@@ -1,0 +1,1058 @@
+<html>
+<head>
+<title>Docs For Class MegaSpider</title>
+<link rel="stylesheet" type="text/css" href="../media/style.css">
+</head>
+<body>
+
+<table border="0" cellspacing="0" cellpadding="0" height="48" width="100%">
+  <tr>
+    <td class="header_top">MegaSpider</td>
+  </tr>
+  <tr><td class="header_line"><img src="../media/empty.png" width="1" height="1" border="0" alt=""  /></td></tr>
+  <tr>
+    <td class="header_menu">
+  		  [ <a href="../classtrees_MegaSpider.html" class="menu">class tree: MegaSpider</a> ]
+		  [ <a href="../elementindex_MegaSpider.html" class="menu">index: MegaSpider</a> ]
+		  [ <a href="../elementindex.html" class="menu">all elements</a> ]
+    </td>
+  </tr>
+  <tr><td class="header_line"><img src="../media/empty.png" width="1" height="1" border="0" alt=""  /></td></tr>
+</table>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="200" class="menu">
+	<div id="todolist">
+			<p><a href="../todolist.html">Todo List</a></p>
+	</div>
+      <b>Packages:</b><br />
+              <a href="../li_MegaSpider.html">MegaSpider</a><br />
+            <br /><br />
+                        <b>Files:</b><br />
+      	  <div class="package">
+			<a href="../MegaSpider/_spider_example_php.html">		example.php
+		</a><br>
+			<a href="../MegaSpider/_spider_spider_class_php.html">		spider.class.php
+		</a><br>
+	  </div><br />
+      
+            <b>Classes:</b><br />
+        <div class="package">
+		    		<a href="../MegaSpider/MegaSpider.html">MegaSpider</a><br />
+	  </div>
+                </td>
+    <td>
+      <table cellpadding="10" cellspacing="0" width="100%" border="0"><tr><td valign="top">
+
+<h1>Class: MegaSpider</h1>
+Source Location: /spider.class.php<br /><br />
+
+
+<table width="100%" border="0">
+<tr><td valign="top">
+
+<h3><a href="#class_details">Class Overview</a></h3>
+<pre></pre><br />
+<div class="description">Retrieving any data from website.</div><br /><br />
+<h4>Author(s):</h4>
+<ul>
+                      <li>Marcin Szymon Sznyra &lt;<a href="mailto:marcin@marcinsznyra.info">marcin@marcinsznyra.info</a>&gt;</li>
+                        </ul>
+
+
+
+
+    
+                      
+      
+<h4>Version:</h4>
+<ul>
+  <li>$Id: spider.class.php,v 1.0 RC 2005/05/05 08:32:25 MarcinSznyra Exp$;</li>
+</ul>
+
+<h4>Copyright:</h4>
+<ul>
+  <li>2005 Marcin Szymon Sznyra &lt;marcin@marcinsznyra.info&gt;</li>
+</ul>
+
+</td>
+
+<td valign="top">
+<h3><a href="#class_vars">Variables</a></h3>
+<ul>
+    <li><a href="../MegaSpider/MegaSpider.html#var$_actual">$_actual</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_COOKIEFILE">$_CURLOPT_COOKIEFILE</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_COOKIEJAR">$_CURLOPT_COOKIEJAR</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_FAILONERROR">$_CURLOPT_FAILONERROR</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_FOLLOWLOCATION">$_CURLOPT_FOLLOWLOCATION</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_POST">$_CURLOPT_POST</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_POSTFIELDS">$_CURLOPT_POSTFIELDS</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_RETURNTRANSFER">$_CURLOPT_RETURNTRANSFER</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_TIMEOUT">$_CURLOPT_TIMEOUT</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_USERAGENT">$_CURLOPT_USERAGENT</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_USERPWD">$_CURLOPT_USERPWD</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#var$_CURL_RESOURCE">$_CURL_RESOURCE</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#var$_debug">$_debug</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#var$_domain">$_domain</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#var$_sleep">$_sleep</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#var$_unique_addreses">$_unique_addreses</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#var$_unique_emails">$_unique_emails</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#var$_unique_hrefs">$_unique_hrefs</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#var$_url">$_url</a></li>
+  </ul>
+</td>
+
+
+<td valign="top">
+<h3><a href="#class_methods">Methods</a></h3>
+<ul>
+    <li><a href="../MegaSpider/MegaSpider.html#methodMegaSpider">MegaSpider</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#methodassign">assign</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#methodgetContent">getContent</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#methodgetPage">getPage</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#methodgetUniqueHref">getUniqueHref</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#method_end_time">_end_time</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#method_run_time">_run_time</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#method_stats">_stats</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#method_unique_addresses">_unique_addresses</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#method_unique_emails">_unique_emails</a></li>
+    <li><a href="../MegaSpider/MegaSpider.html#method_unique_hrefs">_unique_hrefs</a></li>
+  </ul>
+</td>
+
+</tr></table>
+<hr />
+
+<table width="100%" border="0"><tr>
+
+
+
+
+
+
+</tr></table>
+<hr />
+
+<a name="class_details"></a>
+<h3>Class Details</h3>
+<div class="tags">
+[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a36">36</a>]<br />
+Retrieving any data from website.<br /><br /><p>Project:     MegaSpider : small fun project ;) File:        spider.class.php
+ MegaSpider crawl a site following and retrieving any data that you want to retrive.
+ This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
+ This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
+ You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ For questions, help, comments, discussion, etc., please send e-mail to marcin sznyra : marcin@marcinsznyra.info</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>version:</b>&nbsp;&nbsp;</td><td>$Id: spider.class.php,v 1.0 RC 2005/05/05 08:32:25 MarcinSznyra Exp$;</td>
+  </tr>
+  <tr>
+    <td><b>todo:</b>&nbsp;&nbsp;</td><td>add database driver and controller,</td>
+  </tr>
+  <tr>
+    <td><b>author:</b>&nbsp;&nbsp;</td><td>Marcin Szymon Sznyra &lt;<a href="mailto:marcin@marcinsznyra.info">marcin@marcinsznyra.info</a>&gt;</td>
+  </tr>
+  <tr>
+    <td><b>license:</b>&nbsp;&nbsp;</td><td>Public</td>
+  </tr>
+  <tr>
+    <td><b>copyright:</b>&nbsp;&nbsp;</td><td>2005 Marcin Szymon Sznyra &lt;marcin@marcinsznyra.info&gt;</td>
+  </tr>
+  <tr>
+    <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://www.marcinsznyra.info/">http://www.marcinsznyra.info/</a></td>
+  </tr>
+</table>
+</div>
+</div><br /><br />
+<div class="top">[ <a href="#top">Top</a> ]</div><br />
+
+<hr />
+<a name="class_vars"></a>
+<h3>Class Variables</h3>
+<div class="tags">
+	<a name="var$_actual"></a>
+	<p></p>
+	<h4>$_actual = <span class="value">&nbsp;null</span></h4>
+	<p>[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a55">55</a>]</p>
+  Actualy parsed and retrived address<br /><br /><p>Actualy parsed and retrived address</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>var:</b>&nbsp;&nbsp;</td><td>url</td>
+  </tr>
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>string</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$_CURLOPT_COOKIEFILE"></a>
+	<p></p>
+	<h4>$_CURLOPT_COOKIEFILE = <span class="value">&nbsp;'/cookies/'</span></h4>
+	<p>[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a123">123</a>]</p>
+  CURL setting<br /><br /><p>CURL setting</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>var:</b>&nbsp;&nbsp;</td><td>cookie save path</td>
+  </tr>
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>string</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$_CURLOPT_COOKIEJAR"></a>
+	<p></p>
+	<h4>$_CURLOPT_COOKIEJAR = <span class="value">&nbsp;'/cookies/'</span></h4>
+	<p>[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a117">117</a>]</p>
+  CURL setting<br /><br /><p>CURL setting</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>var:</b>&nbsp;&nbsp;</td><td>cookie save path</td>
+  </tr>
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>string</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$_CURLOPT_FAILONERROR"></a>
+	<p></p>
+	<h4>$_CURLOPT_FAILONERROR = <span class="value">&nbsp;false</span></h4>
+	<p>[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a69">69</a>]</p>
+  CURL setting<br /><br /><p>CURL setting</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>boolean</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$_CURLOPT_FOLLOWLOCATION"></a>
+	<p></p>
+	<h4>$_CURLOPT_FOLLOWLOCATION = <span class="value">&nbsp;true</span></h4>
+	<p>[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a75">75</a>]</p>
+  CURL setting<br /><br /><p>CURL setting</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>boolean</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$_CURLOPT_POST"></a>
+	<p></p>
+	<h4>$_CURLOPT_POST = <span class="value">&nbsp;true</span></h4>
+	<p>[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a93">93</a>]</p>
+  CURL setting<br /><br /><p>CURL setting</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>boolean</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$_CURLOPT_POSTFIELDS"></a>
+	<p></p>
+	<h4>$_CURLOPT_POSTFIELDS = <span class="value">&nbsp;null</span></h4>
+	<p>[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a99">99</a>]</p>
+  CURL setting<br /><br /><p>CURL setting</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>boolean</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$_CURLOPT_RETURNTRANSFER"></a>
+	<p></p>
+	<h4>$_CURLOPT_RETURNTRANSFER = <span class="value">&nbsp;true</span></h4>
+	<p>[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a81">81</a>]</p>
+  CURL setting<br /><br /><p>CURL setting</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>boolean</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$_CURLOPT_TIMEOUT"></a>
+	<p></p>
+	<h4>$_CURLOPT_TIMEOUT = <span class="value">&nbsp;3</span></h4>
+	<p>[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a87">87</a>]</p>
+  CURL setting<br /><br /><p>CURL setting</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>integer</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$_CURLOPT_USERAGENT"></a>
+	<p></p>
+	<h4>$_CURLOPT_USERAGENT = <span class="value">&nbsp;&quot;Mozilla/4.0&nbsp;(compatible;&nbsp;MSIE&nbsp;6.0;&nbsp;Windows&nbsp;NT&nbsp;5.0)&quot;</span></h4>
+	<p>[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a105">105</a>]</p>
+  CURL setting<br /><br /><p>CURL setting</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>var:</b>&nbsp;&nbsp;</td><td>Curl browser identification</td>
+  </tr>
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>string</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$_CURLOPT_USERPWD"></a>
+	<p></p>
+	<h4>$_CURLOPT_USERPWD = <span class="value">&nbsp;null</span></h4>
+	<p>[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a111">111</a>]</p>
+  CURL setting<br /><br /><p>CURL setting</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>string</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$_CURL_RESOURCE"></a>
+	<p></p>
+	<h4>$_CURL_RESOURCE = <span class="value">&nbsp;null</span></h4>
+	<p>[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a63">63</a>]</p>
+  CURL RESOURCE<br /><br /><p>CURL RESOURCE</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>var:</b>&nbsp;&nbsp;</td><td>resource</td>
+  </tr>
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>string</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$_debug"></a>
+	<p></p>
+	<h4>$_debug = <span class="value">&nbsp;true</span></h4>
+	<p>[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a131">131</a>]</p>
+  Debug mode true or false<br /><br /><p>Debug mode true or false</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>var:</b>&nbsp;&nbsp;</td><td>mode</td>
+  </tr>
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>boolean</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$_domain"></a>
+	<p></p>
+	<h4>$_domain = <span class="value">&nbsp;null</span></h4>
+	<p>[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a48">48</a>]</p>
+  Domain address of $_url<br /><br /><p>Domain address of $_url</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>var:</b>&nbsp;&nbsp;</td><td>domain name</td>
+  </tr>
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>string</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$_sleep"></a>
+	<p></p>
+	<h4>$_sleep = <span class="value">&nbsp;3</span></h4>
+	<p>[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a139">139</a>]</p>
+  Sleep time after reciving the page<br /><br /><p>Sleep time after reciving the page</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>var:</b>&nbsp;&nbsp;</td><td>time</td>
+  </tr>
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>integer</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$_unique_addreses"></a>
+	<p></p>
+	<h4>$_unique_addreses = <span class="value">array(&nbsp;)</span></h4>
+	<p>[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a148">148</a>]</p>
+  Class array of unique www addresses that found in whole site<br /><br /><p>Class array of unique www addresses that found in whole site</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>var:</b>&nbsp;&nbsp;</td><td>adressess</td>
+  </tr>
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>array</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$_unique_emails"></a>
+	<p></p>
+	<h4>$_unique_emails = <span class="value">array(&nbsp;)</span></h4>
+	<p>[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a162">162</a>]</p>
+  Class array of unique emails that found in whole site<br /><br /><p>Class array of unique emails that found in whole site</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>var:</b>&nbsp;&nbsp;</td><td>emails</td>
+  </tr>
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>array</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$_unique_hrefs"></a>
+	<p></p>
+	<h4>$_unique_hrefs = <span class="value">array(&nbsp;)</span></h4>
+	<p>[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a155">155</a>]</p>
+  Class array of unique links that found in whole site<br /><br /><p>Class array of unique links that found in whole site</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>var:</b>&nbsp;&nbsp;</td><td>links</td>
+  </tr>
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>array</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$_url"></a>
+	<p></p>
+	<h4>$_url = <span class="value">&nbsp;null</span></h4>
+	<p>[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a42">42</a>]</p>
+  Global address of retriving website<br /><br /><p>Global address of retriving website</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>var:</b>&nbsp;&nbsp;</td><td>url</td>
+  </tr>
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>string</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+</div><br />
+
+<hr />
+<a name="class_methods"></a>
+<h3>Class Methods</h3>
+<div class="tags">
+  <hr />
+	<a name="methodMegaSpider"></a>
+	<h3>constructor MegaSpider <span class="smalllinenumber">[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a175">175</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void MegaSpider(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		__Construct of MegaSpider Class don't need any params, starts automaticly and automaticly runs bulit in timer, after that try to run CURL_INIT and makes the CURL resource.<br /><br /><p>__Construct of MegaSpider Class don't need any params, starts automaticly and automaticly runs bulit in timer, after that try to run CURL_INIT and makes the CURL resource.</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>public</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodassign"></a>
+	<h3>method assign <span class="smalllinenumber">[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a224">224</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void assign(
+[string
+$url = 'http://www.msn.com'])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Method alows You to assign some page that will be parsed by the Mega Spider Class. one param - address of www page.<br /><br /><p>Method alows You to assign some page that will be parsed by the Mega Spider Class. Method need only one param - address of www page.</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>public</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$url</b>&nbsp;&nbsp;</td>
+        <td>address</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodgetContent"></a>
+	<h3>method getContent <span class="smalllinenumber">[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a370">370</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void getContent(
+string
+$address)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Method get as param address of<br /><br /><p>Method get as param address of web page and download full html content of page. If this operation was not sucesfully method try do run method getUniqueHref that will try to download next page from array _unique_hrefs</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$address</b>&nbsp;&nbsp;</td>
+        <td>address</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodgetPage"></a>
+	<h3>method getPage <span class="smalllinenumber">[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a251">251</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void getPage(
+string
+$page)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Reciving and parsing the page, that method runs all the others methods as _unique_href, _unique_emails _unique_address. web page address.<br /><br /><p>Reciving and parsing the page, that method runs all the others methods as _unique_href, _unique_emails _unique_address. Needs one param - the web page address.</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$page</b>&nbsp;&nbsp;</td>
+        <td>address</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodgetUniqueHref"></a>
+	<h3>method getUniqueHref <span class="smalllinenumber">[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a333">333</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void getUniqueHref(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		If one page was parsed by class, system trys to know what is the next page that shoud be parsed.<br /><br /><p>If one page was parsed by class, system trys to know what is the next page that shoud be parsed. All found addresses are in array _unique_hrefs. This Method runs the spider to recive next www page from array. Don't need any param.</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="method_end_time"></a>
+	<h3>method _end_time <span class="smalllinenumber">[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a755">755</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>integer _end_time(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		In debug mode prints out full time of application work.<br /><br /><p>In debug mode prints out full time of application work.</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>return:</b>&nbsp;&nbsp;</td><td>run time</td>
+  </tr>
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>public</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="method_run_time"></a>
+	<h3>method _run_time <span class="smalllinenumber">[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a740">740</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void _run_time(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Runs microtime of run time of aplication.<br /><br /><p>Runs microtime of run time of aplication.</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="method_scrollDown"></a>
+	<h3>method _scrollDown <span class="smalllinenumber">[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a725">725</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void _scrollDown(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Method prints in debug mode javascript thtat scroll down the page.<br /><br /><p>Method prints in debug mode javascript thtat scroll down the page.</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="method_stats"></a>
+	<h3>method _stats <span class="smalllinenumber">[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a697">697</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void _stats(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Method prints in debug mode statistics of found adresses and emails.<br /><br /><p>Method prints in debug mode statistics of found adresses and emails.</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="method_unique_addresses"></a>
+	<h3>method _unique_addresses <span class="smalllinenumber">[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a504">504</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void _unique_addresses(
+string
+&$content)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Method parse html codes of web page and retriving from html code all existing www addressess.<br /><br /><p>Method parse html codes of web page and retriving from html code all existing www addressess.</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>&$content</b>&nbsp;&nbsp;</td>
+        <td>html codes</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="method_unique_emails"></a>
+	<h3>method _unique_emails <span class="smalllinenumber">[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a421">421</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void _unique_emails(
+string
+&$content)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Method parse html codes of web page and retriving from html code all existing email addressess.<br /><br /><p>Method parse html codes of web page and retriving from html code all existing email addressess.</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>&$content</b>&nbsp;&nbsp;</td>
+        <td>html codes</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="method_unique_hrefs"></a>
+	<h3>method _unique_hrefs <span class="smalllinenumber">[line <a href="..//__filesource/fsource_MegaSpider__spider.class.php.html#a604">604</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void _unique_hrefs(
+string
+&$content)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Method parse html codes of web page and retriving from html code all existing href links.<br /><br /><p>Method parse html codes of web page and retriving from html code all existing href links.</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>private</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>&$content</b>&nbsp;&nbsp;</td>
+        <td>html codes</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+</div><br />
+
+
+        <div class="credit">
+		    <hr />
+		    Documentation generated on Thu,  5 May 2005 11:46:43 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.3.0RC3</a>
+	      </div>
+      </td></tr></table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

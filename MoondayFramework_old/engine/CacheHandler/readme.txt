@@ -1,0 +1,20 @@
+/
+.htaccess
+/dcc/
+    /index.php
+    /cache/
+    /data/
+         /doc/
+             /index.htm
+    /img/
+    /lib/
+        /class.index.inc
+        /class.doc.inc
+        /dcc/
+            /class.dcc.inc
+            /class.engine.inc
+            /class.mysql.inc
+            /class.parser.inc
+            /class.root.inc
+    /logs/
+    /templates/

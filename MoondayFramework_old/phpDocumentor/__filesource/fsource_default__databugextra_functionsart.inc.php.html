@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for art.inc.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file art.inc.php</h1>
+<p>Documentation is available at <a href="../default/_databug_extra_functions_art_inc_php.html">art.inc.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a>&nbsp;</li>
+<li><a name="a3"></a><span class="src-doc">/***  DOCUMENTATION LAYER</span></li>
+<li><a name="a4"></a><span class="src-doc">    Databug Extra Function File</span></li>
+<li><a name="a5"></a><span class="src-doc">    Package: Databug</span></li>
+<li><a name="a6"></a><span class="src-doc">    File: art.inc.php</span></li>
+<li><a name="a7"></a><span class="src-doc">    Last Update: Jun 2006</span></li>
+<li><a name="a8"></a><span class="src-doc">    Author: Tom Atwell (klenwell@gmail.com)</span></li>
+<li><a name="a9"></a><span class="src-doc">    FUNCTIONS:</span></li>
+<li><a name="a10"></a><span class="src-doc">    </span></li>
+<li><a name="a11"></a><span class="src-doc">        get_color($hex_code='*')    </span></li>
+<li><a name="a12"></a><span class="src-doc">        set_random_color()</span></li>
+<li><a name="a13"></a><span class="src-doc">  NOTES:</span></li>
+<li><a name="a20"></a><span class="src-doc">______________________________________________________________________________*/</span></li>
+<li><a name="a21"></a>&nbsp;</li>
+<li><a name="a22"></a>&nbsp;</li>
+<li><a name="a23"></a><span class="src-comm">// get_color</span></li>
+<li><a name="a24"></a><span class="src-comm">/*____________________________________________________________________________*/</span></li>
+<li><a name="a25"></a><span class="src-key">function </span><a href="../default/_databug_extra_functions_art_inc_php.html#functionget_color">get_color</a><span class="src-sym">(</span><span class="src-var">$hex_code</span>=<span class="src-str">'*'</span><span class="src-sym">) </span></li>
+<li><a name="a26"></a><span class="src-sym">{</span></li>
+<li><a name="a27"></a>    <span class="src-comm">// *** DATA</span></li>
+<li><a name="a28"></a>    </li>
+<li><a name="a29"></a>        <span class="src-comm"># Return</span></li>
+<li><a name="a30"></a>        <span class="src-var">$span </span>= <span class="src-str">''</span><span class="src-sym">;</span></li>
+<li><a name="a31"></a>        </li>
+<li><a name="a32"></a>    </li>
+<li><a name="a33"></a>    <span class="src-comm">// *** MANIPULATE</span></li>
+<li><a name="a34"></a>    </li>
+<li><a name="a35"></a>        <span class="src-comm"># Sanity Check</span></li>
+<li><a name="a36"></a>        </li>
+<li><a name="a37"></a>            <span class="src-comm"># Random</span></li>
+<li><a name="a38"></a>            <span class="src-key">if </span><span class="src-sym">( </span><span class="src-var">$hex_code </span>== <span class="src-str">'*' </span><span class="src-sym">)</span></li>
+<li><a name="a39"></a>            <span class="src-sym">{</span></li>
+<li><a name="a40"></a>                <span class="src-var">$hex_code </span>= <a href="../default/_databug_extra_functions_art_inc_php.html#functionset_random_color">set_random_color</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a41"></a>            <span class="src-sym">}</span></li>
+<li><a name="a42"></a>            </li>
+<li><a name="a43"></a>            <span class="src-comm"># Valid Hex Code?</span></li>
+<li><a name="a44"></a>            <span class="src-key">if </span><span class="src-sym">( </span><a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$hex_code</span><span class="src-sym">) </span>!= <span class="src-num">3 </span>&amp;&amp; <a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$hex_code</span><span class="src-sym">) </span>!= <span class="src-num">6 </span><span class="src-sym">)</span></li>
+<li><a name="a45"></a>            <span class="src-sym">{</span></li>
+<li><a name="a46"></a>                <a href="http://www.php.net/trigger_error">trigger_error</a><span class="src-sym">(</span><span class="src-str">&quot;</span><span class="src-str"><span class="src-id">invalid</span> <span class="src-id">hex</span> <span class="src-id">code</span> <span class="src-sym">[</span><span class="src-var">$hex_code</span><span class="src-sym">]</span></span><span class="src-str">&quot;</span><span class="src-sym">, </span><span class="src-id">E_USER_WARNING</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a47"></a>                <span class="src-key">return </span><span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a48"></a>            <span class="src-sym">}</span></li>
+<li><a name="a49"></a>&nbsp;</li>
+<li><a name="a50"></a>      </li>
+<li><a name="a51"></a>      <span class="src-comm"># Style</span></li>
+<li><a name="a52"></a>      <span class="src-var">$color </span>= <span class="src-str">&quot;</span><span class="src-str">&lt;<span class="src-id">span</span> <span class="src-id">style</span>=\&quot;<span class="src-id">background</span>:#{<span class="src-var">$hex_code</span><span class="src-sym">}</span>; <span class="src-id">padding</span>:0 .5<span class="src-id">em</span>; <span class="src-id">margin</span>-<span class="src-id">right</span>:.5<span class="src-id">em</span>;\&quot;&gt;&amp;<span class="src-id">nbsp</span>;&lt;/<span class="src-id">span</span>&gt;&lt;<span class="src-id">span</span> <span class="src-id">style</span>=\&quot;<span class="src-id">color</span>:#{<span class="src-var">$hex_code</span><span class="src-sym">}</span>\&quot;&gt;#{<span class="src-var">$hex_code</span><span class="src-sym">}</span>&lt;/<span class="src-id">span</span>&gt;</span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a53"></a>        </li>
+<li><a name="a54"></a>    </li>
+<li><a name="a55"></a>    <span class="src-comm">// *** RETURN</span></li>
+<li><a name="a56"></a>    </li>
+<li><a name="a57"></a>        <span class="src-key">return </span><span class="src-var">$color</span><span class="src-sym">;</span></li>
+<li><a name="a58"></a>&nbsp;</li>
+<li><a name="a59"></a><span class="src-sym">} </span><span class="src-comm"># end Fx</span></li>
+<li><a name="a60"></a><span class="src-comm">/*____________________________________________________________________________*/</span></li>
+<li><a name="a61"></a>&nbsp;</li>
+<li><a name="a62"></a>&nbsp;</li>
+<li><a name="a63"></a>&nbsp;</li>
+<li><a name="a64"></a><span class="src-comm">// set_random_color</span></li>
+<li><a name="a65"></a><span class="src-comm">/*____________________________________________________________________________*/</span></li>
+<li><a name="a66"></a><span class="src-key">function </span><a href="../default/_databug_extra_functions_art_inc_php.html#functionset_random_color">set_random_color</a><span class="src-sym">(</span><span class="src-sym">) </span></li>
+<li><a name="a67"></a><span class="src-sym">{</span></li>
+<li><a name="a68"></a>    <span class="src-comm">// *** DATA</span></li>
+<li><a name="a69"></a>    </li>
+<li><a name="a70"></a>        <span class="src-comm"># Return</span></li>
+<li><a name="a71"></a>        <span class="src-var">$hex_code </span>= <span class="src-str">''</span><span class="src-sym">;</span></li>
+<li><a name="a72"></a>        </li>
+<li><a name="a73"></a>    </li>
+<li><a name="a74"></a>    <span class="src-comm">// *** MANIPULATE</span></li>
+<li><a name="a75"></a>    </li>
+<li><a name="a76"></a>      <span class="src-comm"># Get Color Components</span></li>
+<li><a name="a77"></a>      <span class="src-var">$_rhex </span>= <a href="http://www.php.net/str_pad">str_pad</a><span class="src-sym">(</span><a href="http://www.php.net/dechex">dechex</a><span class="src-sym">(</span><a href="http://www.php.net/mt_rand">mt_rand</a><span class="src-sym">(</span><span class="src-num">0</span><span class="src-sym">,</span><span class="src-num">255</span><span class="src-sym">))</span><span class="src-sym">, </span><span class="src-num">2</span><span class="src-sym">, </span><span class="src-str">'0'</span><span class="src-sym">, </span><span class="src-id">STR_PAD_LEFT</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a78"></a>      <span class="src-var">$_ghex </span>= <a href="http://www.php.net/str_pad">str_pad</a><span class="src-sym">(</span><a href="http://www.php.net/dechex">dechex</a><span class="src-sym">(</span><a href="http://www.php.net/mt_rand">mt_rand</a><span class="src-sym">(</span><span class="src-num">0</span><span class="src-sym">,</span><span class="src-num">255</span><span class="src-sym">))</span><span class="src-sym">, </span><span class="src-num">2</span><span class="src-sym">, </span><span class="src-str">'0'</span><span class="src-sym">, </span><span class="src-id">STR_PAD_LEFT</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a79"></a>      <span class="src-var">$_bhex </span>= <a href="http://www.php.net/str_pad">str_pad</a><span class="src-sym">(</span><a href="http://www.php.net/dechex">dechex</a><span class="src-sym">(</span><a href="http://www.php.net/mt_rand">mt_rand</a><span class="src-sym">(</span><span class="src-num">0</span><span class="src-sym">,</span><span class="src-num">255</span><span class="src-sym">))</span><span class="src-sym">, </span><span class="src-num">2</span><span class="src-sym">, </span><span class="src-str">'0'</span><span class="src-sym">, </span><span class="src-id">STR_PAD_LEFT</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a80"></a>      </li>
+<li><a name="a81"></a>      <span class="src-comm"># Conflate</span></li>
+<li><a name="a82"></a>      <span class="src-var">$hex_code </span>= <span class="src-str">&quot;</span>{<span class="src-var">$_rhex</span><span class="src-str"></span><span class="src-sym">}</span>{<span class="src-var">$_ghex</span><span class="src-sym">}</span>{<span class="src-var">$_bhex</span><span class="src-sym">}</span></span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a83"></a>        </li>
+<li><a name="a84"></a>    </li>
+<li><a name="a85"></a>    <span class="src-comm">// *** RETURN</span></li>
+<li><a name="a86"></a>    </li>
+<li><a name="a87"></a>        <span class="src-key">return </span><span class="src-var">$hex_code</span><span class="src-sym">;</span></li>
+<li><a name="a88"></a>&nbsp;</li>
+<li><a name="a89"></a><span class="src-sym">} </span><span class="src-comm"># end Fx</span></li>
+<li><a name="a90"></a><span class="src-comm">/*____________________________________________________________________________*/</span></li>
+<li><a name="a91"></a>&nbsp;</li>
+<li><a name="a92"></a>&nbsp;</li>
+<li><a name="a93"></a>&nbsp;</li>
+<li><a name="a94"></a>&nbsp;</li>
+<li><a name="a95"></a><span class="src-comm">// Testbed</span></li>
+<li><a name="a96"></a><span class="src-comm">/*____________________________________________________________________________*/</span></li>
+<li><a name="a97"></a>&nbsp;</li>
+<li><a name="a98"></a><span class="src-key">if </span><span class="src-sym">( </span><span class="src-num">0 </span><span class="src-sym">)</span></li>
+<li><a name="a99"></a><span class="src-sym">{</span></li>
+<li><a name="a100"></a>    echo <a href="../default/_databug_extra_functions_art_inc_php.html#functionget_color">get_color</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a101"></a><span class="src-sym">}</span></li>
+<li><a name="a102"></a>&nbsp;</li>
+<li><a name="a103"></a><span class="src-comm">/*____________________________________________________________________________*/</span></li>
+<li><a name="a104"></a>&nbsp;</li>
+<li><a name="a105"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:31:08 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</body>
+</html>

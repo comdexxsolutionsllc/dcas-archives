@@ -1,0 +1,1 @@
+<?php $tree=array('d'=>'a	test life this'); ?>

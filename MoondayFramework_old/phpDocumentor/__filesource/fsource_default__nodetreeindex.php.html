@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for index.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file index.php</h1>
+<p>Documentation is available at <a href="../default/_nodetree_index_php.html">index.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php </span></li>
+<li><a name="a2"></a><span class="src-doc">/**</span></li>
+<li><a name="a3"></a><span class="src-doc">* </span><span class="src-doc-coretag">@package</span></li>
+<li><a name="a4"></a><span class="src-doc">* </span><span class="src-doc-coretag">@author</span><span class="src-doc"> Joshua Abbott, WiseGene Project (NKommunikation)</span></li>
+<li><a name="a5"></a><span class="src-doc">* </span><span class="src-doc-coretag">@copyright</span><span class="src-doc"> (C) 2006 NKommunikation. All Rights Reserved.</span></li>
+<li><a name="a6"></a><span class="src-doc">* </span><span class="src-doc-tag">@desc</span><span class="src-doc"> Database tree node application</span></li>
+<li><a name="a7"></a><span class="src-doc">* </span><span class="src-doc-coretag">@uses</span></li>
+<li><a name="a8"></a><span class="src-doc">* </span><span class="src-doc-coretag">@example</span></li>
+<li><a name="a9"></a><span class="src-doc">* </span><span class="src-doc-tag">@files</span></li>
+<li><a name="a10"></a><span class="src-doc">*/</span></li>
+<li><a name="a11"></a><span class="src-doc">/**</span></li>
+<li><a name="a12"></a><span class="src-doc"> * Database tree node application</span></li>
+<li><a name="a13"></a><span class="src-doc"> * </span></li>
+<li><a name="a14"></a><span class="src-doc"> * JavaScripts and stylesheets are tested succesfully on</span></li>
+<li><a name="a15"></a><span class="src-doc"> * - mac safari 2.0.3, firefox 1.5.0.1, netscape 7.2 and omniweb 5.1.1</span></li>
+<li><a name="a16"></a><span class="src-doc"> * - pc firefox 1.0.1</span></li>
+<li><a name="a17"></a><span class="src-doc"> * Php scripts and classes are tested succesfully on:</span></li>
+<li><a name="a18"></a><span class="src-doc"> * - Apache 1.3.33, PHP 5.0.4, MySql 4.1.3</span></li>
+<li><a name="a19"></a><span class="src-doc"> * - Apache 1.3.34, PHP 4.4.2, MySql 4.1.14</span></li>
+<li><a name="a20"></a><span class="src-doc"> */</span></li>
+<li><a name="a21"></a><span class="src-comm">// include configuration file</span></li>
+<li><a name="a22"></a><span class="src-inc">include_once </span><span class="src-str">'config.php'</span><span class="src-sym">; </span></li>
+<li><a name="a23"></a><span class="src-comm">// construct nodetree</span></li>
+<li><a name="a24"></a><span class="src-var">$oNT </span>= <span class="src-key">new </span><span class="src-id"><a href="../NodeTree/NodeTree.html">NodeTree</a></span><span class="src-sym">(</span><span class="src-var">$sTableName</span><span class="src-sym">, </span></li>
+<li><a name="a25"></a>                    <span class="src-var">$sDsn</span><span class="src-sym">, </span></li>
+<li><a name="a26"></a>                    <span class="src-var">$aTableField</span><span class="src-sym">, </span></li>
+<li><a name="a27"></a>                    <span class="src-var">$sNodePathRoot</span><span class="src-sym">, </span></li>
+<li><a name="a28"></a>                    <span class="src-var">$sNodePathSeparator</span><span class="src-sym">, </span></li>
+<li><a name="a29"></a>                    <span class="src-var">$sUniqueTreeKey</span><span class="src-sym">, </span></li>
+<li><a name="a30"></a>                    <span class="src-var">$sLiIdPrefix</span><span class="src-sym">, </span></li>
+<li><a name="a31"></a>                    <span class="src-var">$sUlIdPrefix</span></li>
+<li><a name="a32"></a>                    <span class="src-sym">)</span><span class="src-sym">; </span></li>
+<li><a name="a33"></a><span class="src-comm">// include actions</span></li>
+<li><a name="a34"></a><span class="src-inc">include_once </span><span class="src-str">'actions.php'</span><span class="src-sym">;</span></li>
+<li><a name="a35"></a>&nbsp;</li>
+<li><a name="a36"></a><span class="src-comm">// build tree with parameters</span></li>
+<li><a name="a37"></a><span class="src-var">$sNodeDepth         </span>= <span class="src-var">$iNodeDepth </span>? <span class="src-str">&quot; </span><span class="src-id">AND </span>{<span class="src-var">$aTableField</span><span class="src-sym">[</span><span class="src-str">'depth'</span><span class="src-sym">]</span><span class="src-sym">}</span> &lt; <span class="src-var">$iNodeDepth</span><span class="src-str">&quot; </span>: <span class="src-str">''</span><span class="src-sym">;</span></li>
+<li><a name="a38"></a><span class="src-var">$aParam</span><span class="src-sym">[</span><span class="src-str">'select'</span><span class="src-sym">]    </span>= <span class="src-str">&quot;</span>{<span class="src-var">$aTableField</span><span class="src-sym">[</span><span class="src-str">'id'</span><span class="src-sym">]</span><span class="src-sym">}</span>, {<span class="src-var">$aTableField</span><span class="src-sym">[</span><span class="src-str">'path'</span><span class="src-sym">]</span><span class="src-sym">}</span>, {<span class="src-var">$aTableField</span><span class="src-sym">[</span><span class="src-str">'order'</span><span class="src-sym">]</span><span class="src-sym">}</span>, {<span class="src-var">$aTableField</span><span class="src-sym">[</span><span class="src-str">'title'</span><span class="src-sym">]</span><span class="src-sym">}</span>, {<span class="src-var">$aTableField</span><span class="src-sym">[</span><span class="src-str">'has_childs'</span><span class="src-sym">]</span><span class="src-sym">}</span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a39"></a><span class="src-var">$aParam</span><span class="src-sym">[</span><span class="src-str">'from'</span><span class="src-sym">]        </span>= <span class="src-var">$sTableName</span><span class="src-sym">;</span></li>
+<li><a name="a40"></a><span class="src-var">$aParam</span><span class="src-sym">[</span><span class="src-str">'where'</span><span class="src-sym">]     </span>= <span class="src-var">$iNodeId </span>? <span class="src-str">&quot;</span>( {<span class="src-var">$aTableField</span><span class="src-sym">[</span><span class="src-str">'path'</span><span class="src-sym">]</span><span class="src-sym">} </span><span class="src-id">LIKE</span> '<span class="src-id">x</span>.<span class="src-var">$iNodeId</span>.%' <span class="src-id">OR </span>{<span class="src-var">$aTableField</span><span class="src-sym">[</span><span class="src-str">'id'</span><span class="src-sym">]</span><span class="src-sym">}</span> = <span class="src-var">$iNodeId</span> )<span class="src-var">$sNodeDepth</span><span class="src-str">&quot; </span>: <span class="src-str">&quot;</span>1 <span class="src-var">$sNodeDepth</span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a41"></a><span class="src-var">$aParam</span><span class="src-sym">[</span><span class="src-str">'order by'</span><span class="src-sym">] </span>= <span class="src-var">$sOrder</span><span class="src-sym">;</span></li>
+<li><a name="a42"></a><span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$iLimit </span><span class="src-sym">) </span><span class="src-sym">{ </span><span class="src-var">$aParam</span><span class="src-sym">[</span><span class="src-str">'limit'</span><span class="src-sym">] </span>= <span class="src-var">$iLimit</span><span class="src-sym">; </span><span class="src-sym">}</span></li>
+<li><a name="a43"></a>&nbsp;</li>
+<li><a name="a44"></a><span class="src-var">$oNT</span><span class="src-sym">-&gt;</span><span class="src-id">build_tree</span><span class="src-sym">(</span><span class="src-var">$aParam</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a45"></a>&nbsp;</li>
+<li><a name="a46"></a><span class="src-php">?&gt;</span></li>
+<li><a name="a47"></a>&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</li>
+<li><a name="a48"></a>    &lt;head&gt;</li>
+<li><a name="a49"></a>        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=ISO-8859-1&quot; /&gt;</li>
+<li><a name="a50"></a>        &lt;title&gt;Hierarchical tree editor for php/mysql&lt;/title&gt;</li>
+<li><a name="a51"></a>        &lt;link rel=&quot;stylesheet&quot; href=&quot;./media/style.css&quot; type=&quot;text/css&quot; /&gt;</li>
+<li><a name="a52"></a>        &lt;script src=&quot;./media/script.js&quot; type=&quot;text/javascript&quot; language=&quot;JavaScript&quot;&gt;&lt;/script&gt;</li>
+<li><a name="a53"></a>    &lt;/head&gt;</li>
+<li><a name="a54"></a>    &lt;body&gt;</li>
+<li><a name="a55"></a>        </li>
+<li><a name="a56"></a><span class="src-php">&lt;?php </span>echo <span class="src-var">$oNT</span><span class="src-sym">-&gt;</span><span class="src-id">get_js_contextual_menu</span><span class="src-sym">(</span><span class="src-var">$aMenuActions</span><span class="src-sym">)</span><span class="src-sym">; </span><span class="src-php">?&gt; </span></li>
+<li><a name="a57"></a>        </li>
+<li><a name="a58"></a>        &lt;div&gt;</li>
+<li><a name="a59"></a>            &lt;h4&gt;&lt;a href=&quot;#&quot; onclick=&quot;swap('tree')&quot;&gt;Tree&lt;/a&gt;&lt;/h4&gt;</li>
+<li><a name="a60"></a>            <span class="src-php">&lt;?php </span></li>
+<li><a name="a61"></a>                <span class="src-comm">// message from actions...</span></li>
+<li><a name="a62"></a>                echo <span class="src-var">$sMsg</span><span class="src-sym">; </span></li>
+<li><a name="a63"></a>            <span class="src-php">?&gt;</span></li>
+<li><a name="a64"></a>            </li>
+<li><a name="a65"></a>            &lt;fieldset id=&quot;tree&quot;&gt;</li>
+<li><a name="a66"></a>            </li>
+<li><a name="a67"></a>                <span class="src-php">&lt;?php </span>echo <span class="src-var">$oNT</span><span class="src-sym">-&gt;</span><span class="src-id">get_ul_tree</span><span class="src-sym">(</span><span class="src-var">$sRootName</span><span class="src-sym">, </span><span class="src-var">$sRootId</span><span class="src-sym">, </span><span class="src-var">$sGlobalTreeId</span><span class="src-sym">)</span><span class="src-sym">; </span><span class="src-php">?&gt;</span></li>
+<li><a name="a68"></a>            </li>
+<li><a name="a69"></a>            &lt;/fieldset&gt;</li>
+<li><a name="a70"></a>        &lt;/div&gt;</li>
+<li><a name="a71"></a>        </li>
+<li><a name="a72"></a>        &lt;div&gt;</li>
+<li><a name="a73"></a>            &lt;hr /&gt;&lt;pre&gt;&lt;b&gt;Debug:&lt;/b&gt;</li>
+<li><a name="a74"></a>            <span class="src-php">&lt;?php </span><span class="src-comm">//echo '&lt;br /&gt;tree array: '; print_r($oNT-&gt;aTree); </span><span class="src-php">?&gt; </span></li>
+<li><a name="a75"></a>            &lt;br /&gt;total_script_time: <span class="src-php">&lt;?php </span>echo <span class="src-sym">(</span><a href="http://www.php.net/array_sum">array_sum</a><span class="src-sym">(</span><a href="http://www.php.net/explode">explode</a><span class="src-sym">(</span><span class="src-str">&quot; &quot;</span><span class="src-sym">, </span><a href="http://www.php.net/microtime">microtime</a><span class="src-sym">(</span><span class="src-sym">)))</span>-<span class="src-var">$iStartTime</span><span class="src-sym">)</span><span class="src-sym">; </span><span class="src-php">?&gt;</span></li>
+<li><a name="a76"></a>            &lt;br /&gt;total_query_time: <span class="src-php">&lt;?php </span>echo <span class="src-var">$GLOBALS</span><span class="src-sym">[</span><span class="src-str">'total_query_time'</span><span class="src-sym">]</span><span class="src-sym">; </span><span class="src-php">?&gt;</span></li>
+<li><a name="a77"></a>            &lt;br /&gt;total_queries: <span class="src-php">&lt;?php </span><a href="http://www.php.net/print_r">print_r</a><span class="src-sym">( </span><span class="src-var">$GLOBALS</span><span class="src-sym">[</span><span class="src-str">'total_queries'</span><span class="src-sym">] </span><span class="src-sym">)</span><span class="src-sym">; </span><span class="src-php">?&gt;</span></li>
+<li><a name="a78"></a>        &lt;/div&gt;</li>
+<li><a name="a79"></a>        </li>
+<li><a name="a80"></a>    &lt;/body&gt;</li>
+<li><a name="a81"></a>&lt;/html&gt;</li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:34:18 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</body>
+</html>

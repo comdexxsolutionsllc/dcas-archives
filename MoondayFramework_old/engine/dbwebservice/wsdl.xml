@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="%%targetNamespace%%" 
+	xmlns="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:apachesoap="http://xml.apache.org/xml-soap" 
+	xmlns:impl="%%targetNamespace%%" 
+	xmlns:intf="%%targetNamespace%%" 
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:types><schema targetNamespace="%%targetNamespace%%" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="ArrayOf_xsd_string"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:string[]"/></restriction></complexContent></complexType><complexType name="DBRecord"><sequence><element name="id" type="xsd:int"/><element name="values" nillable="true" type="impl:ArrayOf_xsd_string"/></sequence></complexType><complexType name="ArrayOf_xsd_int"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:int[]"/></restriction></complexContent></complexType><complexType name="ArrayOfDBRecord"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="impl:DBRecord[]"/></restriction></complexContent></complexType><complexType name="DBTable"><sequence><element name="columns" nillable="true" type="impl:ArrayOf_xsd_string"/><element name="columnTypes" nillable="true" type="impl:ArrayOf_xsd_int"/><element name="name" nillable="true" type="xsd:string"/><element name="records" nillable="true" type="impl:ArrayOfDBRecord"/></sequence></complexType><complexType name="ArrayOf_apachesoap_Map"><complexContent><restriction base="soapenc:Array"><attribute ref="soapenc:arrayType" wsdl:arrayType="apachesoap:Map[]"/></restriction></complexContent></complexType></schema><schema targetNamespace="http://xml.apache.org/xml-soap" xmlns="http://www.w3.org/2001/XMLSchema"><import namespace="http://schemas.xmlsoap.org/soap/encoding/"/><complexType name="mapItem"><sequence><element name="key" nillable="true" type="xsd:string"/><element name="value" nillable="true" type="xsd:string"/></sequence></complexType><complexType name="Map"><sequence><element maxOccurs="unbounded" minOccurs="0" name="item" type="apachesoap:mapItem"/></sequence></complexType></schema></wsdl:types>
+  <wsdl:message name="getRecordValueResponse">
+    <wsdl:part name="getRecordValueReturn" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="synchronizeRecordsByIdResponse">
+    <wsdl:part name="synchronizeRecordsByIdReturn" type="xsd:int"/>
+  </wsdl:message>
+  <wsdl:message name="deleteRecordByIdRequest">
+    <wsdl:part name="table" type="xsd:string"/>
+    <wsdl:part name="id" type="xsd:int"/>
+  </wsdl:message>
+  <wsdl:message name="getRecordValueRequest">
+    <wsdl:part name="table" type="xsd:string"/>
+    <wsdl:part name="id" type="xsd:int"/>
+    <wsdl:part name="column" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="getRecordRequest">
+    <wsdl:part name="table" type="xsd:string"/>
+    <wsdl:part name="id" type="xsd:int"/>
+  </wsdl:message>
+  <wsdl:message name="synchronizeRecordsByMatchRequest">
+    <wsdl:part name="table" type="xsd:string"/>
+    <wsdl:part name="match" type="apachesoap:Map"/>
+    <wsdl:part name="data" type="impl:ArrayOf_apachesoap_Map"/>
+  </wsdl:message>
+  <wsdl:message name="getRecordResponse">
+    <wsdl:part name="getRecordReturn" type="impl:DBRecord"/>
+  </wsdl:message>
+  <wsdl:message name="deleteRecordsByMatchRequest">
+    <wsdl:part name="table" type="xsd:string"/>
+    <wsdl:part name="match" type="apachesoap:Map"/>
+  </wsdl:message>
+  <wsdl:message name="synchronizeRecordByIdResponse">
+    <wsdl:part name="synchronizeRecordByIdReturn" type="xsd:int"/>
+  </wsdl:message>
+  <wsdl:message name="deleteRecordsByIdRequest">
+    <wsdl:part name="table" type="xsd:string"/>
+    <wsdl:part name="ids" type="impl:ArrayOf_xsd_int"/>
+  </wsdl:message>
+  <wsdl:message name="deleteRecordsByIdResponse">
+    <wsdl:part name="deleteRecordsByIdReturn" type="xsd:int"/>
+  </wsdl:message>
+  <wsdl:message name="deleteRecordByIdResponse">
+    <wsdl:part name="deleteRecordByIdReturn" type="xsd:int"/>
+  </wsdl:message>
+  <wsdl:message name="getTableRequest">
+    <wsdl:part name="name" type="xsd:string"/>
+    <wsdl:part name="parameters" type="apachesoap:Map"/>
+  </wsdl:message>
+  <wsdl:message name="synchronizeRecordsByIdRequest">
+    <wsdl:part name="table" type="xsd:string"/>
+    <wsdl:part name="ids" type="impl:ArrayOf_xsd_int"/>
+    <wsdl:part name="data" type="impl:ArrayOf_apachesoap_Map"/>
+  </wsdl:message>
+  <wsdl:message name="synchronizeRecordsByMatchResponse">
+    <wsdl:part name="synchronizeRecordsByMatchReturn" type="xsd:int"/>
+  </wsdl:message>
+  <wsdl:message name="deleteRecordsByMatchResponse">
+    <wsdl:part name="deleteRecordsByMatchReturn" type="xsd:int"/>
+  </wsdl:message>
+  <wsdl:message name="synchronizeRecordByIdRequest">
+    <wsdl:part name="table" type="xsd:string"/>
+    <wsdl:part name="id" type="xsd:int"/>
+    <wsdl:part name="data" type="apachesoap:Map"/>
+  </wsdl:message>
+  <wsdl:message name="getTableResponse">
+    <wsdl:part name="getTableReturn" type="impl:DBTable"/>
+  </wsdl:message>
+  <wsdl:portType name="DBWebService">
+    <wsdl:operation name="getTable" parameterOrder="name parameters">
+      <wsdl:input message="impl:getTableRequest" name="getTableRequest"/>
+      <wsdl:output message="impl:getTableResponse" name="getTableResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="synchronizeRecordsById" parameterOrder="table ids data">
+      <wsdl:input message="impl:synchronizeRecordsByIdRequest" name="synchronizeRecordsByIdRequest"/>
+      <wsdl:output message="impl:synchronizeRecordsByIdResponse" name="synchronizeRecordsByIdResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="synchronizeRecordById" parameterOrder="table id data">
+      <wsdl:input message="impl:synchronizeRecordByIdRequest" name="synchronizeRecordByIdRequest"/>
+      <wsdl:output message="impl:synchronizeRecordByIdResponse" name="synchronizeRecordByIdResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="synchronizeRecordsByMatch" parameterOrder="table match data">
+      <wsdl:input message="impl:synchronizeRecordsByMatchRequest" name="synchronizeRecordsByMatchRequest"/>
+      <wsdl:output message="impl:synchronizeRecordsByMatchResponse" name="synchronizeRecordsByMatchResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRecordsById" parameterOrder="table ids">
+      <wsdl:input message="impl:deleteRecordsByIdRequest" name="deleteRecordsByIdRequest"/>
+      <wsdl:output message="impl:deleteRecordsByIdResponse" name="deleteRecordsByIdResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRecordById" parameterOrder="table id">
+      <wsdl:input message="impl:deleteRecordByIdRequest" name="deleteRecordByIdRequest"/>
+      <wsdl:output message="impl:deleteRecordByIdResponse" name="deleteRecordByIdResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRecordsByMatch" parameterOrder="table match">
+      <wsdl:input message="impl:deleteRecordsByMatchRequest" name="deleteRecordsByMatchRequest"/>
+      <wsdl:output message="impl:deleteRecordsByMatchResponse" name="deleteRecordsByMatchResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getRecord" parameterOrder="table id">
+      <wsdl:input message="impl:getRecordRequest" name="getRecordRequest"/>
+      <wsdl:output message="impl:getRecordResponse" name="getRecordResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getRecordValue" parameterOrder="table id column">
+      <wsdl:input message="impl:getRecordValueRequest" name="getRecordValueRequest"/>
+      <wsdl:output message="impl:getRecordValueResponse" name="getRecordValueResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="%%serviceName%%SoapBinding" type="impl:DBWebService">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getTable">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getTableRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="%%sourceNamespace%%" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getTableResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="%%targetNamespace%%" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="synchronizeRecordsById">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="synchronizeRecordsByIdRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="%%sourceNamespace%%" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="synchronizeRecordsByIdResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="%%targetNamespace%%" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="synchronizeRecordById">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="synchronizeRecordByIdRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="%%sourceNamespace%%" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="synchronizeRecordByIdResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="%%targetNamespace%%" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="synchronizeRecordsByMatch">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="synchronizeRecordsByMatchRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="%%sourceNamespace%%" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="synchronizeRecordsByMatchResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="%%targetNamespace%%" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRecordsById">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="deleteRecordsByIdRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="%%sourceNamespace%%" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="deleteRecordsByIdResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="%%targetNamespace%%" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRecordById">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="deleteRecordByIdRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="%%sourceNamespace%%" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="deleteRecordByIdResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="%%targetNamespace%%" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRecordsByMatch">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="deleteRecordsByMatchRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="%%sourceNamespace%%" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="deleteRecordsByMatchResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="%%targetNamespace%%" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRecord">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getRecordRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="%%sourceNamespace%%" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getRecordResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="%%targetNamespace%%" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRecordValue">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getRecordValueRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="%%sourceNamespace%%" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getRecordValueResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="%%targetNamespace%%" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="%%serviceName%%">
+    <wsdl:port binding="impl:%%serviceName%%SoapBinding" name="%%serviceName%%">
+      <wsdlsoap:address location="%%serviceLocation%%"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

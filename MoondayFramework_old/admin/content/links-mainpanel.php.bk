@@ -1,0 +1,20 @@
+<!-- Start Page::View(links-mainpanel) -->        
+                <tr>
+                  <td height="27" colspan="3" valign="top"><table width="100%"  border="0" p_border="1" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="4" style=" background-image:url(<?php echo $coreEngine->sRU; ?>/admin/images/bg_mid_strip.jpg); background-repeat:repeat-y; background-position:left;">&nbsp;</td>
+              <td width="86" height="27" valign="top"><img alt="" src="<?php echo $coreEngine->sRU; ?>/admin/images/spacer.gif" width="5" ></img><img alt="" src="<?php echo $coreEngine->sRU; ?>/admin/images/btn_sections.gif" height="27" width="78"></img></td>
+              <td width="101"><a href="/managedNOC/user.admin/page/accounting_view/"><img alt="" src="<?php echo $coreEngine->sRU; ?>/admin/images/btn_accounting.gif" border="0" height="27" width="101"></img></a></td>
+              <td width="89"><a href="/managedNOC/user.admin/page/hardware_view/"><img alt="" src="<?php echo $coreEngine->sRU; ?>/admin/images/btn_hardware1.gif" border="0" height="27" width="89"></img></a></td>
+              <td width="78"><a href="/managedNOC/user.admin/page/network_view/"><img alt="" src="<?php echo $coreEngine->sRU; ?>/admin/images/btn_network.gif" border="0" height="27" width="78"></img></a></td>
+              <td width="70"><a href="/managedNOC/user.admin/page/sales_view/"><img alt="" src="<?php echo $coreEngine->sRU; ?>/admin/images/btn_sales1.gif" border="0" height="27" width="70"></img></a></td>
+              <td width="80"><a href="/managedNOC/user.admin/page/security_view/"><img alt="" src="<?php echo $coreEngine->sRU; ?>/admin/images/btn_security1.gif" border="0" height="27" width="80"></img></a></td>
+              <td width="80"><a href="/managedNOC/user.admin/page/services_view/"><img alt="" src="<?php echo $coreEngine->sRU; ?>/admin/images/btn_services.gif" border="0" height="27" width="80"></img></a></td>
+              <td width="80"><a href="/managedNOC/user.admin/page/reports_view/"><img alt="" src="<?php echo $coreEngine->sRU; ?>/admin/images/btn_reports.gif" border="0" height="27" width="80"></img></a></td>
+              <td width="364"><a href="/managedNOC/user.admin/page/management_view/"><img alt="" src="<?php echo $coreEngine->sRU; ?>/admin/images/btn_managments.gif" border="0" height="27" width="107"></img></a></td>
+              <td width="11" style=" background-image:url(<?php echo $coreEngine->sRU; ?>/admin/images/bg_mid_strip.jpg); background-repeat:repeat-y; background-position:right;">&nbsp;</td>
+            </tr>
+          </table></td>
+                </tr>
+                
+<!-- End Page::View(links-mainpanel) -->

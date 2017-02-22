@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+	<head>
+	<link rel="stylesheet" type="text/css" href="../../../../../css/maindoc.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+	<h2 class="titre">ClassFuncDoc : <em>Automatic documentation</em></h2>
+		<div class="path">
+		<span class="acc"><a class="acc" href="../../../index.html" title="Home">Home</a></span> -> <span class="acc"><a class="acc" href="../index.html" title="city">city</a></span><br /><br />
+		<span><a class="other" href="..//class_.html" alt=""></a> -> <a class="current" href="class_ocity.html" alt="ocity">ocity</a> ->
+		</span>
+		</div>
+		<div class="menu">			<ul>Methods
+				<li><a class="current" href="__construct.html" title="__construct">__construct</a></li>
+				<li><a class="other" href="getFirst.html" title="getFirst">getFirst</a></li>
+				<li><a class="other" href="getSearch.html" title="getSearch">getSearch</a></li>
+				</ul>
+			<ul>Properties
+				<li><a class="other" href="aVilles.html" title="aVilles">aVilles</a></li>
+				<li><a class="other" href="sResult.html" title="sResult">sResult</a></li>
+				<li><a class="other" href="sSearch.html" title="sSearch">sSearch</a></li>
+		</ul>
+		</div>
+		<div class="content">
+				<span class="name">__construct</span><br /><br />
+				<span class="definition">user-defined     public   function __construct (			<em class="methodParams">					  dataFile  = data.da		</em>) : constructor</span><br /><br />
+				<span class="file">defined in C:\wamp\www\cls\doc\classes\city\ocity.cls.php from line 23 to line 29</span><br /><br />
+				<a class="other" href="javascript: void(0);" title="See code" onclick="document.getElementById('code').style.display = (document.getElementById('code').style.display == 'block')?'none':'block';">See code</a><br />
+				<div class="code" id="code"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;function&nbsp;</span><span style="color: #0000BB">__construct&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$dataFile&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'data.dat'</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$sVilles&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file_get_contents&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$dataFile</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$aLines&nbsp;</span><span style="color: #007700">=</span><span style="color: #0000BB">explode&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"\r"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$sVilles</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">$aLines&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$line</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this&nbsp;</span><span style="color: #007700">-&gt;&nbsp;</span><span style="color: #0000BB">aVilles</span><span style="color: #007700">[</span><span style="color: #0000BB">trim&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">substr&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$line</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">6</span><span style="color: #007700">))]=&nbsp;</span><span style="color: #0000BB">strtolower&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">trim&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">substr&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$line</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">strlen&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$line</span><span style="color: #007700">)&nbsp;-&nbsp;</span><span style="color: #0000BB">6</span><span style="color: #007700">)));<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;</span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div><br /><br />
+					<span class="label">Documented parameters value</span><br />
+					<span class="params"><strong>Param</strong> <em> string dataFile : data filename.</em><br /></span><br /><br />
+				<span class="label">Owner</span><br />
+				<span class="owner"><a href="../ocity/class_ocity.html" title="ocity">ocity</a></span><br /><br />
+				<span class="label">Modifiers</span><br />
+				<span class="modifiers">8448 => public</span><br /><br />
+				<span class="label">Parameters</span><br />
+						<span class="parameters">  dataFile  = data.dat : (Optional)</span><br />
+					<br />
+					<span class="label">Author's comments</span><br />
+					<span class="comments">/**
+	* public function __construct
+	* constructor
+	* @Param string dataFile : data filename.
+	*/</span><br /><br />
+		</div>
+	</body>
+</html>

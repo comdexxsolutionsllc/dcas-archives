@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for dyn_php.class.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file dyn_php.class.php</h1>
+<p>Documentation is available at <a href="../dyn_php/_dyn_php_dyn_php_class_php.html">dyn_php.class.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a>&nbsp;</li>
+<li><a name="a3"></a><span class="src-doc">/**</span></li>
+<li><a name="a4"></a><span class="src-doc">* </span><span class="src-doc-coretag">@package</span><span class="src-doc"> dyn_php</span></li>
+<li><a name="a5"></a><span class="src-doc">* </span><span class="src-doc-coretag">@author</span><span class="src-doc"> Joshua Abbott, WiseGene Project (NKommunikation)</span></li>
+<li><a name="a6"></a><span class="src-doc">* </span><span class="src-doc-coretag">@copyright</span><span class="src-doc"> (C) 2006 NKommunikation. All Rights Reserved.</span></li>
+<li><a name="a7"></a><span class="src-doc">* </span><span class="src-doc-tag">@desc</span><span class="src-doc"> Dynamically create PHP pages OOPmatically</span></li>
+<li><a name="a8"></a><span class="src-doc">* </span><span class="src-doc-coretag">@uses</span></li>
+<li><a name="a9"></a><span class="src-doc">* </span><span class="src-doc-coretag">@example</span></li>
+<li><a name="a10"></a><span class="src-doc">* </span><span class="src-doc-tag">@files</span></li>
+<li><a name="a11"></a><span class="src-doc">*/</span></li>
+<li><a name="a12"></a>&nbsp;</li>
+<li><a name="a13"></a>&nbsp;</li>
+<li><a name="a14"></a><span class="src-key">class </span><a href="../dyn_php/dyn_php.html">dyn_php</a> <span class="src-sym">{</span></li>
+<li><a name="a15"></a>&nbsp;</li>
+<li><a name="a16"></a>    <span class="src-key">var </span><a href="../dyn_php/dyn_php.html#var$buffer">$buffer</a><span class="src-sym">;</span></li>
+<li><a name="a17"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a18"></a><span class="src-doc">     * class constructor</span></li>
+<li><a name="a19"></a><span class="src-doc">     * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">void </span></li>
+<li><a name="a20"></a><span class="src-doc">     * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">void </span></li>
+<li><a name="a21"></a><span class="src-doc">     * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">dynphp </span></li>
+<li><a name="a22"></a><span class="src-doc">     */</span></li>
+<li><a name="a23"></a>    <span class="src-key">function </span><a href="../dyn_php/dyn_php.html#methoddyn_php">dyn_php</a><span class="src-sym">(</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a24"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../dyn_php/dyn_php.html#var$buffer">buffer</a> = <span class="src-str">''</span><span class="src-sym">;</span></li>
+<li><a name="a25"></a>    <span class="src-sym">}</span></li>
+<li><a name="a26"></a>    </li>
+<li><a name="a27"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a28"></a><span class="src-doc">     * error getter</span></li>
+<li><a name="a29"></a><span class="src-doc">     * </span><span class="src-doc-coretag">@param </span><span class="src-doc"> </span><span class="src-doc-type">void </span></li>
+<li><a name="a30"></a><span class="src-doc">     * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">string </span></li>
+<li><a name="a31"></a><span class="src-doc">     */</span></li>
+<li><a name="a32"></a>    <span class="src-key">function </span><a href="../dyn_php/dyn_php.html#methoderror">error</a><span class="src-sym">(</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a33"></a>        </li>
+<li><a name="a34"></a>    <span class="src-sym">}</span></li>
+<li><a name="a35"></a>&nbsp;</li>
+<li><a name="a36"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a37"></a><span class="src-doc">     * returns e.g. &quot; $test = &quot;test_value&quot;\n;</span></li>
+<li><a name="a38"></a><span class="src-doc">     * can be used if we create php vars at runtime</span></li>
+<li><a name="a39"></a><span class="src-doc">     *</span></li>
+<li><a name="a40"></a><span class="src-doc">     * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">string </span><span class="src-doc-var">$name </span></li>
+<li><a name="a41"></a><span class="src-doc">     * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">string </span><span class="src-doc-var">$value </span></li>
+<li><a name="a42"></a><span class="src-doc">    */</span></li>
+<li><a name="a43"></a>    <span class="src-key">function </span><a href="../dyn_php/dyn_php.html#methodadd_scalar">add_scalar</a><span class="src-sym">(</span><span class="src-var">$name</span><span class="src-sym">, </span><span class="src-var">$value </span>= <span class="src-str">&quot;&quot;</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a44"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><a href="http://www.php.net/is_scalar">is_scalar</a><span class="src-sym">(</span><span class="src-var">$value</span><span class="src-sym">))</span></li>
+<li><a name="a45"></a>            <span class="src-key">return </span><span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a46"></a>        <span class="src-var">$value </span>= <a href="http://www.php.net/addslashes">addslashes</a><span class="src-sym">(</span><span class="src-var">$value</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a47"></a>        <span class="src-var">$str </span>= <span class="src-str">&quot;</span><span class="src-str">\t\$<span class="src-var">$name</span> = \&quot;<span class="src-var">$value</span>\&quot;;\n</span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a48"></a>        </li>
+<li><a name="a49"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../dyn_php/dyn_php.html#var$buffer">buffer</a> .= <span class="src-var">$str</span><span class="src-sym">;</span></li>
+<li><a name="a50"></a>    <span class="src-sym">}</span></li>
+<li><a name="a51"></a>&nbsp;</li>
+<li><a name="a52"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a53"></a><span class="src-doc">     * returns e.g. &quot; define(&quot;TEST&quot;, &quot;test_value&quot;);\n</span></li>
+<li><a name="a54"></a><span class="src-doc">     * can be used if we create php vars at runtime</span></li>
+<li><a name="a55"></a><span class="src-doc">     *</span></li>
+<li><a name="a56"></a><span class="src-doc">     * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">string </span><span class="src-doc-var">$name </span></li>
+<li><a name="a57"></a><span class="src-doc">     * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">string </span><span class="src-doc-var">$value </span></li>
+<li><a name="a58"></a><span class="src-doc">    */</span></li>
+<li><a name="a59"></a>    <span class="src-key">function </span><a href="../dyn_php/dyn_php.html#methodadd_constant">add_constant</a><span class="src-sym">(</span><span class="src-var">$name</span><span class="src-sym">, </span><span class="src-var">$value </span>= <span class="src-str">&quot;&quot;</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a60"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><a href="http://www.php.net/is_scalar">is_scalar</a><span class="src-sym">(</span><span class="src-var">$value</span><span class="src-sym">))</span></li>
+<li><a name="a61"></a>            <span class="src-key">return </span><span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a62"></a>        </li>
+<li><a name="a63"></a>        <span class="src-var">$name </span>= <a href="http://www.php.net/strtoupper">strtoupper</a><span class="src-sym">(</span><span class="src-var">$name</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a64"></a>        <span class="src-var">$value </span>= <a href="http://www.php.net/addslashes">addslashes</a><span class="src-sym">(</span><span class="src-var">$value</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a65"></a>        <span class="src-var">$name </span>= <a href="http://www.php.net/preg_replace">preg_replace</a><span class="src-sym">(</span><span class="src-str">&quot;@[^\w]*@si&quot;</span><span class="src-sym">, </span><span class="src-str">&quot;&quot;</span><span class="src-sym">, </span><span class="src-var">$name</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a66"></a>        <span class="src-var">$str </span>= <span class="src-str">&quot;</span><span class="src-str">\t<span class="src-id">define</span>(\&quot;<span class="src-var">$name</span>\&quot;, \&quot;<span class="src-var">$value</span>\&quot;);\n</span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a67"></a>        </li>
+<li><a name="a68"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../dyn_php/dyn_php.html#var$buffer">buffer</a> .= <span class="src-var">$str</span><span class="src-sym">;</span></li>
+<li><a name="a69"></a>    <span class="src-sym">}</span></li>
+<li><a name="a70"></a>&nbsp;</li>
+<li><a name="a71"></a>&nbsp;</li>
+<li><a name="a72"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a73"></a><span class="src-doc">     * dumps array contents using var_export function</span></li>
+<li><a name="a74"></a><span class="src-doc">     *</span></li>
+<li><a name="a75"></a><span class="src-doc">     * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">string </span><span class="src-doc-var">$name </span></li>
+<li><a name="a76"></a><span class="src-doc">     * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">array </span><span class="src-doc-var">$value </span></li>
+<li><a name="a77"></a><span class="src-doc">    */</span></li>
+<li><a name="a78"></a>    <span class="src-key">function </span><a href="../dyn_php/dyn_php.html#methodadd_array">add_array</a><span class="src-sym">(</span><span class="src-var">$name</span><span class="src-sym">, </span><span class="src-var">$value </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)) </span><span class="src-sym">{</span></li>
+<li><a name="a79"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><a href="http://www.php.net/is_array">is_array</a><span class="src-sym">(</span><span class="src-var">$value</span><span class="src-sym">))</span></li>
+<li><a name="a80"></a>            <span class="src-key">return </span><span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a81"></a>            </li>
+<li><a name="a82"></a>        <span class="src-var">$value </span>= <a href="http://www.php.net/var_export">var_export</a><span class="src-sym">(</span><span class="src-var">$value</span><span class="src-sym">, </span><span class="src-num">1</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a83"></a>        <span class="src-var">$str </span>= <span class="src-str">&quot;</span><span class="src-str">\t\$<span class="src-var">$name</span> = <span class="src-var">$value</span>;\n</span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a84"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../dyn_php/dyn_php.html#var$buffer">buffer</a> .= <span class="src-var">$str</span><span class="src-sym">;</span></li>
+<li><a name="a85"></a>    <span class="src-sym">}</span></li>
+<li><a name="a86"></a>    </li>
+<li><a name="a87"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a88"></a><span class="src-doc">     * wrap string with starting and ending php tags useful if we create PHP file at runtime</span></li>
+<li><a name="a89"></a><span class="src-doc">     *</span></li>
+<li><a name="a90"></a><span class="src-doc">     * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">string </span><span class="src-doc-var">$str </span><span class="src-doc">the php code that will be wrapped</span></li>
+<li><a name="a91"></a><span class="src-doc">     */</span></li>
+<li><a name="a92"></a>    <span class="src-key">function </span><a href="../dyn_php/dyn_php.html#methodwrap_php">wrap_php</a><span class="src-sym">(</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a93"></a>        <span class="src-var">$str </span>= <span class="src-str">'&lt;' </span>. <span class="src-str">'?' </span>. <span class="src-str">&quot;php\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a94"></a>        <span class="src-var">$str </span>.= <span class="src-str">&quot;\t// Generated by dyn_php class\n\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a95"></a>        <span class="src-var">$str </span>.= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../dyn_php/dyn_php.html#var$buffer">buffer</a><span class="src-sym">;</span></li>
+<li><a name="a96"></a>        <span class="src-var">$str </span>.= <span class="src-str">'?' </span>. <span class="src-str">'&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a97"></a>    </li>
+<li><a name="a98"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../dyn_php/dyn_php.html#var$buffer">buffer</a> = <span class="src-var">$str</span><span class="src-sym">;</span></li>
+<li><a name="a99"></a>    <span class="src-sym">}</span></li>
+<li><a name="a100"></a>    </li>
+<li><a name="a101"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a102"></a><span class="src-doc">     * returns current buffer's contents. if file is specified, result is saved there</span></li>
+<li><a name="a103"></a><span class="src-doc">     * </span></li>
+<li><a name="a104"></a><span class="src-doc">     * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">string </span><span class="src-doc-var">$file </span></li>
+<li><a name="a105"></a><span class="src-doc">     */</span></li>
+<li><a name="a106"></a>    <span class="src-key">function </span><a href="../dyn_php/dyn_php.html#methodcode">code</a><span class="src-sym">(</span><span class="src-var">$filename </span>= <span class="src-str">&quot;&quot;</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a107"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../dyn_php/dyn_php.html#methodwrap_php">wrap_php</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a108"></a>        </li>
+<li><a name="a109"></a>        <span class="src-comm">// Let's make sure the file exists and is writable first.</span></li>
+<li><a name="a110"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-key">empty</span><span class="src-sym">(</span><span class="src-var">$filename</span><span class="src-sym">)) </span><span class="src-sym">{</span></li>
+<li><a name="a111"></a>&nbsp;</li>
+<li><a name="a112"></a>           <span class="src-comm">// In our example we're opening $filename in append mode.</span></li>
+<li><a name="a113"></a>           <span class="src-comm">// The file pointer is at the bottom of the file hence </span></li>
+<li><a name="a114"></a>           <span class="src-comm">// that's where $somecontent will go when we fwrite() it.</span></li>
+<li><a name="a115"></a>           <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-var">$handle </span>= <span class="src-sym">@</span><a href="http://www.php.net/fopen">fopen</a><span class="src-sym">(</span><span class="src-var">$filename</span><span class="src-sym">, </span><span class="src-str">'w'</span><span class="src-sym">)) </span><span class="src-sym">{</span></li>
+<li><a name="a116"></a>                <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">error </span>= <span class="src-str">&quot;</span><span class="src-str"><span class="src-id">Cannot</span> <span class="src-id">open</span> <span class="src-id">file</span> (<span class="src-var">$filename</span>)</span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a117"></a>                <span class="src-key">return </span><span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a118"></a>           <span class="src-sym">}</span></li>
+<li><a name="a119"></a>    </li>
+<li><a name="a120"></a>           <span class="src-comm">// Write $somecontent to our opened file.</span></li>
+<li><a name="a121"></a>           <span class="src-key">if </span><span class="src-sym">(</span><a href="http://www.php.net/fwrite">fwrite</a><span class="src-sym">(</span><span class="src-var">$handle</span><span class="src-sym">, </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../dyn_php/dyn_php.html#var$buffer">buffer</a> <span class="src-sym">) </span>=== <span class="src-id">FALSE</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a122"></a>               <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">error </span>= <span class="src-str">&quot;</span><span class="src-str"><span class="src-id">Cannot</span> <span class="src-id">write</span> <span class="src-id">to</span> <span class="src-id">file</span> (<span class="src-var">$filename</span>)</span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a123"></a>               <span class="src-key">return </span><span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a124"></a>           <span class="src-sym">}</span></li>
+<li><a name="a125"></a>           </li>
+<li><a name="a126"></a>           <span class="src-sym">@</span><a href="http://www.php.net/fclose">fclose</a><span class="src-sym">(</span><span class="src-var">$handle</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a127"></a>           <span class="src-key">return </span><span class="src-id">true</span><span class="src-sym">;</span></li>
+<li><a name="a128"></a>        <span class="src-sym">}              </span></li>
+<li><a name="a129"></a>        </li>
+<li><a name="a130"></a>        <span class="src-key">return </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../dyn_php/dyn_php.html#var$buffer">buffer</a><span class="src-sym">;    </span></li>
+<li><a name="a131"></a>    <span class="src-sym">}</span></li>
+<li><a name="a132"></a><span class="src-sym">}</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:33:01 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</body>
+</html>

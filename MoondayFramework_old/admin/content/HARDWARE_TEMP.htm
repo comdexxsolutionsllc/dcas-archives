@@ -1,0 +1,70 @@
+<?php if(!@$_SESSION['loggedin']) header("Location: logout.php"); ?>
+	<table width="99%"  border="0" cellspacing="0" cellpadding="0">
+	<tr><td align=left valign=top height=350>
+	    <b>Please select a hardware management option:</b><br>
+<br><b>Find</b><br>
+  &nbsp;<a href='hardware.html?action=search' class='linkN'>Search Hardware Database</a><br>
+  &nbsp;<a href='ipmi_install.html' class='linkN'>Missing IPMI</a><br>
+  &nbsp;<a href='maint_admin.html' class='linkN'>Servers Requiring Maintenance</a><br>
+
+  &nbsp;<a href='software_virt_license.html' class='linkN'>Virtual Licenses</a><br>
+<br><b>Transactions</b><br>
+  &nbsp;<a href='hwtxn.html' class='linkN'>Transaction home</a><br>
+  &nbsp;<a href='hwtxn.html?action=view_all_current' class='linkN'>Current transactions</a><br>
+  &nbsp;<a href='properties.html?action=menu' class='linkN'>Hardware Properties</a><br>
+<br><b>Hardware</b><br>
+  &nbsp;<a href='hardware.html?action=insert' class='linkN'>Add Hardware Record</a><br>
+
+  &nbsp;<a href='marketing_features.html' class='linkN'>Hardware Component Marketing Features</a><br>
+  &nbsp;<a href='hardware_confirmed_mismatch.html' class='linkN'>Hardware Confirmed Mismatch Log</a><br>
+  &nbsp;<a href='power_object_properties.html' class='linkN'>Manage Rack Cabling Standards</a><br>
+  &nbsp;<a href='attributes.html' class='linkN'>Manage Hardware Attributes</a><br>
+<br><b>Lease Management</b><br>
+  &nbsp;<a href='lease.html' class='linkN'>Lease admin home</a><br>
+
+<br><b>Network</b><br>
+  &nbsp;<a href='/network/index.html' class='linkN'>Network admin home</a><br>
+  &nbsp;<a href='bandwidth_drill.html' class='linkN'>Bandwidth Drilldown</a><br>
+  &nbsp;<a href='SWIP.html' class='linkN'>SWIP Management</a><br>
+<br><b>Reports</b><br>
+  &nbsp;<a href='hardware_distribution.html' class='linkN'>Hardware distribution</a><br>
+  &nbsp;<a href='software_distribution.html' class='linkN'>Software distribution</a><br>
+
+  &nbsp;<a href='software_distribution_with_cost.html' class='linkN'>Software distribution (Cost Info)</a><br>
+  &nbsp;<a href='hardware_upgrades.html' class='linkN'>Upgrade distribution</a><br>
+  &nbsp;<a href='power_summary.html' class='linkN'>Power Strip Summary (slow)</a><br>
+  &nbsp;<a href='power_verification_tool.html' class='linkN'>Power Port Verification Tool</a><br>
+  &nbsp;<a href='base_server_cost.html' class='linkN'>Server Base Costs</a><br>
+<br><b>Audits</b><br>
+
+  &nbsp;<a href='hardware_continuity_audit.html' class='linkN'>Hardware Continuity Audit Tool (SLOW)</a><br>
+  &nbsp;<a href='power_audit.html' class='linkN'>Power Port Connection Audit Tool</a><br>
+  &nbsp;<a href='serial_number_audit.html' class='linkN'>Hardware Serial Number Audit Tool</a><br>
+  &nbsp;<a href='network_component_audit.html' class='linkN'>Network Port Connection Audit Tool</a><br>
+<br><b>Scan In</b><br>
+  &nbsp;<a href='rack_prep_tool.html' class='linkN'>Standard rack network and power prep tool</a><br>
+
+  &nbsp;<a href='hardware.html?action=scan_new' class='linkN'>Scan serial numbers for NEW servers</a><br>
+  &nbsp;<a href='hardware.html?action=scan_new_as_inventory' class='linkN'>Scan serial numbers for NEW servers WITHOUT creating network uplinks</a><br>
+  &nbsp;<a href='hardware.html?action=scan_existing' class='linkN'>Scan serial numbers for existing servers</a><br>
+  &nbsp;<a href='hardware.html?action=preload_config_menu' class='linkN'>Manage preloaded configurations</a><br>
+<br><b>Inventory</b><br>
+  &nbsp;<a href='server_inventory_parts.html' class='linkN'>Parts Inventory in Servers</a><br>
+
+  &nbsp;<a href='parts_inventory.html' class='linkN'>Parts Inventory in Storage</a><br>
+<br><b>Operations</b><br>
+  &nbsp;<a href='/operations/rack_layout.xls' class='linkN'>SR01 Layout</a><br>
+  &nbsp;<a href='/operations/sr02_layout.vsd' class='linkN'>SR02 Layout</a><br>
+  &nbsp;<a href='/operations/sr03_layout.vsd' class='linkN'>SR03 Layout</a><br>
+  &nbsp;<a href='/operations/sr04_layout.vsd' class='linkN'>SR04 Layout</a><br>
+
+<br><b>Special</b><br>
+  &nbsp;<a href='/hardware/eminent_domain_report.html' class='linkN'>"Eminent Domain" Report (Clear Out SR01 RK05-RK12)</a><br>
+<br><br>
+
+
+	</td></tr>
+	</table>
+	</td>
+</tr>
+</table>

@@ -1,0 +1,41 @@
+.ACH_table {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 12;
+	color : #000000;
+	width : 480;	
+}
+
+.ACH_hdr {
+	font-size : 16;
+	font-weight : bold;
+	white-space: nowrap ;
+	background-color : #DDDDDD;
+	text-align : center;
+}
+
+.ACH_label {
+	vertical-align : text-top;
+	font-size : 12;
+	font-weight : bold;
+	white-space: nowrap ;	
+}
+
+.ACH_val {
+	
+}
+
+.ACH_ftr_table {
+	font-size : 12;
+	font-weight : bold;
+	background-color : #DDDDDD;
+	width : 100%;	
+	white-space: nowrap ;
+}
+
+.ACH_ftr_left {
+	text-align : left;
+}
+
+.ACH_ftr_right {
+	text-align : right;
+}

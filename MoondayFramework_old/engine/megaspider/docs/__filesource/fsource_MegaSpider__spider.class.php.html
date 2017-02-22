@@ -1,0 +1,831 @@
+<html>
+<head>
+<title>File Source for spider.class.php</title>
+<link rel="stylesheet" type="text/css" href="../media/style.css">
+</head>
+<body>
+
+<table border="0" cellspacing="0" cellpadding="0" height="48" width="100%">
+  <tr>
+    <td class="header_top">MegaSpider</td>
+  </tr>
+  <tr><td class="header_line"><img src="../media/empty.png" width="1" height="1" border="0" alt=""  /></td></tr>
+  <tr>
+    <td class="header_menu">
+  		  [ <a href="../classtrees_MegaSpider.html" class="menu">class tree: MegaSpider</a> ]
+		  [ <a href="../elementindex_MegaSpider.html" class="menu">index: MegaSpider</a> ]
+		  [ <a href="../elementindex.html" class="menu">all elements</a> ]
+    </td>
+  </tr>
+  <tr><td class="header_line"><img src="../media/empty.png" width="1" height="1" border="0" alt=""  /></td></tr>
+</table>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="200" class="menu">
+	<div id="todolist">
+			<p><a href="../todolist.html">Todo List</a></p>
+	</div>
+      <b>Packages:</b><br />
+              <a href="../li_MegaSpider.html">MegaSpider</a><br />
+            <br /><br />
+                  
+                </td>
+    <td>
+      <table cellpadding="10" cellspacing="0" width="100%" border="0"><tr><td valign="top">
+
+<h1 align="center">Source for file spider.class.php</h1>
+<p>Documentation is available at <a href="../MegaSpider/_spider_spider_class_php.html">spider.class.php</a></p>
+<div class="php">
+<div class="listing"><pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a><span class="src-doc">/**</span></li>
+<li><a name="a3"></a><span class="src-doc">* Project:     MegaSpider : small fun project ;)</span></li>
+<li><a name="a4"></a><span class="src-doc">* File:        spider.class.php</span></li>
+<li><a name="a5"></a><span class="src-doc">*</span></li>
+<li><a name="a6"></a><span class="src-doc">* MegaSpider crawl a site following and retrieving</span></li>
+<li><a name="a7"></a><span class="src-doc">* any data that you want to retrive.</span></li>
+<li><a name="a8"></a><span class="src-doc">*</span></li>
+<li><a name="a9"></a><span class="src-doc">* This library is free software; you can redistribute it and/or</span></li>
+<li><a name="a10"></a><span class="src-doc">* modify it under the terms of the GNU Lesser General Public</span></li>
+<li><a name="a11"></a><span class="src-doc">* License as published by the Free Software Foundation; either</span></li>
+<li><a name="a12"></a><span class="src-doc">* version 2.1 of the License, or (at your option) any later version.</span></li>
+<li><a name="a13"></a><span class="src-doc">*</span></li>
+<li><a name="a14"></a><span class="src-doc">* This library is distributed in the hope that it will be useful,</span></li>
+<li><a name="a15"></a><span class="src-doc">* but WITHOUT ANY WARRANTY; without even the implied warranty of</span></li>
+<li><a name="a16"></a><span class="src-doc">* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></li>
+<li><a name="a17"></a><span class="src-doc">* Lesser General Public License for more details.</span></li>
+<li><a name="a18"></a><span class="src-doc">*</span></li>
+<li><a name="a19"></a><span class="src-doc">* You should have received a copy of the GNU Lesser General Public</span></li>
+<li><a name="a20"></a><span class="src-doc">* License along with this library; if not, write to the Free Software</span></li>
+<li><a name="a21"></a><span class="src-doc">* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</span></li>
+<li><a name="a22"></a><span class="src-doc">*</span></li>
+<li><a name="a23"></a><span class="src-doc">* For questions, help, comments, discussion, etc., please</span></li>
+<li><a name="a24"></a><span class="src-doc">* send e-mail to marcin sznyra : marcin@marcinsznyra.info</span></li>
+<li><a name="a25"></a><span class="src-doc">* </span></li>
+<li><a name="a26"></a><span class="src-doc">* </span><span class="src-doc-coretag">@package</span><span class="src-doc"> MegaSpider</span></li>
+<li><a name="a27"></a><span class="src-doc">* </span><span class="src-doc-tag">@desc</span><span class="src-doc"> Retrieving any data from website.</span></li>
+<li><a name="a28"></a><span class="src-doc">* </span><span class="src-doc-coretag">@link</span><span class="src-doc"> http://www.marcinsznyra.info/</span></li>
+<li><a name="a29"></a><span class="src-doc">* </span><span class="src-doc-coretag">@copyright</span><span class="src-doc"> 2005 Marcin Szymon Sznyra &lt;marcin@marcinsznyra.info&gt;</span></li>
+<li><a name="a30"></a><span class="src-doc">* </span><span class="src-doc-coretag">@license</span><span class="src-doc"> Public Domain LGPL</span></li>
+<li><a name="a31"></a><span class="src-doc">* </span><span class="src-doc-coretag">@author</span><span class="src-doc"> Marcin Szymon Sznyra &lt;marcin@marcinsznyra.info&gt;</span></li>
+<li><a name="a32"></a><span class="src-doc">* </span><span class="src-doc-coretag">@version</span><span class="src-doc"> $Id: spider.class.php,v 1.0 RC 2005/05/05 08:32:25 MarcinSznyra Exp$;</span></li>
+<li><a name="a33"></a><span class="src-doc">* </span><span class="src-doc-coretag">@todo</span><span class="src-doc"> add database driver and controller,</span></li>
+<li><a name="a34"></a><span class="src-doc">*/</span></li>
+<li><a name="a35"></a>&nbsp;</li>
+<li><a name="a36"></a><span class="src-key">class </span><a href="../MegaSpider/MegaSpider.html">MegaSpider</a></li>
+<li><a name="a37"></a><span class="src-sym">{</span></li>
+<li><a name="a38"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a39"></a><span class="src-doc">    * Global address of retriving website</span></li>
+<li><a name="a40"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">string </span><span class="src-doc">url</span></li>
+<li><a name="a41"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a42"></a>    <span class="src-key">var </span><a href="../MegaSpider/MegaSpider.html#var$_url">$_url</a> = <span class="src-id">null</span><span class="src-sym">;</span></li>
+<li><a name="a43"></a>&nbsp;</li>
+<li><a name="a44"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a45"></a><span class="src-doc">    * Domain address of $_url</span></li>
+<li><a name="a46"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">string </span><span class="src-doc">domain name</span></li>
+<li><a name="a47"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a48"></a>    <span class="src-key">var </span><a href="../MegaSpider/MegaSpider.html#var$_domain">$_domain</a> = <span class="src-id">null</span><span class="src-sym">;</span></li>
+<li><a name="a49"></a>    </li>
+<li><a name="a50"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a51"></a><span class="src-doc">    * Actualy parsed and retrived address</span></li>
+<li><a name="a52"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">string </span><span class="src-doc">url</span></li>
+<li><a name="a53"></a><span class="src-doc">    * </span><span class="src-doc-tag">@depracted</span></li>
+<li><a name="a54"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a55"></a>    <span class="src-key">var </span><a href="../MegaSpider/MegaSpider.html#var$_actual">$_actual</a> = <span class="src-id">null</span><span class="src-sym">;</span></li>
+<li><a name="a56"></a>    </li>
+<li><a name="a57"></a>    <span class="src-doc">/** CURL OPTIONS **/</span></li>
+<li><a name="a57"></a>&nbsp;</li>
+<li><a name="a58"></a>    </li>
+<li><a name="a59"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a60"></a><span class="src-doc">    * CURL RESOURCE</span></li>
+<li><a name="a61"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">string </span><span class="src-doc">resource</span></li>
+<li><a name="a62"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a63"></a>    <span class="src-key">var </span><a href="../MegaSpider/MegaSpider.html#var$_CURL_RESOURCE">$_CURL_RESOURCE</a> = <span class="src-id">null</span><span class="src-sym">;</span></li>
+<li><a name="a64"></a>    </li>
+<li><a name="a65"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a66"></a><span class="src-doc">    * CURL setting</span></li>
+<li><a name="a67"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">boolean </span></li>
+<li><a name="a68"></a><span class="src-doc">    **</span><span class="src-doc">*/</span></li>
+<li><a name="a69"></a>    <span class="src-key">var </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_FAILONERROR">$_CURLOPT_FAILONERROR</a> = <span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a70"></a>    </li>
+<li><a name="a71"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a72"></a><span class="src-doc">    * CURL setting</span></li>
+<li><a name="a73"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">boolean </span></li>
+<li><a name="a74"></a><span class="src-doc">    **</span><span class="src-doc">*/</span></li>
+<li><a name="a75"></a>    <span class="src-key">var </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_FOLLOWLOCATION">$_CURLOPT_FOLLOWLOCATION</a> = <span class="src-id">true</span><span class="src-sym">;</span></li>
+<li><a name="a76"></a>    </li>
+<li><a name="a77"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a78"></a><span class="src-doc">    * CURL setting</span></li>
+<li><a name="a79"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">boolean </span></li>
+<li><a name="a80"></a><span class="src-doc">    **</span><span class="src-doc">*/</span></li>
+<li><a name="a81"></a>    <span class="src-key">var </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_RETURNTRANSFER">$_CURLOPT_RETURNTRANSFER</a> = <span class="src-id">true</span><span class="src-sym">;</span></li>
+<li><a name="a82"></a>    </li>
+<li><a name="a83"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a84"></a><span class="src-doc">    * CURL setting</span></li>
+<li><a name="a85"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">integer </span></li>
+<li><a name="a86"></a><span class="src-doc">    **</span><span class="src-doc">*/</span></li>
+<li><a name="a87"></a>    <span class="src-key">var </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_TIMEOUT">$_CURLOPT_TIMEOUT</a> = <span class="src-num">3</span><span class="src-sym">;</span></li>
+<li><a name="a88"></a>    </li>
+<li><a name="a89"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a90"></a><span class="src-doc">    * CURL setting</span></li>
+<li><a name="a91"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">boolean </span></li>
+<li><a name="a92"></a><span class="src-doc">    **</span><span class="src-doc">*/</span></li>
+<li><a name="a93"></a>    <span class="src-key">var </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_POST">$_CURLOPT_POST</a> = <span class="src-id">true</span><span class="src-sym">;</span></li>
+<li><a name="a94"></a>    </li>
+<li><a name="a95"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a96"></a><span class="src-doc">    * CURL setting</span></li>
+<li><a name="a97"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">boolean </span></li>
+<li><a name="a98"></a><span class="src-doc">    **</span><span class="src-doc">*/</span></li>
+<li><a name="a99"></a>    <span class="src-key">var </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_POSTFIELDS">$_CURLOPT_POSTFIELDS</a> = <span class="src-id">null</span><span class="src-sym">;</span></li>
+<li><a name="a100"></a>    </li>
+<li><a name="a101"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a102"></a><span class="src-doc">    * CURL setting</span></li>
+<li><a name="a103"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">string </span><span class="src-doc">Curl browser identification</span></li>
+<li><a name="a104"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a105"></a>    <span class="src-key">var </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_USERAGENT">$_CURLOPT_USERAGENT</a> = <span class="src-str">&quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a106"></a>    </li>
+<li><a name="a107"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a108"></a><span class="src-doc">    * CURL setting</span></li>
+<li><a name="a109"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">string </span></li>
+<li><a name="a110"></a><span class="src-doc">    **</span><span class="src-doc">*/</span></li>
+<li><a name="a111"></a>    <span class="src-key">var </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_USERPWD">$_CURLOPT_USERPWD</a> = <span class="src-id">null</span><span class="src-sym">;</span></li>
+<li><a name="a112"></a>    </li>
+<li><a name="a113"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a114"></a><span class="src-doc">    * CURL setting</span></li>
+<li><a name="a115"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">string </span><span class="src-doc">cookie save path</span></li>
+<li><a name="a116"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a117"></a>    <span class="src-key">var </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_COOKIEJAR">$_CURLOPT_COOKIEJAR</a> = <span class="src-str">'/cookies/'</span><span class="src-sym">;</span></li>
+<li><a name="a118"></a>&nbsp;</li>
+<li><a name="a119"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a120"></a><span class="src-doc">    * CURL setting</span></li>
+<li><a name="a121"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">string </span><span class="src-doc">cookie save path</span></li>
+<li><a name="a122"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a123"></a>    <span class="src-key">var </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_COOKIEFILE">$_CURLOPT_COOKIEFILE</a> = <span class="src-str">'/cookies/'</span><span class="src-sym">;</span></li>
+<li><a name="a124"></a>        </li>
+<li><a name="a125"></a>    <span class="src-doc">/** DEBUG MODE **/</span></li>
+<li><a name="a125"></a>&nbsp;</li>
+<li><a name="a126"></a>    </li>
+<li><a name="a127"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a128"></a><span class="src-doc">    * Debug mode true or false</span></li>
+<li><a name="a129"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">boolean </span><span class="src-doc">mode</span></li>
+<li><a name="a130"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a131"></a>    <span class="src-key">var </span><a href="../MegaSpider/MegaSpider.html#var$_debug">$_debug</a> = <span class="src-id">true</span><span class="src-sym">;</span></li>
+<li><a name="a132"></a>        </li>
+<li><a name="a133"></a>    <span class="src-doc">/** SETTINGS **/</span></li>
+<li><a name="a133"></a>&nbsp;</li>
+<li><a name="a134"></a>    </li>
+<li><a name="a135"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a136"></a><span class="src-doc">    * Sleep time after reciving the page</span></li>
+<li><a name="a137"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">integer </span><span class="src-doc">time</span></li>
+<li><a name="a138"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a139"></a>    <span class="src-key">var </span><a href="../MegaSpider/MegaSpider.html#var$_sleep">$_sleep</a> = <span class="src-num">3</span><span class="src-sym">;</span></li>
+<li><a name="a140"></a>        </li>
+<li><a name="a141"></a>    <span class="src-doc">/** DATA **/</span></li>
+<li><a name="a141"></a>&nbsp;</li>
+<li><a name="a142"></a>    </li>
+<li><a name="a143"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a144"></a><span class="src-doc">    * Class array of unique www addresses that found in whole site</span></li>
+<li><a name="a145"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">array </span><span class="src-doc">adressess</span></li>
+<li><a name="a146"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> private</span></li>
+<li><a name="a147"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a148"></a>    <span class="src-key">var </span><a href="../MegaSpider/MegaSpider.html#var$_unique_addreses">$_unique_addreses</a> = <span class="src-key">array</span><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a149"></a>    </li>
+<li><a name="a150"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a151"></a><span class="src-doc">    * Class array of unique links that found in whole site</span></li>
+<li><a name="a152"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">array </span><span class="src-doc">links</span></li>
+<li><a name="a153"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> private</span></li>
+<li><a name="a154"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a155"></a>    <span class="src-key">var </span><a href="../MegaSpider/MegaSpider.html#var$_unique_hrefs">$_unique_hrefs</a> = <span class="src-key">array</span><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a156"></a>    </li>
+<li><a name="a157"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a158"></a><span class="src-doc">    * Class array of unique emails that found in whole site</span></li>
+<li><a name="a159"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">array </span><span class="src-doc">emails</span></li>
+<li><a name="a160"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> private</span></li>
+<li><a name="a161"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a162"></a>    <span class="src-key">var </span><a href="../MegaSpider/MegaSpider.html#var$_unique_emails">$_unique_emails</a> = <span class="src-key">array</span><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a163"></a>        </li>
+<li><a name="a164"></a>        </li>
+<li><a name="a165"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a166"></a><span class="src-doc">    * __Construct of MegaSpider Class don't</span></li>
+<li><a name="a167"></a><span class="src-doc">    * need any params, starts automaticly and</span></li>
+<li><a name="a168"></a><span class="src-doc">    * automaticly runs bulit in timer, after</span></li>
+<li><a name="a169"></a><span class="src-doc">    * that try to run CURL_INIT and makes the</span></li>
+<li><a name="a170"></a><span class="src-doc">    * CURL resource.</span></li>
+<li><a name="a171"></a><span class="src-doc">    *</span></li>
+<li><a name="a172"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">void </span></li>
+<li><a name="a173"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a174"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a175"></a>    <span class="src-key">function </span><a href="../MegaSpider/MegaSpider.html#methodMegaSpider">MegaSpider</a><span class="src-sym">( </span><span class="src-sym">)</span></li>
+<li><a name="a176"></a>    <span class="src-sym">{</span></li>
+<li><a name="a177"></a>        <a href="http://www.php.net/error_reporting">error_reporting</a><span class="src-sym">( </span><span class="src-id">E_ALL </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a178"></a>        <a href="http://www.php.net/ini_set">ini_set</a><span class="src-sym">( </span><span class="src-str">'display_errors' </span><span class="src-sym">, </span><span class="src-id">true </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a179"></a>        <a href="http://www.php.net/set_time_limit">set_time_limit</a><span class="src-sym">( </span><span class="src-num">3600 </span>* <span class="src-num">24 </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a180"></a>            </li>
+<li><a name="a181"></a>        <span class="src-var">$body </span>= <span class="src-str">'&lt;html&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a182"></a>        <span class="src-var">$body </span>= <span class="src-str">'&lt;head&gt;&lt;title&gt;MegSpider&lt;/title&gt;&lt;/head&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a183"></a>        <span class="src-var">$body </span>= <span class="src-str">'&lt;body style=&quot;background:#000000;font-family:sans-serif;font-size:11px;color:#ffffff&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a184"></a>            </li>
+<li><a name="a185"></a>        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a186"></a>        <span class="src-sym">{</span></li>
+<li><a name="a187"></a>            print<span class="src-sym">( </span><span class="src-var">$body </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a188"></a>        <span class="src-sym">}</span></li>
+<li><a name="a189"></a>        </li>
+<li><a name="a190"></a>        <span class="src-comm">//debug construct run</span></li>
+<li><a name="a191"></a>        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">) </span></li>
+<li><a name="a192"></a>        <span class="src-sym">{</span></li>
+<li><a name="a193"></a>            print<span class="src-sym">( </span><span class="src-str">'&lt;h4&gt;MegaSpider __Construct start running application&lt;/h4&gt;&lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a194"></a>            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a195"></a>        <span class="src-sym">}</span></li>
+<li><a name="a196"></a>        </li>
+<li><a name="a197"></a>        <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_run_time">_run_time</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a198"></a>    </li>
+<li><a name="a199"></a>        <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_COOKIEJAR">_CURLOPT_COOKIEJAR</a> = <a href="http://www.php.net/realpath">realpath</a><span class="src-sym">( </span><a href="http://www.php.net/dirname">dirname</a><span class="src-sym">( </span>__FILE__ <span class="src-sym">) )</span>.<span class="src-str">'/'</span>.<span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_COOKIEJAR">_CURLOPT_COOKIEJAR</a><span class="src-sym">;</span></li>
+<li><a name="a200"></a>        <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_COOKIEFILE">_CURLOPT_COOKIEFILE</a> = <a href="http://www.php.net/realpath">realpath</a><span class="src-sym">( </span><a href="http://www.php.net/dirname">dirname</a><span class="src-sym">( </span>__FILE__ <span class="src-sym">) )</span>.<span class="src-str">'/'</span>.<span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_COOKIEFILE">_CURLOPT_COOKIEFILE</a><span class="src-sym">;</span></li>
+<li><a name="a201"></a>        </li>
+<li><a name="a202"></a>        <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURL_RESOURCE">_CURL_RESOURCE</a> = <a href="http://www.php.net/curl_init">curl_init</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a203"></a>            </li>
+<li><a name="a204"></a>        <span class="src-comm">//debug init curl</span></li>
+<li><a name="a205"></a>        <span class="src-key">if</span><span class="src-sym">( </span><a href="http://www.php.net/is_resource">is_resource</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURL_RESOURCE">_CURL_RESOURCE</a> <span class="src-sym">) </span>&amp;&amp; <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> <span class="src-sym">)</span></li>
+<li><a name="a206"></a>        <span class="src-sym">{</span></li>
+<li><a name="a207"></a>            print<span class="src-sym">( </span>__LINE__.<span class="src-str">' &lt;b&gt;_CURL init()&lt;/b&gt; executed sucesfully &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a208"></a>            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a209"></a>        <span class="src-sym">}</span></li>
+<li><a name="a210"></a>        </li>
+<li><a name="a211"></a>    <span class="src-sym">}</span></li>
+<li><a name="a212"></a>        </li>
+<li><a name="a213"></a>        </li>
+<li><a name="a214"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a215"></a><span class="src-doc">    * Method alows You to assign some</span></li>
+<li><a name="a216"></a><span class="src-doc">    * page that will be parsed by the</span></li>
+<li><a name="a217"></a><span class="src-doc">    * Mega Spider Class. Method need only</span></li>
+<li><a name="a218"></a><span class="src-doc">    * one param - address of www page.</span></li>
+<li><a name="a219"></a><span class="src-doc">    *</span></li>
+<li><a name="a220"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">string </span><span class="src-doc">address</span></li>
+<li><a name="a221"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">void </span></li>
+<li><a name="a222"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a223"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a224"></a>    <span class="src-key">function </span><a href="../MegaSpider/MegaSpider.html#methodassign">assign</a><span class="src-sym">( </span><span class="src-var">$url </span>= <span class="src-str">'http://www.msn.com' </span><span class="src-sym">)</span></li>
+<li><a name="a225"></a>    <span class="src-sym">{</span></li>
+<li><a name="a226"></a>        <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_url">_url</a> = <span class="src-var">$url</span><span class="src-sym">;</span></li>
+<li><a name="a227"></a>        </li>
+<li><a name="a228"></a>        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">) </span></li>
+<li><a name="a229"></a>        <span class="src-sym">{</span></li>
+<li><a name="a230"></a>            print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Assign method started : address -&gt; '</span>.<span class="src-var">$url</span>.<span class="src-str">'&lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a231"></a>            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a232"></a>        <span class="src-sym">}</span></li>
+<li><a name="a233"></a>            </li>
+<li><a name="a234"></a>        <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#methodgetPage">getPage</a><span class="src-sym">( </span><span class="src-var">$url </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a235"></a>            </li>
+<li><a name="a236"></a>        <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_stats">_stats</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a237"></a>        <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_end_time">_end_time</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a238"></a>    <span class="src-sym">}</span></li>
+<li><a name="a239"></a>    </li>
+<li><a name="a240"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a241"></a><span class="src-doc">    * Reciving and parsing the page,</span></li>
+<li><a name="a242"></a><span class="src-doc">    * that method runs all the others</span></li>
+<li><a name="a243"></a><span class="src-doc">    * methods as _unique_href, _unique_emails</span></li>
+<li><a name="a244"></a><span class="src-doc">    * _unique_address. Needs one param - the</span></li>
+<li><a name="a245"></a><span class="src-doc">    * web page address.</span></li>
+<li><a name="a246"></a><span class="src-doc">    *</span></li>
+<li><a name="a247"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">string </span><span class="src-doc">address</span></li>
+<li><a name="a248"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">void </span></li>
+<li><a name="a249"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> private</span></li>
+<li><a name="a250"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a251"></a>    <span class="src-key">function </span><a href="../MegaSpider/MegaSpider.html#methodgetPage">getPage</a><span class="src-sym">( </span><span class="src-var">$page </span><span class="src-sym">)</span></li>
+<li><a name="a252"></a>    <span class="src-sym">{</span></li>
+<li><a name="a253"></a>        <span class="src-key">if</span><span class="src-sym">( </span>isset<span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_hrefs">_unique_hrefs</a><span class="src-sym">[</span><span class="src-var">$page</span><span class="src-sym">] </span><span class="src-sym">) )</span></li>
+<li><a name="a254"></a>        <span class="src-sym">{</span></li>
+<li><a name="a255"></a>            <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">) </span></li>
+<li><a name="a256"></a>            <span class="src-sym">{</span></li>
+<li><a name="a257"></a>                print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Found address in _unique_hrefs : '</span>.<a href="http://www.php.net/htmlentities">htmlentities</a><span class="src-sym">( </span><a href="http://www.php.net/strip_tags">strip_tags</a><span class="src-sym">( </span><span class="src-var">$page </span><span class="src-sym">) )</span>.<span class="src-str">' &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a258"></a>                <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a259"></a>            <span class="src-sym">}</span></li>
+<li><a name="a260"></a>                </li>
+<li><a name="a261"></a>            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_hrefs">_unique_hrefs</a><span class="src-sym">[</span><span class="src-var">$page</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-str">'visit'</span><span class="src-sym">] </span>= <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_hrefs">_unique_hrefs</a><span class="src-sym">[</span><span class="src-var">$page</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-str">'visit'</span><span class="src-sym">] </span>+ <span class="src-num">1</span><span class="src-sym">; </span></li>
+<li><a name="a262"></a>                </li>
+<li><a name="a263"></a>            <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">) </span></li>
+<li><a name="a264"></a>            <span class="src-sym">{</span></li>
+<li><a name="a265"></a>                print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Change visit number : '</span>.<span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_hrefs">_unique_hrefs</a><span class="src-sym">[</span><span class="src-var">$page</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-str">'visit'</span><span class="src-sym">]</span>.<span class="src-str">' &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a266"></a>                <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a267"></a>            <span class="src-sym">}</span></li>
+<li><a name="a268"></a>            </li>
+<li><a name="a269"></a>            <span class="src-var">$page </span>= <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_url">_url</a>.<span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_hrefs">_unique_hrefs</a><span class="src-sym">[</span><span class="src-var">$page</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-str">'href'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a270"></a>            </li>
+<li><a name="a271"></a>            <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">) </span></li>
+<li><a name="a272"></a>            <span class="src-sym">{</span></li>
+<li><a name="a273"></a>                print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Parse address : '</span>.<a href="http://www.php.net/htmlentities">htmlentities</a><span class="src-sym">( </span><a href="http://www.php.net/strip_tags">strip_tags</a><span class="src-sym">( </span><span class="src-var">$page </span><span class="src-sym">) )</span>.<span class="src-str">' &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a274"></a>                <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a275"></a>            <span class="src-sym">}</span></li>
+<li><a name="a276"></a>                </li>
+<li><a name="a277"></a>            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_actual">_actual</a> = <span class="src-var">$page</span><span class="src-sym">;</span></li>
+<li><a name="a278"></a>        <span class="src-sym">} </span></li>
+<li><a name="a279"></a>        </li>
+<li><a name="a280"></a>        <span class="src-var">$content </span>= <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#methodgetContent">getContent</a><span class="src-sym">( </span><span class="src-var">$page </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a281"></a>            </li>
+<li><a name="a282"></a>        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a283"></a>        <span class="src-sym">{</span></li>
+<li><a name="a284"></a>            print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Parse content &lt;b&gt;date : '</span>.<a href="http://www.php.net/date">date</a><span class="src-sym">(</span><span class="src-str">'h:i:s'</span><span class="src-sym">)</span>.<span class="src-str">'&lt;/b&gt;&lt;br&gt;'</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a285"></a>            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a286"></a>        <span class="src-sym">}</span></li>
+<li><a name="a287"></a>&nbsp;</li>
+<li><a name="a288"></a>        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a289"></a>        <span class="src-sym">{</span></li>
+<li><a name="a290"></a>            print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Sleep time : '</span>.<span class="src-sym">(</span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_sleep">_sleep</a><span class="src-sym">)</span>.<span class="src-str">' seconds&lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a291"></a>            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a292"></a>        <span class="src-sym">}</span></li>
+<li><a name="a293"></a>            </li>
+<li><a name="a294"></a>        <a href="http://www.php.net/sleep">sleep</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_sleep">_sleep</a> <span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a295"></a>            </li>
+<li><a name="a296"></a>        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a297"></a>        <span class="src-sym">{</span></li>
+<li><a name="a298"></a>            print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Parsing content date : '</span>.<a href="http://www.php.net/date">date</a><span class="src-sym">(</span><span class="src-str">'h:i:s'</span><span class="src-sym">)</span>.<span class="src-str">'&lt;br&gt;'</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a299"></a>            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a300"></a>        <span class="src-sym">}</span></li>
+<li><a name="a301"></a>            </li>
+<li><a name="a302"></a>        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$content</span><span class="src-sym">[</span><span class="src-str">'error'</span><span class="src-sym">] </span>== <span class="src-num">0 </span><span class="src-sym">)</span></li>
+<li><a name="a303"></a>        <span class="src-sym">{</span></li>
+<li><a name="a304"></a>        </li>
+<li><a name="a305"></a>            <span class="src-var">$content </span>= <span class="src-var">$content</span><span class="src-sym">[</span><span class="src-str">'pages'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a306"></a>            </li>
+<li><a name="a307"></a>        <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a308"></a>        </li>
+<li><a name="a309"></a>            <span class="src-var">$content </span>= <span class="src-var">$content</span><span class="src-sym">[</span><span class="src-str">'ermsg'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a310"></a>            </li>
+<li><a name="a311"></a>        <span class="src-sym">}</span></li>
+<li><a name="a312"></a>        </li>
+<li><a name="a313"></a>        <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_unique_addresses">_unique_addresses</a><span class="src-sym">( </span><span class="src-sym">&amp;</span><span class="src-var">$content </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a314"></a>        <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_unique_hrefs">_unique_hrefs</a><span class="src-sym">( </span><span class="src-sym">&amp;</span><span class="src-var">$content </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a315"></a>        <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_unique_emails">_unique_emails</a><span class="src-sym">( </span><span class="src-sym">&amp;</span><span class="src-var">$content </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a316"></a>&nbsp;</li>
+<li><a name="a317"></a>        </li>
+<li><a name="a318"></a>        <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#methodgetUniqueHref">getUniqueHref</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a319"></a>    <span class="src-sym">}</span></li>
+<li><a name="a320"></a>    </li>
+<li><a name="a321"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a322"></a><span class="src-doc">    * If one page was parsed by class,</span></li>
+<li><a name="a323"></a><span class="src-doc">    * system trys to know what is the</span></li>
+<li><a name="a324"></a><span class="src-doc">    * next page that shoud be parsed.</span></li>
+<li><a name="a325"></a><span class="src-doc">    * All found addresses are in array</span></li>
+<li><a name="a326"></a><span class="src-doc">    * _unique_hrefs. This Method runs</span></li>
+<li><a name="a327"></a><span class="src-doc">    * the spider to recive next www page</span></li>
+<li><a name="a328"></a><span class="src-doc">    * from array. Don't need any param.</span></li>
+<li><a name="a329"></a><span class="src-doc">    *</span></li>
+<li><a name="a330"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">void </span></li>
+<li><a name="a331"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> private</span></li>
+<li><a name="a332"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a333"></a>    <span class="src-key">function </span><a href="../MegaSpider/MegaSpider.html#methodgetUniqueHref">getUniqueHref</a><span class="src-sym">( </span><span class="src-sym">)</span></li>
+<li><a name="a334"></a>    <span class="src-sym">{</span></li>
+<li><a name="a335"></a>        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-sym">!</span><span class="src-key">empty</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_hrefs">_unique_hrefs</a> <span class="src-sym">) )</span></li>
+<li><a name="a336"></a>        <span class="src-sym">{</span></li>
+<li><a name="a337"></a>            <span class="src-key">foreach</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_hrefs">_unique_hrefs</a> <span class="src-key">AS </span><span class="src-var">$key </span>=&gt; <span class="src-var">$value </span><span class="src-sym">)</span></li>
+<li><a name="a338"></a>            <span class="src-sym">{</span></li>
+<li><a name="a339"></a>&nbsp;</li>
+<li><a name="a340"></a>                <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$value</span><span class="src-sym">[</span><span class="src-str">'visit'</span><span class="src-sym">] </span>== <span class="src-num">0 </span><span class="src-sym">)</span></li>
+<li><a name="a341"></a>                <span class="src-sym">{</span></li>
+<li><a name="a342"></a>                    </li>
+<li><a name="a343"></a>                    <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">) </span></li>
+<li><a name="a344"></a>                    <span class="src-sym">{</span></li>
+<li><a name="a345"></a>                        print<span class="src-sym">( </span><span class="src-str">'&lt;br&gt;&lt;br&gt;&lt;h4&gt;Parse page :: '</span>.<a href="http://www.php.net/htmlentities">htmlentities</a><span class="src-sym">( </span><a href="http://www.php.net/strip_tags">strip_tags</a><span class="src-sym">( </span><span class="src-var">$value</span><span class="src-sym">[</span><span class="src-str">'name'</span><span class="src-sym">] </span><span class="src-sym">) )</span>.<span class="src-str">'&lt;/h4&gt; &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a346"></a>                        <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a347"></a>                    <span class="src-sym">}</span></li>
+<li><a name="a348"></a>                    </li>
+<li><a name="a349"></a>                    <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#methodgetPage">getPage</a><span class="src-sym">( </span><span class="src-var">$key </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a350"></a>                    </li>
+<li><a name="a351"></a>                    <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a352"></a>                <span class="src-sym">}</span></li>
+<li><a name="a353"></a>            <span class="src-sym">}</span></li>
+<li><a name="a354"></a>        <span class="src-sym">}</span></li>
+<li><a name="a355"></a>    <span class="src-sym">}</span></li>
+<li><a name="a356"></a>    </li>
+<li><a name="a357"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a358"></a><span class="src-doc">    * Method get as param address of</span></li>
+<li><a name="a359"></a><span class="src-doc">    * web page and download full html</span></li>
+<li><a name="a360"></a><span class="src-doc">    * content of page. If this operation</span></li>
+<li><a name="a361"></a><span class="src-doc">    * was not sucesfully method try do</span></li>
+<li><a name="a362"></a><span class="src-doc">    * run method getUniqueHref that will</span></li>
+<li><a name="a363"></a><span class="src-doc">    * try to download next page from</span></li>
+<li><a name="a364"></a><span class="src-doc">    * array _unique_hrefs</span></li>
+<li><a name="a365"></a><span class="src-doc">    *</span></li>
+<li><a name="a366"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">string </span><span class="src-doc">address</span></li>
+<li><a name="a367"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">void </span></li>
+<li><a name="a368"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> private</span></li>
+<li><a name="a369"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a370"></a>    <span class="src-key">function </span><a href="../MegaSpider/MegaSpider.html#methodgetContent">getContent</a><span class="src-sym">( </span><span class="src-var">$address </span><span class="src-sym">)</span></li>
+<li><a name="a371"></a>    <span class="src-sym">{</span></li>
+<li><a name="a372"></a>        <a href="http://www.php.net/curl_setopt">curl_setopt</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURL_RESOURCE">_CURL_RESOURCE</a> <span class="src-sym">, </span><span class="src-id">CURLOPT_URL </span><span class="src-sym">, </span><span class="src-var">$address </span><span class="src-sym">)</span><span class="src-sym">; </span><span class="src-comm">// set url to post to</span></li>
+<li><a name="a373"></a>        <a href="http://www.php.net/curl_setopt">curl_setopt</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURL_RESOURCE">_CURL_RESOURCE</a> <span class="src-sym">, </span><span class="src-id">CURLOPT_FAILONERROR </span><span class="src-sym">, </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_FAILONERROR">_CURLOPT_FAILONERROR</a> <span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a374"></a>        <a href="http://www.php.net/curl_setopt">curl_setopt</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURL_RESOURCE">_CURL_RESOURCE</a> <span class="src-sym">, </span><span class="src-id">CURLOPT_FOLLOWLOCATION </span><span class="src-sym">, </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_FOLLOWLOCATION">_CURLOPT_FOLLOWLOCATION</a> <span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a375"></a>        <a href="http://www.php.net/curl_setopt">curl_setopt</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURL_RESOURCE">_CURL_RESOURCE</a> <span class="src-sym">, </span><span class="src-id">CURLOPT_RETURNTRANSFER </span><span class="src-sym">, </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_RETURNTRANSFER">_CURLOPT_RETURNTRANSFER</a> <span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a376"></a>        <a href="http://www.php.net/curl_setopt">curl_setopt</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURL_RESOURCE">_CURL_RESOURCE</a> <span class="src-sym">, </span><span class="src-id">CURLOPT_TIMEOUT </span><span class="src-sym">, </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_TIMEOUT">_CURLOPT_TIMEOUT</a> <span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a377"></a>        <a href="http://www.php.net/curl_setopt">curl_setopt</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURL_RESOURCE">_CURL_RESOURCE</a> <span class="src-sym">, </span><span class="src-id">CURLOPT_COOKIEJAR </span><span class="src-sym">, </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_COOKIEJAR">_CURLOPT_COOKIEJAR</a> <span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a378"></a>        <a href="http://www.php.net/curl_setopt">curl_setopt</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURL_RESOURCE">_CURL_RESOURCE</a> <span class="src-sym">, </span><span class="src-id">CURLOPT_COOKIEFILE </span><span class="src-sym">, </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_COOKIEFILE">_CURLOPT_COOKIEFILE</a> <span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a379"></a>&nbsp;</li>
+<li><a name="a380"></a>        <span class="src-key">if</span><span class="src-sym">( </span><a href="http://www.php.net/strlen">strlen</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_POSTFIELDS">_CURLOPT_POSTFIELDS</a> <span class="src-sym">) </span>&gt; <span class="src-num">1 </span><span class="src-sym">)</span></li>
+<li><a name="a381"></a>        <span class="src-sym">{</span></li>
+<li><a name="a382"></a>            <a href="http://www.php.net/curl_setopt">curl_setopt</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURL_RESOURCE">_CURL_RESOURCE</a> <span class="src-sym">, </span><span class="src-id">CURLOPT_POST </span><span class="src-sym">, </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_POST">_CURLOPT_POST</a> <span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a383"></a>            <a href="http://www.php.net/curl_setopt">curl_setopt</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURL_RESOURCE">_CURL_RESOURCE</a> <span class="src-sym">, </span><span class="src-id">CURLOPT_POSTFIELDS </span><span class="src-sym">, </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_POSTFIELDS">_CURLOPT_POSTFIELDS</a> <span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a384"></a>        <span class="src-sym">}</span></li>
+<li><a name="a385"></a>&nbsp;</li>
+<li><a name="a386"></a>        <span class="src-key">if</span><span class="src-sym">( </span><a href="http://www.php.net/strlen">strlen</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_USERAGENT">_CURLOPT_USERAGENT</a> <span class="src-sym">) </span>&gt; <span class="src-num">0 </span><span class="src-sym">) </span></li>
+<li><a name="a387"></a>        <span class="src-sym">{</span></li>
+<li><a name="a388"></a>            <a href="http://www.php.net/curl_setopt">curl_setopt</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURL_RESOURCE">_CURL_RESOURCE</a> <span class="src-sym">, </span><span class="src-id">CURLOPT_USERAGENT</span><span class="src-sym">, </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_USERAGENT">_CURLOPT_USERAGENT</a> <span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a389"></a>        <span class="src-sym">}</span></li>
+<li><a name="a390"></a>&nbsp;</li>
+<li><a name="a391"></a>        <span class="src-key">if</span><span class="src-sym">( </span><a href="http://www.php.net/strlen">strlen</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_USERPWD">_CURLOPT_USERPWD</a> <span class="src-sym">) </span>&gt; <span class="src-num">2 </span><span class="src-sym">) </span></li>
+<li><a name="a392"></a>        <span class="src-sym">{</span></li>
+<li><a name="a393"></a>            <a href="http://www.php.net/curl_setopt">curl_setopt</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURL_RESOURCE">_CURL_RESOURCE</a> <span class="src-sym">, </span><span class="src-id">CURLOPT_USERPWD</span><span class="src-sym">, </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURLOPT_USERPWD">_CURLOPT_USERPWD</a> <span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a394"></a>        <span class="src-sym">}</span></li>
+<li><a name="a395"></a>            </li>
+<li><a name="a396"></a>        <span class="src-var">$ret</span><span class="src-sym">[</span><span class="src-str">'pages'</span><span class="src-sym">] </span>= <a href="http://www.php.net/curl_exec">curl_exec</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURL_RESOURCE">_CURL_RESOURCE</a> <span class="src-sym">)</span><span class="src-sym">; </span><span class="src-comm">// go get the page</span></li>
+<li><a name="a397"></a>        <span class="src-var">$ret</span><span class="src-sym">[</span><span class="src-str">'error'</span><span class="src-sym">] </span>= <a href="http://www.php.net/curl_errno">curl_errno</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURL_RESOURCE">_CURL_RESOURCE</a> <span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a398"></a>        <span class="src-var">$ret</span><span class="src-sym">[</span><span class="src-str">'ermsg'</span><span class="src-sym">] </span>= <a href="http://www.php.net/curl_error">curl_error</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_CURL_RESOURCE">_CURL_RESOURCE</a> <span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a399"></a>&nbsp;</li>
+<li><a name="a400"></a>        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$ret</span><span class="src-sym">[</span><span class="src-str">'error'</span><span class="src-sym">] </span>== <span class="src-num">0 </span><span class="src-sym">)</span></li>
+<li><a name="a401"></a>        <span class="src-sym">{</span></li>
+<li><a name="a402"></a>    </li>
+<li><a name="a403"></a>            <span class="src-key">return </span><span class="src-var">$ret</span><span class="src-sym">;    </span></li>
+<li><a name="a404"></a>    </li>
+<li><a name="a405"></a>        <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a406"></a>        </li>
+<li><a name="a407"></a>            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#methodgetUniqueHref">getUniqueHref</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a408"></a>        </li>
+<li><a name="a409"></a>        <span class="src-sym">}</span></li>
+<li><a name="a410"></a>    <span class="src-sym">}</span></li>
+<li><a name="a411"></a>    </li>
+<li><a name="a412"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a413"></a><span class="src-doc">    * Method parse html codes of web</span></li>
+<li><a name="a414"></a><span class="src-doc">    * page and retriving from html code</span></li>
+<li><a name="a415"></a><span class="src-doc">    * all existing email addressess.</span></li>
+<li><a name="a416"></a><span class="src-doc">    *</span></li>
+<li><a name="a417"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">string </span><span class="src-doc">html codes</span></li>
+<li><a name="a418"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">void </span></li>
+<li><a name="a419"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> private</span></li>
+<li><a name="a420"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a421"></a>    <span class="src-key">function </span><a href="../MegaSpider/MegaSpider.html#method_unique_emails">_unique_emails</a><span class="src-sym">( </span><span class="src-sym">&amp;</span><span class="src-var">$content </span><span class="src-sym">)</span></li>
+<li><a name="a422"></a>    <span class="src-sym">{</span></li>
+<li><a name="a423"></a>        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a424"></a>        <span class="src-sym">{</span></li>
+<li><a name="a425"></a>            print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Parse unique emails &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a426"></a>            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a427"></a>        <span class="src-sym">}</span></li>
+<li><a name="a428"></a>        </li>
+<li><a name="a429"></a>        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-key">empty</span><span class="src-sym">( </span><span class="src-var">$content </span><span class="src-sym">) </span>== <span class="src-id">false </span><span class="src-sym">)</span></li>
+<li><a name="a430"></a>        <span class="src-sym">{</span></li>
+<li><a name="a431"></a>            </li>
+<li><a name="a432"></a>            <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a433"></a>            <span class="src-sym">{</span></li>
+<li><a name="a434"></a>                print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Parse Parsing content &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a435"></a>                <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a436"></a>            <span class="src-sym">}</span></li>
+<li><a name="a437"></a>            </li>
+<li><a name="a438"></a>            <a href="http://www.php.net/preg_match_all">preg_match_all</a><span class="src-sym">(</span><span class="src-str">&quot;/[mM][aA][iI][lL][tT][oO]:([^\&quot;]*)/&quot;</span><span class="src-sym">, </span><span class="src-var">$content </span><span class="src-sym">, </span><span class="src-var">$arrEmails </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a439"></a>            </li>
+<li><a name="a440"></a>            <span class="src-key">if</span><span class="src-sym">( </span><span class="src-key">empty</span><span class="src-sym">( </span><span class="src-var">$arrEmails</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">] </span><span class="src-sym">) </span>== <span class="src-id">false </span><span class="src-sym">) </span></li>
+<li><a name="a441"></a>            <span class="src-sym">{</span></li>
+<li><a name="a442"></a>                </li>
+<li><a name="a443"></a>                <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a444"></a>                <span class="src-sym">{</span></li>
+<li><a name="a445"></a>                    print<span class="src-sym">( </span>__LINE__.<span class="src-str">' &lt;b&gt;Found not identified emails&lt;/b&gt; &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a446"></a>                    <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a447"></a>                    print<span class="src-sym">( </span><span class="src-str">'---------------------------&lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a448"></a>                    <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a449"></a>                <span class="src-sym">}</span></li>
+<li><a name="a450"></a>                    </li>
+<li><a name="a451"></a>                <span class="src-key">foreach</span><span class="src-sym">( </span><span class="src-var">$arrEmails</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">] </span><span class="src-key">AS </span><span class="src-var">$key </span>=&gt; <span class="src-var">$value </span><span class="src-sym">)</span></li>
+<li><a name="a452"></a>                <span class="src-sym">{</span></li>
+<li><a name="a453"></a>                    </li>
+<li><a name="a454"></a>                    <span class="src-key">if</span><span class="src-sym">( </span><span class="src-sym">!</span>isset<span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_emails">_unique_emails</a><span class="src-sym">[</span><span class="src-var">$value</span><span class="src-sym">] </span><span class="src-sym">) )</span></li>
+<li><a name="a455"></a>                    <span class="src-sym">{</span></li>
+<li><a name="a456"></a>                        <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_emails">_unique_emails</a><span class="src-sym">[</span><span class="src-var">$value</span><span class="src-sym">]</span>= <span class="src-var">$value</span><span class="src-sym">;</span></li>
+<li><a name="a457"></a>                            </li>
+<li><a name="a458"></a>                        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a459"></a>                        <span class="src-sym">{</span></li>
+<li><a name="a460"></a>                            print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Parse: Editing _unique_emails, making : '</span>.<a href="http://www.php.net/htmlentities">htmlentities</a><span class="src-sym">( </span><a href="http://www.php.net/strip_tags">strip_tags</a><span class="src-sym">( </span><span class="src-var">$value </span><span class="src-sym">) )</span>.<span class="src-str">' &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a461"></a>                            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a462"></a>                        <span class="src-sym">}</span></li>
+<li><a name="a463"></a>                    </li>
+<li><a name="a464"></a>                    <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a465"></a>                        </li>
+<li><a name="a466"></a>                        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a467"></a>                        <span class="src-sym">{</span></li>
+<li><a name="a468"></a>                            print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Parse: Address exits at _unique_emails, breaking : '</span>.<a href="http://www.php.net/htmlentities">htmlentities</a><span class="src-sym">( </span><a href="http://www.php.net/strip_tags">strip_tags</a><span class="src-sym">( </span><span class="src-var">$value </span><span class="src-sym">) )</span>.<span class="src-str">' &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a469"></a>                            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a470"></a>                        <span class="src-sym">}</span></li>
+<li><a name="a471"></a>                            </li>
+<li><a name="a472"></a>                    <span class="src-sym">}</span></li>
+<li><a name="a473"></a>                </li>
+<li><a name="a474"></a>                <span class="src-sym">}</span></li>
+<li><a name="a475"></a>                    </li>
+<li><a name="a476"></a>                <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a477"></a>                <span class="src-sym">{</span></li>
+<li><a name="a478"></a>                    print<span class="src-sym">( </span><span class="src-str">'---------------------------&lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a479"></a>                    <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a480"></a>                <span class="src-sym">}</span></li>
+<li><a name="a481"></a>                </li>
+<li><a name="a482"></a>            <span class="src-sym">}</span></li>
+<li><a name="a483"></a>            </li>
+<li><a name="a484"></a>        <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a485"></a>        </li>
+<li><a name="a486"></a>            <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a487"></a>            <span class="src-sym">{</span></li>
+<li><a name="a488"></a>                print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Content is empty! &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a489"></a>                <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a490"></a>            <span class="src-sym">}</span></li>
+<li><a name="a491"></a>            </li>
+<li><a name="a492"></a>        <span class="src-sym">}</span></li>
+<li><a name="a493"></a>    <span class="src-sym">}</span></li>
+<li><a name="a494"></a>        </li>
+<li><a name="a495"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a496"></a><span class="src-doc">    * Method parse html codes of web</span></li>
+<li><a name="a497"></a><span class="src-doc">    * page and retriving from html code</span></li>
+<li><a name="a498"></a><span class="src-doc">    * all existing www addressess.</span></li>
+<li><a name="a499"></a><span class="src-doc">    *</span></li>
+<li><a name="a500"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">string </span><span class="src-doc">html codes</span></li>
+<li><a name="a501"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">void </span></li>
+<li><a name="a502"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> private</span></li>
+<li><a name="a503"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a504"></a>    <span class="src-key">function </span><a href="../MegaSpider/MegaSpider.html#method_unique_addresses">_unique_addresses</a><span class="src-sym">( </span><span class="src-sym">&amp;</span><span class="src-var">$content </span><span class="src-sym">)</span></li>
+<li><a name="a505"></a>    <span class="src-sym">{</span></li>
+<li><a name="a506"></a>        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a507"></a>        <span class="src-sym">{</span></li>
+<li><a name="a508"></a>            print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Parse unique adressess &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a509"></a>            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a510"></a>        <span class="src-sym">}</span></li>
+<li><a name="a511"></a>        </li>
+<li><a name="a512"></a>        <span class="src-var">$addr </span>= <span class="src-id">null</span><span class="src-sym">;</span></li>
+<li><a name="a513"></a>        <span class="src-var">$port </span>= <span class="src-id">null</span><span class="src-sym">;</span></li>
+<li><a name="a514"></a>        </li>
+<li><a name="a515"></a>        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-key">empty</span><span class="src-sym">( </span><span class="src-var">$content </span><span class="src-sym">) </span>== <span class="src-id">false </span><span class="src-sym">)</span></li>
+<li><a name="a516"></a>        <span class="src-sym">{</span></li>
+<li><a name="a517"></a>            <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a518"></a>            <span class="src-sym">{</span></li>
+<li><a name="a519"></a>                print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Parse: Parsing content &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a520"></a>                <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a521"></a>            <span class="src-sym">}</span></li>
+<li><a name="a522"></a>        </li>
+<li><a name="a523"></a>            <a href="http://www.php.net/preg_match_all">preg_match_all</a><span class="src-sym">(</span><span class="src-str">&quot;</span><span class="src-str">/(<span class="src-id">http</span>|<span class="src-id">https</span>)?:\/\/?(<span class="src-sym">[</span><span class="src-id">a</span>-<span class="src-id">zA</span>-<span class="src-id">Z0</span>-9\-\.<span class="src-sym">]</span>*\.<span class="src-sym">[</span><span class="src-id">a</span>-<span class="src-id">zA</span>-<span class="src-id">Z</span><span class="src-sym">]</span><span class="src-sym">{</span>2,5<span class="src-sym">}</span>)(:<span class="src-sym">[</span><span class="src-id">a</span>-<span class="src-id">zA</span>-<span class="src-id">Z0</span>-9<span class="src-sym">]</span>*)?\/?(<span class="src-sym">[</span><span class="src-id">a</span>-<span class="src-id">zA</span>-<span class="src-id">Z0</span>-9.-<span class="src-id">_</span><span class="src-sym">]</span>*\/)?(<span class="src-sym">[</span><span class="src-id">a</span>-<span class="src-id">zA</span>-<span class="src-id">Z0</span>-9.-<span class="src-id">_</span>?&amp;=%+$<span class="src-sym">]</span>+)?/</span><span class="src-str">&quot;</span><span class="src-sym">, </span><span class="src-var">$content </span><span class="src-sym">, </span><span class="src-var">$arrAddress </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a524"></a>                </li>
+<li><a name="a525"></a>            <span class="src-key">if</span><span class="src-sym">( </span><span class="src-key">empty</span><span class="src-sym">( </span><span class="src-var">$arrAddress</span><span class="src-sym">[</span><span class="src-num">2</span><span class="src-sym">] </span><span class="src-sym">) </span>== <span class="src-id">false </span><span class="src-sym">)</span></li>
+<li><a name="a526"></a>            <span class="src-sym">{</span></li>
+<li><a name="a527"></a>                <span class="src-var">$prot </span>=<span class="src-sym">&amp; </span><span class="src-var">$arrAddress</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a528"></a>                <span class="src-var">$addr </span>=<span class="src-sym">&amp; </span><span class="src-var">$arrAddress</span><span class="src-sym">[</span><span class="src-num">2</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a529"></a>                <span class="src-var">$port </span>=<span class="src-sym">&amp; </span><span class="src-var">$arrAddress</span><span class="src-sym">[</span><span class="src-num">3</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a530"></a>                <span class="src-var">$fold </span>=<span class="src-sym">&amp; </span><span class="src-var">$arrAddress</span><span class="src-sym">[</span><span class="src-num">4</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a531"></a>                <span class="src-var">$phps </span>=<span class="src-sym">&amp; </span><span class="src-var">$arrAddress</span><span class="src-sym">[</span><span class="src-num">4</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a532"></a>                    </li>
+<li><a name="a533"></a>                <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a534"></a>                <span class="src-sym">{</span></li>
+<li><a name="a535"></a>                    print<span class="src-sym">( </span>__LINE__.<span class="src-str">' &lt;b&gt;Found not identified addresses&lt;/b&gt; &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a536"></a>                    <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a537"></a>                    print<span class="src-sym">( </span><span class="src-str">'---------------------------&lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a538"></a>                    <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a539"></a>                <span class="src-sym">}</span></li>
+<li><a name="a540"></a>            <span class="src-sym">}</span></li>
+<li><a name="a541"></a>                </li>
+<li><a name="a542"></a>                </li>
+<li><a name="a543"></a>            <span class="src-comm">//print_r( $arrAddress );</span></li>
+<li><a name="a544"></a>                </li>
+<li><a name="a545"></a>            <span class="src-comm">//uniquie addressess</span></li>
+<li><a name="a546"></a>            <span class="src-key">if</span><span class="src-sym">( </span><span class="src-key">empty</span><span class="src-sym">( </span><span class="src-var">$addr </span><span class="src-sym">) </span>== <span class="src-id">false </span><span class="src-sym">)</span></li>
+<li><a name="a547"></a>            <span class="src-sym">{</span></li>
+<li><a name="a548"></a>                <span class="src-key">foreach</span><span class="src-sym">( </span><span class="src-var">$addr </span><span class="src-key">AS </span><span class="src-var">$key </span>=&gt; <span class="src-var">$value </span><span class="src-sym">) </span></li>
+<li><a name="a549"></a>                <span class="src-sym">{</span></li>
+<li><a name="a550"></a>                    <span class="src-var">$value </span>= <a href="http://www.php.net/eregi_replace">eregi_replace</a><span class="src-sym">( </span><span class="src-str">'www.' </span><span class="src-sym">, </span><span class="src-str">'' </span><span class="src-sym">, </span><span class="src-var">$value </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a551"></a>                    <span class="src-key">if</span><span class="src-sym">( </span><span class="src-sym">!</span>isset<span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_addreses">_unique_addreses</a><span class="src-sym">[</span><span class="src-var">$value</span><span class="src-sym">] </span><span class="src-sym">) )</span></li>
+<li><a name="a552"></a>                    <span class="src-sym">{</span></li>
+<li><a name="a553"></a>                        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a554"></a>                        <span class="src-sym">{</span></li>
+<li><a name="a555"></a>                            print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Parse: Editing _unique_addreses, making : '</span>.<a href="http://www.php.net/htmlentities">htmlentities</a><span class="src-sym">( </span><a href="http://www.php.net/strip_tags">strip_tags</a><span class="src-sym">( </span><span class="src-var">$value </span><span class="src-sym">) )</span>.<span class="src-str">' &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a556"></a>                            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a557"></a>                        <span class="src-sym">}</span></li>
+<li><a name="a558"></a>                        </li>
+<li><a name="a559"></a>                        <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_addreses">_unique_addreses</a><span class="src-sym">[</span><span class="src-var">$value</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-str">'www'</span><span class="src-sym">] </span>= <span class="src-var">$value</span><span class="src-sym">;</span></li>
+<li><a name="a560"></a>                        <span class="src-comm">//protocol</span></li>
+<li><a name="a561"></a>                        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-sym">!</span><span class="src-key">empty</span><span class="src-sym">( </span><span class="src-var">$prot</span><span class="src-sym">[</span><span class="src-var">$key</span><span class="src-sym">] </span><span class="src-sym">) )</span></li>
+<li><a name="a562"></a>                        <span class="src-sym">{</span></li>
+<li><a name="a563"></a>                            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_addreses">_unique_addreses</a><span class="src-sym">[</span><span class="src-var">$value</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-str">'protocol'</span><span class="src-sym">] </span>= <span class="src-var">$prot</span><span class="src-sym">[</span><span class="src-var">$key</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a564"></a>                        <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a565"></a>                            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_addreses">_unique_addreses</a><span class="src-sym">[</span><span class="src-var">$value</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-str">'protocol'</span><span class="src-sym">] </span>= <span class="src-id">null</span><span class="src-sym">;</span></li>
+<li><a name="a566"></a>                        <span class="src-sym">}</span></li>
+<li><a name="a567"></a>                        <span class="src-comm">//port</span></li>
+<li><a name="a568"></a>                        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-sym">!</span><span class="src-key">empty</span><span class="src-sym">( </span><span class="src-var">$port</span><span class="src-sym">[</span><span class="src-var">$key</span><span class="src-sym">] </span><span class="src-sym">) )</span></li>
+<li><a name="a569"></a>                        <span class="src-sym">{</span></li>
+<li><a name="a570"></a>                            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_addreses">_unique_addreses</a><span class="src-sym">[</span><span class="src-var">$value</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-str">'port'</span><span class="src-sym">] </span>= <span class="src-var">$port</span><span class="src-sym">[</span><span class="src-var">$key</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a571"></a>                        <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a572"></a>                            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_addreses">_unique_addreses</a><span class="src-sym">[</span><span class="src-var">$value</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-str">'port'</span><span class="src-sym">] </span>= <span class="src-var">$port</span><span class="src-sym">[</span><span class="src-var">$key</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a573"></a>                        <span class="src-sym">}</span></li>
+<li><a name="a574"></a>                             </li>
+<li><a name="a575"></a>                    <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a576"></a>                        </li>
+<li><a name="a577"></a>                        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a578"></a>                        <span class="src-sym">{</span></li>
+<li><a name="a579"></a>                            print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Parse: Address exits at _unique_addersses : '</span>.<a href="http://www.php.net/htmlentities">htmlentities</a><span class="src-sym">( </span><a href="http://www.php.net/strip_tags">strip_tags</a><span class="src-sym">( </span><span class="src-var">$value </span><span class="src-sym">) )</span>.<span class="src-str">' &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a580"></a>                            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a581"></a>                        <span class="src-sym">}</span></li>
+<li><a name="a582"></a>                            </li>
+<li><a name="a583"></a>                    <span class="src-sym">}</span></li>
+<li><a name="a584"></a>                <span class="src-sym">}</span></li>
+<li><a name="a585"></a>    </li>
+<li><a name="a586"></a>                <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a587"></a>                <span class="src-sym">{                </span></li>
+<li><a name="a588"></a>                    print<span class="src-sym">( </span><span class="src-str">'---------------------------&lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a589"></a>                    <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a590"></a>                <span class="src-sym">}</span></li>
+<li><a name="a591"></a>            <span class="src-sym">}</span></li>
+<li><a name="a592"></a>        <span class="src-sym">}</span></li>
+<li><a name="a593"></a>    <span class="src-sym">}</span></li>
+<li><a name="a594"></a>        </li>
+<li><a name="a595"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a596"></a><span class="src-doc">    * Method parse html codes of web</span></li>
+<li><a name="a597"></a><span class="src-doc">    * page and retriving from html code</span></li>
+<li><a name="a598"></a><span class="src-doc">    * all existing href links.</span></li>
+<li><a name="a599"></a><span class="src-doc">    *</span></li>
+<li><a name="a600"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">string </span><span class="src-doc">html codes</span></li>
+<li><a name="a601"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">void </span></li>
+<li><a name="a602"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> private</span></li>
+<li><a name="a603"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a604"></a>    <span class="src-key">function </span><a href="../MegaSpider/MegaSpider.html#method_unique_hrefs">_unique_hrefs</a><span class="src-sym">( </span><span class="src-sym">&amp;</span><span class="src-var">$content </span><span class="src-sym">)</span></li>
+<li><a name="a605"></a>    <span class="src-sym">{</span></li>
+<li><a name="a606"></a>        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a607"></a>        <span class="src-sym">{</span></li>
+<li><a name="a608"></a>            print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Parse unique hrefs &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a609"></a>            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a610"></a>        <span class="src-sym">}</span></li>
+<li><a name="a611"></a>        </li>
+<li><a name="a612"></a>        <span class="src-var">$addr </span>= <span class="src-id">null</span><span class="src-sym">;</span></li>
+<li><a name="a613"></a>        <span class="src-var">$port </span>= <span class="src-id">null</span><span class="src-sym">;</span></li>
+<li><a name="a614"></a>        </li>
+<li><a name="a615"></a>        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-key">empty</span><span class="src-sym">( </span><span class="src-var">$content </span><span class="src-sym">) </span>== <span class="src-id">false </span><span class="src-sym">)</span></li>
+<li><a name="a616"></a>        <span class="src-sym">{</span></li>
+<li><a name="a617"></a>            <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a618"></a>            <span class="src-sym">{</span></li>
+<li><a name="a619"></a>                print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Parse: Parsing content &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a620"></a>                <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a621"></a>            <span class="src-sym">}</span></li>
+<li><a name="a622"></a>            </li>
+<li><a name="a623"></a>            <a href="http://www.php.net/preg_match_all">preg_match_all</a><span class="src-sym">(</span><span class="src-str">&quot;/&lt;[aA][[:space:]][hH][rR][eE][fF]=\&quot;([^\&quot;]+)\&quot;[^&gt;]+&gt;(.*)&lt;\/[aA]&gt;/&quot;</span><span class="src-sym">, </span><span class="src-var">$content </span><span class="src-sym">, </span><span class="src-var">$arrAddress </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a624"></a>                </li>
+<li><a name="a625"></a>            <span class="src-key">if</span><span class="src-sym">( </span><span class="src-key">empty</span><span class="src-sym">( </span><span class="src-var">$arrAddress</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">] </span><span class="src-sym">) </span>== <span class="src-id">false </span><span class="src-sym">)</span></li>
+<li><a name="a626"></a>            <span class="src-sym">{</span></li>
+<li><a name="a627"></a>                </li>
+<li><a name="a628"></a>                <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a629"></a>                <span class="src-sym">{</span></li>
+<li><a name="a630"></a>                    print<span class="src-sym">( </span>__LINE__.<span class="src-str">' &lt;b&gt;Found not identified hrefs&lt;/b&gt; &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a631"></a>                    <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a632"></a>                    print<span class="src-sym">( </span><span class="src-str">'---------------------------&lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a633"></a>                    <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a634"></a>                <span class="src-sym">}</span></li>
+<li><a name="a635"></a>                    </li>
+<li><a name="a636"></a>                    </li>
+<li><a name="a637"></a>                <span class="src-key">foreach</span><span class="src-sym">( </span><span class="src-var">$arrAddress</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">] </span><span class="src-key">AS </span><span class="src-var">$id </span>=&gt; <span class="src-var">$href </span><span class="src-sym">)</span></li>
+<li><a name="a638"></a>                <span class="src-sym">{</span></li>
+<li><a name="a639"></a>                    <span class="src-var">$href </span>= <a href="http://www.php.net/eregi_replace">eregi_replace</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_url">_url</a> <span class="src-sym">, </span><span class="src-str">'' </span><span class="src-sym">, </span><span class="src-var">$href </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a640"></a>                    </li>
+<li><a name="a641"></a>                    <span class="src-key">if</span><span class="src-sym">( </span><span class="src-sym">!</span><a href="http://www.php.net/eregi">eregi</a><span class="src-sym">( </span><span class="src-str">'http|www|mailto'</span><span class="src-sym">, </span><span class="src-var">$href </span><span class="src-sym">) </span>&amp;&amp; <span class="src-var">$href</span>!=<span class="src-str">&quot;#&quot; </span>&amp;&amp; <span class="src-sym">!</span><a href="http://www.php.net/eregi">eregi</a><span class="src-sym">( </span><span class="src-str">'javascript|;'</span><span class="src-sym">, </span><span class="src-var">$href </span><span class="src-sym">) )</span></li>
+<li><a name="a642"></a>                    <span class="src-sym">{</span></li>
+<li><a name="a643"></a>                        </li>
+<li><a name="a644"></a>                        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a645"></a>                        <span class="src-sym">{</span></li>
+<li><a name="a646"></a>                            <span class="src-key">if</span><span class="src-sym">( </span><span class="src-sym">!</span>isset<span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_hrefs">_unique_hrefs</a><span class="src-sym">[</span><span class="src-var">$href</span><span class="src-sym">] </span><span class="src-sym">) )</span></li>
+<li><a name="a647"></a>                            <span class="src-sym">{</span></li>
+<li><a name="a648"></a>                                <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_hrefs">_unique_hrefs</a><span class="src-sym">[</span><span class="src-var">$href</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-str">'href'</span><span class="src-sym">] </span>= <span class="src-var">$href</span><span class="src-sym">;</span></li>
+<li><a name="a649"></a>                                <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_hrefs">_unique_hrefs</a><span class="src-sym">[</span><span class="src-var">$href</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-str">'name'</span><span class="src-sym">] </span>= <span class="src-var">$arrAddress</span><span class="src-sym">[</span><span class="src-num">2</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-var">$id</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a650"></a>                                <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_hrefs">_unique_hrefs</a><span class="src-sym">[</span><span class="src-var">$href</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-str">'visit'</span><span class="src-sym">] </span>= <span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a651"></a>&nbsp;</li>
+<li><a name="a652"></a>                                <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a653"></a>                                <span class="src-sym">{</span></li>
+<li><a name="a654"></a>                                    print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Parse: Editing _unique_hrefs, making : '</span>.<a href="http://www.php.net/htmlentities">htmlentities</a><span class="src-sym">( </span><a href="http://www.php.net/strip_tags">strip_tags</a><span class="src-sym">( </span><span class="src-var">$href </span><span class="src-sym">) )</span>.<span class="src-str">' &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;                        </span></li>
+<li><a name="a655"></a>                                    <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a656"></a>                                <span class="src-sym">}</span></li>
+<li><a name="a657"></a>                            <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a658"></a>                                </li>
+<li><a name="a659"></a>                                <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a660"></a>                                <span class="src-sym">{</span></li>
+<li><a name="a661"></a>                                    print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Parse: Href exitst at _unique_hrefs, breaking : '</span>.<a href="http://www.php.net/htmlentities">htmlentities</a><span class="src-sym">( </span><a href="http://www.php.net/strip_tags">strip_tags</a><span class="src-sym">( </span><span class="src-var">$href </span><span class="src-sym">) )</span>.<span class="src-str">' &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a662"></a>                                    <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a663"></a>                                <span class="src-sym">}</span></li>
+<li><a name="a664"></a>                            </li>
+<li><a name="a665"></a>                            <span class="src-sym">}</span></li>
+<li><a name="a666"></a>                        <span class="src-sym">}</span></li>
+<li><a name="a667"></a>                    <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a668"></a>                        </li>
+<li><a name="a669"></a>                        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a670"></a>                        <span class="src-sym">{</span></li>
+<li><a name="a671"></a>                            print<span class="src-sym">( </span>__LINE__.<span class="src-str">' Parse: bad href expresion, breaking : '</span>.<a href="http://www.php.net/htmlentities">htmlentities</a><span class="src-sym">( </span><a href="http://www.php.net/strip_tags">strip_tags</a><span class="src-sym">( </span><span class="src-var">$href </span><span class="src-sym">) )</span>.<span class="src-str">' &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a672"></a>                            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a673"></a>                        <span class="src-sym">}</span></li>
+<li><a name="a674"></a>&nbsp;</li>
+<li><a name="a675"></a>                    <span class="src-sym">}</span></li>
+<li><a name="a676"></a>                <span class="src-sym">}</span></li>
+<li><a name="a677"></a>                    </li>
+<li><a name="a678"></a>                <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a679"></a>                <span class="src-sym">{</span></li>
+<li><a name="a680"></a>                    print<span class="src-sym">( </span><span class="src-str">'---------------------------&lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a681"></a>                    <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a682"></a>                <span class="src-sym">}</span></li>
+<li><a name="a683"></a>                    </li>
+<li><a name="a684"></a>            <span class="src-sym">}</span></li>
+<li><a name="a685"></a>&nbsp;</li>
+<li><a name="a686"></a>        <span class="src-sym">}</span></li>
+<li><a name="a687"></a>    <span class="src-sym">}</span></li>
+<li><a name="a688"></a>        </li>
+<li><a name="a689"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a690"></a><span class="src-doc">    * Method prints in debug mode</span></li>
+<li><a name="a691"></a><span class="src-doc">    * statistics of found adresses</span></li>
+<li><a name="a692"></a><span class="src-doc">    * and emails.</span></li>
+<li><a name="a693"></a><span class="src-doc">    *</span></li>
+<li><a name="a694"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">void </span></li>
+<li><a name="a695"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> private</span></li>
+<li><a name="a696"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a697"></a>    <span class="src-key">function </span><a href="../MegaSpider/MegaSpider.html#method_stats">_stats</a><span class="src-sym">( </span><span class="src-sym">)</span></li>
+<li><a name="a698"></a>    <span class="src-sym">{</span></li>
+<li><a name="a699"></a>        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a700"></a>        <span class="src-sym">{</span></li>
+<li><a name="a701"></a>            </li>
+<li><a name="a702"></a>            print<span class="src-sym">( </span><span class="src-str">'&lt;br&gt;&lt;br&gt;&lt;h4&gt;Total Statistic &lt;/h4&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a703"></a>            print<span class="src-sym">( </span><span class="src-str">'---------------------------&lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a704"></a>            print<span class="src-sym">( </span><span class="src-str">'Unique WWW addresses : '</span>. <a href="http://www.php.net/sizeof">sizeof</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_addreses">_unique_addreses</a> <span class="src-sym">)</span>.<span class="src-str">' &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a705"></a>            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a706"></a>            </li>
+<li><a name="a707"></a>            print<span class="src-sym">( </span><span class="src-str">'Unique EMAIL addresses : '</span>. <a href="http://www.php.net/sizeof">sizeof</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_emails">_unique_emails</a> <span class="src-sym">)</span>.<span class="src-str">' &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a708"></a>            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a709"></a>&nbsp;</li>
+<li><a name="a710"></a>            print<span class="src-sym">( </span><span class="src-str">'Total Pages parsed : '</span>. <a href="http://www.php.net/sizeof">sizeof</a><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_unique_hrefs">_unique_hrefs</a> <span class="src-sym">)</span>.<span class="src-str">' &lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a711"></a>            <span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a712"></a>            print<span class="src-sym">( </span><span class="src-str">'---------------------------&lt;br&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a713"></a>        <span class="src-sym">}</span></li>
+<li><a name="a714"></a>    <span class="src-sym">}</span></li>
+<li><a name="a715"></a>        </li>
+<li><a name="a716"></a>        </li>
+<li><a name="a717"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a718"></a><span class="src-doc">    * Method prints in debug mode</span></li>
+<li><a name="a719"></a><span class="src-doc">    * javascript thtat scroll down</span></li>
+<li><a name="a720"></a><span class="src-doc">    * the page.</span></li>
+<li><a name="a721"></a><span class="src-doc">    *</span></li>
+<li><a name="a722"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">void </span></li>
+<li><a name="a723"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> private</span></li>
+<li><a name="a724"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a725"></a>    <span class="src-key">function </span><a href="../MegaSpider/MegaSpider.html#method_scrollDown">_scrollDown</a><span class="src-sym">( </span><span class="src-sym">)</span></li>
+<li><a name="a726"></a>    <span class="src-sym">{</span></li>
+<li><a name="a727"></a>        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a728"></a>        <span class="src-sym">{</span></li>
+<li><a name="a729"></a>            print<span class="src-sym">( </span><span class="src-str">'&lt;script&gt; window.scrollBy(0,1000000); &lt;/script&gt; ' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a730"></a>        <span class="src-sym">}</span></li>
+<li><a name="a731"></a>    <span class="src-sym">}        </span></li>
+<li><a name="a732"></a>&nbsp;</li>
+<li><a name="a733"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a734"></a><span class="src-doc">    * Runs microtime of run time</span></li>
+<li><a name="a735"></a><span class="src-doc">    * of aplication.</span></li>
+<li><a name="a736"></a><span class="src-doc">    *</span></li>
+<li><a name="a737"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">void </span></li>
+<li><a name="a738"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> private</span></li>
+<li><a name="a739"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a740"></a>    <span class="src-key">function </span><a href="../MegaSpider/MegaSpider.html#method_run_time">_run_time</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a741"></a>        <span class="src-var">$micro_time </span>= <a href="http://www.php.net/microtime">microtime</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a742"></a>        <span class="src-var">$micro_time </span>= <a href="http://www.php.net/explode">explode</a><span class="src-sym">(</span><span class="src-str">&quot; &quot;</span><span class="src-sym">,</span><span class="src-var">$micro_time</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a743"></a>        </li>
+<li><a name="a744"></a>        <span class="src-var">$this </span><span class="src-sym">-&gt; </span><span class="src-var">_run_time </span>= <span class="src-var">$micro_time</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">] </span>+ <span class="src-var">$micro_time</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a745"></a>    <span class="src-sym">}</span></li>
+<li><a name="a746"></a>    </li>
+<li><a name="a747"></a>    </li>
+<li><a name="a748"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a749"></a><span class="src-doc">    * In debug mode prints out</span></li>
+<li><a name="a750"></a><span class="src-doc">    * full time of application work.</span></li>
+<li><a name="a751"></a><span class="src-doc">    *</span></li>
+<li><a name="a752"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">integer </span><span class="src-doc">run time</span></li>
+<li><a name="a753"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a754"></a><span class="src-doc">    ***/</span></li>
+<li><a name="a755"></a>    <span class="src-key">function </span><a href="../MegaSpider/MegaSpider.html#method_end_time">_end_time</a><span class="src-sym">( </span><span class="src-sym">)</span></li>
+<li><a name="a756"></a>    <span class="src-sym">{</span></li>
+<li><a name="a757"></a>        <span class="src-var">$micro_time </span>= <a href="http://www.php.net/microtime">microtime</a><span class="src-sym">( </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a758"></a>        <span class="src-var">$micro_time </span>= <a href="http://www.php.net/explode">explode</a><span class="src-sym">(</span><span class="src-str">&quot; &quot;</span><span class="src-sym">,</span><span class="src-var">$micro_time</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a759"></a>        <span class="src-var">$this </span><span class="src-sym">-&gt; </span><span class="src-var">_end_time </span>= <span class="src-var">$micro_time</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">] </span>+ <span class="src-var">$micro_time</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a760"></a>&nbsp;</li>
+<li><a name="a761"></a>        <span class="src-var">$total </span>= <span class="src-sym">(</span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><span class="src-var">_end_time </span>- <span class="src-var">$this </span><span class="src-sym">-&gt; </span><span class="src-var">_run_time</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a762"></a>&nbsp;</li>
+<li><a name="a763"></a>        <span class="src-var">$total </span>= <a href="http://www.php.net/round">round</a><span class="src-sym">(</span><span class="src-var">$total</span><span class="src-sym">, </span><span class="src-num">3</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a764"></a>        </li>
+<li><a name="a765"></a>        <span class="src-key">if</span><span class="src-sym">( </span><span class="src-var">$this </span><span class="src-sym">-&gt; </span><a href="../MegaSpider/MegaSpider.html#var$_debug">_debug</a> == <span class="src-id">true </span><span class="src-sym">)</span></li>
+<li><a name="a766"></a>        <span class="src-sym">{</span></li>
+<li><a name="a767"></a>            print<span class="src-sym">( </span><span class="src-str">'&lt;h4&gt;Total Time : '</span>.<span class="src-var">$total</span>.<span class="src-str">' &lt;/h4&gt;' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a768"></a>        <span class="src-sym">}</span></li>
+<li><a name="a769"></a>        </li>
+<li><a name="a770"></a>        <span class="src-key">return </span><span class="src-var">$total</span><span class="src-sym">;</span></li>
+<li><a name="a771"></a>    <span class="src-sym">}</span></li>
+<li><a name="a772"></a>&nbsp;</li>
+<li><a name="a773"></a><span class="src-comm">/* EOF */</span></li>
+<li><a name="a774"></a><span class="src-sym">}</span></li>
+<li><a name="a775"></a><span class="src-php">?&gt;</span></li>
+</ol></pre></div>
+</div>
+        <div class="credit">
+		    <hr />
+		    Documentation generated on Thu,  5 May 2005 11:46:43 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.3.0RC3</a>
+	      </div>
+      </td></tr></table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

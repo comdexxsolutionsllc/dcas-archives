@@ -1,0 +1,10 @@
+The zip code table must contain at least three columns, one each for the zip code, the longitude,
+and the latitude.  Other columns in the table are not used.  The default column names are zip,
+lon, and lat.  Different column names may be used by calling the setZipColumn, setLonColumn, and
+setLatColumn methods.  The name of the table defaults to zips but may also be changed using the
+setTableName method.  The data needed for this class to operate properly can be obtained for free
+from several sources on the internet. One such source is the U.S. government census bureau.
+(http://www.census.gov/geo/www/gazetteer/places.html)  This class was tested using the 1990 zip
+code file as the 2000 ZCTA file was not available when work started.  The 2000 ZCTA file has a 
+different format (represents longitude and latitude as +/-) which may have unexpected results.
+For help creating the database table see the documentation for your RDBMS.

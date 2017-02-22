@@ -1,0 +1,76 @@
+<?php if(!@$_SESSION['loggedin']) header("Location: logout.php"); ?>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td colspan="2"><img src="/img/red_arrow.jpg" alt="">&nbsp;<b>DNS Management<b></b></b></td>
+			</tr>
+			<tr>
+				<td width="10">&nbsp;</td>
+
+				<td>
+				    <a href="/dns/domain.html?action=search" alt="" class="linkN">Search DNS Records</a><br>
+				    <a href="/dns/domain.html?action=insert" alt="" class="linkN">Add DNS Record</a><br>
+				    <a href="/dns/domain_bulk_add.html" alt="" class="linkN">Bulk DNS Add</a><br>
+				    <a href="/dns/domain.html" alt="" class="linkN">DNS List</a><br>
+				    <a href="/dns/domain.html?action=menu&amp;search_string=in-addr.arpa" alt="" class="linkN">Reverse DNS</a><br>
+
+				</td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+
+			<tr>
+				<td colspan="2"><img src="/img/red_arrow.jpg" alt="">&nbsp;<b>McAfee Management<b></b></b></td>
+			</tr>
+			<tr>
+				<td width="10">&nbsp;</td>
+
+				<td><a href="/security/mcafee.html" alt="" class="linkN">Customer McAfee Logs / Settings</a></td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+
+			<tr>
+				<td colspan="2"><img src="/img/red_arrow.jpg" alt="">&nbsp;<b>SWIP Management<b></b></b></td>
+			</tr>
+			<tr>
+				<td width="10">&nbsp;</td>
+
+				<td><a href="/hardware/SWIP.html" alt="" class="linkN">Manage SWIP Transactions</a></td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+
+		</tbody></table>
+		</td><td align="left" valign="top" width="33%">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td colspan="2"><img src="/img/red_arrow.jpg" alt="">&nbsp;<b>NAS / Lockbox<b></b></b></td>
+
+			</tr>
+			<tr>
+				<td width="10">&nbsp;</td>
+				<td>
+				        <a href="/services/nas_summary.html" alt="" class="linkN">NAS Customer List</a><br>
+                        <a href="/services/nas_summary.html?NAS_TYPE=LOCKBOX" alt="" class="linkN">LockBox Customer List</a><br>
+                </td>
+			</tr>
+
+			<tr><td colspan="2">&nbsp;</td></tr>
+
+			<tr>
+				<td colspan="2"><img src="/img/red_arrow.jpg" alt="">&nbsp;<b>Vulnerability Scanning<b></b></b></td>
+			</tr>
+			<tr>
+				<td width="10">&nbsp;</td>
+				<td><a href="/security/nessus.html" alt="" class="linkN">Customer Nessus Scans</a></td>
+
+			</tr>
+						<tr><td colspan="2">&nbsp;</td></tr>
+			<tr>
+				<td colspan="2"><img src="/img/red_arrow.jpg" alt="">&nbsp;<b>Hardware Firewalls<b></b></b></td>
+			</tr>
+			<tr>
+				<td width="10">&nbsp;</td>
+				<td><a href="/network/firewall_service_module.html" alt="" class="linkN">Customer Firewall Management</a></td>
+
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+
+	    </tbody></table>

@@ -1,0 +1,78 @@
+0.  UML Plotting / Database Schema creation								     [14-23 HOURS]
+    A.  UML Plotting								PROGRAMATIC FLOW OUTLINE	1-2  HOURS
+    B.  Database Schema Creation											3-5  HOURS
+    C.  Framework Creation							ALREADY DONE			0-0  HOURS
+    D.  Database Information Porting					3 SYSTEMS	(2 EA)		5-6  HOURS
+    E.  Graphics Design								INDEPENDENT CONTRACTOR		5-10 HOURS
+1.  Billing system												     [51-80  HOURS]
+    A.  Billing Summary													3-4  HOURS
+    B.  Order Processing												3-4  HOURS
+    C.  Manual Order Entry												3-4  HOURS
+    D.  Pending Order Review / Denied Order Review								2-4  HOURS
+    E.  Credit Card Transactions											1-2  HOURS
+    F.  Paypal Transactions												1-2  HOURS
+    G.  Pending Manual Payments											2-3  HOURS
+    H.  Pending Credit Card Changes											2-3  HOURS
+    I.  Promotional Codes												1-2  HOURS
+    J.  Delivery Time Edit												1-2  HOURS
+    K.  Edit Service Offering Availability									1-2  HOURS
+    L.  Daily Sales Report												1-3  HOURS
+    M.  Sales On Track Report												1-3  HOURS
+    N.  Sales Summary Graph												1-3  HOURS
+    O.  Cancellation Summary Graph											1-3  HOURS
+2.  Ordering system												     [3-7  HOURS] *42*
+    A.  Cart														1-3  HOURS
+    B.  Admin Integration							PREVIOUSLY QUOTED			0-0  HOURS
+    C.  Billing System Integration											1-2  HOURS
+    D.  Order Summary													1-2  HOURS
+3.  Integration with Paypal and 2CO										     [2-4  HOURS]
+    A.  PayPal														1-2  HOURS
+    B.  2C0															1-2  HOURS
+4.  Billing reminders, Paypal subscriptions, Mass emails						     [5-7  HOURS]
+    A.  Billing Reminders												1-2  HOURS
+    B.  PayPal Subscriptions												2-2  HOURS
+    C.  Mass Email List													2-3  HOURS
+5.  Newsletter [m]												     [1-2  HOURS] [!]
+6.  MRTG and Bandwidth Graphs											     [4-8  HOURS]
+    A. Inbound														1-2  HOURS
+    B. Outbound														1-2  HOURS
+    C. Agregate														1-2  HOURS
+    D. Private									NOT IMPLEMENTED			0-0  HOURS
+    E. Switch Information												1-2  HOURS
+7.  Customer reboot facility											     [1-5  HOURS]
+    A. Access Control								IMPLEMENTING CURRENTLY		1-2  HOURS
+    B. Reboot ALs														0-1  HOURS
+    C. Server Correlation Data						PEND. FOR INFO.			0-2  HOURS
+8.  Support Tickets								VAR. - CANT QUOTE - EXTENSIVE[?-?  HOURS] [All-Phase] 36 hours
+9.  Portal Administration											     [40-72 HOURS]
+    A.  Add Client													1-2  HOURS
+    B.  Add Employee													1-2  HOURS
+    C.  Employee Portal Access											0-1  HOURS
+    D.  Client Portal Access												0-1  HOURS
+    E.  Employee Internal Details											0-1  HOURS
+    F.  Superuser Admin													3-4  HOURS
+    G.  Secret Key Management												1-1  HOURS
+    H.  Permission Management												5-6  HOURS
+    I.  Portal Emergency Notification										3-4  HOURS
+    J.  Change Log Management												1-2  HOURS
+    K.  Portal Network Status												5-10 HOURS
+    L.  Group Index Page Mangement											5-10 HOURS
+    M.  View Logs														2-3  HOURS
+    N.  DB Admin (ticket group, emp titles, etc..)								5-10 HOURS
+    O.  Signup Form Administration											3-5  HOURS
+    P.  Service Resource Administration										5-10 HOURS
+10. Network														     [4-6  HOURS]
+    A.  IP Search														2-3  HOURS
+    B.  Reboot Power Strips Administration				SIMPLE LINK. NO TIME.		0-0  HOURS
+    C.  Switch Administration												2-3  HOURS
+11. Accounting													     [4-8  HOURS]
+    A.  View All Invoices												1-2  HOURS
+    B.  View Pending Invoices												1-2  HOURS
+    C.  View Monthly Invoices												1-2  HOURS
+    D.  Change Cancellation Reason											1-2  HOURS
+
+
+
+
+
+265 hours = 4505.00

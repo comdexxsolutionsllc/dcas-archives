@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for accessControl.class.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file accessControl.class.php</h1>
+<p>Documentation is available at <a href="../accessControl/_accesscontrol_accessControl_class_php.html">accessControl.class.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a>&nbsp;</li>
+<li><a name="a3"></a><span class="src-doc">/**</span></li>
+<li><a name="a4"></a><span class="src-doc">* </span><span class="src-doc-coretag">@package</span><span class="src-doc"> accessControl</span></li>
+<li><a name="a5"></a><span class="src-doc">* </span><span class="src-doc-coretag">@author</span><span class="src-doc"> Joshua Abbott, WiseGene Project (NKommunikation)</span></li>
+<li><a name="a6"></a><span class="src-doc">* </span><span class="src-doc-coretag">@copyright</span><span class="src-doc"> (C) 2006 NKommunikation. All Rights Reserved.</span></li>
+<li><a name="a7"></a><span class="src-doc">* </span><span class="src-doc-tag">@desc</span><span class="src-doc">            It is a simple class to implement an access</span></li>
+<li><a name="a8"></a><span class="src-doc">*                control, with log of had access files, user</span></li>
+<li><a name="a9"></a><span class="src-doc">*                agent and other string that the server can</span></li>
+<li><a name="a10"></a><span class="src-doc">*                get with the array $_SERVER</span></li>
+<li><a name="a11"></a><span class="src-doc">*                It also implements methods to analyse logs</span></li>
+<li><a name="a12"></a><span class="src-doc">*                generated</span></li>
+<li><a name="a13"></a><span class="src-doc">* </span><span class="src-doc-coretag">@uses</span></li>
+<li><a name="a14"></a><span class="src-doc">* </span><span class="src-doc-coretag">@example</span></li>
+<li><a name="a15"></a><span class="src-doc">* </span><span class="src-doc-tag">@files</span></li>
+<li><a name="a16"></a><span class="src-doc">*/</span></li>
+<li><a name="a17"></a>&nbsp;</li>
+<li><a name="a18"></a><span class="src-key">class </span><a href="../accessControl/accessControl.html">accessControl</a> <span class="src-sym">{</span></li>
+<li><a name="a19"></a>&nbsp;</li>
+<li><a name="a20"></a>    <span class="src-key">var </span><a href="../accessControl/accessControl.html#var$file">$file</a> = <span class="src-str">'logs.txt'</span><span class="src-sym">;        </span><span class="src-comm">// @var file string            File when is loged the informations</span></li>
+<li><a name="a20"></a>    </li>
+<li><a name="a21"></a>    <span class="src-key">var </span><a href="../accessControl/accessControl.html#var$arr">$arr</a><span class="src-sym">;                    </span><span class="src-comm">// @var arr  array            Information's array that contains data</span></li>
+<li><a name="a21"></a>    </li>
+<li><a name="a22"></a>    <span class="src-key">var </span><a href="../accessControl/accessControl.html#var$ignoreReload">$ignoreReload</a> = <span class="src-id">TRUE</span><span class="src-sym">;    </span><span class="src-comm">// @var ignoreReload bool    ignore or not the reload of user agent</span></li>
+<li><a name="a23"></a>&nbsp;</li>
+<li><a name="a24"></a>    <span class="src-comm">//!--------------------------------------------------</span></li>
+<li><a name="a25"></a>    <span class="src-comm">// @function    accessControl::accessControl</span></li>
+<li><a name="a26"></a>    <span class="src-comm">// @desc        Class constructor</span></li>
+<li><a name="a27"></a>    <span class="src-comm">//                this function verify if the param to</span></li>
+<li><a name="a28"></a>    <span class="src-comm">//                ignore the user reload was informed </span></li>
+<li><a name="a29"></a>    <span class="src-comm">//                and if a log file exists.</span></li>
+<li><a name="a30"></a>    <span class="src-comm">// @param        ignore bool        Ignore the agent reload</span></li>
+<li><a name="a31"></a>    <span class="src-comm">// @access        public</span></li>
+<li><a name="a32"></a>    <span class="src-comm">// @return        void</span></li>
+<li><a name="a33"></a>    <span class="src-comm">//!--------------------------------------------------</span></li>
+<li><a name="a33"></a>    </li>
+<li><a name="a34"></a>    <span class="src-key">function </span><a href="../accessControl/accessControl.html#methodaccessControl">accessControl</a><span class="src-sym">(</span><span class="src-var">$ignore </span>= <span class="src-id">FALSE</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a35"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$ignoreReload">ignoreReload</a> = <span class="src-var">$ignore</span><span class="src-sym">;</span></li>
+<li><a name="a36"></a>        <span class="src-key">if </span><span class="src-sym">( </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$ignoreReload">ignoreReload</a> == <span class="src-id">TRUE </span><span class="src-sym">)</span></li>
+<li><a name="a37"></a>            <a href="http://www.php.net/session_start">session_start</a><span class="src-sym">(</span><span class="src-str">'ACCESS'</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a38"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">! </span><a href="http://www.php.net/file_exists">file_exists</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$file">file</a><span class="src-sym">) )</span><span class="src-sym">{</span></li>
+<li><a name="a39"></a>            <span class="src-var">$x </span>= <a href="http://www.php.net/fopen">fopen</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$file">file</a><span class="src-sym">, </span><span class="src-str">&quot;w+&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a40"></a>            <a href="http://www.php.net/fclose">fclose</a><span class="src-sym">(</span><span class="src-var">$x</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a41"></a>        <span class="src-sym">}</span></li>
+<li><a name="a42"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$arr">arr</a> = <a href="http://www.php.net/file">file</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$file">file</a><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a43"></a>    <span class="src-sym">}</span></li>
+<li><a name="a44"></a>&nbsp;</li>
+<li><a name="a45"></a>    <span class="src-comm">//!--------------------------------------------------</span></li>
+<li><a name="a46"></a>    <span class="src-comm">// @function    accessControl::_processLog</span></li>
+<li><a name="a47"></a>    <span class="src-comm">// @desc        Save the array's content to file </span></li>
+<li><a name="a48"></a>    <span class="src-comm">// @param        desc resource    Handler to save the file</span></li>
+<li><a name="a49"></a>    <span class="src-comm">// @access        private</span></li>
+<li><a name="a50"></a>    <span class="src-comm">// @return        void</span></li>
+<li><a name="a51"></a>    <span class="src-comm">//!--------------------------------------------------</span></li>
+<li><a name="a51"></a>    </li>
+<li><a name="a52"></a>    <span class="src-key">function </span><span class="src-id">_processLog</span><span class="src-sym">(</span><span class="src-var">$desc</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a53"></a>        <span class="src-key">for </span><span class="src-sym">( </span><span class="src-var">$i </span>= <span class="src-num">0</span><span class="src-sym">; </span><span class="src-var">$i </span>&lt; <a href="http://www.php.net/sizeof">sizeof</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$arr">arr</a><span class="src-sym">)</span><span class="src-sym">; </span><span class="src-var">$i</span>++<span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a54"></a>            <span class="src-var">$newline </span>= <a href="http://www.php.net/explode">explode</a><span class="src-sym">(</span><span class="src-str">&quot;\t&quot;</span><span class="src-sym">,</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$arr">arr</a><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a55"></a>            <span class="src-var">$tmp </span>= <a href="http://www.php.net/trim">trim</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$arr">arr</a><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">]</span><span class="src-sym">) </span>. <span class="src-str">&quot;\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a56"></a>            <span class="src-key">if</span><span class="src-sym">(</span><span class="src-var">$tmp</span><span class="src-sym">)</span></li>
+<li><a name="a57"></a>                <a href="http://www.php.net/fputs">fputs</a><span class="src-sym">(</span><span class="src-var">$desc</span><span class="src-sym">, </span><span class="src-var">$tmp</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a58"></a>        <span class="src-sym">}</span></li>
+<li><a name="a59"></a>    <span class="src-sym">}</span></li>
+<li><a name="a60"></a>&nbsp;</li>
+<li><a name="a61"></a>    <span class="src-comm">//!--------------------------------------------------</span></li>
+<li><a name="a62"></a>    <span class="src-comm">// @function    accessControl::executeFiles</span></li>
+<li><a name="a63"></a>    <span class="src-comm">// @desc        It registers in the log that the file</span></li>
+<li><a name="a64"></a>    <span class="src-comm">//                was accessed whit the file name. If</span></li>
+<li><a name="a65"></a>    <span class="src-comm">//                the file already accessed it increment</span></li>
+<li><a name="a66"></a>    <span class="src-comm">//                a the number that indicates the number</span></li>
+<li><a name="a67"></a>    <span class="src-comm">//                of accesses</span></li>
+<li><a name="a68"></a>    <span class="src-comm">// @access        private</span></li>
+<li><a name="a69"></a>    <span class="src-comm">// @return        void</span></li>
+<li><a name="a70"></a>    <span class="src-comm">//!--------------------------------------------------</span></li>
+<li><a name="a70"></a>    </li>
+<li><a name="a71"></a>    <span class="src-key">function </span><a href="../accessControl/accessControl.html#methodexecuteFiles">executeFiles</a><span class="src-sym">(</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a72"></a>        <span class="src-var">$str </span>= <span class="src-var">$_SERVER</span><span class="src-sym">[</span><span class="src-str">'REQUEST_URI'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a73"></a>        <span class="src-var">$desc </span>= <a href="http://www.php.net/fopen">fopen</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$file">file</a><span class="src-sym">, </span><span class="src-str">&quot;w+&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a74"></a>        <span class="src-key">foreach </span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$arr">arr</a> <span class="src-key">as </span><span class="src-var">$p</span>=&gt;<span class="src-var">$l</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a75"></a>            <span class="src-key">if</span><span class="src-sym">(</span><a href="http://www.php.net/strstr">strstr</a><span class="src-sym">(</span><span class="src-var">$l</span><span class="src-sym">, </span><span class="src-var">$str</span><span class="src-sym">)) </span><span class="src-sym">{</span></li>
+<li><a name="a76"></a>                <span class="src-var">$newline </span>= <a href="http://www.php.net/explode">explode</a><span class="src-sym">(</span><span class="src-str">&quot;\t&quot;</span><span class="src-sym">,</span><span class="src-var">$l</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a77"></a>                <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$newline</span><span class="src-sym">[</span><span class="src-num">2</span><span class="src-sym">] </span>== <span class="src-num">0</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a78"></a>                    <span class="src-var">$i </span>= <a href="http://www.php.net/trim">trim</a><span class="src-sym">(</span><span class="src-var">$newline</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a79"></a>                    <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$ignoreReload">ignoreReload</a> == <span class="src-id">FALSE</span><span class="src-sym">)</span></li>
+<li><a name="a80"></a>                        <span class="src-var">$i</span>++<span class="src-sym">;</span></li>
+<li><a name="a81"></a>                    <span class="src-var">$j </span>= <a href="http://www.php.net/trim">trim</a><span class="src-sym">(</span><span class="src-var">$newline</span><span class="src-sym">[</span><span class="src-num">3</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a82"></a>                    <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$arr">arr</a><span class="src-sym">[</span><span class="src-var">$p</span><span class="src-sym">] </span>= <span class="src-var">$newline</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">] </span>. <span class="src-str">&quot;\t&quot; </span>. <span class="src-var">$i </span>. <span class="src-str">&quot;\t0\t&quot; </span>. ++<span class="src-var">$j </span>. <span class="src-str">&quot;\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a83"></a>                    <span class="src-var">$found </span>= <span class="src-id">TRUE</span><span class="src-sym">;</span></li>
+<li><a name="a84"></a>                    <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a85"></a>                <span class="src-sym">}</span></li>
+<li><a name="a86"></a>            <span class="src-sym">}</span></li>
+<li><a name="a87"></a>        <span class="src-sym">}</span></li>
+<li><a name="a88"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-var">$found</span><span class="src-sym">)</span></li>
+<li><a name="a89"></a>            <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$arr">arr</a><span class="src-sym">[</span><span class="src-sym">] </span>= <span class="src-var">$str </span>. <span class="src-str">&quot;\t0\t0\t0\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a90"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">_processLog</span><span class="src-sym">(</span><span class="src-var">$desc</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a91"></a>        <a href="http://www.php.net/fclose">fclose</a><span class="src-sym">(</span><span class="src-var">$desc</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a92"></a>    <span class="src-sym">}</span></li>
+<li><a name="a93"></a>&nbsp;</li>
+<li><a name="a94"></a>    <span class="src-comm">//!--------------------------------------------------</span></li>
+<li><a name="a95"></a>    <span class="src-comm">// @function    accessControl::executeGeneric</span></li>
+<li><a name="a96"></a>    <span class="src-comm">// @desc        In the same way that executeFiles, it</span></li>
+<li><a name="a97"></a>    <span class="src-comm">//                register a string that can be retorned</span></li>
+<li><a name="a98"></a>    <span class="src-comm">//                by the $_SERVER variable when the user</span></li>
+<li><a name="a99"></a>    <span class="src-comm">//                to access the file.</span></li>
+<li><a name="a100"></a>    <span class="src-comm">// @param        var string        it informs which is the</span></li>
+<li><a name="a101"></a>    <span class="src-comm">//                variable name to register to file</span></li>
+<li><a name="a102"></a>    <span class="src-comm">// @param        ind integer        it informs the id which</span></li>
+<li><a name="a103"></a>    <span class="src-comm">//                will be used to consult this variable</span></li>
+<li><a name="a104"></a>    <span class="src-comm">// @access        private</span></li>
+<li><a name="a105"></a>    <span class="src-comm">// @return        void</span></li>
+<li><a name="a106"></a>    <span class="src-comm">//!--------------------------------------------------</span></li>
+<li><a name="a106"></a>    </li>
+<li><a name="a107"></a>    <span class="src-key">function </span><a href="../accessControl/accessControl.html#methodexecuteGeneric">executeGeneric</a><span class="src-sym">(</span><span class="src-var">$var</span><span class="src-sym">, </span><span class="src-var">$ind</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a108"></a>        <span class="src-var">$desc </span>= <a href="http://www.php.net/fopen">fopen</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$file">file</a><span class="src-sym">, </span><span class="src-str">&quot;w+&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a109"></a>        <span class="src-var">$str </span>= <span class="src-var">$_SERVER</span><span class="src-sym">[</span><span class="src-var">$var</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a110"></a>        <span class="src-key">if </span><span class="src-sym">(</span><a href="http://www.php.net/is_null">is_null</a><span class="src-sym">(</span><span class="src-var">$str</span><span class="src-sym">)) </span><span class="src-sym">{</span></li>
+<li><a name="a111"></a>            <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">_processLog</span><span class="src-sym">(</span><span class="src-var">$desc</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a112"></a>            <span class="src-key">return </span><span class="src-id">FALSE</span><span class="src-sym">;</span></li>
+<li><a name="a113"></a>        <span class="src-sym">}</span></li>
+<li><a name="a114"></a>        <span class="src-key">foreach </span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$arr">arr</a> <span class="src-key">as </span><span class="src-var">$p</span>=&gt;<span class="src-var">$l</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a115"></a>            <span class="src-key">if</span><span class="src-sym">(</span><a href="http://www.php.net/strstr">strstr</a><span class="src-sym">(</span><span class="src-var">$l</span><span class="src-sym">, </span><span class="src-var">$str</span><span class="src-sym">)) </span><span class="src-sym">{</span></li>
+<li><a name="a116"></a>                <span class="src-var">$newline </span>= <a href="http://www.php.net/explode">explode</a><span class="src-sym">(</span><span class="src-str">&quot;\t&quot;</span><span class="src-sym">,</span><span class="src-var">$l</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a117"></a>                <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$newline</span><span class="src-sym">[</span><span class="src-num">2</span><span class="src-sym">] </span>== <span class="src-var">$ind</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a118"></a>                    <span class="src-var">$i </span>= <a href="http://www.php.net/trim">trim</a><span class="src-sym">(</span><span class="src-var">$newline</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a119"></a>                    <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$arr">arr</a><span class="src-sym">[</span><span class="src-var">$p</span><span class="src-sym">] </span>= <span class="src-var">$newline</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">] </span>. <span class="src-str">&quot;\t&quot; </span>. ++<span class="src-var">$i </span>. <span class="src-str">&quot;</span><span class="src-str">\t<span class="src-var">$ind</span>\n</span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a120"></a>                    <span class="src-var">$found </span>= <span class="src-id">TRUE</span><span class="src-sym">;</span></li>
+<li><a name="a121"></a>                    <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a122"></a>                <span class="src-sym">}</span></li>
+<li><a name="a123"></a>            <span class="src-sym">}</span></li>
+<li><a name="a124"></a>        <span class="src-sym">}</span></li>
+<li><a name="a125"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-var">$found</span><span class="src-sym">)</span></li>
+<li><a name="a126"></a>            <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$arr">arr</a><span class="src-sym">[</span><span class="src-sym">] </span>= <span class="src-var">$str </span>. <span class="src-str">&quot;</span><span class="src-str">\t0\t<span class="src-var">$ind</span>\n</span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a127"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">_processLog</span><span class="src-sym">(</span><span class="src-var">$desc</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a128"></a>        <a href="http://www.php.net/fclose">fclose</a><span class="src-sym">(</span><span class="src-var">$desc</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a129"></a>    <span class="src-sym">}</span></li>
+<li><a name="a130"></a>&nbsp;</li>
+<li><a name="a131"></a>    <span class="src-comm">//!--------------------------------------------------</span></li>
+<li><a name="a132"></a>    <span class="src-comm">// @function    accessControl::resumeFiles</span></li>
+<li><a name="a133"></a>    <span class="src-comm">// @desc        Make the information resume of files</span></li>
+<li><a name="a134"></a>    <span class="src-comm">//                had been access</span></li>
+<li><a name="a135"></a>    <span class="src-comm">//                If ignoreReload is set the &quot;Amount&quot; field</span></li>
+<li><a name="a136"></a>    <span class="src-comm">//                will not be increase, but the &quot;Total&quot; field</span></li>
+<li><a name="a137"></a>    <span class="src-comm">//                ever store all access</span></li>
+<li><a name="a138"></a>    <span class="src-comm">// @access        private</span></li>
+<li><a name="a139"></a>    <span class="src-comm">// @return        void</span></li>
+<li><a name="a140"></a>    <span class="src-comm">//!--------------------------------------------------</span></li>
+<li><a name="a140"></a>    </li>
+<li><a name="a141"></a>    <span class="src-key">function </span><a href="../accessControl/accessControl.html#methodresumeFiles">resumeFiles</a><span class="src-sym">(</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a142"></a>        <span class="src-key">foreach </span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$arr">arr</a> <span class="src-key">as </span><span class="src-var">$l</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a143"></a>            <span class="src-var">$newline </span>= <a href="http://www.php.net/explode">explode</a><span class="src-sym">(</span><span class="src-str">&quot;\t&quot;</span><span class="src-sym">, </span><span class="src-var">$l</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a144"></a>            <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$newline</span><span class="src-sym">[</span><span class="src-num">2</span><span class="src-sym">] </span>== <span class="src-num">0</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a145"></a>                <span class="src-var">$a</span><span class="src-sym">[</span><span class="src-sym">] </span>= <span class="src-var">$l </span>. <span class="src-str">&quot;&lt;br&gt;&quot; </span><span class="src-sym">;</span></li>
+<li><a name="a146"></a>            <span class="src-sym">}</span></li>
+<li><a name="a147"></a>        <span class="src-sym">}</span></li>
+<li><a name="a148"></a>        </li>
+<li><a name="a149"></a>        <span class="src-key">for </span><span class="src-sym">(</span><span class="src-var">$i </span>= <span class="src-num">0 </span><span class="src-sym">; </span><span class="src-var">$i </span>&lt; <a href="http://www.php.net/sizeof">sizeof</a><span class="src-sym">(</span><span class="src-var">$a</span><span class="src-sym">) </span><span class="src-sym">; </span><span class="src-var">$i</span>++<span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a150"></a>            <span class="src-var">$newline </span>= <a href="http://www.php.net/explode">explode</a><span class="src-sym">(</span><span class="src-str">&quot;\t&quot;</span><span class="src-sym">, </span><span class="src-var">$a</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a151"></a>            <span class="src-key">for </span><span class="src-sym">(</span><span class="src-var">$j </span>= <span class="src-num">0 </span><span class="src-sym">; </span><span class="src-var">$j </span>&lt; <a href="http://www.php.net/sizeof">sizeof</a><span class="src-sym">(</span><span class="src-var">$a</span><span class="src-sym">)</span><span class="src-sym">; </span><span class="src-var">$j</span>++<span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a152"></a>                <span class="src-var">$newlineatual </span>= <a href="http://www.php.net/explode">explode</a><span class="src-sym">(</span><span class="src-str">&quot;\t&quot;</span><span class="src-sym">, </span><span class="src-var">$a</span><span class="src-sym">[</span><span class="src-var">$j</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a153"></a>                <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$newline</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">] </span>&gt; <span class="src-var">$newlineatual</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">] </span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a154"></a>                    <span class="src-var">$aux </span>= <span class="src-var">$a</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a155"></a>                    <span class="src-var">$a</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">] </span>= <span class="src-var">$a</span><span class="src-sym">[</span><span class="src-var">$j</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a156"></a>                    <span class="src-var">$a</span><span class="src-sym">[</span><span class="src-var">$j</span><span class="src-sym">] </span>= <span class="src-var">$aux</span><span class="src-sym">;</span></li>
+<li><a name="a157"></a>                <span class="src-sym">}</span></li>
+<li><a name="a158"></a>            <span class="src-sym">}</span></li>
+<li><a name="a159"></a>        <span class="src-sym">}</span></li>
+<li><a name="a160"></a>        echo <span class="src-str">&quot;&lt;table width='100%' border='0'&gt;\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a161"></a>        echo <span class="src-str">&quot;\t&lt;tr&gt;\n\t\t&lt;td&gt;File name&lt;/td&gt;\n\t\t&lt;td&gt;Amount&lt;/td&gt;\n\t\t&lt;td&gt;Total&lt;/td&gt;\n\t&lt;/tr&gt;\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a162"></a>        <span class="src-key">foreach </span><span class="src-sym">(</span><span class="src-var">$a </span><span class="src-key">as </span><span class="src-var">$l</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a163"></a>            <span class="src-var">$newline </span>= <a href="http://www.php.net/explode">explode</a><span class="src-sym">(</span><span class="src-str">&quot;\t&quot;</span><span class="src-sym">, </span><span class="src-var">$l</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a164"></a>            <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$newline</span><span class="src-sym">[</span><span class="src-num">2</span><span class="src-sym">] </span>== <span class="src-num">0</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a165"></a>                echo <span class="src-str">&quot;\t&lt;tr&gt;\n\t\t&lt;td&gt;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a166"></a>                echo <span class="src-str">&quot;&lt;a href=\&quot;http://&quot; </span>. <span class="src-var">$_SERVER</span><span class="src-sym">[</span><span class="src-str">'SERVER_NAME'</span><span class="src-sym">] </span>. <span class="src-var">$newline</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">] </span>. <span class="src-str">&quot;\&quot;&gt;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a167"></a>                echo <span class="src-var">$newline</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">] </span>. <span class="src-str">&quot;&lt;/a&gt;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a168"></a>                echo <span class="src-str">&quot;&lt;/td&gt;\n\t\t&lt;td&gt;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a169"></a>                echo <span class="src-var">$newline</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a170"></a>                echo <span class="src-str">&quot;&lt;/td&gt;\n\t\t&lt;td&gt;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a171"></a>                echo <span class="src-var">$newline</span><span class="src-sym">[</span><span class="src-num">3</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a172"></a>                echo <span class="src-str">&quot;&lt;/td&gt;\n\t&lt;/tr&gt;\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a173"></a>            <span class="src-sym">}</span></li>
+<li><a name="a174"></a>        <span class="src-sym">}</span></li>
+<li><a name="a175"></a>        echo <span class="src-str">&quot;&lt;/table&gt;\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a176"></a>    <span class="src-sym">}</span></li>
+<li><a name="a177"></a>&nbsp;</li>
+<li><a name="a178"></a>    <span class="src-comm">//!--------------------------------------------------</span></li>
+<li><a name="a179"></a>    <span class="src-comm">// @function    accessControl::resumeGeneric</span></li>
+<li><a name="a180"></a>    <span class="src-comm">// @desc        Make the information resume of strings</span></li>
+<li><a name="a181"></a>    <span class="src-comm">//                referent to id informed</span></li>
+<li><a name="a182"></a>    <span class="src-comm">// @param        ind    integer        id to find the informations</span></li>
+<li><a name="a183"></a>    <span class="src-comm">// @access        private</span></li>
+<li><a name="a184"></a>    <span class="src-comm">// @return        void</span></li>
+<li><a name="a185"></a>    <span class="src-comm">//!--------------------------------------------------</span></li>
+<li><a name="a185"></a>    </li>
+<li><a name="a186"></a>    <span class="src-key">function </span><a href="../accessControl/accessControl.html#methodresumeGeneric">resumeGeneric</a><span class="src-sym">(</span><span class="src-var">$ind</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a187"></a>        <span class="src-key">foreach </span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../accessControl/accessControl.html#var$arr">arr</a> <span class="src-key">as </span><span class="src-var">$l</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a188"></a>            <span class="src-var">$newline </span>= <a href="http://www.php.net/explode">explode</a><span class="src-sym">(</span><span class="src-str">&quot;\t&quot;</span><span class="src-sym">, </span><span class="src-var">$l</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a189"></a>            <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$newline</span><span class="src-sym">[</span><span class="src-num">2</span><span class="src-sym">] </span>== <span class="src-var">$ind</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a190"></a>                <span class="src-var">$a</span><span class="src-sym">[</span><span class="src-sym">] </span>= <span class="src-var">$l </span>. <span class="src-str">&quot;&lt;br&gt;&quot; </span><span class="src-sym">;</span></li>
+<li><a name="a191"></a>            <span class="src-sym">}</span></li>
+<li><a name="a192"></a>        <span class="src-sym">}</span></li>
+<li><a name="a193"></a>        <span class="src-key">for </span><span class="src-sym">(</span><span class="src-var">$i </span>= <span class="src-num">0 </span><span class="src-sym">; </span><span class="src-var">$i </span>&lt; <a href="http://www.php.net/sizeof">sizeof</a><span class="src-sym">(</span><span class="src-var">$a</span><span class="src-sym">) </span><span class="src-sym">; </span><span class="src-var">$i</span>++<span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a194"></a>            <span class="src-var">$newline </span>= <a href="http://www.php.net/explode">explode</a><span class="src-sym">(</span><span class="src-str">&quot;\t&quot;</span><span class="src-sym">, </span><span class="src-var">$a</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a195"></a>            <span class="src-key">for </span><span class="src-sym">(</span><span class="src-var">$j </span>= <span class="src-num">0 </span><span class="src-sym">; </span><span class="src-var">$j </span>&lt; <a href="http://www.php.net/sizeof">sizeof</a><span class="src-sym">(</span><span class="src-var">$a</span><span class="src-sym">)</span><span class="src-sym">; </span><span class="src-var">$j</span>++<span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a196"></a>                <span class="src-var">$newlineatual </span>= <a href="http://www.php.net/explode">explode</a><span class="src-sym">(</span><span class="src-str">&quot;\t&quot;</span><span class="src-sym">, </span><span class="src-var">$a</span><span class="src-sym">[</span><span class="src-var">$j</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a197"></a>                <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$newline</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">] </span>&gt; <span class="src-var">$newlineatual</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">] </span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a198"></a>                    <span class="src-var">$aux </span>= <span class="src-var">$a</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a199"></a>                    <span class="src-var">$a</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">] </span>= <span class="src-var">$a</span><span class="src-sym">[</span><span class="src-var">$j</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a200"></a>                    <span class="src-var">$a</span><span class="src-sym">[</span><span class="src-var">$j</span><span class="src-sym">] </span>= <span class="src-var">$aux</span><span class="src-sym">;</span></li>
+<li><a name="a201"></a>                <span class="src-sym">}</span></li>
+<li><a name="a202"></a>            <span class="src-sym">}</span></li>
+<li><a name="a203"></a>        <span class="src-sym">}</span></li>
+<li><a name="a204"></a>        echo <span class="src-str">&quot;&lt;table width='100%' border='0'&gt;\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a205"></a>        echo <span class="src-str">&quot;\t&lt;tr&gt;\n\t\t&lt;td&gt;Names&lt;/td&gt;\n\t\t&lt;td&gt;Amount&lt;/td&gt;\n\t&lt;/tr&gt;\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a206"></a>        <span class="src-key">foreach </span><span class="src-sym">(</span><span class="src-var">$a </span><span class="src-key">as </span><span class="src-var">$l</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a207"></a>            <span class="src-var">$newline </span>= <a href="http://www.php.net/explode">explode</a><span class="src-sym">(</span><span class="src-str">&quot;\t&quot;</span><span class="src-sym">, </span><span class="src-var">$l</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a208"></a>            <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$newline</span><span class="src-sym">[</span><span class="src-num">2</span><span class="src-sym">] </span>== <span class="src-var">$ind</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a209"></a>                echo <span class="src-str">&quot;\t&lt;tr&gt;\n\t\t&lt;td&gt;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a210"></a>                echo <span class="src-var">$newline</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a211"></a>                echo <span class="src-str">&quot;&lt;/td&gt;\n\t\t&lt;td&gt;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a212"></a>                echo <span class="src-var">$newline</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a213"></a>                echo <span class="src-str">&quot;&lt;/td&gt;\n\t&lt;/tr&gt;\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a214"></a>            <span class="src-sym">}</span></li>
+<li><a name="a215"></a>        <span class="src-sym">}</span></li>
+<li><a name="a216"></a>        echo <span class="src-str">&quot;&lt;/table&gt;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a217"></a>    <span class="src-sym">}</span></li>
+<li><a name="a218"></a>&nbsp;</li>
+<li><a name="a219"></a><span class="src-sym">}</span></li>
+<li><a name="a220"></a>&nbsp;</li>
+<li><a name="a221"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:30:48 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</body>
+</html>

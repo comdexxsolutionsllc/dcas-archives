@@ -1,0 +1,50 @@
+/* CSS Document */
+.button {
+	border : thin solid #CCCCCC;
+	background: #F4F5F7;
+	color : #666666;
+	font-weight : bold;
+	font-size : 11px;
+	padding: 4px;
+}
+.ContText12 {
+	font-family:Verdana, Helvetica, sans-serif;
+	font-size:12px;
+	color:#00557D;
+}
+.ContText14 {
+	font-family:Verdana, Helvetica, sans-serif;
+	font-size:14px;
+	color:#00557D;
+}
+.TitleText12 {
+	font-family:Helvetica, sans-serif;
+	font-size:12px;
+	color:#FF0000;
+}
+.HeadText18 {
+	font-family:Helvetica, sans-serif;
+	font-size:18px;
+	color:#FF9900;
+	border : thin solid #FFFFFF;
+	padding:4px;
+}
+.SPLink:link {
+	font-family:Helvetica, sans-serif;
+	font-size:12px;
+	color:#009933;
+	text-decoration:none;
+}
+.SPLink:visited {
+	font-family:Helvetica, sans-serif;
+	font-size:12px;
+	color:#009933;
+	text-decoration:none;
+}
+.SPLink:hover {
+	font-family:Helvetica, sans-serif;
+	font-size:12px;
+	color:#00557D;
+	text-decoration:underline;
+}
+

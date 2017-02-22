@@ -1,0 +1,307 @@
+######################################
+# Alpha (0.0.0-1)  2010-11-07        #
+######################################
+ Category: Design (Site)
+ UPDATED SPELLING MISTAKES
+ In CLIENT Welcome Page
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-11-07        #
+######################################
+ Category: Web Engine
+ ADDED AJAXTESTING FOLDER
+ To facilitate testing for AJAX framework addon to MoondayFramework.
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-11-07        #
+######################################
+ Category: Web Engine
+ ADDED MULTIPLE JS SCRIPTS TO CLIENT AREA
+ To facilitate easier, cleaner web browsing on the application.
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-11-07        #
+######################################
+ Category: Web Engine
+ ADDED ADMIN:LOST PASSWORD PAGE
+ ADDED Admin:Lost Password page. & Admin:Lost Password page Content Navigation CASE to content.inc.php
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-11-07        #
+######################################
+ Category: Web Engine
+ ADDED TEST PAGE
+ Test Page Added to web root and content.inc.php to facilitate smooth relations and testing in the admin panel side of the application.
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-11-07        #
+######################################
+ Category: Web Engine
+ UPDATED CHANGELOGGER SCRIPT
+ Updated ChangeLogger/index.php script to contain direct link to CHANGELOG.
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-11-07        #
+######################################
+ Category: Testing Environment
+ ADDED OPTION "CORE ENGINE" TO CHANGELOGGER SCRIPT
+ Noticed that it was needed to expand upon the script.
+
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-11-07        #
+######################################
+ Category: Testing Environment
+ ADDED OPTION "TESTING ENVIRONMENT" TO CHANGELOGGER SCRIPT
+ Noticed that it was needed to expand upon the script.
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-11-07        #
+######################################
+ Category: Filesystem Layout
+ PLANNING FOLDER ADDITIONS TO MOONDAYFRAMEWORK
+ Folder Additions in PLANNING Stage
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-12-07        #
+######################################
+ Category: Services
+ CHANGED _GET_REMOTE_TIME()
+ Implemented License::_get_remote_time() call.
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-12-07        #
+######################################
+ Category: Design (Site)
+ UPDATED JS CLIENT SCRIPTS
+ Updated JS Client Scripts .... Added 40+.
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-12-07        #
+######################################
+ Category: Web Engine
+ ADDED NOTICE TO MAIN PAGE
+ "You have until TOMORROW to add all of the Client/JS Scripts." 07/13/2010
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-12-07        #
+######################################
+ Category: Web Engine
+ ADDED AUTO-BREADCRUMBS TO CLIENT PAGE
+
+Added Auto-Breadcrumbs to Client Page.
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-12-07        #
+######################################
+ Category: Web Engine
+  ADDED AUTO-BREADCRUMBS TO ADMIN PAGE
+
+Added Auto-Breadcrumbs to Admin Page.
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-12-07        #
+######################################
+ Category: Web Engine
+ ADDED IMGLOAD CHECK
+ onError="imageError(this)" onAbort="imageError(this)"
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-13-07        #
+######################################
+ Category: Design (Database)
+ ADDED TO 'USERS' TABLE
+   `group_id` int(11) NOT NULL,
+  `CREATED` datetime NOT NULL,
+  `MODIFIED` datetime NOT NULL
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-13-07        #
+######################################
+ Category: Design (Database)
+ ADDED TABLE 'GROUPS' TO DATABASE
+
+CREATE TABLE groups (
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    created DATETIME,
+    modified DATETIME
+);
+
+
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-13-07        #
+######################################
+ Category: Design (Database)
+ ADDED 'CHAT' TABLE FOR AJAXCHAT
+
+CREATE TABLE `chat` (
+  `usrnm` varchar(255) NOT NULL default '',
+  `text` text,
+  `color` varchar(6) NOT NULL default '',
+  `time` time NOT NULL default '00:00:00'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-17-07        #
+######################################
+ Category: Core Engine
+ TESTINGCLASS ADDED TO COREENGINE
+ coreEngine-testingclass.php added to ./engine/~
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-18-07        #
+######################################
+ Category: Design (Database)
+ USERS_ACCESS_LEVELS TABLE ADDED
+
+CREATE TABLE `framework`.`users_access_levels` (
+`userid` INT( 8 ) NOT NULL ,
+`access_level_id` INT( 16 ) NOT NULL ,
+PRIMARY KEY ( `userid` )
+) ENGINE = MYISAM ;
+
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-26-07        #
+######################################
+ Category: Core Engine
+ IMPLEMENTED INIT/TERMINATE ABSTRACT METHOD
+
+Implemented init() and terminate() abstract methods in coreEngine.php
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-26-07        #
+######################################
+ Category: Core Engine
+ IMPLEMENTED DIEONENGINECONTEXT CHECK FOR COREENGINE-DATABASE.PHP FOR TESTING
+
+die(include_once('/error_docs/contextInEngine.html'));
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-26-07        #
+######################################
+ Category: Testing Environment
+ CHANGED CLASSCREATIONTEMPLATE
+
+Changed ClassCreationTemplate to remove the die() header to be replaced by "die(include_once('../error_docs/contextInEngine.html'));"
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-26-07        #
+######################################
+ Category: Web Engine
+ ADDED ERROR_DOC: CONTEXTINENGINE.HTML
+
+Added /error_doc/contextInEngine.html
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-26-07        #
+######################################
+ Category: Testing Environment
+ ADDED 5.3.1 PHP, 2.2 APACHE
+
+Already Added
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-26-07        #
+######################################
+ Category: Testing Environment
+ ADDENDUM TO ADD: SQUID AND MRTG
+
+Added Squid and MRTG to testing environment.
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-26-07        #
+######################################
+ Category: Web Engine
+ ADDED DIR: _APPEND_FILES
+
+To include append.inc.php and prepend.inc.php using .htaccess - this currently isn't implemented fully.
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2010-26-07        #
+######################################
+ Category: Core Engine
+ MODIFIED /ENGINE/COREENGINE.PHP
+ With the following code:
+<code>
+define("APPENDDIR", "_append_files/");
+
+//*** Include APPEND files
+ini_set('auto_prepend_file', DOCROOT.APPENDDIR.'prepend.inc.php');
+ini_set('auto_append_file', DOCROOT.APPENDDIR.'append.inc.php');
+
+//*** Turn ON Profiling::XDebug if XDebug is Loaded
+$xd = extension_loaded('xdebug');
+if ($xd) {
+	ini_set('xdebug.collect_vars', 'on');
+	ini_set('xdebug.collect_params', '4');
+	ini_set('xdebug.dump_globals', 'on');
+	ini_set('xdebug.dump.SERVER', 'REQUEST_URI');
+	ini_set('xdebug.show_local_vars', 'on');
+} else {
+	// Include CDS::MoondayFramework->Profiling
+}
+</code>
+ **************************
+
+######################################
+# Alpha (0.0.0-1)  2011-08-02        #
+######################################
+ Category: Design (Database)
+ CREATED SECURITY_QUESTION TABLE TO LOAD SECURITY QUESTIONS ON MAIN PAGE
+ CREATE TABLE `paragonpanel`.`security_questions` (
+`user_id` INT NOT NULL ,
+`hash_code` TEXT NOT NULL ,
+`security_question` TEXT NOT NULL ,
+`date_entered` DATE NOT NULL ,
+`time_entered` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+`user_comment` TEXT NULL DEFAULT NULL ,
+UNIQUE (
+`user_id`
+)
+) ENGINE = InnoDB;
+
+
+ **************************
+######################################
+# Alpha (0.0.0-1)  2011-15-02        #
+######################################
+ Category: Core Engine
+ CHANGED SECURITY PARMS CHECK
+ From:  die("Hacking Attempt!");
+
+To:  die(include_once('../error_docs/contextInEngine.html'));
+
+76 occurrences
+ **************************
+

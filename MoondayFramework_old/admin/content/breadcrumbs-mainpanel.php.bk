@@ -1,0 +1,16 @@
+<!-- Start Page::View(breadcrumbs-mainpanel) -->
+              <td width="5">&nbsp;</td>
+              <td valign="top">
+              <table width="100%"  border="0" p_border="1" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="19" align="left"><img alt="" src="<?php echo $coreEngine->sRU; ?>/admin/images/employee_left_part.gif" width="19" height="26"></img></td>
+                  <td width="1005" align="left" background="<?php echo $coreEngine->sRU; ?>/admin/images/link_mid_strip.gif"><span class="text_login_h">Link: None </span></td>
+                  <td width="19" align="right"><img alt="" src="<?php echo $coreEngine->sRU; ?>/admin/images/employee_ryt_part.gif" width="19" height="26"></img></td>
+                </tr>
+                <tr>
+                  <td width="19" height="25"><img alt="" src="<?php echo $coreEngine->sRU; ?>/admin/images/left_side.jpg" width="19" height="25"></img></td>
+                  <td height="25" background="<?php echo $coreEngine->sRU; ?>/admin/images/employee_2_mid.jpg"><span class="text_login_h">Current: Employee portal </span></td>
+                  <td height="25" align="right"><img alt="" src="<?php echo $coreEngine->sRU; ?>/admin/images/ryt_side.jpg" width="19" height="25"></img></td>
+                </tr>
+
+<!-- End Page::View(breadcrumbs-mainpanel) -->

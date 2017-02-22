@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for bsearch.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file bsearch.php</h1>
+<p>Documentation is available at <a href="../default/_search_bsearch_php.html">bsearch.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a><span class="src-comm">// Search sample script</span></li>
+<li><a name="a3"></a>    <span class="src-inc">include</span><span class="src-sym">(</span><span class="src-str">&quot;xmlbasica.lib.php&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a4"></a>&nbsp;</li>
+<li><a name="a5"></a>    <span class="src-comm">/* $SearchTerm = &quot;basica yukari programming visual japanese&quot;; */</span></li>
+<li><a name="a6"></a>&nbsp;</li>
+<li><a name="a7"></a>    <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span>isset<span class="src-sym">(</span><span class="src-var">$SearchTerm</span><span class="src-sym">)) </span><span class="src-var">$SearchTerm </span>= <span class="src-str">&quot;SEARCH-TERM-NOT-SET&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a8"></a>    <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span>isset<span class="src-sym">(</span><span class="src-var">$NoCharDisp</span><span class="src-sym">)) </span><span class="src-var">$NoCharDisp </span>= <span class="src-num">15</span><span class="src-sym">;  </span></li>
+<li><a name="a9"></a>    <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span>isset<span class="src-sym">(</span><span class="src-var">$SearchMode</span><span class="src-sym">)) </span><span class="src-var">$SearchMode </span>= <span class="src-num">0</span><span class="src-sym">; </span><span class="src-comm">/* 0: word by word (delimited by space) | 1: whole phrase       */</span></li>
+<li><a name="a12"></a>    <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span>isset<span class="src-sym">(</span><span class="src-var">$WrdXplicit</span><span class="src-sym">)) </span><span class="src-var">$WrdXplicit </span>= <span class="src-num">1</span><span class="src-sym">; </span><span class="src-comm">/* 0: &quot;basic&quot; would return for &quot;basica&quot; | 1: basic is iif basic */</span></li>
+<li><a name="a13"></a><span class="src-comm">/*</span></li>
+<li><a name="a14"></a><span class="src-comm">       This function serves to tell if a character is a alphabet, number or neither</span></li>
+<li><a name="a15"></a><span class="src-comm">     */</span></li>
+<li><a name="a16"></a>    <span class="src-key">function </span><a href="../default/_search_bsearch_php.html#functionnotAlphaNumeric">notAlphaNumeric</a><span class="src-sym">(</span><span class="src-var">$charDataIn</span><span class="src-sym">) </span><span class="src-sym">{ </span></li>
+<li><a name="a17"></a>    </li>
+<li><a name="a18"></a>        <span class="src-key">if </span><span class="src-sym">(((</span><a href="http://www.php.net/ord">ord</a><span class="src-sym">(</span><span class="src-var">$charDataIn</span><span class="src-sym">) </span>&gt;= <span class="src-num">97</span><span class="src-sym">) </span>&amp;&amp; <span class="src-sym">(</span><a href="http://www.php.net/ord">ord</a><span class="src-sym">(</span><span class="src-var">$charDataIn</span><span class="src-sym">) </span>&lt;= <span class="src-num">122</span><span class="src-sym">)) </span>|| <span class="src-sym">((</span><a href="http://www.php.net/ord">ord</a><span class="src-sym">(</span><span class="src-var">$charDataIn</span><span class="src-sym">) </span>&gt;= <span class="src-num">48</span><span class="src-sym">) </span>&amp;&amp; <span class="src-sym">(</span><a href="http://www.php.net/ord">ord</a><span class="src-sym">(</span><span class="src-var">$charDataIn</span><span class="src-sym">) </span>&lt;= <span class="src-num">57</span><span class="src-sym">))) </span><span class="src-sym">{</span></li>
+<li><a name="a19"></a>            <span class="src-key">return </span><span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a20"></a>        <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a21"></a>            <span class="src-key">return </span><span class="src-id">true</span><span class="src-sym">;</span></li>
+<li><a name="a22"></a>        <span class="src-sym">}</span></li>
+<li><a name="a23"></a>        </li>
+<li><a name="a24"></a>    <span class="src-sym">}</span></li>
+<li><a name="a25"></a>    </li>
+<li><a name="a26"></a>&nbsp;</li>
+<li><a name="a27"></a>    <span class="src-comm">/*</span></li>
+<li><a name="a28"></a><span class="src-comm">        Check if a certain instance of a string exists in another bigger string.</span></li>
+<li><a name="a29"></a><span class="src-comm">     */</span></li>
+<li><a name="a30"></a>    <span class="src-key">function </span><a href="../default/_search_bsearch_php.html#functionTermExists">TermExists</a><span class="src-sym">(</span><span class="src-var">$TString</span><span class="src-sym">, </span><span class="src-var">$Term</span><span class="src-sym">, </span><span class="src-sym">&amp;</span><span class="src-var">$Pos</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a31"></a>    </li>
+<li><a name="a32"></a>        <span class="src-var">$RetVal </span>= <span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a33"></a>        </li>
+<li><a name="a34"></a>        <span class="src-key">if </span><span class="src-sym">(</span><a href="http://www.php.net/trim">trim</a><span class="src-sym">(</span><a href="http://www.php.net/strval">strval</a><span class="src-sym">(</span><a href="http://www.php.net/strpos">strpos</a><span class="src-sym">(</span><span class="src-var">$TString</span><span class="src-sym">, </span><span class="src-var">$Term</span><span class="src-sym">))) </span>!= <span class="src-str">&quot;&quot;</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a35"></a>            <span class="src-var">$RetVal </span>= <span class="src-id">true</span><span class="src-sym">;</span></li>
+<li><a name="a36"></a>            <span class="src-var">$Pos    </span>= <a href="http://www.php.net/strpos">strpos</a><span class="src-sym">(</span><span class="src-var">$TString</span><span class="src-sym">, </span><span class="src-var">$Term</span><span class="src-sym">)</span><span class="src-sym">; </span></li>
+<li><a name="a37"></a>        <span class="src-sym">}</span></li>
+<li><a name="a38"></a>        </li>
+<li><a name="a39"></a>        <span class="src-key">return </span><span class="src-var">$RetVal</span><span class="src-sym">;</span></li>
+<li><a name="a40"></a>        </li>
+<li><a name="a41"></a>    <span class="src-sym">}</span></li>
+<li><a name="a42"></a>    </li>
+<li><a name="a43"></a>    </li>
+<li><a name="a44"></a>    <span class="src-comm">/*</span></li>
+<li><a name="a45"></a><span class="src-comm">        function to remove HTML tags.</span></li>
+<li><a name="a46"></a><span class="src-comm">     */</span></li>
+<li><a name="a47"></a>    <span class="src-key">function </span><a href="../default/_search_bsearch_php.html#functionRemoveHTMLTags">RemoveHTMLTags</a><span class="src-sym">(</span><span class="src-var">$strDataIn</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a48"></a>        </li>
+<li><a name="a49"></a>        <span class="src-var">$Temp </span>= <span class="src-str">&quot;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a50"></a>        </li>
+<li><a name="a51"></a>        <span class="src-key">for </span><span class="src-sym">(</span><span class="src-var">$i </span>= <span class="src-num">0</span><span class="src-sym">; </span><span class="src-var">$i </span>&lt; <a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$strDataIn</span><span class="src-sym">)</span><span class="src-sym">; </span><span class="src-var">$i</span>++<span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a52"></a>            <span class="src-key">if </span><span class="src-sym">(</span><a href="http://www.php.net/substr">substr</a><span class="src-sym">(</span><span class="src-var">$strDataIn</span><span class="src-sym">, </span><span class="src-var">$i</span><span class="src-sym">, </span><span class="src-num">1</span><span class="src-sym">) </span>== <span class="src-str">&quot;&lt;&quot;</span><span class="src-sym">) </span><span class="src-var">$Add </span>= <span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a53"></a>            <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$Add</span><span class="src-sym">) </span><span class="src-var">$Temp </span>.= <a href="http://www.php.net/substr">substr</a><span class="src-sym">(</span><span class="src-var">$strDataIn</span><span class="src-sym">, </span><span class="src-var">$i</span><span class="src-sym">, </span><span class="src-num">1</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a54"></a>            <span class="src-key">if </span><span class="src-sym">(</span><a href="http://www.php.net/substr">substr</a><span class="src-sym">(</span><span class="src-var">$strDataIn</span><span class="src-sym">, </span><span class="src-var">$i</span><span class="src-sym">, </span><span class="src-num">1</span><span class="src-sym">) </span>== <span class="src-str">&quot;&gt;&quot;</span><span class="src-sym">) </span><span class="src-var">$Add </span>= <span class="src-id">true</span><span class="src-sym">;</span></li>
+<li><a name="a55"></a>        <span class="src-sym">}</span></li>
+<li><a name="a56"></a>        </li>
+<li><a name="a57"></a>        <span class="src-key">return </span><span class="src-var">$Temp</span><span class="src-sym">;</span></li>
+<li><a name="a58"></a>        </li>
+<li><a name="a59"></a>    <span class="src-sym">}</span></li>
+<li><a name="a60"></a>    </li>
+<li><a name="a61"></a>&nbsp;</li>
+<li><a name="a62"></a>    <span class="src-var">$SearchDB    </span>= <span class="src-str">&quot;search-db.xml&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a63"></a>    <span class="src-var">$SearchData  </span>= <a href="../default/_search_xmlbasica_lib_php.html#functionXML_DBarrayDump">XML_DBarrayDump</a><span class="src-sym">(</span><span class="src-var">$SearchDB</span><span class="src-sym">, </span><span class="src-var">$DB</span><span class="src-sym">, </span><span class="src-var">$REC</span><span class="src-sym">, </span><span class="src-var">$cntREC</span><span class="src-sym">, </span><span class="src-var">$cntFLD</span><span class="src-sym">, </span><span class="src-var">$FLD</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a64"></a>    <span class="src-var">$SearchTerm  </span>= <a href="http://www.php.net/strtolower">strtolower</a><span class="src-sym">(</span><a href="http://www.php.net/trim">trim</a><span class="src-sym">(</span><span class="src-var">$SearchTerm</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+<li><a name="a65"></a>    <span class="src-var">$SearchMatch </span>= <span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a66"></a>    <span class="src-var">$NumMatches  </span>= <span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a67"></a>    </li>
+<li><a name="a68"></a>    <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$SearchMode </span>== <span class="src-num">0</span><span class="src-sym">) </span><span class="src-var">$TermArray  </span>= <a href="http://www.php.net/explode">explode</a><span class="src-sym">(</span><span class="src-str">&quot; &quot;</span><span class="src-sym">, </span><span class="src-var">$SearchTerm</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a69"></a>    <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$SearchMode </span>== <span class="src-num">1</span><span class="src-sym">) </span><span class="src-var">$TermArray</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">] </span>= <span class="src-var">$SearchTerm</span><span class="src-sym">; </span></li>
+<li><a name="a70"></a>&nbsp;</li>
+<li><a name="a71"></a>    print <span class="src-str">&quot;&lt;hr color=#000080&gt;&lt;font color=#000080&gt;&lt;b&gt;Search Results&lt;br&gt; -* for:&amp;nbsp;&amp;nbsp;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a72"></a>    </li>
+<li><a name="a73"></a>    <span class="src-key">for </span><span class="src-sym">(</span><span class="src-var">$i </span>= <span class="src-num">0</span><span class="src-sym">; </span><span class="src-var">$i </span>&lt; <a href="http://www.php.net/sizeof">sizeof</a><span class="src-sym">(</span><span class="src-var">$TermArray</span><span class="src-sym">)</span><span class="src-sym">; </span><span class="src-var">$i</span>++<span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a74"></a>        print <span class="src-str">&quot;|&amp;nbsp;&amp;nbsp;\&quot;&quot; </span>. <span class="src-var">$TermArray</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">] </span>. <span class="src-str">&quot;\&quot;&amp;nbsp;&amp;nbsp;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a75"></a>    <span class="src-sym">}                           </span></li>
+<li><a name="a76"></a>    </li>
+<li><a name="a77"></a>    print <span class="src-str">&quot;|&lt;/b&gt;&lt;/font&gt;&lt;hr color=#000080&gt;&lt;br&gt;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a78"></a>&nbsp;</li>
+<li><a name="a79"></a>&nbsp;</li>
+<li><a name="a80"></a>    <span class="src-key">for </span><span class="src-sym">(</span><span class="src-var">$i </span>= <span class="src-num">0</span><span class="src-sym">; </span><span class="src-var">$i </span>&lt; <span class="src-var">$cntREC</span><span class="src-sym">; </span><span class="src-var">$i</span>++<span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a81"></a>        </li>
+<li><a name="a82"></a>        <span class="src-var">$TFile   </span>= <span class="src-var">$SearchData</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">;     </span></li>
+<li><a name="a83"></a>        <span class="src-var">$fp      </span>= <a href="http://www.php.net/file">file</a><span class="src-sym">(</span><span class="src-var">$TFile</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a84"></a>        <span class="src-var">$strFile </span>= <a href="http://www.php.net/implode">implode</a><span class="src-sym">(</span><span class="src-var">$fp</span><span class="src-sym">, </span><span class="src-str">&quot;&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a85"></a>        <span class="src-var">$strFile </span>= <a href="../default/_search_bsearch_php.html#functionRemoveHTMLTags">RemoveHTMLTags</a><span class="src-sym">(</span><span class="src-var">$strFile</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a86"></a>        <span class="src-var">$bakFile </span>= <span class="src-var">$strFile</span><span class="src-sym">;</span></li>
+<li><a name="a87"></a>        <span class="src-var">$strFile </span>= <a href="http://www.php.net/strtolower">strtolower</a><span class="src-sym">(</span><span class="src-var">$strFile</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a88"></a>        </li>
+<li><a name="a89"></a>        <span class="src-var">$Prev </span>= -<span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a90"></a>&nbsp;</li>
+<li><a name="a91"></a>        <span class="src-key">for </span><span class="src-sym">(</span><span class="src-var">$j </span>= <span class="src-num">0</span><span class="src-sym">; </span><span class="src-var">$j </span>&lt; <a href="http://www.php.net/sizeof">sizeof</a><span class="src-sym">(</span><span class="src-var">$TermArray</span><span class="src-sym">)</span><span class="src-sym">; </span><span class="src-var">$j</span>++<span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a92"></a>        </li>
+<li><a name="a93"></a>            <span class="src-key">if </span><span class="src-sym">(</span><a href="../default/_search_bsearch_php.html#functionTermExists">TermExists</a><span class="src-sym">(</span><span class="src-var">$strFile</span><span class="src-sym">, </span><span class="src-var">$TermArray</span><span class="src-sym">[</span><span class="src-var">$j</span><span class="src-sym">]</span><span class="src-sym">, </span><span class="src-var">$Pos</span><span class="src-sym">)) </span><span class="src-sym">{ </span></li>
+<li><a name="a94"></a>&nbsp;</li>
+<li><a name="a95"></a>                <span class="src-comm">/* this condition checks that sandwiching the search term is 2 spaces and no </span></li>
+<li><a name="a96"></a><span class="src-comm">                 * other characters makeing an explicit search                               </span></li>
+<li><a name="a97"></a><span class="src-comm">                 * --------------------------------------------------------------------------</span></li>
+<li><a name="a98"></a><span class="src-comm">                 * However a little switch is made and that is the $WrdXplicit var if this   </span></li>
+<li><a name="a99"></a><span class="src-comm">                 * variable is given a preset value of 0 then the search can then be optioned</span></li>
+<li><a name="a100"></a><span class="src-comm">                 * not to be explicit meaning &quot;basic&quot; could return &quot;basica&quot;. </span></li>
+<li><a name="a101"></a><span class="src-comm">                 *</span></li>
+<li><a name="a102"></a><span class="src-comm">                 * SLIGHT CHANGE: The 2 characters sandwiching the search term must not be </span></li>
+<li><a name="a103"></a><span class="src-comm">                 * alpha numeric characters. ie they can be punctuations.</span></li>
+<li><a name="a104"></a><span class="src-comm">                 *</span></li>
+<li><a name="a105"></a><span class="src-comm">                 * YET ANOTHER CHANGE: Here is another note the search initially changes</span></li>
+<li><a name="a106"></a><span class="src-comm">                 * all the case to lower to facilitate the operations but had not made it</span></li>
+<li><a name="a107"></a><span class="src-comm">                 * such that the state is just what it is in the document. creating a </span></li>
+<li><a name="a108"></a><span class="src-comm">                 * backup var for $strFile - $bakFile the operation has been perfectly </span></li>
+<li><a name="a109"></a><span class="src-comm">                 * handled.</span></li>
+<li><a name="a110"></a><span class="src-comm">                  */</span></li>
+<li><a name="a111"></a>                </li>
+<li><a name="a112"></a>                <span class="src-key">if </span><span class="src-sym">(((</span><a href="../default/_search_bsearch_php.html#functionnotAlphaNumeric">notAlphaNumeric</a><span class="src-sym">(</span><a href="http://www.php.net/substr">substr</a><span class="src-sym">(</span><span class="src-var">$strFile</span><span class="src-sym">, </span><span class="src-var">$Pos </span>- <span class="src-num">1</span><span class="src-sym">, </span><span class="src-num">1</span><span class="src-sym">))) </span>&amp;&amp; <span class="src-sym">(</span><a href="../default/_search_bsearch_php.html#functionnotAlphaNumeric">notAlphaNumeric</a><span class="src-sym">(</span><a href="http://www.php.net/substr">substr</a><span class="src-sym">(</span><span class="src-var">$strFile</span><span class="src-sym">, </span><span class="src-var">$Pos </span>+ <a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$TermArray</span><span class="src-sym">[</span><span class="src-var">$j</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">, </span><span class="src-num">1</span><span class="src-sym">)))) </span>|| <span class="src-sym">(</span><span class="src-var">$WrdXplicit </span>== <span class="src-num">0</span><span class="src-sym">)) </span><span class="src-sym">{</span></li>
+<li><a name="a113"></a>                </li>
+<li><a name="a114"></a>                    <span class="src-var">$SearchMatch </span>= <span class="src-id">true</span><span class="src-sym">;</span></li>
+<li><a name="a115"></a>&nbsp;</li>
+<li><a name="a116"></a>                    <span class="src-comm">/* if the previous successful result return came from the same page </span></li>
+<li><a name="a117"></a><span class="src-comm">                     * there is no need to print the header another time.</span></li>
+<li><a name="a118"></a><span class="src-comm">                     */</span></li>
+<li><a name="a119"></a>                    <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$Prev </span>!= <span class="src-var">$i</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a120"></a>                        print <span class="src-str">&quot;&lt;b&gt;[&lt;a href=&quot; </span>. <span class="src-var">$SearchData</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">] </span>. <span class="src-str">&quot;&gt;&lt;font color=#000000&gt;&quot; </span>. <span class="src-var">$SearchData</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-num">2</span><span class="src-sym">] </span>. <span class="src-str">&quot;&lt;/font&gt;&lt;/a&gt;]&lt;/b&gt;&lt;br&gt;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a121"></a>                        <span class="src-var">$NumMatches </span>+= <span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a122"></a>                    <span class="src-sym">}</span></li>
+<li><a name="a123"></a>&nbsp;</li>
+<li><a name="a124"></a>                    <span class="src-var">$LEADING_CHARS_START </span>= <span class="src-var">$Pos </span>- <span class="src-var">$NoCharDisp</span><span class="src-sym">;</span></li>
+<li><a name="a125"></a>                    <span class="src-var">$LEADING_CHARS_LEN </span>= <span class="src-var">$NoCharDisp</span><span class="src-sym">;</span></li>
+<li><a name="a126"></a>                    <span class="src-var">$TRAILING_CHARS_START </span>= <span class="src-var">$Pos </span>+ <a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$TermArray</span><span class="src-sym">[</span><span class="src-var">$j</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">; </span></li>
+<li><a name="a127"></a>                    <span class="src-var">$TRAILING_CHARS_LEN </span>= <span class="src-var">$NoCharDisp</span><span class="src-sym">;          </span></li>
+<li><a name="a128"></a>                </li>
+<li><a name="a129"></a>                    print <span class="src-str">&quot;&lt;font color=#008000&gt;&lt;b&gt;&quot; </span>. <span class="src-var">$TermArray</span><span class="src-sym">[</span><span class="src-var">$j</span><span class="src-sym">] </span>. <span class="src-str">&quot;: &lt;/b&gt;&lt;/font&gt;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a130"></a>&nbsp;</li>
+<li><a name="a131"></a>                    <span class="src-comm">/* if the user set the number of leading characters to show to a number </span></li>
+<li><a name="a132"></a><span class="src-comm">                     * such that the backward tracing of characters go before 0 it would have</span></li>
+<li><a name="a133"></a><span class="src-comm">                     * an unsightly ouput in php... therefore create the limit here.</span></li>
+<li><a name="a134"></a><span class="src-comm">                     */</span></li>
+<li><a name="a135"></a>                </li>
+<li><a name="a136"></a>                    <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$Pos </span>&lt; <span class="src-var">$NoCharDisp</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a137"></a>                        <span class="src-var">$LEADING_CHARS_START </span>= <span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a138"></a>                        <span class="src-var">$LEADING_CHARS_LEN   </span>= <span class="src-var">$Pos</span><span class="src-sym">;</span></li>
+<li><a name="a139"></a>                    <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a140"></a>                        print <span class="src-str">&quot;.....&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a141"></a>                    <span class="src-sym">}   </span></li>
+<li><a name="a142"></a>                </li>
+<li><a name="a143"></a>                    <span class="src-comm">/* print substr($strFile, $LEADING_CHARS_START, $LEADING_CHARS_LEN) . &quot;&lt;font color=#800000&gt;&lt;b&gt;&quot; . $TermArray[$j] . &quot;&lt;/b&gt;&lt;/font&gt;&quot; . substr($strFile, $TRAILING_CHARS_START, $TRAILING_CHARS_LEN); */</span></li>
+<li><a name="a144"></a>                </li>
+<li><a name="a145"></a>                    print <a href="http://www.php.net/substr">substr</a><span class="src-sym">(</span><span class="src-var">$bakFile</span><span class="src-sym">, </span><span class="src-var">$LEADING_CHARS_START</span><span class="src-sym">, </span><span class="src-var">$LEADING_CHARS_LEN</span><span class="src-sym">) </span>. <span class="src-str">&quot;&lt;font color=#800000&gt;&lt;b&gt;&quot; </span>. <a href="http://www.php.net/substr">substr</a><span class="src-sym">(</span><span class="src-var">$bakFile</span><span class="src-sym">, </span><span class="src-var">$Pos</span><span class="src-sym">, </span><a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$TermArray</span><span class="src-sym">[</span><span class="src-var">$j</span><span class="src-sym">]</span><span class="src-sym">)) </span>. <span class="src-str">&quot;&lt;/b&gt;&lt;/font&gt;&quot; </span>. <a href="http://www.php.net/substr">substr</a><span class="src-sym">(</span><span class="src-var">$bakFile</span><span class="src-sym">, </span><span class="src-var">$TRAILING_CHARS_START</span><span class="src-sym">, </span><span class="src-var">$TRAILING_CHARS_LEN</span><span class="src-sym">)</span><span class="src-sym">; </span></li>
+<li><a name="a146"></a>&nbsp;</li>
+<li><a name="a147"></a>                    <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-sym">(</span><span class="src-var">$Pos </span>+ <a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$TermArray</span><span class="src-sym">[</span><span class="src-var">$j</span><span class="src-sym">]</span><span class="src-sym">) </span>+ <span class="src-var">$NoCharDisp </span>&gt; <a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$strFile</span><span class="src-sym">))) </span>print <span class="src-str">&quot;.....&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a148"></a>                                </li>
+<li><a name="a149"></a>                    print <span class="src-str">&quot;&lt;br&gt;&quot;</span><span class="src-sym">;   </span></li>
+<li><a name="a150"></a>                </li>
+<li><a name="a151"></a>                    <span class="src-var">$Prev </span>= <span class="src-var">$i</span><span class="src-sym">;</span></li>
+<li><a name="a152"></a>                </li>
+<li><a name="a153"></a>                <span class="src-sym">}</span></li>
+<li><a name="a154"></a>                </li>
+<li><a name="a155"></a>            <span class="src-sym">}   </span></li>
+<li><a name="a156"></a>            </li>
+<li><a name="a157"></a>        <span class="src-sym">}</span></li>
+<li><a name="a158"></a>          </li>
+<li><a name="a159"></a>        <span class="src-comm">/* If A record was found previously then print the Line breaker. */</span></li>
+<li><a name="a160"></a>         </li>
+<li><a name="a161"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$Prev </span>!= -<span class="src-num">1</span><span class="src-sym">) </span>print <span class="src-str">&quot;&lt;br&gt;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a162"></a>        </li>
+<li><a name="a163"></a>    <span class="src-sym">}       </span></li>
+<li><a name="a164"></a>    </li>
+<li><a name="a165"></a>    <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-sym">(</span><span class="src-var">$SearchMatch</span><span class="src-sym">)) </span>print <span class="src-str">&quot;&lt;font color=#008000&gt;&lt;b&gt;No Matches found.&lt;/b&gt;&lt;/font&gt;&quot;</span><span class="src-sym">; </span></li>
+<li><a name="a166"></a>    </li>
+<li><a name="a167"></a>    print <span class="src-str">&quot;</span>&lt;<span class="src-id">hr color</span>=000080&gt;&lt;<span class="src-id">font color</span>=000080&gt;&lt;<span class="src-id">b</span>&gt;<span class="src-id">Return</span>: <span class="src-var">$NumMatches </span><span class="src-id">Matches</span>&lt;/<span class="src-id">b</span>&gt;&lt;/<span class="src-id">font</span>&gt;&lt;<span class="src-id">hr color</span>=000080&gt;<span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a168"></a>    </li>
+<li><a name="a169"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:31:15 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</body>
+</html>

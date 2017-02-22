@@ -1,0 +1,9 @@
+URL:http://localhost:443/managedNOC/engine/dbwebservice/service.php
+QUERY_STRING:
+request:
+--------
+response:
+--------
+<?xml version="1.0"?><disco:discovery xmlns:disco="http://schemas.xmlsoap.org/disco/" xmlns:scl="http://schemas.xmlsoap.org/disco/scl/">
+<scl:contractRef ref="http://localhost:443/managedNOC/engine/dbwebservice/service.php?wsdl" />
+</disco:discovery>

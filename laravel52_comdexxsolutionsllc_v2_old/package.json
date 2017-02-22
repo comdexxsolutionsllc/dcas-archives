@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "dependencies": {
+    "babelify": "^6.1.2",
+    "bootstrap-sass": "^3.0.0",
+    "browserify": "^10.2.3",
+    "gulp": "^3.9.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-phpspec": "^0.5.3",
+    "gulp-run": "^1.6.8",
+    "laravel-elixir": "^4.0.0",
+    "laravel-elixir-stylus": "^1.0.1",
+    "laravel-elixir-vueify": "^1.0.0",
+    "notify-send": "^0.1.2",
+    "react-templates": "0.1.20",
+    "vinyl-source-stream": "^1.1.0",
+    "vue-router": "^0.7.7",
+    "selenium-webdriver": "~2.53.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "vue": "^1.0.10",
+    "vue-resource": "^0.1.17"
+  }
+}

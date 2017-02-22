@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for domain.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file domain.php</h1>
+<p>Documentation is available at <a href="../default/_dbwebservice_domain_php.html">domain.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a><span class="src-key">class </span><a href="../default/DBRecord.html">DBRecord</a> <span class="src-sym">{</span></li>
+<li><a name="a3"></a>    <span class="src-key">var </span><a href="../default/DBRecord.html#var$id">$id</a><span class="src-sym">;</span></li>
+<li><a name="a4"></a>    <span class="src-key">var </span><a href="../default/DBRecord.html#var$values">$values</a><span class="src-sym">;</span></li>
+<li><a name="a5"></a>    <span class="src-key">function </span><a href="../default/DBRecord.html#methodgetClass">getClass</a><span class="src-sym">(</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a6"></a>        <span class="src-key">return </span><span class="src-str">&quot;DBRecord&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a7"></a>    <span class="src-sym">}</span></li>
+<li><a name="a8"></a>    <span class="src-key">function </span><a href="../default/DBRecord.html#methodDBRecord">DBRecord</a><span class="src-sym">(</span><span class="src-var">$id</span><span class="src-sym">,</span><span class="src-var">$values</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a9"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/DBRecord.html#var$id">id</a>=<span class="src-var">$id</span><span class="src-sym">;</span></li>
+<li><a name="a10"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/DBRecord.html#var$values">values</a>=<span class="src-var">$values</span><span class="src-sym">;</span></li>
+<li><a name="a11"></a>    <span class="src-sym">}</span></li>
+<li><a name="a12"></a>    <span class="src-key">function </span><a href="../default/DBRecord.html#methodtoSoap">toSoap</a><span class="src-sym">(</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a13"></a><span class="src-php">?&gt;</span>&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; </li>
+<li><a name="a14"></a>    xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; </li>
+<li><a name="a15"></a>    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;</li>
+<li><a name="a16"></a> &lt;soapenv:Body&gt;</li>
+<li><a name="a17"></a>  &lt;ns1:getRecordResponse soapenv:encodingStyle=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot; xmlns:ns1=&quot;<span class="src-php">&lt;?php </span>echo <span class="src-id"><a href="../default/_dbwebservice_service_php.html#defineSCRIPT_URL">SCRIPT_URL</a> </span><span class="src-php">?&gt;</span>&quot;&gt;</li>
+<li><a name="a18"></a>   &lt;ns1:getRecordReturn href=&quot;#id0&quot;/&gt;</li>
+<li><a name="a19"></a>  &lt;/ns1:getRecordResponse&gt;</li>
+<li><a name="a20"></a>  &lt;multiRef id=&quot;id0&quot; soapenc:root=&quot;0&quot; soapenv:encodingStyle=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot; xsi:type=&quot;ns2:DBRecord&quot; xmlns:soapenc=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot; xmlns:ns2=&quot;<span class="src-php">&lt;?php </span>echo <span class="src-id"><a href="../default/_dbwebservice_service_php.html#defineSCRIPT_URL">SCRIPT_URL</a> </span><span class="src-php">?&gt;</span>&quot;&gt;</li>
+<li><a name="a21"></a>   &lt;id xsi:type=&quot;xsd:int&quot;&gt;<span class="src-php">&lt;?php </span>echo <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/DBRecord.html#var$id">id</a> <span class="src-php">?&gt;</span>&lt;/id&gt;</li>
+<li><a name="a22"></a>   &lt;values xsi:type=&quot;soapenc:Array&quot; soapenc:arrayType=&quot;xsd:string[<span class="src-php">&lt;?php </span>echo <a href="http://www.php.net/sizeof">sizeof</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/DBRecord.html#var$values">values</a><span class="src-sym">) </span><span class="src-php">?&gt;</span>]&quot;&gt;</li>
+<li><a name="a23"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a24"></a>    <span class="src-key">foreach </span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/DBRecord.html#var$values">values</a> <span class="src-key">as </span><span class="src-var">$value</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a25"></a>        echo <span class="src-str">&quot;    &lt;item&gt;&quot;</span>.<a href="http://www.php.net/htmlspecialchars">htmlspecialchars</a><span class="src-sym">(</span><span class="src-var">$value</span><span class="src-sym">, </span><span class="src-id">ENT_QUOTES</span><span class="src-sym">)</span>.<span class="src-str">&quot;&lt;/item&gt;\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a26"></a>    <span class="src-sym">}</span></li>
+<li><a name="a27"></a><span class="src-php">?&gt;</span></li>
+<li><a name="a28"></a>   &lt;/values&gt;</li>
+<li><a name="a29"></a>  &lt;/multiRef&gt;</li>
+<li><a name="a30"></a> &lt;/soapenv:Body&gt;</li>
+<li><a name="a31"></a>&lt;/soapenv:Envelope&gt;<span class="src-php">&lt;?php</span></li>
+<li><a name="a32"></a>    <span class="src-sym">}</span></li>
+<li><a name="a33"></a><span class="src-sym">}</span></li>
+<li><a name="a34"></a><span class="src-key">class </span><a href="../default/DBTable.html">DBTable</a> <span class="src-sym">{</span></li>
+<li><a name="a35"></a>    <span class="src-key">var </span><a href="../default/DBTable.html#var$name">$name</a><span class="src-sym">;</span></li>
+<li><a name="a36"></a>    <span class="src-key">var </span><a href="../default/DBTable.html#var$columns">$columns</a><span class="src-sym">;</span></li>
+<li><a name="a37"></a>    <span class="src-key">var </span><a href="../default/DBTable.html#var$columnTypes">$columnTypes</a><span class="src-sym">;</span></li>
+<li><a name="a38"></a>    <span class="src-key">var </span><a href="../default/DBTable.html#var$records">$records</a><span class="src-sym">;</span></li>
+<li><a name="a39"></a>    <span class="src-key">function </span><a href="../default/DBTable.html#methodgetClass">getClass</a><span class="src-sym">(</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a40"></a>        <span class="src-key">return </span><span class="src-str">&quot;DBTable&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a41"></a>    <span class="src-sym">}</span></li>
+<li><a name="a42"></a>    <span class="src-key">function </span><a href="../default/DBTable.html#methodDBTable">DBTable</a><span class="src-sym">(</span><span class="src-var">$name</span><span class="src-sym">,</span><span class="src-var">$columns</span><span class="src-sym">,</span><span class="src-var">$columnTypes</span><span class="src-sym">,</span><span class="src-var">$records</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a43"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/DBTable.html#var$name">name</a>=<span class="src-var">$name</span><span class="src-sym">;</span></li>
+<li><a name="a44"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/DBTable.html#var$columns">columns</a>=<span class="src-var">$columns</span><span class="src-sym">;</span></li>
+<li><a name="a45"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/DBTable.html#var$records">records</a>=<span class="src-var">$records</span><span class="src-sym">;    </span></li>
+<li><a name="a46"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/DBTable.html#var$columnTypes">columnTypes</a>=<span class="src-var">$columnTypes</span><span class="src-sym">;</span></li>
+<li><a name="a47"></a>    <span class="src-sym">}</span></li>
+<li><a name="a48"></a>    <span class="src-key">function </span><a href="../default/DBTable.html#methodtoSoap">toSoap</a><span class="src-sym">(</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a49"></a><span class="src-php">?&gt;</span>&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; </li>
+<li><a name="a50"></a>        xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; </li>
+<li><a name="a51"></a>        xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;</li>
+<li><a name="a52"></a> &lt;soapenv:Body&gt;</li>
+<li><a name="a53"></a>  &lt;ns1:getTableResponse soapenv:encodingStyle=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot; xmlns:ns1=&quot;<span class="src-php">&lt;?php </span>echo <span class="src-id"><a href="../default/_dbwebservice_service_php.html#defineSCRIPT_URL">SCRIPT_URL</a> </span><span class="src-php">?&gt;</span>&quot;&gt;</li>
+<li><a name="a54"></a>   &lt;ns1:getTableReturn href=&quot;#id0&quot;/&gt;</li>
+<li><a name="a55"></a>  &lt;/ns1:getTableResponse&gt;</li>
+<li><a name="a56"></a>  &lt;multiRef id=&quot;id0&quot; soapenc:root=&quot;0&quot; soapenv:encodingStyle=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot; xsi:type=&quot;ns2:DBTable&quot; xmlns:soapenc=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot; xmlns:ns2=&quot;<span class="src-php">&lt;?php </span>echo <span class="src-id"><a href="../default/_dbwebservice_service_php.html#defineSCRIPT_URL">SCRIPT_URL</a> </span><span class="src-php">?&gt;</span>&quot;&gt;</li>
+<li><a name="a57"></a>   &lt;columns xsi:type=&quot;soapenc:Array&quot; soapenc:arrayType=&quot;xsd:string[<span class="src-php">&lt;?php </span>echo <a href="http://www.php.net/sizeof">sizeof</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/DBTable.html#var$columns">columns</a><span class="src-sym">) </span><span class="src-php">?&gt;</span>]&quot;&gt;</li>
+<li><a name="a58"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a59"></a>    <span class="src-key">foreach </span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/DBTable.html#var$columns">columns</a> <span class="src-key">as </span><span class="src-var">$col</span><span class="src-sym">) </span>echo <span class="src-str">&quot;    &lt;item&gt;&quot;</span>.<a href="http://www.php.net/htmlspecialchars">htmlspecialchars</a><span class="src-sym">(</span><span class="src-var">$col</span><span class="src-sym">, </span><span class="src-id">ENT_QUOTES</span><span class="src-sym">)</span>.<span class="src-str">&quot;&lt;/item&gt;\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a60"></a><span class="src-php">?&gt;</span></li>
+<li><a name="a61"></a>   &lt;/columns&gt;</li>
+<li><a name="a62"></a>   &lt;columnTypes xsi:type=&quot;soapenc:Array&quot; soapenc:arrayType=&quot;xsd:int[<span class="src-php">&lt;?php </span>echo <a href="http://www.php.net/sizeof">sizeof</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/DBTable.html#var$columns">columns</a><span class="src-sym">) </span><span class="src-php">?&gt;</span>]&quot;&gt;</li>
+<li><a name="a63"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a64"></a>    <span class="src-key">foreach </span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/DBTable.html#var$columnTypes">columnTypes</a> <span class="src-key">as </span><span class="src-var">$colType</span><span class="src-sym">) </span>echo <span class="src-str">&quot;</span><span class="src-str">    &lt;<span class="src-id">item</span>&gt;<span class="src-var">$colType</span>&lt;/<span class="src-id">item</span>&gt;\n</span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a65"></a><span class="src-php">?&gt;</span></li>
+<li><a name="a66"></a>   &lt;/columnTypes&gt;</li>
+<li><a name="a67"></a>   &lt;name xsi:type=&quot;xsd:string&quot;&gt;<span class="src-php">&lt;?php </span>echo <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/DBTable.html#var$name">name</a><span class="src-php">?&gt;</span>&lt;/name&gt;</li>
+<li><a name="a68"></a>   &lt;records xsi:type=&quot;soapenc:Array&quot; soapenc:arrayType=&quot;ns2:DBRecord[<span class="src-php">&lt;?php </span>echo <a href="http://www.php.net/sizeof">sizeof</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/DBTable.html#var$records">records</a><span class="src-sym">) </span><span class="src-php">?&gt;</span>]&quot;&gt;</li>
+<li><a name="a69"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a70"></a>    <span class="src-var">$i</span>=<span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a71"></a>    <span class="src-key">foreach </span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/DBTable.html#var$records">records</a> <span class="src-key">as </span><span class="src-var">$record</span><span class="src-sym">) </span>echo <span class="src-str">&quot;    &lt;item href=\&quot;#id&quot;</span>.<span class="src-sym">(</span><span class="src-var">$i</span>++<span class="src-sym">)</span>.<span class="src-str">&quot;\&quot;/&gt;\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a72"></a><span class="src-php">?&gt;</span></li>
+<li><a name="a73"></a>   &lt;/records&gt;</li>
+<li><a name="a74"></a>  &lt;/multiRef&gt;</li>
+<li><a name="a75"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a76"></a>    <span class="src-var">$i</span>=<span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a77"></a>    <span class="src-key">foreach </span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/DBTable.html#var$records">records</a> <span class="src-key">as </span><span class="src-var">$record</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a78"></a><span class="src-php">?&gt;</span>  &lt;multiRef id=&quot;id<span class="src-php">&lt;?php </span>echo <span class="src-var">$i </span><span class="src-php">?&gt;</span>&quot; soapenc:root=&quot;0&quot; soapenv:encodingStyle=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot; xsi:type=&quot;ns<span class="src-php">&lt;? </span>echo <span class="src-num">5</span>+<span class="src-var">$i </span><span class="src-php">?&gt;</span>:DBRecord&quot; xmlns:ns<span class="src-php">&lt;? </span>echo <span class="src-num">5</span>+<span class="src-var">$i </span><span class="src-php">?&gt;</span>=&quot;<span class="src-php">&lt;? </span>echo <span class="src-id"><a href="../default/_dbwebservice_service_php.html#defineSCRIPT_URL">SCRIPT_URL</a> </span><span class="src-php">?&gt;</span>&quot; xmlns:soapenc=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;&gt;</li>
+<li><a name="a79"></a>   &lt;id xsi:type=&quot;xsd:int&quot;&gt;<span class="src-php">&lt;?php </span>echo <span class="src-var">$record</span><span class="src-sym">-&gt;</span><span class="src-id">id </span><span class="src-php">?&gt;</span>&lt;/id&gt;</li>
+<li><a name="a80"></a>   &lt;values xsi:type=&quot;soapenc:Array&quot; soapenc:arrayType=&quot;xsd:string[<span class="src-php">&lt;?php </span>echo <a href="http://www.php.net/sizeof">sizeof</a> <span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/DBTable.html#var$columns">columns</a><span class="src-sym">) </span><span class="src-php">?&gt;</span>]&quot;&gt;</li>
+<li><a name="a81"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a82"></a>    <span class="src-key">foreach </span><span class="src-sym">(</span><span class="src-var">$record</span><span class="src-sym">-&gt;</span><span class="src-id">values </span><span class="src-key">as </span><span class="src-var">$value</span><span class="src-sym">) </span>echo <span class="src-str">&quot;    &lt;item&gt;&quot;</span>.<a href="http://www.php.net/htmlspecialchars">htmlspecialchars</a><span class="src-sym">(</span><span class="src-var">$value</span><span class="src-sym">, </span><span class="src-id">ENT_QUOTES</span><span class="src-sym">)</span>.<span class="src-str">&quot;&lt;/item&gt;\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a83"></a><span class="src-php">?&gt;</span></li>
+<li><a name="a84"></a>   &lt;/values&gt;</li>
+<li><a name="a85"></a>  &lt;/multiRef&gt;</li>
+<li><a name="a86"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a87"></a>        <span class="src-var">$i</span>++<span class="src-sym">;</span></li>
+<li><a name="a88"></a>    <span class="src-sym">}</span></li>
+<li><a name="a89"></a>&nbsp;</li>
+<li><a name="a90"></a><span class="src-php">?&gt;</span> &lt;/soapenv:Body&gt;</li>
+<li><a name="a91"></a>&lt;/soapenv:Envelope&gt;<span class="src-php">&lt;?php</span></li>
+<li><a name="a92"></a>    <span class="src-sym">}</span></li>
+<li><a name="a93"></a><span class="src-sym">}</span></li>
+<li><a name="a94"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:32:54 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>::ezMySQL::.ARiF</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<table width="100%" border="0" cellspacing="0" bgcolor="#C5E2C5">
+  <tr>
+    <td width="1%" height="8">&nbsp;</td>
+    <td width="98%"></td>
+    <td width="1%"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="10">
+        
+        <tr>
+          <td width="100%" colspan="2" align="center" valign="top" bgcolor="#EEEEDD"><table width="100%" border="0" cellspacing="5" class="ContText12">
+            <tr>
+              <td colspan="2" align="left"><div class="HeadText18"><strong>Stored Procedure Help Guide </strong> (ezMySQL) </div></td>
+            </tr>
+            <tr>
+              <td width="89%" align="left" valign="top"><a href="index.php" class="SPLink"><font size="4"><b>Home</b></font></a></td>
+              <td width="11%" align="right" valign="top"><a href="help.html" class="SPLink"></a></td>
+            </tr>
+            <tr>
+              <td align="left" valign="top">&nbsp;</td>
+              <td align="right" valign="top">&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left" valign="top"><strong class="TitleText12">Example code to create a Stored PROCEDURE:</strong> </td>
+              <td align="right" valign="top">&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left" valign="top">CREATE PROCEDURE `StatusOfDay`(IN inVar VARCHAR(10), OUT outVar VARCHAR(30))<br />
+                BEGIN<br />
+                IF(inVar = `Woohoo`) THEN<br />
+                SET outVar = `Today is a good day.`;<br />
+                ELSE<br />
+                SET outVar = `Nothing to chear about today.`;<br />
+                END IF;<br />
+                END</td>
+              <td align="right" valign="top">&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left" valign="top">&nbsp;</td>
+              <td align="right" valign="top">&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left" valign="top"><strong class="TitleText12">Calling a Stored PROCEDURE:</strong> </td>
+              <td align="right" valign="top">&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left" valign="top">CALL StatusOfDay(`Woohoo`, @msg);</td>
+              <td align="right" valign="top">&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left" valign="top"><span align="left" class="TitleText12">Get the return message after call by this command: </span> SELECT @msg;</td>
+              <td align="right" valign="top">&nbsp;</td>
+            </tr>
+            
+            <tr>
+              <td align="left" valign="top">&nbsp;</td>
+              <td align="right" valign="top">&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left" valign="top"><strong class="TitleText12">Tutorial References:</strong></td>
+              <td align="right" valign="top">&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left" valign="top"><a href="http://dev.mysql.com/doc/refman/5.0/en/stored-procedures.html" target="_blank">http://dev.mysql.com/doc/refman/5.0/en/stored-procedures.html</a></td>
+              <td align="right" valign="top">&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left" valign="top"><a href="http://www.csr.uky.edu/~sxu2/mysql/manual_Stored_Procedures.html#Stored_Procedures" target="_blank">http://www.csr.uky.edu/~sxu2/mysql/manual_Stored_Procedures.html#Stored_Procedures</a></td>
+              <td align="right" valign="top">&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left" valign="top">&nbsp;</td>
+              <td align="right" valign="top">&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="left" valign="top">&nbsp;</td>
+              <td align="right" valign="top">&nbsp;</td>
+            </tr>
+            
+
+          </table></td>
+        </tr>
+        
+        
+      </table></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="8"></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+</body>
+</html>

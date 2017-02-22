@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Node</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Node</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Class Node</p>
+<p class="description"><p>Hierarchical parent/child managing class for database</p><p>Hierarchal data is good for categorizing and structuring data quite similar  way as xml document is purposed to structure data. This class uses materialized  path apart from other methods available. Materialized path is quite  efficient and easy to understand yet it has its limitations because path  is forced to have varchar, max 255 characters on path field in table.  However this isn't a big problem until there is a need for very wide hierarchy. If  we assume 10 000 000 rows in table, there is still room for 36 depth for any  row.</p><p>To use this class, you need a table with next structure:</p><p>example rows:</p><p>With class you can add nodes, edit nodes, delete nodes, copy, move and change  order of nodes with simple methods. Construct object with table name,  table field prefix (node_ default) and dsn database connection string. Optional  arguments can be used to change path concanating elements. If you change  $sNodePathRoot, remember to change `node_path` default 'x' value on table  definition.</p><p>Usage examples:</p><p>require_once './phpdtobject/PhpDtObject.php';  require_once './node/Node.php';</p><p>$sTableName 					= 'treetest';  $sDsn 						= 'mysql://root:pass@localhost/test';  $aTableField['id'] 			= 'node_id';  $aTableField['path'] 		= 'node_path';  $aTableField['depth'] 		= 'node_depth';  $aTableField['order'] 		= 'node_order';  $aTableField['title'] 		= 'node_title';  $aTableField['has_childs'] 	= 'node_has_childs';</p><p>$oNode 			= new Node($sTableName, $sDsn, $aTableField);  $iNode 			= $oNode-&gt;add_node();  $iParentNode 	= $oNode-&gt;add_node();  $iChildNode 		= $oNode-&gt;add_node($iParentNode, 'MyTitle');</p><p>$oNode-&gt;edit_node($iParentNode, 'MyTitle');  $oNode-&gt;delete_node($iChildNode,$bOnlySubnodes);  $oNode-&gt;order_up($iNode);  $oNode-&gt;order_down($iNode);  $oNode-&gt;move_node($iSourceId,$iTargetId,$bOnlySubnodes);  $oNode-&gt;copy_node($iSourceId,$iTargetId,$iDepth,$bOnlySubnodes);</p><p>...</p></p>
+		<p class="notes">
+			Located in <a class="field" href="_nodetree_node_Node_php.html">/nodetree/node/Node.php</a> (line <span class="field"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a89">89</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../NodeTree/NodeTree.html">NodeTree</a></td>
+					<td>
+											Class NodeTree
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+								<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$sDsn" title="details" class="var-name">$sDsn</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$sNodeDepth" title="details" class="var-name">$sNodeDepth</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$sNodeHasChilds" title="details" class="var-name">$sNodeHasChilds</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$sNodeId" title="details" class="var-name">$sNodeId</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$sNodeOrder" title="details" class="var-name">$sNodeOrder</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$sNodePath" title="details" class="var-name">$sNodePath</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$sNodePathRoot" title="details" class="var-name">$sNodePathRoot</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$sNodePathSeparator" title="details" class="var-name">$sNodePathSeparator</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$sNodeTitle" title="details" class="var-name">$sNodeTitle</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$sTableName" title="details" class="var-name">$sTableName</a>
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#Node" title="details" class="method-name">Node</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$sDsn</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$aTableField</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$sNodePathRoot</span> = <span class="var-default">'x'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$sNodePathSeparator</span> = <span class="var-default">'.'</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#add_node" title="details" class="method-name">add_node</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$iTo</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$sTitle</span> = <span class="var-default">null</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$iOrder</span> = <span class="var-default">null</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#copy_node" title="details" class="method-name">copy_node</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$iFrom</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$iTo</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$iDepth</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$bOnlySubnodes</span> = <span class="var-default">false</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#delete_node" title="details" class="method-name">delete_node</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$iNode</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$bOnlySubnodes</span> = <span class="var-default">false</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#edit_node" title="details" class="method-name">edit_node</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$iNode</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$sTitle</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$iOrder</span> = <span class="var-default">null</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#get_childs_num" title="details" class="method-name">get_childs_num</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$iNode</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$iDepth</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#move_node" title="details" class="method-name">move_node</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$iFrom</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$iTo</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$bOnlySubnodes</span> = <span class="var-default">false</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#order_down" title="details" class="method-name">order_down</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$iNode</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#order_up" title="details" class="method-name">order_up</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$iNode</span>)
+									</div>
+							</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$sDsn" id="$sDsn"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$sDsn</span>
+						(line <span class="line-number"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a100">100</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Database connection string</p>
+	
+	
+		
+		
+
+</div>
+<a name="var$sNodeDepth" id="$sNodeDepth"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$sNodeDepth</span>
+						(line <span class="line-number"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a128">128</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Table node depth field name</p>
+	
+	
+		
+		
+
+</div>
+<a name="var$sNodeHasChilds" id="$sNodeHasChilds"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$sNodeHasChilds</span>
+						(line <span class="line-number"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a143">143</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Table node has childs field name</p>
+	
+	
+		
+		
+
+</div>
+<a name="var$sNodeId" id="$sNodeId"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$sNodeId</span>
+						(line <span class="line-number"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a118">118</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Table node id field name</p>
+	
+	
+		
+		
+
+</div>
+<a name="var$sNodeOrder" id="$sNodeOrder"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$sNodeOrder</span>
+						(line <span class="line-number"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a133">133</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Table node order field name</p>
+	
+	
+		
+		
+
+</div>
+<a name="var$sNodePath" id="$sNodePath"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$sNodePath</span>
+						(line <span class="line-number"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a123">123</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Table node path field name</p>
+	
+	
+		
+		
+
+</div>
+<a name="var$sNodePathRoot" id="$sNodePathRoot"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$sNodePathRoot</span>
+						(line <span class="line-number"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a106">106</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Node path root mark (x.2.34.2) where</p>
+<p class="description"><p>x is a root mark in path</p></p>
+	
+	
+		
+		
+
+</div>
+<a name="var$sNodePathSeparator" id="$sNodePathSeparator"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$sNodePathSeparator</span>
+						(line <span class="line-number"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a112">112</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Node path separator (x.2.34.2) where</p>
+<p class="description"><p>dot (.) is a separator in path</p></p>
+	
+	
+		
+		
+
+</div>
+<a name="var$sNodeTitle" id="$sNodeTitle"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$sNodeTitle</span>
+						(line <span class="line-number"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a138">138</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Table node title field name</p>
+	
+	
+		
+		
+
+</div>
+<a name="var$sTableName" id="$sTableName"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$sTableName</span>
+						(line <span class="line-number"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a95">95</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Targe table name</p>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodNode" id="Node"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor Node</span> (line <span class="line-number"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a156">156</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			Node
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sTableName</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$sDsn</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$aTableField</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$sNodePathRoot</span> = <span class="var-default">'x'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$sNodePathSeparator</span> = <span class="var-default">'.'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sTableName</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sDsn</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$aTableField</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sNodePathRoot</span><span class="var-description">: default 'x'</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sNodePathSeparator</span><span class="var-description">: default '.'</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodadd_node" id="add_node"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">add_node</span> (line <span class="line-number"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a197">197</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add node with optional title and order arguments</p>
+<p class="description"><p>If target node ($iTo) is zero (0) then add to root.  If order is not set, method find next order. Using manual order  may cause duplicate order numbers and that would affect to order  up, order down methods  If title is not set, method creates new name: Node + Order.  Be careful when setting empty string as titles, because they may  have unexpected result when printing trees with action links!  Method returns new node id or false when creating new node fails.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> integer / boolean</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			add_node
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$iTo</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$sTitle</span> = <span class="var-default">null</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$iOrder</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$iTo</span><span class="var-description">: default 0</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sTitle</span><span class="var-description">: default null</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$iOrder</span><span class="var-description">: default null</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodcopy_node" id="copy_node"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">copy_node</span> (line <span class="line-number"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a386">386</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Copy node</p>
+<p class="description"><p>Copies node from source id ($iFrom) to target id ($iTo).  If target node is zero (0), then method copies nodes to root.  With depth argument it is possible to limit depth of copied nodes  Only subnodes argument is used for copying or not copying parent  node ($iFrom)</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> boolean</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			copy_node
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$iFrom</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$iTo</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$iDepth</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$bOnlySubnodes</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$iFrom</span><span class="var-description">: default 0</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$iTo</span><span class="var-description">: default 0</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$iDepth</span><span class="var-description">: default 0</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$bOnlySubnodes</span><span class="var-description">: default false</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methoddelete_node" id="delete_node"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">delete_node</span> (line <span class="line-number"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a287">287</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Delete node and / or all subnodes</p>
+<p class="description"><p>With optional argument it is possible to delete only subnodes of  selected / target node. If node id is zero (0), then delete  truncates table!</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			delete_node
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$iNode</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$bOnlySubnodes</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$iNode</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$bOnlySubnodes</span><span class="var-description">: default false</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodedit_node" id="edit_node"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">edit_node</span> (line <span class="line-number"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a260">260</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Edit node title and order</p>
+<p class="description"><p>Path, depth and has childs fields are handled automatic on other methods  If you decide manually to change them (as well as order field) be carefull  because its easy to break hierarchical data structure in table</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			edit_node
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$iNode</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$sTitle</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$iOrder</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$iNode</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sTitle</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$iOrder</span><span class="var-description">: default null</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodget_childs_num" id="get_childs_num"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">get_childs_num</span> (line <span class="line-number"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a353">353</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get node childs number</p>
+<p class="description"><p>If node is zero, this finds all root nodes. Depth  id used to limit how deep on tree search is made</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> number / boolean</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			get_childs_num
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$iNode</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$iDepth</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$iNode</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$iDepth</span><span class="var-description">: default 0</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodmove_node" id="move_node"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">move_node</span> (line <span class="line-number"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a484">484</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Move node</p>
+<p class="description"><p>Copies node from source id ($iFrom) to target id ($iTo).  If target node is zero (0), then method moves nodes to root.  Only subnodes argument is used for moving or not moving parent  node ($iFrom).  This method checks possible collisions when trying to move node  into itself.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> number / boolean</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			move_node
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$iFrom</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$iTo</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$bOnlySubnodes</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$iFrom</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$iTo</span><span class="var-description">: default 0</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$bOnlySubnodes</span><span class="var-description">: default false</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodorder_down" id="order_down"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">order_down</span> (line <span class="line-number"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a338">338</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Order node down</p>
+<p class="description"><p>Changes order. Fixes orders if there are duplicate order values  and checks lower limit for optimized queries</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			order_down
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$iNode</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$iNode</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodorder_up" id="order_up"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">order_up</span> (line <span class="line-number"><a href="..//__filesource/fsource_Node__nodetreenodeNode.php.html#a324">324</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Order node up</p>
+<p class="description"><p>Changes order. Fixes orders if there are duplicate order values  and checks upper limit for optimized queries</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			order_up
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$iNode</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$iNode</span>			</li>
+				</ul>
+		
+		
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:34:37 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</div></body>
+</html>

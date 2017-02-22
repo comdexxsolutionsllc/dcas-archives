@@ -1,0 +1,1476 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class AIM</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class AIM</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Authorize.net AIM  client</p>
+	<ul class="tags">
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">uses:</span> <a href="../default/.html"></a></li>
+				<li><span class="field">copyright:</span> (C) 2006 NKommunikation. All Rights Reserved.</li>
+				<li><span class="field">author:</span> Joshua Abbott, WiseGene Project (NKommunikation)</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_aim_AIM_php.html">/aim/AIM.php</a> (line <span class="field"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a18">18</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#MAX_RESPONSE_SIZE" title="details" class="const-name">MAX_RESPONSE_SIZE</a> = 					<span class="var-type"> 10240</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#MON_FORMATSTR" title="details" class="const-name">MON_FORMATSTR</a> = 					<span class="var-type"> &quot;%6.2f&quot;</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$data" title="details" class="var-name">$data</a>
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#fetch" title="details" class="method-name">fetch</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getAmount" title="details" class="method-name">getAmount</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getApproval" title="details" class="method-name">getApproval</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getAVS" title="details" class="method-name">getAVS</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getRcode" title="details" class="method-name">getRcode</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getRRcode" title="details" class="method-name">getRRcode</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getRRtext" title="details" class="method-name">getRRtext</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getTestMode" title="details" class="method-name">getTestMode</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getTransId" title="details" class="method-name">getTransId</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getTransType" title="details" class="method-name">getTransType</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">AIM</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setAmount" title="details" class="method-name">setAmount</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inAmt</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setAuthCode" title="details" class="method-name">setAuthCode</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setBillAddress" title="details" class="method-name">setBillAddress</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setBillCity" title="details" class="method-name">setBillCity</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setBillCountry" title="details" class="method-name">setBillCountry</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setBillFax" title="details" class="method-name">setBillFax</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setBillFirstName" title="details" class="method-name">setBillFirstName</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setBillLastName" title="details" class="method-name">setBillLastName</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setBillOrg" title="details" class="method-name">setBillOrg</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setBillPhone" title="details" class="method-name">setBillPhone</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setBillStateName" title="details" class="method-name">setBillStateName</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setBillZip" title="details" class="method-name">setBillZip</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setCardCode" title="details" class="method-name">setCardCode</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setCardNum" title="details" class="method-name">setCardNum</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setCustId" title="details" class="method-name">setCustId</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setDescription" title="details" class="method-name">setDescription</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setEmail" title="details" class="method-name">setEmail</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setExp" title="details" class="method-name">setExp</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setInvoiceNum" title="details" class="method-name">setInvoiceNum</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setShipAddress" title="details" class="method-name">setShipAddress</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setShipCity" title="details" class="method-name">setShipCity</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setShipCountry" title="details" class="method-name">setShipCountry</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setShipFirstName" title="details" class="method-name">setShipFirstName</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setShipLastName" title="details" class="method-name">setShipLastName</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setShipOrg" title="details" class="method-name">setShipOrg</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setShipStateName" title="details" class="method-name">setShipStateName</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setShipZip" title="details" class="method-name">setShipZip</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setTransId" title="details" class="method-name">setTransId</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inInt</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setType" title="details" class="method-name">setType</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#toString" title="details" class="method-name">toString</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#validateInput" title="details" class="method-name">validateInput</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$vehicle</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#validateTypical" title="details" class="method-name">validateTypical</a>
+										()
+									</div>
+							</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$data" id="$data"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$data</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a388">388</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodfetch" id="fetch"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">fetch</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a215">215</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			fetch
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetAmount" id="getAmount"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getAmount</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a423">423</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getAmount
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetApproval" id="getApproval"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getApproval</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a402">402</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getApproval
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetAVS" id="getAVS"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getAVS</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a410">410</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getAVS
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetRcode" id="getRcode"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRcode</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a427">427</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getRcode
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetRRcode" id="getRRcode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRRcode</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a415">415</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getRRcode
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetRRtext" id="getRRtext"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRRtext</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a398">398</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getRRtext
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetTestMode" id="getTestMode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTestMode</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a210">210</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getTestMode
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetTransId" id="getTransId"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTransId</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a419">419</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getTransId
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetTransType" id="getTransType"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTransType</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a406">406</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getTransType
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a205">205</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Configures the instance.</p>
+<p class="description"><p>TODO:     Read in a user-friendly configuration file, instead of a PHP     source code file.     The Java version of this class uses a &quot;properties&quot; file, but     I know of no comparable feature to make this easy to do in PHP.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">AIM</span>
+		<span class="method-name">
+			__construct
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetAmount" id="setAmount"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setAmount</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a177">177</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setAmount
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inAmt</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetAuthCode" id="setAuthCode"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setAuthCode</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a173">173</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setAuthCode
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetBillAddress" id="setBillAddress"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setBillAddress</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a74">74</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setBillAddress
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetBillCity" id="setBillCity"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setBillCity</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a78">78</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setBillCity
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetBillCountry" id="setBillCountry"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setBillCountry</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a90">90</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setBillCountry
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetBillFax" id="setBillFax"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setBillFax</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a98">98</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setBillFax
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetBillFirstName" id="setBillFirstName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setBillFirstName</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a62">62</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setBillFirstName
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetBillLastName" id="setBillLastName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setBillLastName</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a66">66</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setBillLastName
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetBillOrg" id="setBillOrg"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setBillOrg</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a70">70</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setBillOrg
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetBillPhone" id="setBillPhone"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setBillPhone</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a94">94</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setBillPhone
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetBillStateName" id="setBillStateName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setBillStateName</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a82">82</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setBillStateName
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetBillZip" id="setBillZip"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setBillZip</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a86">86</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setBillZip
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetCardCode" id="setCardCode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setCardCode</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a165">165</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setCardCode
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetCardNum" id="setCardNum"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setCardNum</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a188">188</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setCardNum
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetCustId" id="setCustId"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setCustId</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a102">102</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setCustId
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetDescription" id="setDescription"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setDescription</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a115">115</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setDescription
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetEmail" id="setEmail"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setEmail</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a106">106</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setEmail
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetExp" id="setExp"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setExp</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a192">192</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setExp
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetInvoiceNum" id="setInvoiceNum"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setInvoiceNum</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a110">110</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setInvoiceNum
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetShipAddress" id="setShipAddress"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setShipAddress</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a135">135</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setShipAddress
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetShipCity" id="setShipCity"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setShipCity</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a140">140</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setShipCity
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetShipCountry" id="setShipCountry"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setShipCountry</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a155">155</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setShipCountry
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetShipFirstName" id="setShipFirstName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setShipFirstName</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a120">120</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setShipFirstName
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetShipLastName" id="setShipLastName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setShipLastName</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a125">125</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setShipLastName
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetShipOrg" id="setShipOrg"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setShipOrg</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a130">130</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setShipOrg
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetShipStateName" id="setShipStateName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setShipStateName</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a145">145</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setShipStateName
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetShipZip" id="setShipZip"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setShipZip</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a150">150</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setShipZip
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetTransId" id="setTransId"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setTransId</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a169">169</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setTransId
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inInt</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetType" id="setType"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setType</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a161">161</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setType
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$inString</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodtoString" id="toString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">toString</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a390">390</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			toString
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodvalidateInput" id="validateInput"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">validateInput</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a469">469</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Verify that input data is good to submit a payment request.</p>
+<p class="description"><p>We assume that the addresses have already been validated.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			validateInput
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$vehicle</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodvalidateTypical" id="validateTypical"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">validateTypical</span> (line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a431">431</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			validateTypical
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constMAX_RESPONSE_SIZE" id="MAX_RESPONSE_SIZE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MAX_RESPONSE_SIZE</span>
+			 = <span class="const-default"> 10240</span>
+			(line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a19">19</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constMON_FORMATSTR" id="MON_FORMATSTR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">MON_FORMATSTR</span>
+			 = <span class="const-default"> &quot;%6.2f&quot;</span>
+			(line <span class="line-number"><a href="..//__filesource/fsource_AIM__aimAIM.php.html#a20">20</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:31:05 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</div></body>
+</html>

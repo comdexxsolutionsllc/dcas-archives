@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for CYahooStatus.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file CYahooStatus.php</h1>
+<p>Documentation is available at <a href="../CYahooStatus/_cyahoostatus_CYahooStatus_php.html">CYahooStatus.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php </span></li>
+<li><a name="a2"></a><span class="src-doc">/**</span></li>
+<li><a name="a3"></a><span class="src-doc">* </span><span class="src-doc-coretag">@package</span><span class="src-doc"> CYahooStatus</span></li>
+<li><a name="a4"></a><span class="src-doc">* </span><span class="src-doc-coretag">@author</span><span class="src-doc"> Joshua Abbott, WiseGene Project (NKommunikation)</span></li>
+<li><a name="a5"></a><span class="src-doc">* </span><span class="src-doc-coretag">@copyright</span><span class="src-doc"> (C) 2006 NKommunikation. All Rights Reserved.</span></li>
+<li><a name="a6"></a><span class="src-doc">* </span><span class="src-doc-tag">@desc</span><span class="src-doc"> Yahoo screen-name Status</span></li>
+<li><a name="a7"></a><span class="src-doc">* </span><span class="src-doc-coretag">@uses</span></li>
+<li><a name="a8"></a><span class="src-doc">* </span><span class="src-doc-coretag">@example</span></li>
+<li><a name="a9"></a><span class="src-doc">* </span><span class="src-doc-tag">@files</span></li>
+<li><a name="a10"></a><span class="src-doc">*/</span></li>
+<li><a name="a11"></a>&nbsp;</li>
+<li><a name="a12"></a><a href="http://www.php.net/define">define</a> <span class="src-sym">(</span><span class="src-str">&quot;YAHOO_ONLINE&quot;</span><span class="src-sym">, </span><span class="src-num">1</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a13"></a><a href="http://www.php.net/define">define</a> <span class="src-sym">(</span><span class="src-str">&quot;YAHOO_OFFLINE&quot;</span><span class="src-sym">, </span><span class="src-num">2</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a14"></a><a href="http://www.php.net/define">define</a> <span class="src-sym">(</span><span class="src-str">&quot;YAHOO_UNKNOWN&quot;</span><span class="src-sym">, </span><span class="src-num">3</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a15"></a>&nbsp;</li>
+<li><a name="a16"></a><span class="src-key">class </span><a href="../CYahooStatus/CYahooStatus.html">CYahooStatus</a></li>
+<li><a name="a17"></a><span class="src-sym">{</span></li>
+<li><a name="a18"></a>    <span class="src-key">function </span><a href="../CYahooStatus/CYahooStatus.html#methodexecute">execute</a> <span class="src-sym">(</span><span class="src-var">$yahoo </span>= <span class="src-str">&quot;&quot;</span><span class="src-sym">, </span><span class="src-sym">&amp;</span><span class="src-var">$errno</span><span class="src-sym">, </span><span class="src-sym">&amp;</span><span class="src-var">$errstr</span><span class="src-sym">)</span></li>
+<li><a name="a19"></a>    <span class="src-sym">{</span></li>
+<li><a name="a20"></a>        <span class="src-var">$errno </span>= <span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a21"></a>        <span class="src-var">$errstr </span>= <span class="src-str">&quot;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a22"></a>        <span class="src-var">$lines </span>= <span class="src-sym">@</span><a href="http://www.php.net/file">file</a> <span class="src-sym">(</span><span class="src-str">&quot;http://opi.yahoo.com/online?u=&quot; </span>. <span class="src-var">$yahoo </span>. <span class="src-str">&quot;&amp;m=t&quot;</span><span class="src-sym">)</span><span class="src-sym">; </span></li>
+<li><a name="a23"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$lines </span>!== <span class="src-id">false</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a24"></a>            <span class="src-var">$response </span>= <a href="http://www.php.net/implode">implode</a> <span class="src-sym">(</span><span class="src-str">&quot;&quot;</span><span class="src-sym">, </span><span class="src-var">$lines</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a25"></a>            <span class="src-key">if </span><span class="src-sym">(</span><a href="http://www.php.net/strpos">strpos</a> <span class="src-sym">(</span><span class="src-var">$response</span><span class="src-sym">, </span><span class="src-str">&quot;NOT ONLINE&quot;</span><span class="src-sym">) </span>!== <span class="src-id">false</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a26"></a>                <span class="src-key">return </span><span class="src-id"><a href="../CYahooStatus/_cyahoostatus_CYahooStatus_php.html#defineYAHOO_OFFLINE">YAHOO_OFFLINE</a></span><span class="src-sym">;</span></li>
+<li><a name="a27"></a>            <span class="src-sym">} </span><span class="src-key">elseif </span><span class="src-sym">(</span><a href="http://www.php.net/strpos">strpos</a> <span class="src-sym">(</span><span class="src-var">$response</span><span class="src-sym">, </span><span class="src-str">&quot;ONLINE&quot;</span><span class="src-sym">) </span>!== <span class="src-id">false</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a28"></a>                <span class="src-key">return </span><span class="src-id"><a href="../CYahooStatus/_cyahoostatus_CYahooStatus_php.html#defineYAHOO_ONLINE">YAHOO_ONLINE</a></span><span class="src-sym">;</span></li>
+<li><a name="a29"></a>            <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a30"></a>                <span class="src-key">return </span><span class="src-id"><a href="../CYahooStatus/_cyahoostatus_CYahooStatus_php.html#defineYAHOO_UNKNOWN">YAHOO_UNKNOWN</a></span><span class="src-sym">;</span></li>
+<li><a name="a31"></a>            <span class="src-sym">}</span></li>
+<li><a name="a32"></a>        <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a33"></a>            <span class="src-var">$errno </span>= <span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a34"></a>            <span class="src-var">$errstr </span>= <span class="src-str">&quot;Unable to connect to http://opi.yahoo.com&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a35"></a>            <span class="src-key">return </span><span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a36"></a>        <span class="src-sym">}</span></li>
+<li><a name="a37"></a>    <span class="src-sym">}</span></li>
+<li><a name="a38"></a><span class="src-sym">}</span></li>
+<li><a name="a39"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:32:34 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</body>
+</html>

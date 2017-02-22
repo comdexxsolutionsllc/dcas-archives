@@ -1,0 +1,138 @@
+<?PHP
+
+/**
+* @package MegaSpider
+* @author Joshua Abbott, WiseGene Project (NKommunikation)
+* @copyright (C) 2006 NKommunikation. All Rights Reserved.
+* @desc Retrieve any data from a website
+* @uses
+* @example
+* @files
+*/
+
+/**
+* SQL API Extending Library
+*
+* @package sqlapi
+* @author $Author: Sheiko $ 
+* @version $Id: adodb.sqlapi.lib.php,v 1.0 2005/10/20 05:34:08 Sheiko Exp $
+* @since sqlCache v.1.0
+* @copyright (C) by Dmitry Sheiko <sheiko@cmsdevelopment.com>
+*/
+
+if(!defined("DALAPIPATH")) trigger_error("You must specify correct PHPBB Db API path");
+
+if( !@include_once( DALAPIPATH.'adodb.inc.php' ) ) trigger_error("Can not load ".DALAPIPATH."adodb.inc.php module", E_USER_ERROR);
+
+
+/**
+* SQLAPI Class. Needs Abstract DB Layers Library AdoBD 
+* Extend DB API
+* @package kernel
+* @author $Author: Sheiko $ 
+*/
+
+define("CACHETABLESINFOCALL", true);
+define("APPLYCACHE", true);
+
+class sqlAPI {
+	
+	/**
+	* Unified ID of DB Conection
+	* @var string (may be interger)
+	*/	
+	var $dbConnectionID;
+	/**
+	* DB Connector
+	* @var string (may be object)
+	*/	
+	var $db; 
+
+
+
+	/**
+	* Class constructor
+	* @param string $sqlserver server host
+	* @param string $sqluser user name
+	* @param string $sqlpassword user password
+	* @param string $database base name
+	* @param string $persistency persistent connection trigger 
+	* @return object
+	*/	
+	function sqlAPI($sqlserver, $sqluser, $sqlpassword, $database, $persistency = true) {
+		$this->db = NewADOConnection(SQLLAYER);
+		$this->dbConnectionID = $this->db->PConnect($sqlserver, $sqluser, $sqlpassword, $database);
+		return $this->db;
+	}
+	/**
+	 * Results array cleaning (slashes striping and entry duplicates deleting)
+	 *
+	 * @param array $results results array
+	 * @return array
+	 */	
+	function cleanResults($results) {
+			if($results) {
+				foreach($results as $index=>$result){
+					foreach($result as $key=>$val){
+					if(is_int($key)) unset($results[$index][$key]);
+					elseif( get_magic_quotes_gpc() ) $results[$index][$key]=stripslashes($result[$key]);
+					}
+				}
+			}
+		return $results;
+	}
+	/**
+	 * Get fetches' listing from DB
+	 *
+	 * @param string $Query SQL query
+	 * @param string $Trigger (may be APPLYCACHE or false). If $Trigger equals APPLYCACHE cache engine will be use
+	 * @return array or error string
+	 */		
+	function getFetchListing($Query, $Trigger=false) { 
+		$Query = trim($Query);
+		if(!preg_match("/^SELECT\s/is", $Query)) trigger_error("This method may be used only in common with SELECT query", E_USER_ERROR);
+		$results = CACHENOTFOUND;
+		if($Trigger == APPLYCACHE) $results=$this->getCache($Query);
+		if( $results == CACHENOTFOUND) {
+			$results = array();
+			$recordSet = &$this->db->Execute($Query); 
+		    if (!$recordSet)  
+		        return convert_cyr_string($this->db->ErrorMsg(),'k','w');
+		    else 
+		    while (!$recordSet->EOF) { 
+       			$results[] = $recordSet->fields;
+        		$recordSet->MoveNext(); 
+    		} 
+			$recordSet->Close(); 
+			$results = $this->cleanResults($results);
+			if($Trigger == APPLYCACHE) $this->putCache($Query, $results);
+		}
+		return $results;
+	} 		
+	/**
+	 * DB modifying 
+	 *
+	 * @param string $Query SQL query
+	 * @param string $Trigger (may be CACHETABLESINFOCALL or false). $Trigger allows CACHETABLESINFOCALL value only for calls from sqlCache methods
+	 * @return pointer
+	 */	
+	function modify($Query, $Trigger=false) {
+		$Query = trim($Query);
+		if(!preg_match("/^(INSERT|UPDATE|DELETE|CREATE)\s/is", $Query)) trigger_error("This method may be used only in common with INSERT/UPDATE/DELETE queries", E_USER_ERROR);
+		if($Trigger!=CACHETABLESINFOCALL) $this->cleanCache($Query);
+		return $this->db->Execute($Query);
+	}
+	/**
+	 * SQL query validation 
+	 *
+	 * @param string $Query SQL query
+	 * @return integer (false or not false)
+	 */		
+	function checkQuery($Query) {
+		$recordSet = $this->db->Execute($Query);
+		if (!$recordSet)  
+		    return $this->db->ErrorNo();		
+	}
+	
+}
+

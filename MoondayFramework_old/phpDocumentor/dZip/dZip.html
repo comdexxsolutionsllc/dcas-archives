@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class dZip</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class dZip</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Zip files on the fly</p>
+	<ul class="tags">
+				<li><span class="field">filesource:</span> <a href="..//__filesource/fsource_dZip__dunzip2dZip.inc.php.html">Source Code for this file</a></li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">copyright:</span> (C) 2006 NKommunikation. All Rights Reserved.</li>
+				<li><span class="field">author:</span> Joshua Abbott, WiseGene Project (NKommunikation)</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_dunzip2_dZip_inc_php.html">/dunzip2/dZip.inc.php</a> (line <span class="field"><a href="..//__filesource/fsource_dZip__dunzip2dZip.inc.php.html#a14">14</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$dirSignature" title="details" class="var-name">$dirSignature</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$dirSignatureE" title="details" class="var-name">$dirSignatureE</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$fh" title="details" class="var-name">$fh</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$filename" title="details" class="var-name">$filename</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$files_count" title="details" class="var-name">$files_count</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$overwrite" title="details" class="var-name">$overwrite</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$zipSignature" title="details" class="var-name">$zipSignature</a>
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+								
+				<div class="method-definition">
+											<span class="method-result">dZip</span>
+										<a href="#dZip" title="details" class="method-name">dZip</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$filename</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$overwrite</span> = <span class="var-default">true</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#addDir" title="details" class="method-name">addDir</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$dirname</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$fileComments</span> = <span class="var-default">''</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#addFile" title="details" class="method-name">addFile</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$filename</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$cfilename</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$fileComments</span> = <span class="var-default">''</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span> = <span class="var-default">false</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#appendCentralDir" title="details" class="method-name">appendCentralDir</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$filename</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$properties</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#save" title="details" class="method-name">save</a>
+											([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$zipComments</span> = <span class="var-default">''</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setExtra" title="details" class="method-name">setExtra</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$filename</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$property</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+							</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$dirSignature" id="$dirSignature"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$dirSignature</span>
+			 = <span class="var-default"> &quot;\x50\x4b\x01\x02&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_dZip__dunzip2dZip.inc.php.html#a19">19</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$dirSignatureE" id="$dirSignatureE"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$dirSignatureE</span>
+			 = <span class="var-default"> &quot;\x50\x4b\x05\x06&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_dZip__dunzip2dZip.inc.php.html#a20">20</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$fh" id="$fh"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$fh</span>
+						(line <span class="line-number"><a href="..//__filesource/fsource_dZip__dunzip2dZip.inc.php.html#a22">22</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$filename" id="$filename"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$filename</span>
+						(line <span class="line-number"><a href="..//__filesource/fsource_dZip__dunzip2dZip.inc.php.html#a15">15</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$files_count" id="$files_count"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$files_count</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number"><a href="..//__filesource/fsource_dZip__dunzip2dZip.inc.php.html#a21">21</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$overwrite" id="$overwrite"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$overwrite</span>
+						(line <span class="line-number"><a href="..//__filesource/fsource_dZip__dunzip2dZip.inc.php.html#a16">16</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$zipSignature" id="$zipSignature"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$zipSignature</span>
+			 = <span class="var-default"> &quot;\x50\x4b\x03\x04&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_dZip__dunzip2dZip.inc.php.html#a18">18</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methoddZip" id="dZip"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor dZip</span> (line <span class="line-number"><a href="..//__filesource/fsource_dZip__dunzip2dZip.inc.php.html#a24">24</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">dZip</span>
+		<span class="method-name">
+			dZip
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$filename</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$overwrite</span> = <span class="var-default">true</span>])
+			</div>
+	
+		
+		
+	</div>
+<a name="methodaddDir" id="addDir"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addDir</span> (line <span class="line-number"><a href="..//__filesource/fsource_dZip__dunzip2dZip.inc.php.html#a28">28</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addDir
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$dirname</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$fileComments</span> = <span class="var-default">''</span>])
+			</div>
+	
+		
+		
+	</div>
+<a name="methodaddFile" id="addFile"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">addFile</span> (line <span class="line-number"><a href="..//__filesource/fsource_dZip__dunzip2dZip.inc.php.html#a33">33</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addFile
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$filename</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$cfilename</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$fileComments</span> = <span class="var-default">''</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span> = <span class="var-default">false</span>])
+			</div>
+	
+		
+		
+	</div>
+<a name="methodappendCentralDir" id="appendCentralDir"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">appendCentralDir</span> (line <span class="line-number"><a href="..//__filesource/fsource_dZip__dunzip2dZip.inc.php.html#a155">155</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			appendCentralDir
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$filename</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$properties</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsave" id="save"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">save</span> (line <span class="line-number"><a href="..//__filesource/fsource_dZip__dunzip2dZip.inc.php.html#a111">111</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			save
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$zipComments</span> = <span class="var-default">''</span>])
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetExtra" id="setExtra"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setExtra</span> (line <span class="line-number"><a href="..//__filesource/fsource_dZip__dunzip2dZip.inc.php.html#a108">108</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setExtra
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$filename</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$property</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+		
+		
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:33:05 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</div></body>
+</html>

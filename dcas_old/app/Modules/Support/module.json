@@ -1,0 +1,9 @@
+{
+	"name": "Support",
+	"slug": "support",
+	"namespace": "Support",
+	"version": "1.0",
+	"author": "Sarah Renner",
+	"license": "MIT",
+	"description": "Support Module for Datacenter Automation Suite"
+}

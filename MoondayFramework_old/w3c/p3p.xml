@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!-- Created with P3PEdit on 7-Nov-2006 01:29:09 PM - http://p3pedit.com -->
+<META xmlns="http://www.w3.org/2002/01/P3Pv1">
+	<POLICY-REFERENCES>
+		<EXPIRY max-age="86400" />
+		<POLICY-REF about="#WebsitePolicy">
+			<INCLUDE>/*</INCLUDE>
+			<COOKIE-INCLUDE name="*" value="*" domain="*" path="*"/>
+		</POLICY-REF>
+	</POLICY-REFERENCES>
+	<POLICIES xmlns="http://www.w3.org/2002/01/P3Pv1">
+		<POLICY name="WebsitePolicy" discuri="http://www.managedNOC.net/w3c/policy.html" opturi="http://www.managedNOC.net/w3c/policy.html">
+			<ENTITY>
+				<DATA-GROUP>
+					<DATA ref="#business.name">PC Range Pty Ltd</DATA>
+					<DATA ref="#business.contact-info.postal.street">A Tam, Sherrifs Road</DATA>
+					<DATA ref="#business.contact-info.postal.city">Lonsdale</DATA>
+					<DATA ref="#business.contact-info.postal.stateprov">South Australia</DATA>
+					<DATA ref="#business.contact-info.postal.postalcode">5160</DATA>
+					<DATA ref="#business.contact-info.postal.country">Australia</DATA>
+					<DATA ref="#business.contact-info.telecom.telephone">+61 88-322-9544</DATA>
+					<DATA ref="#business.contact-info.online.email">admin@managedNOC.net</DATA>
+				</DATA-GROUP>
+			</ENTITY>
+			<ACCESS>
+				<all/>
+			</ACCESS>
+			<DISPUTES-GROUP>
+				<DISPUTES resolution-type="service" service="http://www.managedNOC.net/w3c/policy.html" short-description="support@managedNOC.net">
+					<REMEDIES><correct/></REMEDIES>
+				</DISPUTES>
+			</DISPUTES-GROUP>
+			<STATEMENT>
+				<PURPOSE>
+					<current/>
+					<admin/>
+					<develop/>
+					<tailoring/>
+					<pseudo-analysis required="opt-out"/>
+					<pseudo-decision/>
+					<individual-analysis/>
+					<individual-decision/>
+				</PURPOSE>
+				<RECIPIENT>
+					<public><recipient-description>admin@managedNOC.net</recipient-description></public>
+				</RECIPIENT>
+				<RETENTION><indefinitely/></RETENTION>
+				<DATA-GROUP>
+					<DATA ref="#user.name"/>
+					<DATA ref="#user.gender" optional="yes"/>
+					<DATA ref="#user.home-info"/>
+					<DATA ref="#user.business-info" optional="yes"/>
+					<DATA ref="#thirdparty.name"/>
+					<DATA ref="#thirdparty.gender"/>
+					<DATA ref="#thirdparty.home-info"/>
+					<DATA ref="#thirdparty.business-info" optional="yes"/>
+					<DATA ref="#dynamic.http"/>
+					<DATA ref="#dynamic.clientevents"/>
+					<DATA ref="#dynamic.searchtext"/>
+					<DATA ref="#dynamic.interactionrecord"/>
+					<DATA ref="#dynamic.cookies">
+						<CATEGORIES>
+							<physical/>
+							<uniqueid/>
+							<computer/>
+							<state/>
+							<preference/>
+							<location/>
+						</CATEGORIES>
+					</DATA>
+				</DATA-GROUP>
+			</STATEMENT>
+		</POLICY>
+	</POLICIES>
+</META>

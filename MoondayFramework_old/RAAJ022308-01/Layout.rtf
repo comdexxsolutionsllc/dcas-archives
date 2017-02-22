@@ -1,0 +1,356 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Courier New;}}
+{\*\generator Msftedit 5.41.21.2507;}\viewkind4\uc1\pard\ul\f0\fs20 Accounting\ulnone\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Accounting.php\par
+\ulnone View All Invoices\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab viewAllInvoices()\par
+View Pending Invoices\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab viewPendingInvoices()\par
+View Monthly Invoices\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab viewMonthlyInvoices()\par
+View Cybersource Batches\tab\tab\tab\tab\tab\tab\tab\tab\tab viewCybersourceBatches()\par
+Change Cancellation Reason\tab\tab\tab\tab\tab\tab\tab\tab\tab changeCancellationReason()\ul\par
+\par
+\par
+Hardware\ulnone\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Hardware.php\par
+\ulnone Find\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Hardware-Find.php\ulnone\par
+\tab Search Hardware Database\tab\tab\tab\tab\tab\tab\tab\tab searchHardwareDatabase()\par
+\tab Missing IPMI\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab viewMissingIPMI()\par
+\tab Servers Requiring Maintenance\tab\tab\tab\tab\tab\tab\tab\tab viewServersRequiringMaintenance()\par
+\tab Virtual Licenses\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab viewVirtualLicenses()\par
+\par
+Transactions\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Hardware-Transactions.php\ulnone\par
+\tab Transaction home\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab viewTransactionsHome()\par
+\tab Current transactions\tab\tab\tab\tab\tab\tab\tab\tab\tab viewCurrentTransactions()\par
+\tab Hardware Properties\tab\tab\tab\tab\tab\tab\tab\tab\tab viewHardwareProperties()\par
+\par
+Hardware\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Hardware-Main.php\ulnone\par
+\tab Add Hardware Record\tab\tab\tab\tab\tab\tab\tab\tab\tab addHardwareRecord()\par
+\tab Hardware Component Marketing Features\tab\tab\tab\tab\tab\tab viewHardwareComponentMarketingFeatures()\par
+\tab Hardware Confirmed Mismatch Log\tab\tab\tab\tab\tab\tab\tab viewHardwareConfirmedMismatchLog()\par
+\tab Manage Rack Cabling Standards\tab\tab\tab\tab\tab\tab\tab\tab manageRackCablingStandards()\par
+\tab Manage Hardware Attributes\tab\tab\tab\tab\tab\tab\tab\tab manageHardwareAttributes()\par
+\par
+Lease Management\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Hardware-LeaseManagement.php\ulnone\par
+\tab Lease admin home\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab viewLeaseAdminHome()\par
+\par
+Network\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Hardware-Network.php\ulnone\par
+\tab Network admin home\tab\tab\tab\tab\tab\tab\tab\tab\tab viewNetworkAdminHome()\par
+\tab Bandwidth Drilldown\tab\tab\tab\tab\tab\tab\tab\tab\tab viewBandwidthDrilldown()\par
+\tab SWIP Management\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab manageSWIPTransactions()\par
+\par
+Reports\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Hardware-Reports.php\ulnone\par
+\tab Hardware distribution\tab\tab\tab\tab\tab\tab\tab\tab\tab viewHardwareDistribution()\par
+\tab Software distribution\tab\tab\tab\tab\tab\tab\tab\tab\tab viewSoftwareDistribution($short)\par
+\tab Software distribution (Cost Info)\tab\tab\tab\tab\tab\tab\tab viewSoftwareDistribution($long)\par
+\tab Upgrade distribution\tab\tab\tab\tab\tab\tab\tab\tab\tab viewUpgradeDistribution()\par
+\tab Power Strip Summary (slow)\tab\tab\tab\tab\tab\tab\tab\tab viewPowerStripSummary()\par
+\tab Power Port Verification Tool\tab\tab\tab\tab\tab\tab\tab\tab viewPowerPortVerification()\par
+\tab Server Base Costs\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab viewServerBaseCosts()\par
+\par
+Audits\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Hardware-Audits.php\ulnone\par
+\tab Hardware Continuity Audit Tool (SLOW)\tab\tab\tab\tab\tab\tab viewHardwareContinuityAuditTool()\par
+\tab Power Port Connection Audit Tool\tab\tab\tab\tab\tab\tab\tab viewPowerPortConnectionAuditTool()\par
+\tab Hardware Serial Number Audit Tool\tab\tab\tab\tab\tab\tab\tab viewHardwareSErialNumberAuditTool()\par
+\tab Network Port Connection Audit Tool\tab\tab\tab\tab\tab\tab\tab viewNetworkPortConnectionAuditTool()\par
+\par
+Scan In\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Hardware-ScanIn.php\ulnone\par
+\tab Standard rack network and power prep tool\tab\tab\tab\tab\tab\tab\par
+\tab Scan serial numbers for NEW servers\tab\tab\tab\tab\tab\tab\tab\par
+\tab Scan serial numbers for NEW servers WITHOUT creating network uplinks\tab\par
+\tab Scan serial numbers for existing servers\tab\tab\tab\tab\tab\tab\par
+\tab Manage preloaded configurations\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Inventory\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Hardware-Inventory.php\ulnone\par
+\tab Parts Inventory in Servers\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Parts Inventory in Storage\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Operations\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Hardware-Operations.php\ulnone\par
+\tab SR01 Layout\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab SR02 Layout\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab SR03 Layout\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab SR04 Layout\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Special\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Hardware-Special.php\ulnone\par
+\tab "Eminent Domain" Report (Clear Out SR01 RK05-RK12)\tab\tab\tab\tab\ul\par
+\par
+\par
+Network\ulnone\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Network.php\par
+\ulnone DOS/Abuse Links\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Network-DOSAbuse.php\ulnone\par
+\tab Network Address Management\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab TippingPoint Quarantine List\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Protected VLAN Address Export\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Router Managment\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Network-RouterManagement.php\ulnone\par
+\tab Subnet Administration\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab VLAN Administration\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab VLAN Statistics\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Edit Network Administration Passwords\tab\tab\tab\tab\tab\tab\par
+\tab Circuit ID List\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Export Switch Addresses\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Hardware Firewall Management\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Network-HardwareFirewallManagement.php\ulnone\par
+\tab Portal Configs\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Load Balancer Management\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Network-LoadBalancerManagement.php\ulnone\par
+\tab Portal Configs\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Web Site Stats\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Network-WebSiteStats.php\ulnone\par
+\tab website.softlayer.com-stats\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab sldn.softlayer.com-stats \tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab theinnerlayer.softlayer.com-stats\tab\tab\tab\tab\tab\tab\tab\par
+\tab manage.softlayer.com\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Speedtest stats(softlayer/l4y3rs0ft)\tab\tab\tab\tab\tab\tab\par
+\par
+Monitoring\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Network-Monitoring.php\ulnone\par
+\tab Network Service Monitor Master Control\tab\tab\tab\tab\tab\tab\par
+\tab Customer Portal Up/Down Network Status\tab\tab\tab\tab\tab\tab\par
+\par
+Phone System\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Network-PhoneSystem.php\ulnone\par
+\tab Plano Office CME Login - 0XXX (Login Required)\tab\tab\tab\tab\tab\par
+\tab Dallas Phone CME Login - 1XXX (Login Required)\tab\tab\tab\tab\tab\par
+\tab Seattle Phone CME Login - 2XXX (Login Required)\tab\tab\tab\tab\tab\par
+\par
+Wireless Information\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Network-WirelessInformation.php\ulnone\par
+\tab Plano Office\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab\tab softlayer-private - FEDD9CBEEB\tab\tab\tab\tab\tab\tab\par
+\tab\tab softlayer-public - <open wap>\tab\tab\tab\tab\tab\tab\tab\par
+\tab Dallas\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab\tab slw - FEDD9CBEEB\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Seattle\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab\tab slw - FEDD9CBEEB\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Other Links\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Network-Other.php\ulnone\par
+\tab utility01.dal01\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab utility02.off01\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab utility03.dal01\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab utility201.sea01\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Public Network Stats\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Network-PublicNetworkStats.php\ulnone\par
+\tab Website Pulse Metrics\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Netflow - Overall\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Netflow - Top 10\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Netflow - Top 10 AS\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Netflow - Portal Graph\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Netflow - Flow Grapher\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Public Network Graphs\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Network-PublicNetworkGraphs.php\ulnone\par
+\tab Backbone Graphs - transit\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Backbone Graphs - peering\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Backbone Packets Per Second\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab FCR Uplinks\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Load Balancer Farm\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Billing Graphs - 95%\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Public Router Graphs\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Network-PublicRouterGraphs.php\ulnone\par
+\tab CPU/Ram Graphs - cer01.dal01\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab CPU/Ram Graphs - cer02.dal01\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab CPU/Ram Graphs - slr01.dal01\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab CPU/Ram Graphs - fcr01.dal01\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab CPU/Ram Graphs - fcr02.dal01\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab CPU/Ram Graphs - fcr03.dal01\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab FCP span data\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Public Network Monitoring\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Network-PublicNetworkMonitoring.php\ulnone\par
+\tab Backbone Monitoring - Nagios\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Private Network Stats\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Network-PrivateNetworkStats.php\ulnone\par
+\tab Website Pulse Metrics\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Private Network Graps\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Network-PrivateNetworkGraphs.php\ulnone\par
+\tab CPU/Ram Graphs - mbr01.dal01\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab CPU/Ram Graphs - bcr01.dal01\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab CPU/Ram Graphs - bcr02.dal01\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab CPU/Ram Graphs - bcr03.dal01\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Network Tools\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Network-NetworkTools.php\ulnone\par
+\tab Network Tools\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Log Search\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Security Cameras\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Network-SecurityCameras.php\ulnone\par
+\tab cameras\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Hardware Firewall Management\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Portal Configs\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab fcr01.dal01 - fwsm01-1 - stats\tab\tab\tab\tab\tab\tab\tab\par
+\tab fcr02.dal01 - fwsm02-1 - stats\tab\tab\tab\tab\tab\tab\tab\par
+\tab fcr03.dal01 - fwsm03-1 - stats\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Load Balancer Management\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Portal Configs\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab lb01.dal01 - stats\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab lb02.dal01 - stats\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab lb03.dal01 - stats\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab lb04.dal01 - stats\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab lb05.dal01 - stats\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab lb06.dal01 - stats\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Cisco Guards\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Network-CiscoGuardManagement.php\ulnone\par
+\tab npr01.dal01 - guard01-1 / guard01-2 / guard01-3 / guard01-4\tab\tab\tab\ul\par
+\par
+\par
+Sales\ulnone\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Sales.php\par
+\ulnone Orders\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Sales-Orders.php\ulnone\par
+\tab Pending Order Review (3)\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Denied Order Review (3)\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Payments\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Sales-Payments.php\ulnone\par
+\tab Credit Card Transactions\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Paypal Transactions\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Pending Manual Payments\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Pending Credit Card Changes\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Signup Forms\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Sales-SignupForms.php\ulnone\par
+\tab Promotional Codes\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Delivery Time Edit\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Current Partition List\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Add New Partition\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Edit Service Offering Availability\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Reports / Graphs\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Sales-ReportsNGraphs.php\ulnone\par
+\tab Daily Sales Report\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Sales On Track Report\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Sales Summary Graph\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Cancellation Summary Graph\tab\tab\tab\tab\tab\tab\tab\tab\ul\par
+\par
+\par
+Security\ulnone\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Security.php\par
+\ulnone Hardware Firewalls\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Security-HardwareFirewalls.php\ulnone\par
+\tab Customer Firewall Management\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Top Usage for Last Hour\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul\par
+\ulnone\par
+McAfee Management\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Security-McAfeeManagement.php\ulnone\par
+\tab Customer McAfee Logs / Settings\tab\tab\tab\tab\tab\tab\tab\par
+\par
+\pard\qj Network Intrusion Detection\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Security-NetworkIntrusionDetection.php\ulnone\par
+\pard\tab --Soon--\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Private VPN\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Security-PrivateVPN.php\ulnone\par
+\tab Customer VPN Administration\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Vulnerability Scanning\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Security-VulnerabilityScanning.php\ulnone\par
+\tab Customer Nessus Scans\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Administrative Tools\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Security-AdministrativeTools.php\ulnone\par
+\tab Network Address Protection\tab\tab\tab\tab\tab\tab\tab\tab\ul\par
+\par
+\par
+Services\ulnone\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Services.php\par
+\ulnone DNS Management\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Services-DNSManagement.php\ulnone\par
+\tab Search DNS Records\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Add DNS Record\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Bulk DNS Add\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab DNS List\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Reverse DNS\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul\par
+\par
+\ulnone McAfee Management\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Services-McAfeeManagement.php\ulnone\par
+\tab Customer McAfee Logs / Settings\tab\tab\tab\tab\tab\tab\tab\par
+\par
+SWIP Management\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Services-SWIPManagement.php\ulnone\par
+\tab Manage SWIP Transactions\tab\tab\tab\tab\tab\tab\tab\tab\par
+\ul\par
+\ulnone NAS / Lockbox\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Services-NASLockbox.php\ulnone\par
+  \tab NAS Customer List\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab LockBox Customer List\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Vulnerability Scanning\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Services-VulnerabilityScanning.php\ulnone\par
+\tab Customer Nessus Scans\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Hardware Firewalls\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Services-HardwareFirewalls.php\ulnone\par
+\tab Customer Firewall Management\tab\tab\tab\tab\tab\tab\tab\tab\ul\par
+\par
+\par
+Reports\ulnone\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Reports.php\par
+\ulnone Accounting\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Reports-Accounting.php\ulnone\par
+\tab ARPU Report   -  History\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Deferred Revenue Report\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Predicted Cash Flow\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab End of Month Open Balances\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Invoice Report with Revenue Downloads\tab\tab\tab\tab\tab\tab\par
+\tab Payments by Day\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Payments by Month\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Payments by Invoice\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Carrier Bandwidth Billing\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Revenue Forecast\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Net New Revenue\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Late-Fee Protected Customers\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Delinquent Customers\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Customers over $25.00 and 5 days delinquent\tab\tab\tab\tab\tab\par
+\par
+Sales\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Reports-Sales.php\ulnone\par
+\tab Expected Revenue Report (New!)\tab\tab\tab\tab\tab\tab\tab\par
+\tab Daily Sales Report\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Daily Sales Report - Deluxe Version\tab\tab\tab\tab\tab\tab\tab\par
+\tab Sales On Track Report\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Daily Sales (by Item)\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Sales by Price Point breakout\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Cancellations by Month (Detailed Report)\tab\tab\tab\tab\tab\tab\par
+\tab Top Customers by Revenue\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Reseller List\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Item Upgrade Details\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Item Upgrade Trends\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Recent Server Sales\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul\par
+\par
+\ulnone Tickets\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Reports-Tickets.php\ulnone\par
+\tab Ticket Stats by Hour\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Ticket Resolution Stats\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Server Administration Tickets Statistics\tab\tab\tab\tab\tab\tab\par
+\tab Cancel Ticket Report \tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Ticket Count by Account\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Ticket Count by User\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Ticket Notes by Account\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Tickets Created/Edited in Past Given Hours\tab\tab\tab\tab\tab\par
+\tab Ticket Metrics Closed/Edited Within Date Range\tab\tab\tab\tab\tab\par
+\tab Tickets Opened Per Period Metrics\tab\tab\tab\tab\tab\tab\tab\par
+\tab Tickets Creation Statistics By Period\tab\tab\tab\tab\tab\tab\par
+\tab Top Ticket Opening Accounts\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Top Ticket Generating Servers\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Local Support Vs. Contractor Support\tab\tab\tab\tab\tab\tab\par
+\tab Ticket Ratings Metrics By Date Range\tab\tab\tab\tab\tab\tab\par
+\tab Ticket Ratings Avgs. and Comments By Date Range\tab\tab\tab\tab\tab\par
+\tab Ticket Ratings Details by Rating and Date Range\tab\tab\tab\tab\tab\par
+\tab Tickets created first 120 days on server orders\tab\tab\tab\tab\tab\par
+\par
+Misc.\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Reports-Misc.php\ulnone\par
+\tab Servers in Inventory and extra processors\tab\tab\tab\tab\tab\tab\par
+\tab Recent Cancellation/Server breakout\tab\tab\tab\tab\tab\tab\tab\par
+\tab Provision orders requiring manual hardware assigment\tab\tab\tab\tab\par
+\tab Manual hardware assignments over time\tab\tab\tab\tab\tab\tab\par
+\tab Scheduled Cancellations (future)\tab\tab\tab\tab\tab\tab\tab\par
+\tab Server Depletion Forecast\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Ram Search by Server\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Customer Account CSV\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Customer Hardware CSV\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Top Customer Bandwidth Usage\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab User Auth Failures (last 3 days)\tab\tab\tab\tab\tab\tab\tab\par
+\tab Contractor Auth Failures (last 3 days)\tab\tab\tab\tab\tab\tab\par
+\tab Server Inventory/Distribution\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Accounts / Users by Switch\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Customer Geographic Demographics\tab\tab\tab\tab\tab\tab\tab\par
+\tab Nessus History\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Sales Approvals\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab ADS01\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Servers By Status Report\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Hardware with Duplicate Location\tab\tab\tab\tab\tab\tab\tab\par
+\tab Survey Response\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul\par
+\par
+\par
+Management\ulnone\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Management.php\par
+\ulnone Human Resources\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Management-HR.php\ulnone\par
+\tab Add Employee\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Employee Portal Access\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab HR Docs\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Employee Internal Details\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Permissions\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Management-Permissions.php\ulnone\par
+\tab Superuser Admin\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Secret Key Management\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Permission Management\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Notification\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Management-Notification.php\ulnone\par
+\tab Portal Emergency Notification\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Change Log Management\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Portal Network Status\tab\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Group Index Page Mangement\tab\tab\tab\tab\tab\tab\tab\tab\par
+\par
+Database Administration\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\ul coreEngine-Management-DatabaseAdministration.php\ulnone\par
+\tab DB Admin (ticket group, emp titles, etc..)\tab\tab\tab\tab\tab\par
+\tab Signup Form Administration\tab\tab\tab\tab\tab\tab\tab\tab\par
+\tab Service Resource Administration\tab\tab\tab\tab\tab\tab\tab\par
+}
+ 

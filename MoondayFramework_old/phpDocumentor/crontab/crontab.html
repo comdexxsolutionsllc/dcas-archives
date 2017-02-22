@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class crontab</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class crontab</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create cronjobs with ease</p>
+	<ul class="tags">
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">uses:</span> <a href="../default/.html"></a></li>
+				<li><span class="field">copyright:</span> (C) 2006 NKommunikation. All Rights Reserved.</li>
+				<li><span class="field">author:</span> Joshua Abbott, WiseGene Project (NKommunikation)</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_crontab_crontab_php.html">/crontab/crontab.php</a> (line <span class="field"><a href="..//__filesource/fsource_crontab__crontabcrontab.php.html#a12">12</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$command" title="details" class="var-name">$command</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$crontabPath" title="details" class="var-name">$crontabPath</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$day" title="details" class="var-name">$day</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$dayofweek" title="details" class="var-name">$dayofweek</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$directory" title="details" class="var-name">$directory</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$filename" title="details" class="var-name">$filename</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$handle" title="details" class="var-name">$handle</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$hour" title="details" class="var-name">$hour</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$minute" title="details" class="var-name">$minute</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$month" title="details" class="var-name">$month</a>
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+								
+				<div class="method-definition">
+											<span class="method-result">crontab</span>
+										<a href="#crontab" title="details" class="method-name">crontab</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$dir</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$filename</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$crontabPath</span> = <span class="var-default">NULL</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#addToCrontab" title="details" class="method-name">addToCrontab</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#createCronFile" title="details" class="method-name">createCronFile</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$filename</span> = <span class="var-default">NULL</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#destroyFilePoint" title="details" class="method-name">destroyFilePoint</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#saveCronFile" title="details" class="method-name">saveCronFile</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#setCommand" title="details" class="method-name">setCommand</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$command</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setDateParams" title="details" class="method-name">setDateParams</a>
+											([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$min</span> = <span class="var-default">NULL</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$hour</span> = <span class="var-default">NULL</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$day</span> = <span class="var-default">NULL</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$month</span> = <span class="var-default">NULL</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$dayofweek</span> = <span class="var-default">NULL</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#setDirectory" title="details" class="method-name">setDirectory</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>)
+									</div>
+							</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$command" id="$command"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$command</span>
+			 = <span class="var-default">NULL</span>			(line <span class="line-number"><a href="..//__filesource/fsource_crontab__crontabcrontab.php.html#a19">19</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$crontabPath" id="$crontabPath"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$crontabPath</span>
+			 = <span class="var-default">NULL</span>			(line <span class="line-number"><a href="..//__filesource/fsource_crontab__crontabcrontab.php.html#a22">22</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$day" id="$day"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$day</span>
+			 = <span class="var-default">NULL</span>			(line <span class="line-number"><a href="..//__filesource/fsource_crontab__crontabcrontab.php.html#a16">16</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$dayofweek" id="$dayofweek"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$dayofweek</span>
+			 = <span class="var-default">NULL</span>			(line <span class="line-number"><a href="..//__filesource/fsource_crontab__crontabcrontab.php.html#a18">18</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$directory" id="$directory"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$directory</span>
+			 = <span class="var-default">NULL</span>			(line <span class="line-number"><a href="..//__filesource/fsource_crontab__crontabcrontab.php.html#a20">20</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$filename" id="$filename"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$filename</span>
+			 = <span class="var-default">&quot;crons&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_crontab__crontabcrontab.php.html#a21">21</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$handle" id="$handle"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$handle</span>
+			 = <span class="var-default">NULL</span>			(line <span class="line-number"><a href="..//__filesource/fsource_crontab__crontabcrontab.php.html#a23">23</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$hour" id="$hour"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$hour</span>
+			 = <span class="var-default">NULL</span>			(line <span class="line-number"><a href="..//__filesource/fsource_crontab__crontabcrontab.php.html#a15">15</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$minute" id="$minute"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$minute</span>
+			 = <span class="var-default">NULL</span>			(line <span class="line-number"><a href="..//__filesource/fsource_crontab__crontabcrontab.php.html#a14">14</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$month" id="$month"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$month</span>
+			 = <span class="var-default">NULL</span>			(line <span class="line-number"><a href="..//__filesource/fsource_crontab__crontabcrontab.php.html#a17">17</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodcrontab" id="crontab"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor crontab</span> (line <span class="line-number"><a href="..//__filesource/fsource_crontab__crontabcrontab.php.html#a35">35</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor. Attempts to create directory for 	holding cron jobs</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">author:</span> Richard Sumilang     &lt;<a href="mailto:richard@richard-sumilang.com">richard@richard-sumilang.com</a>&gt;</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">crontab</span>
+		<span class="method-name">
+			crontab
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$dir</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$filename</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$crontabPath</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$dir</span><span class="var-description">: Directory to hold cron job files</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$filename</span><span class="var-description">: Filename to write to</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$crontabPath</span><span class="var-description">: Path to cron program</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodaddToCrontab" id="addToCrontab"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addToCrontab</span> (line <span class="line-number"><a href="..//__filesource/fsource_crontab__crontabcrontab.php.html#a204">204</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Save cron in system</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true if successful else false</li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">author:</span> Richard Sumilang    &lt;<a href="mailto:richard@richard-sumilang.com">richard@richard-sumilang.com</a>&gt;</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			addToCrontab
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodcreateCronFile" id="createCronFile"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">createCronFile</span> (line <span class="line-number"><a href="..//__filesource/fsource_crontab__crontabcrontab.php.html#a137">137</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create cron file</p>
+<p class="description"><p>This will create a cron job file for you and set the filename 	of this class to use it. Make sure you have already set the directory 	path variable with the consructor. If the file exists and we can write 	it then return true esle false. Also sets $handle with the resource handle 	to the file</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">author:</span> Richard Sumilang    &lt;<a href="mailto:richard@richard-sumilang.com">richard@richard-sumilang.com</a>&gt;</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			createCronFile
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$filename</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$filename</span><span class="var-description">: Name of file you want to create</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methoddestroyFilePoint" id="destroyFilePoint"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">destroyFilePoint</span> (line <span class="line-number"><a href="..//__filesource/fsource_crontab__crontabcrontab.php.html#a223">223</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Destroy file pointer</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">author:</span> Richard Sumilang    &lt;<a href="mailto:richard@richard-sumilang.com">richard@richard-sumilang.com</a>&gt;</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			destroyFilePoint
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsaveCronFile" id="saveCronFile"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">saveCronFile</span> (line <span class="line-number"><a href="..//__filesource/fsource_crontab__crontabcrontab.php.html#a186">186</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Write cron command to file. Make sure you used createCronFile 	before using this function of it will return false</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">author:</span> Richard Sumilang    &lt;<a href="mailto:richard@richard-sumilang.com">richard@richard-sumilang.com</a>&gt;</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			saveCronFile
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsetCommand" id="setCommand"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setCommand</span> (line <span class="line-number"><a href="..//__filesource/fsource_crontab__crontabcrontab.php.html#a168">168</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set command to execute</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">author:</span> Richard Sumilang    &lt;<a href="mailto:richard@richard-sumilang.com">richard@richard-sumilang.com</a>&gt;</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			setCommand
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$command</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$command</span><span class="var-description">: Comand to set</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodsetDateParams" id="setDateParams"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setDateParams</span> (line <span class="line-number"><a href="..//__filesource/fsource_crontab__crontabcrontab.php.html#a73">73</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set date parameters</p>
+<p class="description"><p>If any parameters are left NULL then they default to *</p><p>A hyphen (-) between integers specifies a range of integers. For 	example, 1-4 means the integers 1, 2, 3, and 4.</p><p>A list of values separated by commas (,) specifies a list. For 	example, 3, 4, 6, 8 indicates those four specific integers.</p><p>The forward slash (/) can be used to specify step values. The value 	of an integer can be skipped within a range by following the range 	with /&lt;integer&gt;. For example, 0-59/2 can be used to define every other 	minute in the minute field. Step values can also be used with an asterisk. 	For instance, the value * /3 (no space) can be used in the month field to run the 	task every third month...</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Richard Sumilang    &lt;<a href="mailto:richard@richard-sumilang.com">richard@richard-sumilang.com</a>&gt;</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setDateParams
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$min</span> = <span class="var-default">NULL</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$hour</span> = <span class="var-default">NULL</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$day</span> = <span class="var-default">NULL</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$month</span> = <span class="var-default">NULL</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$dayofweek</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$min</span><span class="var-description">: Minute(s)... 0 to 59</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$hour</span><span class="var-description">: Hour(s)... 0 to 23</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$day</span><span class="var-description">: Day(s)... 1 to 31</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$month</span><span class="var-description">: Month(s)... 1 to 12 or short name</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$dayofweek</span><span class="var-description">: Day(s) of week... 0 to 7 or short name. 0 and 7 = sunday     $access    public</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodsetDirectory" id="setDirectory"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setDirectory</span> (line <span class="line-number"><a href="..//__filesource/fsource_crontab__crontabcrontab.php.html#a104">104</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the directory path. Will check it if it exists then 	try to open it. Also if it doesn't exist then it will try to 	create it, makes it with mode 0700</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">author:</span> Richard Sumilang    &lt;<a href="mailto:richard@richard-sumilang.com">richard@richard-sumilang.com</a>&gt;</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			setDirectory
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$directory</span><span class="var-description">: Directory, relative or full path</span>			</li>
+				</ul>
+		
+		
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:32:31 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</div></body>
+</html>

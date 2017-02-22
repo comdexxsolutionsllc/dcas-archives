@@ -1,0 +1,80 @@
+This class is intended to allow easy session handling. It has a few methods:
+
+/*----------------------------------------------------------*/
+SessionHandler($myDomain,$path,$failURL,$sName="")
+
+Purpose: Constructor for the class
+
+$myDomain : the domain name for which the cookie variable must be set
+$path	  : the path for which the coocki will be set
+$failURL  : an URL to be redirected to if a session can not be initialized
+$sName    : the session name. Will be used for global vars. It allows to instantiate multiple sessions
+
+/*----------------------------------------------------------*/
+function NoSessions() 
+
+Purpose   : Redirect to a fail URL
+
+/*----------------------------------------------------------*/
+function Start()
+
+Purpose   : Starts the session
+
+/*----------------------------------------------------------*/
+function SetVariable($varname,$initval) 
+
+Purpose   : Sets a session variable
+
+$varname  : the variable name
+$initval  : initial value for that variable
+
+/*----------------------------------------------------------*/
+function GetVariable($varname) 
+
+Purpose   : retrieves the value from a session variable
+
+$varname  : the variable name
+	
+/*----------------------------------------------------------*/
+function UnsetVariable($varname) 
+
+
+Purpose   : Unsets a session Variable
+
+$varname  : the variable to unset
+
+/*----------------------------------------------------------*/
+function SavePath($newPath="") 
+
+Purpose   : Sets the session save directory, where the cookie files will be saved
+
+$newPath  : the directory. Parent directory must be writable by apache's user
+
+/*----------------------------------------------------------*/
+function Destroy() 
+
+Purpose   : Frees the session instance
+
+
+/*----------------------------------------------------------*/
+
+
+A common use for this class would be:
+
+<?
+
+include("clsSessionHandler.php");
+$mySessionHandler=new SessionHandler("http://www.mydomain.com","/","nosession.php","");
+	
+if ($mySessionHandler->SavePath("/tmp/mydomain.com-Sessions")) {
+    $mySessionHandler->Start();
+}
+
+if ($mySessionHandler->getVariable("myname")=="") {
+    $mySessionHandler->setVariable("myname","I'm a session");
+    header("location: $PHP_SELF");
+} else {
+    echo $mySessionHandler->getVariable("myname"); 
+}
+
+?>

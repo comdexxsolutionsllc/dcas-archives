@@ -1,0 +1,4 @@
+pear channel-discover pear.firephp.org
+pear install firephp/FirePHPCore 
+
+*pear* == pecl?

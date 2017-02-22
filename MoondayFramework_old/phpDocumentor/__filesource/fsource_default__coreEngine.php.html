@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for coreEngine.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file coreEngine.php</h1>
+<p>Documentation is available at <a href="../default/_coreEngine_php.html">coreEngine.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a>&nbsp;</li>
+<li><a name="a3"></a><span class="src-doc">/**************************************************************************************************</span></li>
+<li><a name="a4"></a><span class="src-doc"> *</span></li>
+<li><a name="a5"></a><span class="src-doc"> *    _____   _____       ___  ___   _____   _____  __    __ __    __  _____   _____   _____   _____</span></li>
+<li><a name="a6"></a><span class="src-doc"> *   /  ___| /  _  \     /   |/   | |  _  \ | ____| \ \  / / \ \  / / /  ___/ /  _  \ |  ___| |_   _|</span></li>
+<li><a name="a7"></a><span class="src-doc"> *   | |     | | | |    / /|   /| | | | | | | |__    \ \/ /   \ \/ /  | |___  | | | | | |__     | |</span></li>
+<li><a name="a8"></a><span class="src-doc"> *   | |     | | | |   / / |__/ | | | | | | |  __|    }  {     }  {   \___  \ | | | | |  __|    | |</span></li>
+<li><a name="a9"></a><span class="src-doc"> *   | |___  | |_| |  / /       | | | |_| | | |___   / /\ \   / /\ \   ___| | | |_| | | |       | |</span></li>
+<li><a name="a10"></a><span class="src-doc"> *   \_____| \_____/ /_/        |_| |_____/ |_____| /_/  \_\ /_/  \_\ /_____/ \_____/ |_|       |_|</span></li>
+<li><a name="a11"></a><span class="src-doc"> *</span></li>
+<li><a name="a12"></a><span class="src-doc"> * Copyright (c) Comdexx Software, LLC                                                  Version : 1.0</span></li>
+<li><a name="a13"></a><span class="src-doc"> ****************************************************************************************************/</span></li>
+<li><a name="a13"></a>&nbsp;</li>
+<li><a name="a14"></a>&nbsp;</li>
+<li><a name="a15"></a><span class="src-comm">//*** Unlocks include files.</span></li>
+<li><a name="a16"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">&quot;IN_ENGINE&quot;</span><span class="src-sym">, </span><span class="src-id">true</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a17"></a><span class="src-comm">#define(&quot;DOCROOT&quot;, 'C:/wamp/www/projects/STATUS/current/RAAJ022308-01/');</span></li>
+<li><a name="a18"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">&quot;DOCROOT&quot;</span><span class="src-sym">, </span><span class="src-str">'C:/XAMPP/xampp/htdocs/MoondayFramework/'</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a19"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">&quot;ENGINELOC&quot;</span><span class="src-sym">, </span><span class="src-id">DOCROOT</span>.<span class="src-str">'engine/'</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a20"></a>&nbsp;</li>
+<li><a name="a21"></a>&nbsp;</li>
+<li><a name="a22"></a><span class="src-comm">//*** Includes coreEngine Files</span></li>
+<li><a name="a23"></a><span class="src-inc">require_once</span><span class="src-sym">(</span><span class="src-id">ENGINELOC</span>.<span class="src-str">&quot;coreEngine-config.php&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a24"></a><span class="src-inc">require_once</span><span class="src-sym">(</span><span class="src-id">ENGINELOC</span>.<span class="src-str">&quot;coreEngine-database.php&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a25"></a><span class="src-inc">require_once</span><span class="src-sym">(</span><span class="src-id">ENGINELOC</span>.<span class="src-str">&quot;coreEngine-filesystem.php&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a26"></a><span class="src-inc">require_once</span><span class="src-sym">(</span><span class="src-id">ENGINELOC</span>.<span class="src-str">&quot;coreEngine-users.php&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a27"></a><span class="src-inc">require_once</span><span class="src-sym">(</span><span class="src-id">ENGINELOC</span>.<span class="src-str">&quot;coreEngine-errors.php&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a28"></a><span class="src-inc">require_once</span><span class="src-sym">(</span><span class="src-id">ENGINELOC</span>.<span class="src-str">&quot;coreEngine-strings.php&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a29"></a><span class="src-inc">require_once</span><span class="src-sym">(</span><span class="src-id">ENGINELOC</span>.<span class="src-str">&quot;coreEngine-time.php&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a30"></a><span class="src-inc">require_once</span><span class="src-sym">(</span><span class="src-id">ENGINELOC</span>.<span class="src-str">&quot;coreEngine-tickets.php&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a31"></a><span class="src-inc">require_once</span><span class="src-sym">(</span><span class="src-id">ENGINELOC</span>.<span class="src-str">&quot;FirePHPCore/lib/FirePHPCore/FirePHP.class.php&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a32"></a><span class="src-inc">require_once</span><span class="src-sym">(</span><span class="src-id">ENGINELOC</span>.<span class="src-str">&quot;FirePHPCore/lib/FirePHPCore/fb.php&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a33"></a>&nbsp;</li>
+<li><a name="a34"></a><span class="src-inc">require_once</span><span class="src-sym">(</span><span class="src-id">ENGINELOC</span>.<span class="src-str">&quot;coreEngine-exception.php&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a35"></a>&nbsp;</li>
+<li><a name="a36"></a><span class="src-comm">/*</span></li>
+<li><a name="a37"></a><span class="src-comm">require_once(ENGINELOC.&quot;abstractdb/abstractdb.class.php&quot;);</span></li>
+<li><a name="a38"></a><span class="src-comm">require_once(ENGINELOC.&quot;accesscontrol/accessControl.class.php&quot;);</span></li>
+<li><a name="a39"></a><span class="src-comm">require_once(ENGINELOC.&quot;ach/ACH_core.class.php&quot;);</span></li>
+<li><a name="a40"></a><span class="src-comm">require_once(ENGINELOC.&quot;ach/ACH.class.php&quot;);</span></li>
+<li><a name="a41"></a><span class="src-comm">require_once(ENGINELOC.&quot;aim/AIM.php&quot;);</span></li>
+<li><a name="a42"></a><span class="src-comm">require_once(ENGINELOC.&quot;aim_status/aim_status.class.php&quot;);</span></li>
+<li><a name="a43"></a><span class="src-comm">require_once(ENGINELOC.&quot;autokeyword/class.autokeyword.php&quot;);</span></li>
+<li><a name="a44"></a><span class="src-comm">require_once(ENGINELOC.&quot;autoresponse/autoresponse.class.php&quot;);</span></li>
+<li><a name="a45"></a><span class="src-comm">require_once(ENGINELOC.&quot;bargraph/class.bargraph.php&quot;);</span></li>
+<li><a name="a46"></a><span class="src-comm">require_once(ENGINELOC.&quot;bbiptocountry/bbIPtoCountry.class.php&quot;);</span></li>
+<li><a name="a47"></a><span class="src-comm">require_once(ENGINELOC.&quot;better-array-storage/array_storage.php&quot;);</span></li>
+<li><a name="a48"></a><span class="src-comm">require_once(ENGINELOC.&quot;bouncehandler/bounce_driver.class.php&quot;);</span></li>
+<li><a name="a49"></a><span class="src-comm">require_once(ENGINELOC.&quot;bst_spell_check/SpellCheck.class.php&quot;);</span></li>
+<li><a name="a50"></a><span class="src-comm">require_once(ENGINELOC.&quot;cicqstatus/CICQStatus.php&quot;);</span></li>
+<li><a name="a51"></a><span class="src-comm">require_once(ENGINELOC.&quot;class_debug/class_debug.php&quot;);</span></li>
+<li><a name="a52"></a><span class="src-comm">require_once(ENGINELOC.&quot;cls_creditcard/cls_CreditCard.php&quot;);</span></li>
+<li><a name="a53"></a><span class="src-comm">require_once(ENGINELOC.&quot;clssessionhandler/clsSessionHandler.php&quot;);</span></li>
+<li><a name="a54"></a><span class="src-comm">require_once(ENGINELOC.&quot;code_timer/class_code_timer.php&quot;);</span></li>
+<li><a name="a55"></a><span class="src-comm">require_once(ENGINELOC.&quot;cpuload/class_CPULoad.php&quot;);</span></li>
+<li><a name="a56"></a><span class="src-comm">require_once(ENGINELOC.&quot;crontab/crontab.php&quot;);</span></li>
+<li><a name="a57"></a><span class="src-comm">require_once(ENGINELOC.&quot;currencyconverter/currency_converter.inc.php&quot;);</span></li>
+<li><a name="a58"></a><span class="src-comm">require_once(ENGINELOC.&quot;cyahoostatus/CYahooStatus.php&quot;);</span></li>
+<li><a name="a59"></a><span class="src-comm">require_once(ENGINELOC.&quot;databug/databug.class.php&quot;);</span></li>
+<li><a name="a60"></a><span class="src-comm">require_once(ENGINELOC.&quot;dbwebservice/DBWebService.php&quot;);</span></li>
+<li><a name="a61"></a><span class="src-comm">require_once(ENGINELOC.&quot;dbwebservice/domain.php&quot;);</span></li>
+<li><a name="a62"></a><span class="src-comm">//require_once(ENGINELOC.&quot;dbwebservice/handle_request.php&quot;);</span></li>
+<li><a name="a63"></a><span class="src-comm">require_once(ENGINELOC.&quot;domain/domain.class.php&quot;);</span></li>
+<li><a name="a64"></a><span class="src-comm">require_once(ENGINELOC.&quot;dunzip2/dUnzip2.inc.php&quot;);</span></li>
+<li><a name="a65"></a><span class="src-comm">require_once(ENGINELOC.&quot;dunzip2/dZip.inc.php&quot;);</span></li>
+<li><a name="a66"></a><span class="src-comm">require_once(ENGINELOC.&quot;dyn_php/dyn_php.class.php&quot;);</span></li>
+<li><a name="a67"></a><span class="src-comm">require_once(ENGINELOC.&quot;easycron/easycron.class.php&quot;);</span></li>
+<li><a name="a68"></a><span class="src-comm">require_once(ENGINELOC.&quot;easysms_api/easysms_api.php&quot;);</span></li>
+<li><a name="a69"></a><span class="src-comm">require_once(ENGINELOC.&quot;enom/class.EnomInterface.php&quot;);</span></li>
+<li><a name="a70"></a><span class="src-comm">require_once(ENGINELOC.&quot;enom/class.EnomService.php&quot;);</span></li>
+<li><a name="a71"></a><span class="src-comm">require_once(ENGINELOC.&quot;fpdf/fpdf.php&quot;);</span></li>
+<li><a name="a72"></a><span class="src-comm">require_once(ENGINELOC.&quot;gantt/gantt.class.php&quot;);</span></li>
+<li><a name="a73"></a><span class="src-comm">require_once(ENGINELOC.&quot;getbrowsertype/GetBrowserType.php&quot;);</span></li>
+<li><a name="a74"></a><span class="src-comm">require_once(ENGINELOC.&quot;gzip/gzip.php&quot;);</span></li>
+<li><a name="a75"></a><span class="src-comm">require_once(ENGINELOC.&quot;iam_backup/iam_backup.php&quot;);</span></li>
+<li><a name="a76"></a><span class="src-comm">require_once(ENGINELOC.&quot;iam_backup/iam_restore.php&quot;);</span></li>
+<li><a name="a77"></a><span class="src-comm">//require_once(ENGINELOC.&quot;megaspider/spider.class.php&quot;);</span></li>
+<li><a name="a78"></a><span class="src-comm">require_once(ENGINELOC.&quot;mlswap/mlswap.php&quot;);</span></li>
+<li><a name="a79"></a><span class="src-comm">//require_once(ENGINELOC.&quot;mobile_func/mobile_func/chkisdn.inc.php&quot;);</span></li>
+<li><a name="a80"></a><span class="src-comm">//require_once(ENGINELOC.&quot;ocities/*&quot;); //</span></li>
+<li><a name="a81"></a><span class="src-comm">require_once(ENGINELOC.&quot;password/class.password.php&quot;);</span></li>
+<li><a name="a82"></a><span class="src-comm">//require_once(ENGINELOC.&quot;/paypal_ipn/i_paypal.php&quot;);</span></li>
+<li><a name="a83"></a><span class="src-comm">//require_once(ENGINELOC.&quot;php_print_lpr/PrintSendLPR.php&quot;);</span></li>
+<li><a name="a84"></a><span class="src-comm">//require_once(ENGINELOC.&quot;php_print_lpr/PrintSend.php&quot;);</span></li>
+<li><a name="a85"></a><span class="src-comm">//require_once(ENGINELOC.&quot;phpresolver/DNS.php&quot;);</span></li>
+<li><a name="a86"></a><span class="src-comm">//require_once(ENGINELOC.&quot;phpresolver/rrcompat.php&quot;);</span></li>
+<li><a name="a87"></a><span class="src-comm">//require_once(ENGINELOC.&quot;portscanner/portscanner.php&quot;);</span></li>
+<li><a name="a88"></a><span class="src-comm">//require_once(ENGINELOC.&quot;progbar/cprogbar.php&quot;);</span></li>
+<li><a name="a89"></a><span class="src-comm">require_once(ENGINELOC.&quot;progbar/ctable.php&quot;);</span></li>
+<li><a name="a90"></a><span class="src-comm">require_once(ENGINELOC.&quot;queue_class/class_queue.php&quot;);</span></li>
+<li><a name="a91"></a><span class="src-comm">require_once(ENGINELOC.&quot;rssbuilder/class.RSSBuilder.inc.php&quot;);</span></li>
+<li><a name="a92"></a><span class="src-comm">//require_once(ENGINELOC.&quot;search&quot;); //</span></li>
+<li><a name="a93"></a><span class="src-comm">require_once(ENGINELOC.&quot;server_status/status.php&quot;);</span></li>
+<li><a name="a94"></a><span class="src-comm">require_once(ENGINELOC.&quot;shadow/shadow.class.php&quot;);</span></li>
+<li><a name="a95"></a><span class="src-comm">//require_once(ENGINELOC.&quot;simpleforum/SForum_class.php&quot;); //couldn't connect</span></li>
+<li><a name="a96"></a><span class="src-comm">require_once(ENGINELOC.&quot;site_search/class.search.php&quot;);</span></li>
+<li><a name="a97"></a><span class="src-comm">//require_once(ENGINELOC.&quot;sqlcache/sqlcache.lib.php&quot;);</span></li>
+<li><a name="a98"></a><span class="src-comm">require_once(ENGINELOC.&quot;ssh_in_php/ssh_in_php.php&quot;);</span></li>
+<li><a name="a99"></a><span class="src-comm">//require_once(ENGINELOC.&quot;sun_rise_set/include/sun.php&quot;);</span></li>
+<li><a name="a100"></a><span class="src-comm">require_once(ENGINELOC.&quot;sun_rise_set/math.php&quot;);</span></li>
+<li><a name="a101"></a><span class="src-comm">require_once(ENGINELOC.&quot;swish/swish.php&quot;);</span></li>
+<li><a name="a102"></a><span class="src-comm">require_once(ENGINELOC.&quot;threesscpanel/threesscpanel.class.php&quot;);</span></li>
+<li><a name="a103"></a><span class="src-comm">require_once(ENGINELOC.&quot;threessftp/threessftp.class.php&quot;);</span></li>
+<li><a name="a104"></a><span class="src-comm">require_once(ENGINELOC.&quot;transparentwatermark/transparentWatermark.class.php&quot;);</span></li>
+<li><a name="a105"></a><span class="src-comm">require_once(ENGINELOC.&quot;user-quota/class.userquota.php&quot;);</span></li>
+<li><a name="a106"></a><span class="src-comm">require_once(ENGINELOC.&quot;vnc_floodrecorder/class.floodrecorder.php&quot;);</span></li>
+<li><a name="a107"></a><span class="src-comm">//require_once(ENGINELOC.&quot;weather/rssweather.inc.php&quot;);</span></li>
+<li><a name="a108"></a><span class="src-comm">//require_once(ENGINELOC.&quot;zipcodesrange/ZipCodesRange.class.php&quot;);</span></li>
+<li><a name="a109"></a><span class="src-comm">*/</span></li>
+<li><a name="a110"></a>&nbsp;</li>
+<li><a name="a111"></a><span class="src-comm">//*** Starts coreEngine class.</span></li>
+<li><a name="a112"></a><span class="src-comm">//final class coreEngine</span></li>
+<li><a name="a112"></a>&nbsp;</li>
+<li><a name="a113"></a><span class="src-key">class </span><a href="../default/coreEngine.html">coreEngine</a></li>
+<li><a name="a114"></a><span class="src-sym">{</span></li>
+<li><a name="a115"></a>    <span class="src-key">var </span><a href="../default/coreEngine.html#var$sRU">$sRU</a><span class="src-sym">;</span></li>
+<li><a name="a116"></a>&nbsp;</li>
+<li><a name="a117"></a>    <span class="src-key">var </span><a href="../default/coreEngine.html#var$configObject">$configObject</a><span class="src-sym">,</span></li>
+<li><a name="a118"></a>        <a href="../default/coreEngine.html#var$userObject">$userObject</a><span class="src-sym">,</span></li>
+<li><a name="a119"></a>        <a href="../default/coreEngine.html#var$dbObject">$dbObject</a><span class="src-sym">,</span></li>
+<li><a name="a120"></a>        <a href="../default/coreEngine.html#var$errorObject">$errorObject</a><span class="src-sym">,</span></li>
+<li><a name="a121"></a>        <a href="../default/coreEngine.html#var$stringObject">$stringObject</a><span class="src-sym">,</span></li>
+<li><a name="a122"></a>        <a href="../default/coreEngine.html#var$fileObject">$fileObject</a><span class="src-sym">,</span></li>
+<li><a name="a123"></a>        <a href="../default/coreEngine.html#var$clientObject">$clientObject</a><span class="src-sym">,</span></li>
+<li><a name="a124"></a>        <a href="../default/coreEngine.html#var$timeObject">$timeObject</a><span class="src-sym">,</span></li>
+<li><a name="a125"></a>        <a href="../default/coreEngine.html#var$ticketObject">$ticketObject</a><span class="src-sym">,</span></li>
+<li><a name="a126"></a>        <a href="../default/coreEngine.html#var$firePHPObject">$firePHPObject</a><span class="src-sym">,</span></li>
+<li><a name="a127"></a>        <a href="../default/coreEngine.html#var$LinkedExceptionObject">$LinkedExceptionObject</a><span class="src-sym">;</span></li>
+<li><a name="a128"></a>&nbsp;</li>
+<li><a name="a129"></a>&nbsp;</li>
+<li><a name="a130"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a131"></a><span class="src-doc">     * Initliazes the coreEngine components.</span></li>
+<li><a name="a132"></a><span class="src-doc">     *</span></li>
+<li><a name="a133"></a><span class="src-doc">     * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">bool </span></li>
+<li><a name="a134"></a><span class="src-doc">     */</span></li>
+<li><a name="a135"></a>    <span class="src-key">public </span><span class="src-key">function </span><a href="../default/coreEngine.html#methodinit">init</a><span class="src-sym">(</span><span class="src-sym">)</span></li>
+<li><a name="a136"></a>    <span class="src-sym">{</span></li>
+<li><a name="a137"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$sRU">sRU</a> = <a href="http://www.php.net/explode">explode</a><span class="src-sym">(</span><span class="src-str">'/'</span><span class="src-sym">, </span><span class="src-var">$_SERVER</span><span class="src-sym">[</span><span class="src-str">'REQUEST_URI'</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a138"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$sRU">sRU</a> = <span class="src-str">'/'</span>.<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$sRU">sRU</a><span class="src-sym">[</span><span class="src-str">'1'</span><span class="src-sym">]</span>.<span class="src-str">'/'</span><span class="src-sym">;</span></li>
+<li><a name="a139"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$configObject">configObject</a>  = <span class="src-key">new </span><span class="src-id"><a href="../default/coreEngine.html#var$configObject">configObject</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a140"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$userObject">userObject</a>    = <span class="src-key">new </span><span class="src-id"><a href="../default/coreEngine.html#var$userObject">userObject</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a141"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$dbObject">dbObject</a>      = <span class="src-key">new </span><span class="src-id"><a href="../default/coreEngine.html#var$dbObject">dbObject</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a142"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$errorObject">errorObject</a>   = <span class="src-key">new </span><span class="src-id"><a href="../default/coreEngine.html#var$errorObject">errorObject</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a143"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$stringObject">stringObject</a>  = <span class="src-key">new </span><span class="src-id"><a href="../default/coreEngine.html#var$stringObject">stringObject</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a144"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$fileObject">fileObject</a>    = <span class="src-key">new </span><span class="src-id"><a href="../default/coreEngine.html#var$fileObject">fileObject</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a145"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$clientObject">clientObject</a>  = <span class="src-key">new </span><span class="src-id"><a href="../default/coreEngine.html#var$userObject">userObject</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">; </span><span class="src-comm">// ?</span></li>
+<li><a name="a146"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$timeObject">timeObject</a>    = <span class="src-key">new </span><span class="src-id"><a href="../default/coreEngine.html#var$timeObject">timeObject</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a147"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$ticketObject">ticketObject</a> = <span class="src-key">new </span><span class="src-id"><a href="../default/coreEngine.html#var$ticketObject">ticketObject</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a148"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$firePHPObject">firePHPObject</a> = <span class="src-key">new </span><span class="src-id"><a href="../default/FirePHP.html">FirePHP</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a149"></a>        </li>
+<li><a name="a150"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$LinkedExceptionObject">LinkedExceptionObject</a> = <span class="src-key">new </span><span class="src-id"><a href="../default/coreEngine.html#var$LinkedExceptionObject">LinkedExceptionObject</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a151"></a>        <span class="src-comm">//$this-&gt;clientObject  = new clientObject();</span></li>
+<li><a name="a152"></a>        <span class="src-comm">//$this-&gt;billingObject = new billingObject();</span></li>
+<li><a name="a153"></a>        <span class="src-comm">/*$this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a154"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a155"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a156"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a157"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a158"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a159"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a160"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a161"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a162"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a163"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a164"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a165"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a166"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a167"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a168"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a169"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a170"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a171"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a172"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a173"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a174"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a175"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a176"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a177"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a178"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a179"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a180"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a181"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a182"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a183"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a184"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a185"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a186"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a187"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a188"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a189"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a190"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a191"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a192"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a193"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a194"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a195"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a196"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a197"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a198"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a199"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a200"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a201"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a202"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a203"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a204"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a205"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a206"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a207"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a208"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a209"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a210"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a211"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a212"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a213"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a214"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a215"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a216"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a217"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a218"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a219"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();</span></li>
+<li><a name="a220"></a><span class="src-comm">        $this-&gt;fileObject    = new fileObject();*/</span></li>
+<li><a name="a221"></a>&nbsp;</li>
+<li><a name="a222"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$fileObject">fileObject</a><span class="src-sym">-&gt;</span><span class="src-id">errorObject  </span>= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$errorObject">errorObject</a><span class="src-sym">;</span></li>
+<li><a name="a223"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$fileObject">fileObject</a><span class="src-sym">-&gt;</span><span class="src-id">stringObject </span>= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$stringObject">stringObject</a><span class="src-sym">;</span></li>
+<li><a name="a224"></a>&nbsp;</li>
+<li><a name="a225"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$userObject">userObject</a><span class="src-sym">-&gt;</span><span class="src-id">dbObject      </span>= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$dbObject">dbObject</a><span class="src-sym">;</span></li>
+<li><a name="a226"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$userObject">userObject</a><span class="src-sym">-&gt;</span><span class="src-id">errorObject   </span>= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$errorObject">errorObject</a><span class="src-sym">;</span></li>
+<li><a name="a227"></a>&nbsp;</li>
+<li><a name="a228"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$dbObject">dbObject</a><span class="src-sym">-&gt;</span><span class="src-id">errorObject     </span>= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$errorObject">errorObject</a><span class="src-sym">;</span></li>
+<li><a name="a229"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$dbObject">dbObject</a><span class="src-sym">-&gt;</span><span class="src-id">configObject    </span>= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../default/coreEngine.html#var$configObject">configObject</a><span class="src-sym">;</span></li>
+<li><a name="a230"></a>&nbsp;</li>
+<li><a name="a231"></a>        <span class="src-comm">//$this-&gt;clientObject-&gt;dbObject   = $this-&gt;dbObject;</span></li>
+<li><a name="a232"></a>        <span class="src-comm">//$this-&gt;clientObject-&gt;errorObject    = $this-&gt;errorObject;</span></li>
+<li><a name="a233"></a>        <span class="src-comm">//$this-&gt;clientObject-&gt;stringObject   = $this-&gt;stringObject;</span></li>
+<li><a name="a234"></a>&nbsp;</li>
+<li><a name="a235"></a>        <span class="src-comm">//$this-&gt;billingObject-&gt;dbObject   = $this-&gt;dbObject;</span></li>
+<li><a name="a236"></a>        <span class="src-comm">//$this-&gt;billingObject-&gt;errorObject    = $this-&gt;errorObject;</span></li>
+<li><a name="a237"></a>        <span class="src-comm">//$this-&gt;billingObject-&gt;stringObject   = $this-&gt;stringObject;</span></li>
+<li><a name="a238"></a><span class="src-comm">/*</span></li>
+<li><a name="a239"></a><span class="src-comm">        $this-&gt;babesObject-&gt;dbObject     = $this-&gt;dbObject;</span></li>
+<li><a name="a240"></a><span class="src-comm">        $this-&gt;babesObject-&gt;stringObject = $this-&gt;stringObject;</span></li>
+<li><a name="a241"></a><span class="src-comm">        $this-&gt;babesObject-&gt;fileObject     = $this-&gt;fileObject;</span></li>
+<li><a name="a242"></a>&nbsp;</li>
+<li><a name="a243"></a><span class="src-comm">        $this-&gt;gamesObject-&gt;dbObject       = $this-&gt;dbObject;</span></li>
+<li><a name="a244"></a><span class="src-comm">        $this-&gt;gamesObject-&gt;stringObject   = $this-&gt;stringObject;</span></li>
+<li><a name="a245"></a><span class="src-comm">        $this-&gt;gamesObject-&gt;fileObject     = $this-&gt;fileObject;</span></li>
+<li><a name="a246"></a>&nbsp;</li>
+<li><a name="a247"></a><span class="src-comm">        $this-&gt;carsObject-&gt;dbObject       = $this-&gt;dbObject;</span></li>
+<li><a name="a248"></a><span class="src-comm">        $this-&gt;carsObject-&gt;stringObject   = $this-&gt;stringObject;</span></li>
+<li><a name="a249"></a><span class="src-comm">        $this-&gt;carsObject-&gt;fileObject     = $this-&gt;fileObject;</span></li>
+<li><a name="a250"></a>&nbsp;</li>
+<li><a name="a251"></a><span class="src-comm">        $this-&gt;musicObject-&gt;dbObject       = $this-&gt;dbObject;</span></li>
+<li><a name="a252"></a><span class="src-comm">        $this-&gt;musicObject-&gt;stringObject   = $this-&gt;stringObject;</span></li>
+<li><a name="a253"></a><span class="src-comm">        $this-&gt;musicObject-&gt;fileObject     = $this-&gt;fileObject;</span></li>
+<li><a name="a254"></a>&nbsp;</li>
+<li><a name="a255"></a><span class="src-comm">        $this-&gt;moviesObject-&gt;dbObject       = $this-&gt;dbObject;</span></li>
+<li><a name="a256"></a><span class="src-comm">        $this-&gt;moviesObject-&gt;stringObject   = $this-&gt;stringObject;</span></li>
+<li><a name="a257"></a><span class="src-comm">        $this-&gt;moviesObject-&gt;fileObject     = $this-&gt;fileObject;</span></li>
+<li><a name="a258"></a>&nbsp;</li>
+<li><a name="a259"></a><span class="src-comm">        $this-&gt;dvdObject-&gt;dbObject       = $this-&gt;dbObject;</span></li>
+<li><a name="a260"></a><span class="src-comm">        $this-&gt;dvdObject-&gt;stringObject   = $this-&gt;stringObject;</span></li>
+<li><a name="a261"></a><span class="src-comm">        $this-&gt;dvdObject-&gt;fileObject     = $this-&gt;fileObject;</span></li>
+<li><a name="a262"></a>&nbsp;</li>
+<li><a name="a263"></a><span class="src-comm">        $this-&gt;rolesObject-&gt;dbObject       = $this-&gt;dbObject;</span></li>
+<li><a name="a264"></a><span class="src-comm">        $this-&gt;rolesObject-&gt;stringObject   = $this-&gt;stringObject;</span></li>
+<li><a name="a265"></a><span class="src-comm">        $this-&gt;rolesObject-&gt;fileObject     = $this-&gt;fileObject;</span></li>
+<li><a name="a266"></a>&nbsp;</li>
+<li><a name="a267"></a><span class="src-comm">        $this-&gt;personalitiesObject-&gt;dbObject       = $this-&gt;dbObject;</span></li>
+<li><a name="a268"></a><span class="src-comm">        $this-&gt;personalitiesObject-&gt;stringObject   = $this-&gt;stringObject;</span></li>
+<li><a name="a269"></a><span class="src-comm">        $this-&gt;personalitiesObject-&gt;fileObject     = $this-&gt;fileObject;</span></li>
+<li><a name="a270"></a><span class="src-comm">*/ </span></li>
+<li><a name="a271"></a>        <span class="src-key">return </span><span class="src-id">true</span><span class="src-sym">;</span></li>
+<li><a name="a272"></a>    <span class="src-sym">}</span></li>
+<li><a name="a273"></a><span class="src-sym">}</span></li>
+<li><a name="a274"></a>&nbsp;</li>
+<li><a name="a275"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:32:27 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</body>
+</html>

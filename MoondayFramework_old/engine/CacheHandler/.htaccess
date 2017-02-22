@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.*/[^\./]*[^/])$ /dcc/$1/
+RewriteRule ^([a-zA-Z0-9\/_-]*)(\.html?)?$ /dcc/index.php?path=$1 [QSA,L]

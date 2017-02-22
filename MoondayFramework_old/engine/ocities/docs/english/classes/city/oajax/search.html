@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+	<head>
+	<link rel="stylesheet" type="text/css" href="../../../../../css/maindoc.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+	<h2 class="titre">ClassFuncDoc : <em>Automatic documentation</em></h2>
+		<div class="path">
+		<span class="acc"><a class="acc" href="../../../index.html" title="Home">Home</a></span> -> <span class="acc"><a class="acc" href="../index.html" title="city">city</a></span><br /><br />
+		<span><a class="other" href="..//class_.html" alt=""></a> -> <a class="current" href="class_oajax.html" alt="oajax">oajax</a> ->
+		</span>
+		</div>
+		<div class="menu">			<ul>Methods
+				<li><a class="other" href="buildAjax.html" title="buildAjax">buildAjax</a></li>
+				<li><a class="current" href="search.html" title="search">search</a></li>
+				<li><a class="other" href="setFooter.html" title="setFooter">setFooter</a></li>
+				<li><a class="other" href="setHeader.html" title="setHeader">setHeader</a></li>
+				</ul>
+		</ul>
+		</div>
+		<div class="content">
+				<span class="name">search</span><br /><br />
+				<span class="definition">user-defined     public   function search (			<em class="methodParams">		</em>) : regular method</span><br /><br />
+				<span class="file">defined in C:\wamp\www\cls\doc\classes\city\oajax.cls.php from line 34 to line 54</span><br /><br />
+				<a class="other" href="javascript: void(0);" title="See code" onclick="document.getElementById('code').style.display = (document.getElementById('code').style.display == 'block')?'none':'block';">See code</a><br />
+				<div class="code" id="code"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">sS&nbsp;</span><span style="color: #007700">!=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">oXmlhttp</span><span style="color: #007700">.</span><span style="color: #0000BB">open</span><span style="color: #007700">(</span><span style="color: #DD0000">'POST'</span><span style="color: #007700">,</span><span style="color: #DD0000">'{$_SERVER['</span><span style="color: #0000BB">PHP_SELF</span><span style="color: #DD0000">']}'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">oXmlhttp</span><span style="color: #007700">.</span><span style="color: #0000BB">onreadystatechange</span><span style="color: #007700">=function()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">oXmlhttp</span><span style="color: #007700">.</span><span style="color: #0000BB">readyState</span><span style="color: #007700">==</span><span style="color: #0000BB">4&nbsp;</span><span style="color: #007700">&amp;&amp;&nbsp;</span><span style="color: #0000BB">oXmlhttp</span><span style="color: #007700">.</span><span style="color: #0000BB">status&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">200</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//document.body.innerHTML&nbsp;=&nbsp;oXmlhttp.responseText;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">document</span><span style="color: #007700">.</span><span style="color: #0000BB">getElementById&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">'divContent'</span><span style="color: #007700">).</span><span style="color: #0000BB">innerHTML&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oXmlhttp</span><span style="color: #007700">.</span><span style="color: #0000BB">responseText</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">oXmlhttp</span><span style="color: #007700">.</span><span style="color: #0000BB">setRequestHeader</span><span style="color: #007700">(</span><span style="color: #DD0000">"Content-type"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"application/x-www-form-urlencoded"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'data='</span><span style="color: #007700">+</span><span style="color: #0000BB">sS</span><span style="color: #007700">+</span><span style="color: #DD0000">'&amp;sort='</span><span style="color: #007700">+</span><span style="color: #0000BB">bSort</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">oXmlhttp</span><span style="color: #007700">.</span><span style="color: #0000BB">send&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">data</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">HTML</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$sString</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>&nbsp;?&gt;</span>
+</code></div><br /><br />
+				<span class="label">Owner</span><br />
+				<span class="owner"><a href="../oajax/class_oajax.html" title="oajax">oajax</a></span><br /><br />
+				<span class="label">Modifiers</span><br />
+				<span class="modifiers">65792 => public</span><br /><br />
+					<br />
+		</div>
+	</body>
+</html>

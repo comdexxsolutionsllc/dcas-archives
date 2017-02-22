@@ -1,0 +1,996 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class RSSBuilder</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class RSSBuilder</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Class for creating a RSS file</p>
+<p class="description"><p>Tested with WAMP (XP-SP1/1.3.24/4.0.12/4.3.0)  Last change: 2003-05-30</p></p>
+	<ul class="tags">
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">version:</span> 1.001</li>
+				<li><span class="field">link:</span> <a href="http://www.flaimo.com/">http://www.flaimo.com/</a></li>
+				<li><span class="field">copyright:</span> Michael Wimmer</li>
+				<li><span class="field">author:</span> Michael Wimmer &lt;<a href="mailto:flaimo@gmx.net">flaimo@gmx.net</a>&gt;</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_rssbuilder_class_RSSBuilder_inc_php.html">/rssbuilder/class.RSSBuilder.inc.php</a> (line <span class="field"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a70">70</a></span>)
+		</p>
+		
+				
+		<pre><a href="../RSSBuilder/RSSBase.html">RSSBase</a>
+   |
+   --RSSBuilder</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+								
+				<div class="method-definition">
+											<span class="method-result">(void)</span>
+										<a href="#addDCdata" title="details" class="method-name">addDCdata</a>
+											([<span class="var-type">(string)</span>&nbsp;<span class="var-name">$publisher</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$creator</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$date</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$language</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$rights</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$coverage</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$contributor</span> = <span class="var-default">''</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(void)</span>
+										<a href="#addItem" title="details" class="method-name">addItem</a>
+											([<span class="var-type">(string)</span>&nbsp;<span class="var-name">$about</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$title</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$link</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$description</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$subject</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$date</span> = <span class="var-default">''</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$author</span> = <span class="var-default">''</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$comments</span> = <span class="var-default">''</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(void)</span>
+										<a href="#addSYdata" title="details" class="method-name">addSYdata</a>
+											([<span class="var-type">(string)</span>&nbsp;<span class="var-name">$period</span> = <span class="var-default">''</span>], [<span class="var-type">(int)</span>&nbsp;<span class="var-name">$frequency</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$base</span> = <span class="var-default">''</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(boolean)</span>
+										<a href="#deleteItem" title="details" class="method-name">deleteItem</a>
+											([<span class="var-type">(int)</span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">-1</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(string)</span>
+										<a href="#getAbout" title="details" class="method-name">getAbout</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(string)</span>
+										<a href="#getBase" title="details" class="method-name">getBase</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(int)</span>
+										<a href="#getCache" title="details" class="method-name">getCache</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(string)</span>
+										<a href="#getCategory" title="details" class="method-name">getCategory</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(string)</span>
+										<a href="#getContributor" title="details" class="method-name">getContributor</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(string)</span>
+										<a href="#getCoverage" title="details" class="method-name">getCoverage</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(string)</span>
+										<a href="#getCreator" title="details" class="method-name">getCreator</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(string)</span>
+										<a href="#getDate" title="details" class="method-name">getDate</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(string)</span>
+										<a href="#getDescription" title="details" class="method-name">getDescription</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(string)</span>
+										<a href="#getEncoding" title="details" class="method-name">getEncoding</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(string)</span>
+										<a href="#getFrequency" title="details" class="method-name">getFrequency</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(string)</span>
+										<a href="#getImageLink" title="details" class="method-name">getImageLink</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(mixed)</span>
+										<a href="#getItem" title="details" class="method-name">getItem</a>
+											([<span class="var-type">(int)</span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">-1</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(array)</span>
+										<a href="#getItemList" title="details" class="method-name">getItemList</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(array)</span>
+										<a href="#getItems" title="details" class="method-name">getItems</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(string)</span>
+										<a href="#getLanguage" title="details" class="method-name">getLanguage</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(string)</span>
+										<a href="#getPeriod" title="details" class="method-name">getPeriod</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(string)</span>
+										<a href="#getPublisher" title="details" class="method-name">getPublisher</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(string)</span>
+										<a href="#getRights" title="details" class="method-name">getRights</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(void)</span>
+										<a href="#getRSSOutput" title="details" class="method-name">getRSSOutput</a>
+											([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$version</span> = <span class="var-default">''</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(string)</span>
+										<a href="#getTitle" title="details" class="method-name">getTitle</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(boolean)</span>
+										<a href="#isValidLanguageCode" title="details" class="method-name">isValidLanguageCode</a>
+											([<span class="var-type">(string)</span>&nbsp;<span class="var-name">$code</span> = <span class="var-default">''</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">(void)</span>
+										<a href="#outputRSS" title="details" class="method-name">outputRSS</a>
+											([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$version</span> = <span class="var-default">''</span>])
+									</div>
+							</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodaddDCdata" id="addDCdata"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addDCdata</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a322">322</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">add additional DC data</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">uses:</span> setPublisher(), <a href="../default/.html"></a> - setCreator(), setDate(), setLanguage(), setRights(), setCoverage(), setContributor()</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(void)</span>
+		<span class="method-name">
+			addDCdata
+		</span>
+					([<span class="var-type">(string)</span>&nbsp;<span class="var-name">$publisher</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$creator</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$date</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$language</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$rights</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$coverage</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$contributor</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">(string)</span>
+				<span class="var-name">$publisher</span><span class="var-description">: person, an organization, or a service</span>			</li>
+					<li>
+				<span class="var-type">(string)</span>
+				<span class="var-name">$creator</span><span class="var-description">: person, an organization, or a service</span>			</li>
+					<li>
+				<span class="var-type">(string)</span>
+				<span class="var-name">$date</span><span class="var-description">: format: 2003-05-29T00:03:07+0200</span>			</li>
+					<li>
+				<span class="var-type">(string)</span>
+				<span class="var-name">$language</span><span class="var-description">: iso-format</span>			</li>
+					<li>
+				<span class="var-type">(string)</span>
+				<span class="var-name">$rights</span><span class="var-description">: copyright information</span>			</li>
+					<li>
+				<span class="var-type">(string)</span>
+				<span class="var-name">$coverage</span><span class="var-description">: spatial location (a place name or geographic coordinates), temporal period (a period label, date, or date range) or jurisdiction (such as a named administrative entity)</span>			</li>
+					<li>
+				<span class="var-type">(string)</span>
+				<span class="var-name">$contributor</span><span class="var-description">: person, an organization, or a service</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodaddItem" id="addItem"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">addItem</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a863">863</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds another rss item to the object</p>
+	<ul class="tags">
+				<li><span class="field">uses:</span> RSSItem</li>
+				<li><span class="field">see:</span> $items</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(void)</span>
+		<span class="method-name">
+			addItem
+		</span>
+					([<span class="var-type">(string)</span>&nbsp;<span class="var-name">$about</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$title</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$link</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$description</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$subject</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$date</span> = <span class="var-default">''</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$author</span> = <span class="var-default">''</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$comments</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">(string)</span>
+				<span class="var-name">$about</span><span class="var-description">: URL</span>			</li>
+					<li>
+				<span class="var-type">(string)</span>
+				<span class="var-name">$title</span>			</li>
+					<li>
+				<span class="var-type">(string)</span>
+				<span class="var-name">$link</span><span class="var-description">: URL</span>			</li>
+					<li>
+				<span class="var-type">(string)</span>
+				<span class="var-name">$description</span><span class="var-description">: (optional)</span>			</li>
+					<li>
+				<span class="var-type">(string)</span>
+				<span class="var-name">$subject</span><span class="var-description">: some sort of category (optional dc value - only shows up if DC data has been set before)</span>			</li>
+					<li>
+				<span class="var-type">(string)</span>
+				<span class="var-name">$date</span><span class="var-description">: format: 2003-05-29T00:03:07+0200 (optional dc value - only shows up if DC data has been set before)</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodaddSYdata" id="addSYdata"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addSYdata</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a351">351</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">add additional DC data</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">uses:</span> setPeriod(), <a href="../default/.html"></a> - setFrequency(), setBase()</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(void)</span>
+		<span class="method-name">
+			addSYdata
+		</span>
+					([<span class="var-type">(string)</span>&nbsp;<span class="var-name">$period</span> = <span class="var-default">''</span>], [<span class="var-type">(int)</span>&nbsp;<span class="var-name">$frequency</span> = <span class="var-default">''</span>], [<span class="var-type">(string)</span>&nbsp;<span class="var-name">$base</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">(string)</span>
+				<span class="var-name">$period</span><span class="var-description">: 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly'</span>			</li>
+					<li>
+				<span class="var-type">(int)</span>
+				<span class="var-name">$frequency</span><span class="var-description">: every x hours/days/weeks/...</span>			</li>
+					<li>
+				<span class="var-type">(string)</span>
+				<span class="var-name">$base</span><span class="var-description">: format: 2003-05-29T00:03:07+0200</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methoddeleteItem" id="deleteItem"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">deleteItem</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a892">892</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Deletes a rss item from the array</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true if item was deleted</li>
+				<li><span class="field">see:</span> $items</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(boolean)</span>
+		<span class="method-name">
+			deleteItem
+		</span>
+					([<span class="var-type">(int)</span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">-1</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">(int)</span>
+				<span class="var-name">$id</span><span class="var-description">: id of the element in the $items array</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodgetAbout" id="getAbout"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getAbout</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a662">662</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns $about variable</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> $about</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(string)</span>
+		<span class="method-name">
+			getAbout
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetBase" id="getBase"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getBase</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a818">818</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns $base variable</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> $base</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(string)</span>
+		<span class="method-name">
+			getBase
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetCache" id="getCache"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getCache</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a844">844</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns $cache variable</p>
+	<ul class="tags">
+				<li><span class="field">since:</span> 1.001 - 2003/05/30</li>
+				<li><span class="field">see:</span> $cache</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(int)</span>
+		<span class="method-name">
+			getCache
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetCategory" id="getCategory"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getCategory</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a831">831</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns $category variable</p>
+	<ul class="tags">
+				<li><span class="field">since:</span> 1.001 - 2003/05/30</li>
+				<li><span class="field">see:</span> $category</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(string)</span>
+		<span class="method-name">
+			getCategory
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetContributor" id="getContributor"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getContributor</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a770">770</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns $contributor variable</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> $contributor</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(string)</span>
+		<span class="method-name">
+			getContributor
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetCoverage" id="getCoverage"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getCoverage</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a758">758</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns $coverage variable</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> $coverage</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(string)</span>
+		<span class="method-name">
+			getCoverage
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetCreator" id="getCreator"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getCreator</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a710">710</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns $creator variable</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> $creator</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(string)</span>
+		<span class="method-name">
+			getCreator
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetDate" id="getDate"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getDate</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a722">722</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns $date variable</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> $date</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(string)</span>
+		<span class="method-name">
+			getDate
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetDescription" id="getDescription"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getDescription</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a686">686</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns $description variable</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> $description</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(string)</span>
+		<span class="method-name">
+			getDescription
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetEncoding" id="getEncoding"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getEncoding</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a650">650</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns $encoding variable</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> $image_link</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(string)</span>
+		<span class="method-name">
+			getEncoding
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetFrequency" id="getFrequency"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getFrequency</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a806">806</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns $frequency variable</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> $frequency</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(string)</span>
+		<span class="method-name">
+			getFrequency
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetImageLink" id="getImageLink"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getImageLink</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a782">782</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns $image_link variable</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> $image_link</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(string)</span>
+		<span class="method-name">
+			getImageLink
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetItem" id="getItem"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getItem</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a933">933</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a single rss item by ID</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> RSSItem or FALSE</li>
+				<li><span class="field">see:</span> RSSItem</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(mixed)</span>
+		<span class="method-name">
+			getItem
+		</span>
+					([<span class="var-type">(int)</span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">-1</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">(int)</span>
+				<span class="var-name">$id</span><span class="var-description">: id of the element in the $items array</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodgetItemList" id="getItemList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getItemList</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a909">909</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an array with all the keys of the $items array</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> array with all the keys of the $items array</li>
+				<li><span class="field">see:</span> $items</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(array)</span>
+		<span class="method-name">
+			getItemList
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetItems" id="getItems"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getItems</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a920">920</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the $items array</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(array)</span>
+		<span class="method-name">
+			getItems
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetLanguage" id="getLanguage"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLanguage</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a734">734</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns $language variable</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> $language</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(string)</span>
+		<span class="method-name">
+			getLanguage
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetPeriod" id="getPeriod"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPeriod</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a794">794</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns $period variable</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> $period</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(string)</span>
+		<span class="method-name">
+			getPeriod
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetPublisher" id="getPublisher"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPublisher</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a698">698</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns $publisher variable</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> $publisher</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(string)</span>
+		<span class="method-name">
+			getPublisher
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetRights" id="getRights"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRights</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a746">746</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns $rights variable</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> $rights</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(string)</span>
+		<span class="method-name">
+			getRights
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetRSSOutput" id="getRSSOutput"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRSSOutput</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a1354">1354</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">returns the output</p>
+<p class="description"><p>use this function if you want to have the output stream as a string (for example to write it in a cache file)</p></p>
+	<ul class="tags">
+				<li><span class="field">uses:</span> createOutput()</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(void)</span>
+		<span class="method-name">
+			getRSSOutput
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$version</span> = <span class="var-default">''</span>])
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetTitle" id="getTitle"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTitle</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a674">674</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns $title variable</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> $title</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(string)</span>
+		<span class="method-name">
+			getTitle
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodisValidLanguageCode" id="isValidLanguageCode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">isValidLanguageCode</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a367">367</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks if a given string is a valid iso-language-code</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If string is valid or not</li>
+				<li><span class="field">static:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(boolean)</span>
+		<span class="method-name">
+			isValidLanguageCode
+		</span>
+					([<span class="var-type">(string)</span>&nbsp;<span class="var-name">$code</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">(string)</span>
+				<span class="var-name">$code</span><span class="var-description">: String that should validated</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodoutputRSS" id="outputRSS"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">outputRSS</span> (line <span class="line-number"><a href="..//__filesource/fsource_RSSBase__rssbuilderclass.RSSBuilder.inc.php.html#a1333">1333</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">echos the output</p>
+<p class="description"><p>use this function if you want to directly output the rss stream</p></p>
+	<ul class="tags">
+				<li><span class="field">uses:</span> createOutput()</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">(void)</span>
+		<span class="method-name">
+			outputRSS
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$version</span> = <span class="var-default">''</span>])
+			</div>
+	
+		
+		
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:31:45 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</div></body>
+</html>

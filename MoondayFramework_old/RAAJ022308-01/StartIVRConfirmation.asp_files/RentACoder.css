@@ -1,0 +1,317 @@
+
+BODY
+{
+    BORDER-RIGHT: medium none;
+    PADDING-RIGHT: 0px;
+    BORDER-TOP: medium none;
+    PADDING-LEFT: 0px;
+    PADDING-BOTTOM: 0px;
+    MARGIN: 0px;
+    BORDER-LEFT: medium none;
+    PADDING-TOP: 0px;
+    BORDER-BOTTOM: medium none;
+    FONT-FAMILY: Verdana;
+    /*font-size: small*/
+    
+}
+
+TABLE 
+{/*Added 2/10/2008 after doctype was explicity set on page to make tables default to align left*/
+    text-align: left;
+}
+.RacMenuColor
+{
+	background-color: #b3c4ff;  /*#b3c4ff; RAC menu blue*/
+}
+
+.Header /*Header on all RAC pages*/
+{
+	font-weight: bold;
+	font-size: medium;
+	font-family: Verdana;
+	text-align: center;
+}
+.TableBackground
+{
+    background-color: #DDEEFF; /*light blue for forms*/
+}
+.NormalTextPlus
+{
+	font-size: small;
+	font-family: verdana;
+}
+.NormalText
+{
+	font-size: x-small;
+	font-family: verdana;
+}
+.SmallText
+{
+	font-size: xx-small;
+	font-family: verdana;
+}
+
+.HelpBackground
+{
+    background-color: #DDEEFF; /*Help background color*/
+}
+
+.BroadCastMessageBackground
+{
+    background-color: #F0F0F0; /*light grey*/
+    
+}
+
+/**************/
+/* Table rows */
+/**************/
+
+TR.HeaderRow_Small
+
+{
+	color:White;
+	background-color:black;
+	font-size: xx-small;
+	font-family: verdana;
+}
+
+TR.NormalRow_Small 
+{
+	font-size: xx-small;
+}
+
+TR.NormalRow_Medium 
+{
+	font-size: x-small;
+}
+
+TR.ColoredRow_Small /*highlight row color: light blue F4F7FF,#E8EEFF*/
+{
+	background-color: #DDE4FF;
+	font-size: xx-small;
+}
+
+TR.ColoredRow_Medium /*highlight row color: light blue F4F7FF,#E8EEFF*/
+{
+	background-color: #DDE4FF;
+	font-size: x-small;
+}
+
+
+/**************/
+/* Table cells */
+/**************/
+
+TD.MenuRow
+{
+	font-size: 8pt;
+	font-family: Verdana;
+}
+
+
+
+TD.SmallRow /* small TD*/
+{
+	font-size: xx-small;
+	font-family: Verdana;
+}
+
+TD.SmallRow_Header  /*inverse color header row*/
+{
+	color:White;
+	background-color:black;
+	font-size: xx-small;
+	font-family: verdana;
+}
+
+TD.MediumRow /* medium TD*/
+{
+	
+	font-size: x-small; /*2/21/08: changed from "font-size: x-small;" becuase it didn't seem to work. But it caused other problems. So on 2/26 changed back and set this on TR for problem td's and it worked!?*/
+	font-family: Verdana;
+}
+
+TD.MediumRow_HEADER /* medium TD inverse color header row**/
+{
+	font-size: x-small;
+	font-family: Verdana;
+	color:White;
+	background-color:black;
+}
+
+TD.MediumRow2
+{
+	font-size: 10pt;
+	font-family: Verdana;
+}
+   
+/**************/
+/* Hyperlinks */
+/**************/
+   
+/* hyperlink style for left hand menu
+	other decoration is:  underline*/
+A.MenuLink:link {
+    text-decoration:    underline; /*none;*/
+}
+
+A.MenuLink:visited  {
+    text-decoration:    underline; /*none;*/
+}
+
+A.MenuLink:active   {
+    text-decoration:    underline; /*none;*/
+}
+/*
+A.MenuLink:hover    {
+    text-decoration:     underline;
+    background-color:#00239D;  
+    color:white;
+}*/
+
+
+
+
+/*----------------------------------
+	rules for /DotNet/Admin/ area
+====================================*/
+.tblSrchRslt 
+{ font-size:8pt; 
+	}
+	
+	
+
+/*------------------------------------ 
+	RAC Form Rules
+======================================*/
+
+   label 
+    {	font-size:10pt;
+		text-align:right;
+	}
+		
+    fieldset 
+    {
+		background-color:#B3C4FF;
+		border-width:1px; 
+		border-style:solid; 
+		border-color:#666666;
+		padding-left:1px;}
+		
+    fieldset legend 
+    {
+		font-weight:bold; 
+		font-size:12px; 
+		color:#333;}
+       
+    
+    select#select , input.inputText 
+    { 
+		font-size:12px; 
+		margin-left:1px;	
+	}
+     
+    input.inputButton 
+    {
+		width:90px;
+		
+    } 
+    textarea.inputTextarea 
+    {
+		font-family:Tahoma,Arial,sans-serif; 
+		background:#fff left top no-repeat; 
+		font-size:13px; 
+		letter-spacing:.05em; 
+		margin-left:1px; 
+		overflow:auto;}
+	
+    div.optional label {background:#B3C4FF;}
+    div.required label {color:#000; 
+		border:1px none #000; 
+		background:#B3C4FF;}
+		
+    div.optional, div.required 
+    {
+		clear:left; 
+		display:block; 
+		height:expression('1%'); 
+		padding:.1em; 
+		white-space:nowrap;}
+		
+		
+/*--------------------------------------------------
+center column left-right float columns
+===================================================*/
+#center div#floatright, fieldset div#floatright 
+{
+	float:right;	
+	width:49%;
+	height:auto;
+}		
+
+#center div#floatleft, fieldset div#floatleft 
+{
+	float:left;	
+	width:49%;
+	height:auto;
+}			
+
+/*----------------------------------------------------
+rules for standardizing gridview appearance
+
+=====================================================*/
+.clsFooterStyle 
+{
+	background-color:#CCCCCC;
+	color:Black;
+}
+.clsEmptyDataRowStyle
+{
+	font-weight:bold;
+	font-size:smaller;
+	border:none;
+}
+.clsAlternatingRowStyle
+{
+	background-color:#DCDCDC;
+	font-weight:normal;
+}
+.clsHeaderStyle
+{
+	font-size:8pt;
+	background-color:#000000;
+	color:White;
+	text-align:left;
+	font-weight:bold;
+}
+.clsPagerStyle
+{
+	background-color:#B3C4FF;
+	color:Black;
+	text-align:center;
+}
+.clsSelectedRowStyle
+{
+	font-size:8pt;
+	background-color:#B3C4FF;
+	color:White;
+	font-weight:bold;
+}
+.clsRowStyle 
+{
+	font-size:8pt;
+	background-color:white;
+	color:black;
+	font-weight:normal;
+}
+
+
+
+
+input.framebutton 
+	{
+	background-color:#B3C4FF; 
+	color: #000000; 
+	font: Verdana;
+	}
+

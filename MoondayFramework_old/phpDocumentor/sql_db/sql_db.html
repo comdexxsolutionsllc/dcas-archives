@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class sql_db</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class sql_db</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+		<p class="notes">
+			Located in <a class="field" href="_sqlcache_phpbb_dbapi_mysql_php.html">/sqlcache/phpbb_dbapi/mysql.php</a> (line <span class="field"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a17">17</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../sql_db/sqlAPI.html">sqlAPI</a></td>
+					<td>
+											
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$db_connect_id" title="details" class="var-name">$db_connect_id</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$num_queries" title="details" class="var-name">$num_queries</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$query_result" title="details" class="var-name">$query_result</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$row" title="details" class="var-name">$row</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$rowset" title="details" class="var-name">$rowset</a>
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+								
+				<div class="method-definition">
+											<span class="method-result">sql_db</span>
+										<a href="#sql_db" title="details" class="method-name">sql_db</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$sqlserver</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$sqluser</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$sqlpassword</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$database</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$persistency</span> = <span class="var-default">true</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#sql_affectedrows" title="details" class="method-name">sql_affectedrows</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#sql_close" title="details" class="method-name">sql_close</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#sql_error" title="details" class="method-name">sql_error</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#sql_fetchfield" title="details" class="method-name">sql_fetchfield</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$rownum</span> = <span class="var-default">-1</span>], <span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#sql_fetchrow" title="details" class="method-name">sql_fetchrow</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#sql_fetchrowset" title="details" class="method-name">sql_fetchrowset</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#sql_fieldname" title="details" class="method-name">sql_fieldname</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#sql_fieldtype" title="details" class="method-name">sql_fieldtype</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#sql_freeresult" title="details" class="method-name">sql_freeresult</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#sql_nextid" title="details" class="method-name">sql_nextid</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#sql_numfields" title="details" class="method-name">sql_numfields</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#sql_numrows" title="details" class="method-name">sql_numrows</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#sql_query" title="details" class="method-name">sql_query</a>
+											([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$query</span> = <span class="var-default">""</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$transaction</span> = <span class="var-default">FALSE</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#sql_rowseek" title="details" class="method-name">sql_rowseek</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$rownum</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+									</div>
+							</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$db_connect_id" id="$db_connect_id"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$db_connect_id</span>
+						(line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a20">20</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$num_queries" id="$num_queries"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$num_queries</span>
+			 = <span class="var-default"> 0</span>			(line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a24">24</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$query_result" id="$query_result"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$query_result</span>
+						(line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a21">21</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$row" id="$row"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$row</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a22">22</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$rowset" id="$rowset"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$rowset</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a23">23</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodsql_db" id="sql_db"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor sql_db</span> (line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a29">29</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">sql_db</span>
+		<span class="method-name">
+			sql_db
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$sqlserver</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$sqluser</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$sqlpassword</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$database</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$persistency</span> = <span class="var-default">true</span>])
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsql_affectedrows" id="sql_affectedrows"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">sql_affectedrows</span> (line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a129">129</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sql_affectedrows
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsql_close" id="sql_close"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">sql_close</span> (line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a68">68</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sql_close
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsql_error" id="sql_error"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">sql_error</span> (line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a312">312</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sql_error
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsql_fetchfield" id="sql_fetchfield"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">sql_fetchfield</span> (line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a226">226</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sql_fetchfield
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$rownum</span> = <span class="var-default">-1</span>], <span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsql_fetchrow" id="sql_fetchrow"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">sql_fetchrow</span> (line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a189">189</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sql_fetchrow
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsql_fetchrowset" id="sql_fetchrowset"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">sql_fetchrowset</span> (line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a205">205</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sql_fetchrowset
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsql_fieldname" id="sql_fieldname"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">sql_fieldname</span> (line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a157">157</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sql_fieldname
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsql_fieldtype" id="sql_fieldtype"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">sql_fieldtype</span> (line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a173">173</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sql_fieldtype
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsql_freeresult" id="sql_freeresult"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">sql_freeresult</span> (line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a292">292</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sql_freeresult
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsql_nextid" id="sql_nextid"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">sql_nextid</span> (line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a281">281</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sql_nextid
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsql_numfields" id="sql_numfields"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">sql_numfields</span> (line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a141">141</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sql_numfields
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsql_numrows" id="sql_numrows"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">sql_numrows</span> (line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a113">113</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sql_numrows
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsql_query" id="sql_query"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">sql_query</span> (line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a88">88</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sql_query
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$query</span> = <span class="var-default">""</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$transaction</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+		
+		
+	</div>
+<a name="methodsql_rowseek" id="sql_rowseek"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">sql_rowseek</span> (line <span class="line-number"><a href="..//__filesource/fsource_sql_db__sqlcachephpbb_dbapimysql.php.html#a266">266</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sql_rowseek
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$rownum</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$query_id</span>)
+			</div>
+	
+		
+		
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:34:30 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</div></body>
+</html>

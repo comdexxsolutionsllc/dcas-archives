@@ -1,0 +1,1280 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class esiform</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class esiform</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Description:  ------------</p>
+<p class="description"><p>This class is meant to create_, validate and process Web forms.</p><p>When a valid form is submitted, the class can execute several types  of built-in follow-up actions.</p><p>Currently it supports executing these types of follow-up actions:</p><p><ul><li>Send an e-mail message to a given address based on a template that can
+   be processed using the submitted form values</li><li>Resubmit the form data to a given Web server using HTTP POST method</li><li>Execute a database query</li></ul>  The class supports defining forms with many types of built-in validation  rules including form field interdependency.</p></p>
+		<p class="notes">
+			Located in <a class="field" href="_esiform_esiform_class_php.html">/esiform/esiform.class.php</a> (line <span class="field"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a34">34</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$default_pattern" title="details" class="var-name">$default_pattern</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$error_color" title="details" class="var-name">$error_color</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$error_message" title="details" class="var-name">$error_message</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$error_occur" title="details" class="var-name">$error_occur</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$field_settings" title="details" class="var-name">$field_settings</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$finished_fields" title="details" class="var-name">$finished_fields</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$follow_ups" title="details" class="var-name">$follow_ups</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$is_error" title="details" class="var-name">$is_error</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$load_javascript" title="details" class="var-name">$load_javascript</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$method_type" title="details" class="var-name">$method_type</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$post_values" title="details" class="var-name">$post_values</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$required_sign" title="details" class="var-name">$required_sign</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$required_sign_pos" title="details" class="var-name">$required_sign_pos</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$return" title="details" class="var-name">$return</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$return_type" title="details" class="var-name">$return_type</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$sexyness" title="details" class="var-name">$sexyness</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$socket_returns" title="details" class="var-name">$socket_returns</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$template" title="details" class="var-name">$template</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$valid_email_syntax" title="details" class="var-name">$valid_email_syntax</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$xhtml" title="details" class="var-name">$xhtml</a>
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+								
+				<div class="method-definition">
+											<span class="method-result">esiform</span>
+										<a href="#esiform" title="details" class="method-name">esiform</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$settings</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#create_CheckboxRadioFields" title="details" class="method-name">create_CheckboxRadioFields</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#create_DropDownFields" title="details" class="method-name">create_DropDownFields</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#create_FieldAttributes" title="details" class="method-name">create_FieldAttributes</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#create_FieldEvents" title="details" class="method-name">create_FieldEvents</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_key</span> = <span class="var-default">null</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#create_FieldStyles" title="details" class="method-name">create_FieldStyles</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#create_FormFields" title="details" class="method-name">create_FormFields</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$fields_array</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#create_TextareaFields" title="details" class="method-name">create_TextareaFields</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#create_TextFields" title="details" class="method-name">create_TextFields</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#followUps_Start" title="details" class="method-name">followUps_Start</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$follow_ups</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#followUp_autoText" title="details" class="method-name">followUp_autoText</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_data</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$spaces</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$list_sign</span> = <span class="var-default">null</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#followUp_Conditions" title="details" class="method-name">followUp_Conditions</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$conditions</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#followUp_CreateUserData_Array" title="details" class="method-name">followUp_CreateUserData_Array</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#followUp_fallback" title="details" class="method-name">followUp_fallback</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_data</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$file_error</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#followUp_File" title="details" class="method-name">followUp_File</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_data</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$file_error</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#followUp_formatString" title="details" class="method-name">followUp_formatString</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$string</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#followUp_Mail" title="details" class="method-name">followUp_Mail</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_data</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#followUp_Mail_replaceSenderTags" title="details" class="method-name">followUp_Mail_replaceSenderTags</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_data</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$sender_array</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#followUp_Mysql" title="details" class="method-name">followUp_Mysql</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_data</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$follow_up_name</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#followUp_Socket" title="details" class="method-name">followUp_Socket</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_data</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#followUp_socketConnector" title="details" class="method-name">followUp_socketConnector</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$host</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$port</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$method</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$path</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$parameter</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#followUp_tagReplacements" title="details" class="method-name">followUp_tagReplacements</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_data</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$data_string</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$join_array</span> = <span class="var-default">null</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#replace_eventPlaceHolders" title="details" class="method-name">replace_eventPlaceHolders</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$event_string</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_key</span> = <span class="var-default">null</span>])
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#replace_specialChars" title="details" class="method-name">replace_specialChars</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$string</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#return_finishedTemplate" title="details" class="method-name">return_finishedTemplate</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$config</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#return_textSpaces" title="details" class="method-name">return_textSpaces</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$count</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#validate_activateFields" title="details" class="method-name">validate_activateFields</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#validate_formFields" title="details" class="method-name">validate_formFields</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>)
+									</div>
+							</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$default_pattern" id="$default_pattern"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$default_pattern</span>
+			 = <span class="var-default"> '{field}&amp;nbsp;{name}&amp;nbsp;'</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a41">41</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$error_color" id="$error_color"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$error_color</span>
+			 = <span class="var-default"> '#f00'</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a38">38</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$error_message" id="$error_message"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$error_message</span>
+			 = <span class="var-default"> '&lt;p style=&quot;font-size:18px;color:#f00&quot; class=&quot;esiform-error-message&quot;&gt;Please correct / fill the red marked fields!&lt;/p&gt;'</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a39">39</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$error_occur" id="$error_occur"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$error_occur</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a40">40</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$field_settings" id="$field_settings"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$field_settings</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a42">42</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$finished_fields" id="$finished_fields"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$finished_fields</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a43">43</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$follow_ups" id="$follow_ups"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$follow_ups</span>
+			 = <span class="var-default"> true</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a44">44</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$is_error" id="$is_error"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$is_error</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a45">45</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$load_javascript" id="$load_javascript"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$load_javascript</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a46">46</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$method_type" id="$method_type"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$method_type</span>
+			 = <span class="var-default"> 'post'</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a47">47</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$post_values" id="$post_values"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$post_values</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a48">48</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$required_sign" id="$required_sign"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$required_sign</span>
+			 = <span class="var-default"> '&lt;sup&gt;*&lt;/sup&gt;'</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a49">49</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$required_sign_pos" id="$required_sign_pos"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$required_sign_pos</span>
+			 = <span class="var-default"> 'front'</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a50">50</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$return" id="$return"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$return</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a52">52</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$return_type" id="$return_type"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$return_type</span>
+			 = <span class="var-default"> 'print'</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a51">51</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$sexyness" id="$sexyness"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$sexyness</span>
+			 = <span class="var-default"> true</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a53">53</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$socket_returns" id="$socket_returns"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$socket_returns</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a54">54</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$template" id="$template"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$template</span>
+			 = <span class="var-default"> null</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a55">55</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$valid_email_syntax" id="$valid_email_syntax"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$valid_email_syntax</span>
+			 = <span class="var-default"> '^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.(([0-9]{1,3})|([a-zA-Z]{2,6})|(aero|coop|info|museum|name))$'</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a56">56</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$xhtml" id="$xhtml"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$xhtml</span>
+			 = <span class="var-default"> true</span>			(line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a57">57</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodesiform" id="esiform"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor esiform</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a65">65</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">constructor</p>
+	
+	<div class="method-signature">
+		<span class="method-result">esiform</span>
+		<span class="method-name">
+			esiform
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$settings</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodcreate_CheckboxRadioFields" id="create_CheckboxRadioFields"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">create_CheckboxRadioFields</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a221">221</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			create_CheckboxRadioFields
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodcreate_DropDownFields" id="create_DropDownFields"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">create_DropDownFields</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a269">269</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			create_DropDownFields
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodcreate_FieldAttributes" id="create_FieldAttributes"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">create_FieldAttributes</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a338">338</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			create_FieldAttributes
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodcreate_FieldEvents" id="create_FieldEvents"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">create_FieldEvents</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a369">369</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			create_FieldEvents
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_key</span> = <span class="var-default">null</span>])
+			</div>
+	
+		
+		
+	</div>
+<a name="methodcreate_FieldStyles" id="create_FieldStyles"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">create_FieldStyles</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a313">313</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			create_FieldStyles
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodcreate_FormFields" id="create_FormFields"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">create_FormFields</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a117">117</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			create_FormFields
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$fields_array</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodcreate_TextareaFields" id="create_TextareaFields"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">create_TextareaFields</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a199">199</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			create_TextareaFields
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodcreate_TextFields" id="create_TextFields"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">create_TextFields</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a177">177</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			create_TextFields
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodfollowUps_Start" id="followUps_Start"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">followUps_Start</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a629">629</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			followUps_Start
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$follow_ups</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodfollowUp_autoText" id="followUp_autoText"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">followUp_autoText</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a883">883</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			followUp_autoText
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_data</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$spaces</span> = <span class="var-default">null</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$list_sign</span> = <span class="var-default">null</span>])
+			</div>
+	
+		
+		
+	</div>
+<a name="methodfollowUp_Conditions" id="followUp_Conditions"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">followUp_Conditions</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a665">665</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			followUp_Conditions
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$conditions</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodfollowUp_CreateUserData_Array" id="followUp_CreateUserData_Array"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">followUp_CreateUserData_Array</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a754">754</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			followUp_CreateUserData_Array
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodfollowUp_fallback" id="followUp_fallback"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">followUp_fallback</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a1152">1152</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			followUp_fallback
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_data</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$file_error</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodfollowUp_File" id="followUp_File"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">followUp_File</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a1102">1102</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			followUp_File
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_data</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$file_error</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodfollowUp_formatString" id="followUp_formatString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">followUp_formatString</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a1229">1229</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">format strings to upper- / lowercase</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			followUp_formatString
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$string</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodfollowUp_Mail" id="followUp_Mail"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">followUp_Mail</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a951">951</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			followUp_Mail
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_data</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodfollowUp_Mail_replaceSenderTags" id="followUp_Mail_replaceSenderTags"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">followUp_Mail_replaceSenderTags</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a934">934</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			followUp_Mail_replaceSenderTags
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_data</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$sender_array</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodfollowUp_Mysql" id="followUp_Mysql"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">followUp_Mysql</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a1061">1061</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			followUp_Mysql
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_data</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$follow_up_name</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodfollowUp_Socket" id="followUp_Socket"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">followUp_Socket</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a1006">1006</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			followUp_Socket
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_data</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodfollowUp_socketConnector" id="followUp_socketConnector"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">followUp_socketConnector</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a1174">1174</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">connect via socket</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			followUp_socketConnector
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$host</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$port</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$method</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$path</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$parameter</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodfollowUp_tagReplacements" id="followUp_tagReplacements"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">followUp_tagReplacements</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a853">853</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			followUp_tagReplacements
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$user_data</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$data_string</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$join_array</span> = <span class="var-default">null</span>])
+			</div>
+	
+		
+		
+	</div>
+<a name="methodreplace_eventPlaceHolders" id="replace_eventPlaceHolders"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">replace_eventPlaceHolders</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a409">409</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			replace_eventPlaceHolders
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$event_string</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_key</span> = <span class="var-default">null</span>])
+			</div>
+	
+		
+		
+	</div>
+<a name="methodreplace_specialChars" id="replace_specialChars"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">replace_specialChars</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a1286">1286</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			replace_specialChars
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$string</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodreturn_finishedTemplate" id="return_finishedTemplate"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">return_finishedTemplate</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a583">583</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			return_finishedTemplate
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$config</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodreturn_textSpaces" id="return_textSpaces"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">return_textSpaces</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a1299">1299</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			return_textSpaces
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$count</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodvalidate_activateFields" id="validate_activateFields"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">validate_activateFields</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a431">431</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			validate_activateFields
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodvalidate_formFields" id="validate_formFields"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">validate_formFields</span> (line <span class="line-number"><a href="..//__filesource/fsource_esiform__esiformesiform.class.php.html#a514">514</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			validate_formFields
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$field_id</span>)
+			</div>
+	
+		
+		
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:33:22 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</div></body>
+</html>

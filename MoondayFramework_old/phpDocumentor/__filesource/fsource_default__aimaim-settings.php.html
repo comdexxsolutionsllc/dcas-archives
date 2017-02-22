@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for aim-settings.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file aim-settings.php</h1>
+<p>Documentation is available at <a href="../default/_aim_aim-settings_php.html">aim-settings.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a># Set AIM Configuration Variables here</li>
+<li><a name="a2"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a3"></a>&nbsp;</li>
+<li><a name="a4"></a><span class="src-comm"># Server target destination.  You probably want to leave this as it is.</span></li>
+<li><a name="a5"></a><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">urlString </span>= <span class="src-str">&quot;https://secure.authorize.net/gateway/transact.dll&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a6"></a>&nbsp;</li>
+<li><a name="a7"></a><span class="src-comm"># Your AIM login</span></li>
+<li><a name="a8"></a><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">login </span>= <span class="src-str">&quot;changethis&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a9"></a>&nbsp;</li>
+<li><a name="a10"></a><span class="src-comm"># Your Authorize.net Transaction Key  (n.b. this is very different from</span></li>
+<li><a name="a11"></a><span class="src-comm"># a &quot;transaction ID&quot;).</span></li>
+<li><a name="a11"></a>&nbsp;</li>
+<li><a name="a12"></a><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">tran_key </span>= <span class="src-str">&quot;changethis&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a13"></a>&nbsp;</li>
+<li><a name="a14"></a><span class="src-comm"># Protocol field Delimiter.  This is only used to decipher responses, it</span></li>
+<li><a name="a15"></a><span class="src-comm"># is not sent in requests.  Therefore, it must be set to your Authorize.net</span></li>
+<li><a name="a16"></a><span class="src-comm"># &quot;Default Field Separator&quot; setting.</span></li>
+<li><a name="a16"></a>&nbsp;</li>
+<li><a name="a17"></a><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">pdelimiter </span>= <span class="src-str">&quot;|&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a18"></a>&nbsp;</li>
+<li><a name="a19"></a><span class="src-comm"># If, for some reason, you use a &quot;Field Encapsulation Character&quot;.</span></li>
+<li><a name="a20"></a><span class="src-comm">#$this-&gt;pencap = &quot;*&quot;;</span></li>
+<li><a name="a21"></a>&nbsp;</li>
+<li><a name="a22"></a><span class="src-comm"># Client will consider it an error if the response contains fewer than this</span></li>
+<li><a name="a23"></a><span class="src-comm"># number of fields.</span></li>
+<li><a name="a23"></a>&nbsp;</li>
+<li><a name="a24"></a><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">pminfields </span>= <span class="src-num">10</span><span class="src-sym">;</span></li>
+<li><a name="a25"></a>&nbsp;</li>
+<li><a name="a26"></a><span class="src-comm"># Authorize.net calls this &quot;Transaction Version&quot;.  I only know that 3.1 </span></li>
+<li><a name="a27"></a><span class="src-comm"># works, so I suggest you set it to 3.1.</span></li>
+<li><a name="a27"></a>&nbsp;</li>
+<li><a name="a28"></a><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">pversion </span>= <span class="src-num">3.1</span><span class="src-sym">;</span></li>
+<li><a name="a29"></a>&nbsp;</li>
+<li><a name="a30"></a><span class="src-comm"># I doubt this client will work if you have relay true.</span></li>
+<li><a name="a31"></a><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">prelay_response </span>= <span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a32"></a>&nbsp;</li>
+<li><a name="a33"></a><span class="src-comm"># If this is true, the request will really go to Authorize.net, but</span></li>
+<li><a name="a34"></a><span class="src-comm"># Authorize.net only pretend to apply the charge (the RR text and</span></li>
+<li><a name="a35"></a><span class="src-comm"># confirmation emails will indicate test mode).</span></li>
+<li><a name="a35"></a>&nbsp;</li>
+<li><a name="a36"></a><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">test_request </span>= <span class="src-id">true</span><span class="src-sym">;</span></li>
+<li><a name="a37"></a>&nbsp;</li>
+<li><a name="a38"></a><span class="src-key">return </span><span class="src-id">true</span><span class="src-sym">;</span></li>
+<li><a name="a39"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:30:55 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</body>
+</html>

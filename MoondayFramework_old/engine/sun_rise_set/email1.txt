@@ -1,0 +1,48 @@
+Subject:
+Re: Regarding your class: Sun
+From:
+Nesa Simon David <hellznrg@yahoo.com>
+Date:
+Tue, 06 Jul 2004 04:30:03 +0000
+To:
+robert <undisclosed email address>
+
+Hi Robert...
+
+ok, first, the main sunrise/sunset calculation class is in sun.php... then, make sure that math.php is in the same folder as sun.php. (basically, sun.php does a "require_once" on math.php). the math.php file contains simple math functions to get sine, cosine, tangent, arctangent, arcsine, arccosine, etc... by passing the angle in "degrees" (0-360) instead of radians...
+
+then, all you have to do is, in your client program just "require_once" or "include_once" sun.php, then you instantiate a sun object like so:
+
+$sun=new sun;
+
+then, you can find out the sunset or sunrise of any day by passing the correct parameters to the methods... I may have forgotten to include the argument list.. :( sorry.. anyways, here it is..
+
+$sun->rise(date,timezone,latitude,longitude,zenith);
+$sun->set(date,timezone,latitude,longitude,zenith);
+
+where:
+date = date for which you want the sunrise/sunset
+
+timezone = timezone in hours... west is negative, east is positive... usually ranges from -12 to +12... if you want rise/set in GMT or UTC time, just use 0
+
+latitude,longitude = coordinates of the location for which you want to calculate sunrise/sunset
+
+zenith = YOUR definition of sunrise/sunset (what angle the sun needs to be, so that you say it is rising or setting)... 0 degrees means the sun is directly over head. 90 degrees means the sun is exactly at the horizon. usually there are 4 "definitions" of sunrise/set... "official", "civil", "nautical", and "astronomical"... for a nice explanation, visit this site.. http://www.word-detective.com/howcome/stilllight.html
+
+hope this helped.... if you have any further questions, please don't hesitate to ask... :) .. if you don't mind, i can upload this email to the site, so that others can also be helped if they're having problems with the class...
+
+-best regards...
+Simon David aka Darck Pingck
+
+
+robert wrote:
+
+> Hello Darck Pingck,
+>
+> Sorry to bother you, but I couldn't get your new sun class to work. I was hoping you'd have a tip...
+>
+> Thanks,
+> Robert
+> 
+
+

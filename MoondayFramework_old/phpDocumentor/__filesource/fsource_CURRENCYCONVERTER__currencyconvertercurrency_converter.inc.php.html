@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for currency_converter.inc.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file currency_converter.inc.php</h1>
+<p>Documentation is available at <a href="../CURRENCYCONVERTER/_currencyconverter_currency_converter_inc_php.html">currency_converter.inc.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a>    </li>
+<li><a name="a3"></a><span class="src-doc">/**</span></li>
+<li><a name="a4"></a><span class="src-doc">* </span><span class="src-doc-coretag">@package</span><span class="src-doc"> CURRENCYCONVERTER</span></li>
+<li><a name="a5"></a><span class="src-doc">* </span><span class="src-doc-coretag">@author</span><span class="src-doc"> Joshua Abbott, WiseGene Project (NKommunikation)</span></li>
+<li><a name="a6"></a><span class="src-doc">* </span><span class="src-doc-coretag">@copyright</span><span class="src-doc"> (C) 2006 NKommunikation. All Rights Reserved.</span></li>
+<li><a name="a7"></a><span class="src-doc">* </span><span class="src-doc-tag">@desc</span><span class="src-doc"> Currency Converter Class</span></li>
+<li><a name="a8"></a><span class="src-doc">* </span><span class="src-doc-coretag">@uses</span></li>
+<li><a name="a9"></a><span class="src-doc">* </span><span class="src-doc-coretag">@example</span></li>
+<li><a name="a10"></a><span class="src-doc">* </span><span class="src-doc-tag">@files</span></li>
+<li><a name="a11"></a><span class="src-doc">*/</span></li>
+<li><a name="a12"></a>&nbsp;</li>
+<li><a name="a13"></a>    <span class="src-key">Class </span><a href="../CURRENCYCONVERTER/CURRENCYCONVERTER.html">CURRENCYCONVERTER</a></li>
+<li><a name="a14"></a>    <span class="src-sym">{</span></li>
+<li><a name="a15"></a>        <span class="src-key">var </span><span class="src-var">$_amt</span>=<span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a16"></a>        <span class="src-key">var </span><span class="src-var">$_to</span>=<span class="src-str">&quot;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a17"></a>        <span class="src-key">var </span><span class="src-var">$_from</span>=<span class="src-str">&quot;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a18"></a>        <span class="src-key">var </span><span class="src-var">$_error</span>=<span class="src-str">&quot;&quot;</span><span class="src-sym">; </span></li>
+<li><a name="a19"></a>        <span class="src-key">function </span><a href="../CURRENCYCONVERTER/CURRENCYCONVERTER.html#methodCURRENCYCONVERTER">CURRENCYCONVERTER</a><span class="src-sym">(</span><span class="src-var">$amt</span>=<span class="src-num">1</span><span class="src-sym">,</span><span class="src-var">$to</span>=<span class="src-str">&quot;&quot;</span><span class="src-sym">,</span><span class="src-var">$from</span>=<span class="src-str">&quot;&quot;</span><span class="src-sym">)</span></li>
+<li><a name="a20"></a>        <span class="src-sym">{</span></li>
+<li><a name="a21"></a>            <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">_amt</span>=<span class="src-var">$amt</span><span class="src-sym">;</span></li>
+<li><a name="a22"></a>            <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">_to</span>=<span class="src-var">$to</span><span class="src-sym">;</span></li>
+<li><a name="a23"></a>            <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">_from</span>=<span class="src-var">$from</span><span class="src-sym">;</span></li>
+<li><a name="a24"></a>        <span class="src-sym">}</span></li>
+<li><a name="a25"></a>        <span class="src-key">function </span><a href="../CURRENCYCONVERTER/CURRENCYCONVERTER.html#methoderror">error</a><span class="src-sym">(</span><span class="src-sym">)</span></li>
+<li><a name="a26"></a>        <span class="src-sym">{</span></li>
+<li><a name="a27"></a>            <span class="src-key">return </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">_error</span><span class="src-sym">;</span></li>
+<li><a name="a28"></a>        <span class="src-sym">}</span></li>
+<li><a name="a29"></a>        <span class="src-key">function </span><a href="../CURRENCYCONVERTER/CURRENCYCONVERTER.html#methodconvert">convert</a><span class="src-sym">(</span><span class="src-var">$amt</span>=<span class="src-id">NULL</span><span class="src-sym">,</span><span class="src-var">$to</span>=<span class="src-str">&quot;&quot;</span><span class="src-sym">,</span><span class="src-var">$from</span>=<span class="src-str">'USD'</span><span class="src-sym">)</span></li>
+<li><a name="a30"></a>        <span class="src-sym">{</span></li>
+<li><a name="a31"></a>            <span class="src-key">if</span><span class="src-sym">(</span><span class="src-var">$amt</span>&gt;<span class="src-num">1</span><span class="src-sym">)</span></li>
+<li><a name="a32"></a>                <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">_amt</span>=<span class="src-var">$amt</span><span class="src-sym">;</span></li>
+<li><a name="a33"></a>            <span class="src-key">if</span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-key">empty</span><span class="src-sym">(</span><span class="src-var">$to</span><span class="src-sym">))</span></li>
+<li><a name="a34"></a>                <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">_to</span>=<span class="src-var">$to</span><span class="src-sym">;</span></li>
+<li><a name="a35"></a>            <span class="src-key">if</span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-key">empty</span><span class="src-sym">(</span><span class="src-var">$from</span><span class="src-sym">))</span></li>
+<li><a name="a36"></a>                <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">_from</span>=<span class="src-var">$from</span><span class="src-sym">;</span></li>
+<li><a name="a37"></a>&nbsp;</li>
+<li><a name="a38"></a>            <span class="src-comm">//$host=&quot;www.iraqidinar.org&quot;;</span></li>
+<li><a name="a39"></a>            <span class="src-var">$host</span>=<span class="src-str">&quot;www.xe.com&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a40"></a>            <span class="src-var">$fp </span>= <span class="src-sym">@</span><a href="http://www.php.net/fsockopen">fsockopen</a><span class="src-sym">(</span><span class="src-var">$host</span><span class="src-sym">, </span><span class="src-num">80</span><span class="src-sym">, </span><span class="src-var">$errno</span><span class="src-sym">, </span><span class="src-var">$errstr</span><span class="src-sym">, </span><span class="src-num">30</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a41"></a>            <span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-var">$fp</span><span class="src-sym">)</span></li>
+<li><a name="a42"></a>            <span class="src-sym">{</span></li>
+<li><a name="a43"></a>                <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">_error</span>=<span class="src-str">&quot;</span><span class="src-str"><span class="src-var">$errstr</span> (<span class="src-var">$errno</span>)&lt;<span class="src-id">br</span> /&gt;\n</span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a44"></a>                <span class="src-key">return </span><span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a45"></a>            <span class="src-sym">}</span></li>
+<li><a name="a46"></a>            <span class="src-key">else</span></li>
+<li><a name="a47"></a>            <span class="src-sym">{</span></li>
+<li><a name="a48"></a>                <span class="src-comm">//$file=&quot;/conversiontool2.asp&quot;;</span></li>
+<li><a name="a49"></a>                <span class="src-var">$file</span>=<span class="src-str">&quot;/ucc/convert.cgi&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a50"></a>                <span class="src-comm">//$str = &quot;?amount=&quot;.$this-&gt;_amt.&quot;&amp;ConvertFrom=&quot;.$this-&gt;_from.&quot;&amp;ConvertTo=&quot;.$this-&gt;_to;</span></li>
+<li><a name="a51"></a>                <span class="src-var">$str </span>= <span class="src-str">&quot;?language=xe&amp;Amount=&quot;</span>.<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">_amt</span>.<span class="src-str">&quot;&amp;From=&quot;</span>.<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">_from</span>.<span class="src-str">&quot;&amp;To=&quot;</span>.<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">_to</span><span class="src-sym">;</span></li>
+<li><a name="a52"></a>                <span class="src-var">$out </span>= <span class="src-str">&quot;GET &quot;</span>.<span class="src-var">$file</span>.<span class="src-var">$str</span>.<span class="src-str">&quot; HTTP/1.0\r\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a53"></a>                <span class="src-var">$out </span>.= <span class="src-str">&quot;</span><span class="src-str"><span class="src-id">Host</span>: <span class="src-var">$host</span>\r\n</span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a54"></a>                <span class="src-var">$out </span>.= <span class="src-str">&quot;Connection: Close\r\n\r\n&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a55"></a>&nbsp;</li>
+<li><a name="a56"></a>                <span class="src-sym">@</span><a href="http://www.php.net/fputs">fputs</a><span class="src-sym">(</span><span class="src-var">$fp</span><span class="src-sym">, </span><span class="src-var">$out</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a57"></a>                <span class="src-key">while </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-sym">@</span><a href="http://www.php.net/feof">feof</a><span class="src-sym">(</span><span class="src-var">$fp</span><span class="src-sym">))</span></li>
+<li><a name="a58"></a>                <span class="src-sym">{</span></li>
+<li><a name="a59"></a>                    <span class="src-var">$data</span>.= <span class="src-sym">@</span><a href="http://www.php.net/fgets">fgets</a><span class="src-sym">(</span><span class="src-var">$fp</span><span class="src-sym">, </span><span class="src-num">128</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a60"></a>                <span class="src-sym">}</span></li>
+<li><a name="a61"></a>                <span class="src-sym">@</span><a href="http://www.php.net/fclose">fclose</a><span class="src-sym">(</span><span class="src-var">$fp</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a62"></a>                </li>
+<li><a name="a63"></a>                <span class="src-sym">@</span><a href="http://www.php.net/preg_match">preg_match</a><span class="src-sym">(</span><span class="src-str">&quot;/^(.*?)\r?\n\r?\n(.*)/s&quot;</span><span class="src-sym">, </span><span class="src-var">$data</span><span class="src-sym">, </span><span class="src-var">$match</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a64"></a>                <span class="src-var">$data </span>=<span class="src-var">$match</span><span class="src-sym">[</span><span class="src-num">2</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a65"></a>                <span class="src-var">$search </span>= <span class="src-key">array </span><span class="src-sym">(</span><span class="src-str">&quot;'&lt;script[^&gt;]*?&gt;.*?&lt;/script&gt;'si&quot;</span><span class="src-sym">,  </span><span class="src-comm">// Strip out javascript</span></li>
+<li><a name="a66"></a>                                 <span class="src-str">&quot;'&lt;[\/\!]*?[^&lt;&gt;]*?&gt;'si&quot;</span><span class="src-sym">,           </span><span class="src-comm">// Strip out HTML tags</span></li>
+<li><a name="a67"></a>                                 <span class="src-str">&quot;'([\r\n])[\s]+'&quot;</span><span class="src-sym">,                 </span><span class="src-comm">// Strip out white space</span></li>
+<li><a name="a68"></a>                                 <span class="src-str">&quot;'&amp;(quot|#34);'i&quot;</span><span class="src-sym">,                 </span><span class="src-comm">// Replace HTML entities</span></li>
+<li><a name="a69"></a>                                 <span class="src-str">&quot;'&amp;(amp|#38);'i&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a70"></a>                                 <span class="src-str">&quot;'&amp;(lt|#60);'i&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a71"></a>                                 <span class="src-str">&quot;'&amp;(gt|#62);'i&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a72"></a>                                 <span class="src-str">&quot;'&amp;(nbsp|#160);'i&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a73"></a>                                 <span class="src-str">&quot;'&amp;(iexcl|#161);'i&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a74"></a>                                 <span class="src-str">&quot;'&amp;(cent|#162);'i&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a75"></a>                                 <span class="src-str">&quot;'&amp;(pound|#163);'i&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a76"></a>                                 <span class="src-str">&quot;'&amp;(copy|#169);'i&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a77"></a>                                 <span class="src-str">&quot;'&amp;#(\d+);'e&quot;</span><span class="src-sym">)</span><span class="src-sym">;                    </span><span class="src-comm">// evaluate as php</span></li>
+<li><a name="a78"></a>&nbsp;</li>
+<li><a name="a79"></a>                <span class="src-var">$replace </span>= <span class="src-key">array </span><span class="src-sym">(</span><span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a80"></a>                                  <span class="src-str">&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a81"></a>                                  <span class="src-str">&quot;\\1&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a82"></a>                                  <span class="src-str">&quot;\&quot;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a83"></a>                                  <span class="src-str">&quot;&amp;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a84"></a>                                  <span class="src-str">&quot;&lt;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a85"></a>                                  <span class="src-str">&quot;&gt;&quot;</span><span class="src-sym">,</span></li>
+<li><a name="a86"></a>                                  <span class="src-str">&quot; &quot;</span><span class="src-sym">,</span></li>
+<li><a name="a87"></a>                                  <a href="http://www.php.net/chr">chr</a><span class="src-sym">(</span><span class="src-num">161</span><span class="src-sym">)</span><span class="src-sym">,</span></li>
+<li><a name="a88"></a>                                  <a href="http://www.php.net/chr">chr</a><span class="src-sym">(</span><span class="src-num">162</span><span class="src-sym">)</span><span class="src-sym">,</span></li>
+<li><a name="a89"></a>                                  <a href="http://www.php.net/chr">chr</a><span class="src-sym">(</span><span class="src-num">163</span><span class="src-sym">)</span><span class="src-sym">,</span></li>
+<li><a name="a90"></a>                                  <a href="http://www.php.net/chr">chr</a><span class="src-sym">(</span><span class="src-num">169</span><span class="src-sym">)</span><span class="src-sym">,</span></li>
+<li><a name="a91"></a>                                  <span class="src-str">&quot;chr(\\1)&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a92"></a>&nbsp;</li>
+<li><a name="a93"></a>                <span class="src-var">$data </span>= <span class="src-sym">@</span><a href="http://www.php.net/preg_replace">preg_replace</a><span class="src-sym">(</span><span class="src-var">$search</span><span class="src-sym">, </span><span class="src-var">$replace</span><span class="src-sym">, </span><span class="src-var">$data</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a94"></a>                <span class="src-sym">@</span><a href="http://www.php.net/preg_match_all">preg_match_all</a><span class="src-sym">(</span><span class="src-str">&quot;/(\d[^\.]*(\.\d+)?)/&quot;</span><span class="src-sym">,</span><span class="src-var">$data</span><span class="src-sym">,</span><span class="src-var">$mathces</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a95"></a>                <span class="src-var">$return</span>=<a href="http://www.php.net/preg_replace">preg_replace</a><span class="src-sym">(</span><span class="src-str">&quot;/[^\d\.]*/&quot;</span><span class="src-sym">,</span><span class="src-str">&quot;&quot;</span><span class="src-sym">,</span><span class="src-var">$mathces</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a96"></a>                <span class="src-key">return </span>(double)<span class="src-var">$return</span><span class="src-sym">;</span></li>
+<li><a name="a97"></a>            <span class="src-sym">}</span></li>
+<li><a name="a98"></a>        <span class="src-sym">}</span></li>
+<li><a name="a99"></a>    <span class="src-sym">}</span></li>
+<li><a name="a100"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:32:33 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</body>
+</html>

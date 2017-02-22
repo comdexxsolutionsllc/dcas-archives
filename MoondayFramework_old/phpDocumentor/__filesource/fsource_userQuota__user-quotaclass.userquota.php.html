@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for class.userquota.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file class.userquota.php</h1>
+<p>Documentation is available at <a href="../userQuota/_user-quota_class_userquota_php.html">class.userquota.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a><span class="src-doc">/**</span></li>
+<li><a name="a3"></a><span class="src-doc">* </span><span class="src-doc-coretag">@package</span><span class="src-doc"> userQuota</span></li>
+<li><a name="a4"></a><span class="src-doc">* </span><span class="src-doc-coretag">@author</span><span class="src-doc"> Joshua Abbott, WiseGene Project (NKommunikation)</span></li>
+<li><a name="a5"></a><span class="src-doc">* </span><span class="src-doc-coretag">@copyright</span><span class="src-doc"> (C) 2006 NKommunikation. All Rights Reserved.</span></li>
+<li><a name="a6"></a><span class="src-doc">* </span><span class="src-doc-tag">@desc</span></li>
+<li><a name="a7"></a><span class="src-doc">*  This is a class to allow a graphical or text display of a user's quota.</span></li>
+<li><a name="a8"></a><span class="src-doc">*  The quota and how much has been used is passed to the class and the output</span></li>
+<li><a name="a9"></a><span class="src-doc">*  is display as either a graphic or as text.  The graphic is a pie chart and</span></li>
+<li><a name="a10"></a><span class="src-doc">*  can be displayed in a few different ways</span></li>
+<li><a name="a11"></a><span class="src-doc">* </span><span class="src-doc-coretag">@uses</span></li>
+<li><a name="a12"></a><span class="src-doc">* </span><span class="src-doc-coretag">@example</span></li>
+<li><a name="a13"></a><span class="src-doc">* </span><span class="src-doc-tag">@files</span></li>
+<li><a name="a14"></a><span class="src-doc">*/</span></li>
+<li><a name="a15"></a>&nbsp;</li>
+<li><a name="a16"></a><span class="src-comm">// Example of use</span></li>
+<li><a name="a17"></a><span class="src-comm">//</span></li>
+<li><a name="a18"></a><span class="src-comm">//     require(&quot;class.userquota.php&quot;);</span></li>
+<li><a name="a19"></a><span class="src-comm">//     $uq = new userQuota(24000000, 5087643);</span></li>
+<li><a name="a20"></a><span class="src-comm">//     $uq-&gt;setOutputImage();</span></li>
+<li><a name="a21"></a><span class="src-comm">//     $uq-&gt;setImageProperties(130, TRUE, TRUE, FALSE, 'DDDDDD', 'ED1C24', 'FFFFFF', '555555');</span></li>
+<li><a name="a22"></a><span class="src-comm">//     $uq-&gt;displayQuota();</span></li>
+<li><a name="a23"></a><span class="src-comm">//</span></li>
+<li><a name="a24"></a>&nbsp;</li>
+<li><a name="a25"></a>&nbsp;</li>
+<li><a name="a23"></a>&nbsp;</li>
+<li><a name="a24"></a>&nbsp;</li>
+<li><a name="a25"></a>&nbsp;</li>
+<li><a name="a26"></a><span class="src-key">class </span><a href="../userQuota/userQuota.html">userQuota</a></li>
+<li><a name="a27"></a><span class="src-sym">{</span></li>
+<li><a name="a28"></a>    <span class="src-comm">// quota variables</span></li>
+<li><a name="a29"></a>&nbsp;</li>
+<li><a name="a28"></a>    </li>
+<li><a name="a29"></a>&nbsp;</li>
+<li><a name="a30"></a>    <span class="src-key">var </span><a href="../userQuota/userQuota.html#var$qType">$qType</a><span class="src-sym">;        </span><span class="src-comm">// output type</span></li>
+<li><a name="a30"></a>    </li>
+<li><a name="a31"></a>    <span class="src-key">var </span><a href="../userQuota/userQuota.html#var$qQuota">$qQuota</a><span class="src-sym">;       </span><span class="src-comm">// quota value</span></li>
+<li><a name="a31"></a>    </li>
+<li><a name="a32"></a>    <span class="src-key">var </span><a href="../userQuota/userQuota.html#var$qUsed">$qUsed</a><span class="src-sym">;        </span><span class="src-comm">// used value</span></li>
+<li><a name="a32"></a>    </li>
+<li><a name="a33"></a>    <span class="src-key">var </span><a href="../userQuota/userQuota.html#var$qUser">$qUser</a><span class="src-sym">;        </span><span class="src-comm">// input user name</span></li>
+<li><a name="a34"></a>&nbsp;</li>
+<li><a name="a35"></a>    <span class="src-comm">// image variables</span></li>
+<li><a name="a36"></a>&nbsp;</li>
+<li><a name="a35"></a>    </li>
+<li><a name="a36"></a>&nbsp;</li>
+<li><a name="a37"></a>    <span class="src-key">var </span><a href="../userQuota/userQuota.html#var$gWidth">$gWidth</a><span class="src-sym">;       </span><span class="src-comm">// width of pie chart</span></li>
+<li><a name="a37"></a>    </li>
+<li><a name="a38"></a>    <span class="src-key">var </span><a href="../userQuota/userQuota.html#var$gHeight">$gHeight</a><span class="src-sym">;      </span><span class="src-comm">// height of pie chart (determined by width)</span></li>
+<li><a name="a38"></a>    </li>
+<li><a name="a39"></a>    <span class="src-key">var </span><a href="../userQuota/userQuota.html#var$g3DHeight">$g3DHeight</a><span class="src-sym">;    </span><span class="src-comm">// do we want a 3D look or not</span></li>
+<li><a name="a39"></a>    </li>
+<li><a name="a40"></a>    <span class="src-key">var </span><a href="../userQuota/userQuota.html#var$gLegend">$gLegend</a><span class="src-sym">;      </span><span class="src-comm">// display the legend or not</span></li>
+<li><a name="a40"></a>    </li>
+<li><a name="a41"></a>    <span class="src-key">var </span><a href="../userQuota/userQuota.html#var$gQuotaColour">$gQuotaColour</a><span class="src-sym">; </span><span class="src-comm">// colour of quota</span></li>
+<li><a name="a41"></a>    </li>
+<li><a name="a42"></a>    <span class="src-key">var </span><a href="../userQuota/userQuota.html#var$gUsedColour">$gUsedColour</a><span class="src-sym">;  </span><span class="src-comm">// colour of used space</span></li>
+<li><a name="a42"></a>    </li>
+<li><a name="a43"></a>    <span class="src-key">var </span><a href="../userQuota/userQuota.html#var$gBackColour">$gBackColour</a><span class="src-sym">;  </span><span class="src-comm">// colour of the background</span></li>
+<li><a name="a43"></a>    </li>
+<li><a name="a44"></a>    <span class="src-key">var </span><a href="../userQuota/userQuota.html#var$gTextColour">$gTextColour</a><span class="src-sym">;  </span><span class="src-comm">// colour of the legend text</span></li>
+<li><a name="a44"></a>    </li>
+<li><a name="a45"></a>    <span class="src-key">var </span><a href="../userQuota/userQuota.html#var$gCentreUsed">$gCentreUsed</a><span class="src-sym">;  </span><span class="src-comm">// centre the 'used' wedge to bottom of pie</span></li>
+<li><a name="a46"></a>&nbsp;</li>
+<li><a name="a47"></a>&nbsp;</li>
+<li><a name="a48"></a>    <span class="src-comm">//</span></li>
+<li><a name="a49"></a>    <span class="src-comm">// class functions - user called</span></li>
+<li><a name="a50"></a>    <span class="src-comm">//</span></li>
+<li><a name="a51"></a>    </li>
+<li><a name="a52"></a>&nbsp;</li>
+<li><a name="a53"></a>    <span class="src-comm">//</span></li>
+<li><a name="a54"></a>    <span class="src-comm">// $quota is the total quota the user has supplied as just a number</span></li>
+<li><a name="a55"></a>    <span class="src-comm">// $used is how much the user has taken up supplied as just a number</span></li>
+<li><a name="a56"></a>    <span class="src-comm">// $username, if supplied, will be displayed on the image legend or in the text output</span></li>
+<li><a name="a57"></a>    <span class="src-comm">//</span></li>
+<li><a name="a57"></a>    </li>
+<li><a name="a58"></a>    <span class="src-key">function </span><a href="../userQuota/userQuota.html#methoduserQuota">userQuota</a><span class="src-sym">(</span><span class="src-var">$quota</span><span class="src-sym">, </span><span class="src-var">$used</span><span class="src-sym">, </span><span class="src-var">$username </span>= <span class="src-str">''</span><span class="src-sym">)</span></li>
+<li><a name="a59"></a>    <span class="src-sym">{</span></li>
+<li><a name="a60"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qUser">qUser</a> = <span class="src-var">$username</span><span class="src-sym">;</span></li>
+<li><a name="a61"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#methodsetOutputImage">setOutputImage</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a62"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#methodsetImageProperties">setImageProperties</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a63"></a>&nbsp;</li>
+<li><a name="a64"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qQuota">qQuota</a>   = <span class="src-var">$quota</span><span class="src-sym">;</span></li>
+<li><a name="a65"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qUsed">qUsed</a>    = <span class="src-var">$used</span><span class="src-sym">;</span></li>
+<li><a name="a66"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">oPercent </span>= <span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qUsed">qUsed</a> / <span class="src-sym">(</span><span class="src-sym">!</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qQuota">qQuota</a> ? <span class="src-num">1 </span>: <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qQuota">qQuota</a><span class="src-sym">)) </span>* <span class="src-num">100</span><span class="src-sym">;</span></li>
+<li><a name="a67"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qUser">qUser</a>    = <span class="src-var">$username</span><span class="src-sym">;</span></li>
+<li><a name="a68"></a>    <span class="src-sym">}</span></li>
+<li><a name="a69"></a>    </li>
+<li><a name="a70"></a>    <span class="src-comm">//</span></li>
+<li><a name="a71"></a>    <span class="src-comm">// set the class to output only in text mode</span></li>
+<li><a name="a72"></a>    <span class="src-comm">//</span></li>
+<li><a name="a72"></a>    </li>
+<li><a name="a73"></a>    <span class="src-key">function </span><a href="../userQuota/userQuota.html#methodsetOutputText">setOutputText</a><span class="src-sym">(</span><span class="src-sym">)</span></li>
+<li><a name="a74"></a>    <span class="src-sym">{</span></li>
+<li><a name="a75"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qType">qType</a> = <span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a76"></a>    <span class="src-sym">}</span></li>
+<li><a name="a77"></a>    </li>
+<li><a name="a78"></a>    <span class="src-comm">//</span></li>
+<li><a name="a79"></a>    <span class="src-comm">// set the class to output in graphical mode</span></li>
+<li><a name="a80"></a>    <span class="src-comm">//</span></li>
+<li><a name="a80"></a>    </li>
+<li><a name="a81"></a>    <span class="src-key">function </span><a href="../userQuota/userQuota.html#methodsetOutputImage">setOutputImage</a><span class="src-sym">(</span><span class="src-sym">)</span></li>
+<li><a name="a82"></a>    <span class="src-sym">{</span></li>
+<li><a name="a83"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qType">qType</a> = <span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a84"></a>    <span class="src-sym">}</span></li>
+<li><a name="a85"></a>    </li>
+<li><a name="a86"></a>    <span class="src-comm">//</span></li>
+<li><a name="a87"></a>    <span class="src-comm">// determine the image properties for the class</span></li>
+<li><a name="a88"></a>    <span class="src-comm">//</span></li>
+<li><a name="a89"></a>    <span class="src-comm">// $width is the width of the graph in pixels, supplied as an int</span></li>
+<li><a name="a90"></a>    <span class="src-comm">// $threeD is a boolean value.  TRUE shows graph in faux 3D and FALSE shows graph flat</span></li>
+<li><a name="a91"></a>    <span class="src-comm">// $legend is a boolean value.  TRUE shows legend and FALSE does not</span></li>
+<li><a name="a92"></a>    <span class="src-comm">// $centre is a boolean value.  TRUE shows used wedge centered in chart and FALSE defaults to the right</span></li>
+<li><a name="a93"></a>    <span class="src-comm">//</span></li>
+<li><a name="a94"></a>    <span class="src-comm">// all colours are supplied as HTML hex values</span></li>
+<li><a name="a95"></a>    <span class="src-comm">//</span></li>
+<li><a name="a96"></a>    <span class="src-comm">// $qc is the quota colour</span></li>
+<li><a name="a97"></a>    <span class="src-comm">// $uc is the used colour</span></li>
+<li><a name="a98"></a>    <span class="src-comm">// $bc is the background colour</span></li>
+<li><a name="a99"></a>    <span class="src-comm">// $tc is the legend text colour</span></li>
+<li><a name="a100"></a>    <span class="src-comm">//</span></li>
+<li><a name="a100"></a>    </li>
+<li><a name="a101"></a>    <span class="src-key">function </span><a href="../userQuota/userQuota.html#methodsetImageProperties">setImageProperties</a><span class="src-sym">(</span><span class="src-var">$width </span>= <span class="src-num">150</span><span class="src-sym">, </span><span class="src-var">$threeD </span>= <span class="src-id">TRUE</span><span class="src-sym">, </span><span class="src-var">$legend </span>= <span class="src-id">TRUE</span><span class="src-sym">, </span><span class="src-var">$centre </span>= <span class="src-id">TRUE</span><span class="src-sym">, </span><span class="src-var">$qc </span>= <span class="src-str">'DDDDDD'</span><span class="src-sym">, </span><span class="src-var">$uc </span>= <span class="src-str">'ED1C24'</span><span class="src-sym">, </span><span class="src-var">$bc </span>= <span class="src-str">'FFFFFF'</span><span class="src-sym">, </span><span class="src-var">$tc </span>= <span class="src-str">'000000'</span><span class="src-sym">)</span></li>
+<li><a name="a102"></a>    <span class="src-sym">{</span></li>
+<li><a name="a103"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gWidth">gWidth</a> = <span class="src-sym">(</span><span class="src-sym">!</span><span class="src-var">$width </span>? <span class="src-num">150 </span>: <span class="src-var">$width</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a104"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$threeD</span><span class="src-sym">)</span></li>
+<li><a name="a105"></a>        <span class="src-sym">{</span></li>
+<li><a name="a106"></a>            <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gHeight">gHeight</a>   = <span class="src-var">$width</span>/<span class="src-num">2</span><span class="src-sym">;</span></li>
+<li><a name="a107"></a>            <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$g3DHeight">g3DHeight</a> = <span class="src-var">$width</span>/<span class="src-num">10</span><span class="src-sym">;</span></li>
+<li><a name="a108"></a>        <span class="src-sym">}</span></li>
+<li><a name="a109"></a>        <span class="src-key">else</span></li>
+<li><a name="a110"></a>        <span class="src-sym">{</span></li>
+<li><a name="a111"></a>            <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gHeight">gHeight</a>   = <span class="src-var">$width</span><span class="src-sym">;</span></li>
+<li><a name="a112"></a>            <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$g3DHeight">g3DHeight</a> = <span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a113"></a>        <span class="src-sym">}</span></li>
+<li><a name="a114"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gLegend">gLegend</a>      = <span class="src-sym">(</span><span class="src-var">$legend </span>== <span class="src-id">TRUE </span>? <span class="src-id">TRUE </span>: <span class="src-id">FALSE</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a115"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gCentreUsed">gCentreUsed</a>  = <span class="src-sym">(</span><span class="src-var">$centre </span>== <span class="src-id">TRUE </span>? <span class="src-id">TRUE </span>: <span class="src-id">FALSE</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a116"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gQuotaColour">gQuotaColour</a> = <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">_htmlHexToBinArray</span><span class="src-sym">(</span><span class="src-var">$qc</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a117"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gUsedColour">gUsedColour</a>  = <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">_htmlHexToBinArray</span><span class="src-sym">(</span><span class="src-var">$uc</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a118"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gBackColour">gBackColour</a>  = <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">_htmlHexToBinArray</span><span class="src-sym">(</span><span class="src-var">$bc</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a119"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gTextColour">gTextColour</a>  = <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">_htmlHexToBinArray</span><span class="src-sym">(</span><span class="src-var">$tc</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a120"></a>    <span class="src-sym">}</span></li>
+<li><a name="a121"></a>&nbsp;</li>
+<li><a name="a122"></a>    <span class="src-comm">//</span></li>
+<li><a name="a123"></a>    <span class="src-comm">// show the quota output</span></li>
+<li><a name="a124"></a>    <span class="src-comm">//</span></li>
+<li><a name="a124"></a>    </li>
+<li><a name="a125"></a>    <span class="src-key">function </span><a href="../userQuota/userQuota.html#methoddisplayQuota">displayQuota</a><span class="src-sym">(</span><span class="src-sym">)</span></li>
+<li><a name="a126"></a>    <span class="src-sym">{</span></li>
+<li><a name="a127"></a>        <span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qType">qType</a> == <span class="src-num">0</span><span class="src-sym">) </span>? <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">_displayText</span><span class="src-sym">(</span><span class="src-sym">) </span>: <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">_displayImage</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a128"></a>    <span class="src-sym">}</span></li>
+<li><a name="a129"></a>    </li>
+<li><a name="a130"></a>    <span class="src-comm">//</span></li>
+<li><a name="a131"></a>    <span class="src-comm">// internal functions</span></li>
+<li><a name="a132"></a>    <span class="src-comm">//</span></li>
+<li><a name="a133"></a>&nbsp;</li>
+<li><a name="a134"></a>    <span class="src-comm">//</span></li>
+<li><a name="a135"></a>    <span class="src-comm">// convert HTML hex value into integer array</span></li>
+<li><a name="a136"></a>    <span class="src-comm">//</span></li>
+<li><a name="a136"></a>    </li>
+<li><a name="a137"></a>    <span class="src-key">function </span><span class="src-id">_htmlHexToBinArray</span><span class="src-sym">(</span><span class="src-var">$hex</span><span class="src-sym">)</span></li>
+<li><a name="a138"></a>    <span class="src-sym">{</span></li>
+<li><a name="a139"></a>        <span class="src-key">for </span><span class="src-sym">(</span><span class="src-var">$i</span>=<span class="src-num">0</span><span class="src-sym">; </span><span class="src-var">$i</span>&lt;<span class="src-num">3</span><span class="src-sym">; </span><span class="src-var">$i</span>++<span class="src-sym">)</span></li>
+<li><a name="a140"></a>        <span class="src-sym">{</span></li>
+<li><a name="a141"></a>            <span class="src-var">$foo </span>= <a href="http://www.php.net/substr">substr</a><span class="src-sym">(</span><span class="src-var">$hex</span><span class="src-sym">, </span><span class="src-num">2</span>*<span class="src-var">$i</span><span class="src-sym">, </span><span class="src-num">2</span><span class="src-sym">)</span><span class="src-sym">; </span></li>
+<li><a name="a142"></a>            <span class="src-var">$rgb</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">] </span>= <span class="src-num">16 </span>* <a href="http://www.php.net/hexdec">hexdec</a><span class="src-sym">(</span><a href="http://www.php.net/substr">substr</a><span class="src-sym">(</span><span class="src-var">$foo</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-num">1</span><span class="src-sym">)) </span>+ <a href="http://www.php.net/hexdec">hexdec</a><span class="src-sym">(</span><a href="http://www.php.net/substr">substr</a><span class="src-sym">(</span><span class="src-var">$foo</span><span class="src-sym">, </span><span class="src-num">1</span><span class="src-sym">, </span><span class="src-num">1</span><span class="src-sym">))</span><span class="src-sym">; </span></li>
+<li><a name="a143"></a>        <span class="src-sym">}</span></li>
+<li><a name="a144"></a>        <span class="src-key">return </span><span class="src-var">$rgb</span><span class="src-sym">;</span></li>
+<li><a name="a145"></a>    <span class="src-sym">}</span></li>
+<li><a name="a146"></a>&nbsp;</li>
+<li><a name="a147"></a>    <span class="src-comm">//</span></li>
+<li><a name="a148"></a>    <span class="src-comm">// output the quota text</span></li>
+<li><a name="a149"></a>    <span class="src-comm">//</span></li>
+<li><a name="a149"></a>    </li>
+<li><a name="a150"></a>    <span class="src-key">function </span><span class="src-id">_displayText</span><span class="src-sym">(</span><span class="src-sym">)</span></li>
+<li><a name="a151"></a>    <span class="src-sym">{</span></li>
+<li><a name="a152"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qUser">qUser</a><span class="src-sym">) </span>echo <span class="src-str">'The quota for '</span><span class="src-sym">, </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qUser">qUser</a><span class="src-sym">;</span></li>
+<li><a name="a153"></a>        <span class="src-key">else </span>echo <span class="src-str">'Your quota'</span><span class="src-sym">;</span></li>
+<li><a name="a154"></a>        echo <span class="src-str">' is '</span><span class="src-sym">, </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">_formatSize</span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qQuota">qQuota</a><span class="src-sym">)</span><span class="src-sym">, </span><span class="src-str">' and '</span><span class="src-sym">, </span></li>
+<li><a name="a155"></a>            <span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qUser">qUser</a> ? <span class="src-str">'they' </span>: <span class="src-str">'you'</span><span class="src-sym">)</span><span class="src-sym">, </span><span class="src-str">' have used '</span><span class="src-sym">,</span></li>
+<li><a name="a156"></a>            <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">_formatSize</span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qUsed">qUsed</a><span class="src-sym">)</span><span class="src-sym">, </span><span class="src-str">' ('</span><span class="src-sym">,</span></li>
+<li><a name="a157"></a>            <a href="http://www.php.net/number_format">number_format</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">oPercent</span><span class="src-sym">, </span><span class="src-num">2</span><span class="src-sym">)</span><span class="src-sym">, </span><span class="src-str">'%) of it.'</span><span class="src-sym">;</span></li>
+<li><a name="a158"></a>    <span class="src-sym">}</span></li>
+<li><a name="a159"></a>&nbsp;</li>
+<li><a name="a160"></a>    <span class="src-comm">//</span></li>
+<li><a name="a161"></a>    <span class="src-comm">// output the quota graph</span></li>
+<li><a name="a162"></a>    <span class="src-comm">//</span></li>
+<li><a name="a162"></a>    </li>
+<li><a name="a163"></a>    <span class="src-key">function </span><span class="src-id">_displayImage</span><span class="src-sym">(</span><span class="src-sym">)</span></li>
+<li><a name="a164"></a>    <span class="src-sym">{</span></li>
+<li><a name="a165"></a>        <span class="src-comm">// the graph variables</span></li>
+<li><a name="a166"></a>        <span class="src-var">$sStart </span>= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$g3DHeight">g3DHeight</a> * <span class="src-num">2</span><span class="src-sym">;</span></li>
+<li><a name="a167"></a>        <span class="src-var">$wStart </span>= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gWidth">gWidth</a> * <span class="src-num">2</span><span class="src-sym">;</span></li>
+<li><a name="a168"></a>        <span class="src-var">$hStart </span>= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gHeight">gHeight</a> * <span class="src-num">2</span><span class="src-sym">;</span></li>
+<li><a name="a169"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qUsed">qUsed</a> &gt;= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qQuota">qQuota</a><span class="src-sym">) </span><span class="src-var">$usedPercent </span>= <span class="src-num">360</span><span class="src-sym">;</span></li>
+<li><a name="a170"></a>        <span class="src-key">else </span><span class="src-var">$usedPercent </span>= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">oPercent </span>* <span class="src-num">3.6</span><span class="src-sym">;</span></li>
+<li><a name="a171"></a>&nbsp;</li>
+<li><a name="a172"></a>        <span class="src-comm">// work out where the 'used' wedge will be located</span></li>
+<li><a name="a173"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gCentreUsed">gCentreUsed</a><span class="src-sym">)</span></li>
+<li><a name="a174"></a>        <span class="src-sym">{</span></li>
+<li><a name="a175"></a>            <span class="src-var">$sWedge </span>= (int)<span class="src-sym">(</span><span class="src-num">90 </span>- <span class="src-sym">(</span><span class="src-var">$usedPercent </span>/ <span class="src-num">2</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+<li><a name="a176"></a>            <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$sWedge </span>&lt; <span class="src-num">0</span><span class="src-sym">) </span><span class="src-var">$sWedge </span>+= <span class="src-num">360</span><span class="src-sym">;</span></li>
+<li><a name="a177"></a>            <span class="src-var">$mWedge </span>= (int)<span class="src-sym">(</span><span class="src-num">90 </span>+ <span class="src-sym">(</span><span class="src-var">$usedPercent </span>/ <span class="src-num">2</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+<li><a name="a178"></a>            <span class="src-var">$mWedge </span>= <span class="src-sym">(</span><span class="src-var">$mWedge </span>== <span class="src-num">90 </span>? <span class="src-num">91 </span>: <span class="src-var">$mWedge</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a179"></a>            <span class="src-var">$eWedge </span>= (int)<span class="src-var">$sWedge</span><span class="src-sym">;</span></li>
+<li><a name="a180"></a>        <span class="src-sym">}</span></li>
+<li><a name="a181"></a>        <span class="src-key">else</span></li>
+<li><a name="a182"></a>        <span class="src-sym">{</span></li>
+<li><a name="a183"></a>            <span class="src-var">$sWedge </span>= <span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a184"></a>            <span class="src-var">$mWedge </span>= (int)<span class="src-sym">(</span><span class="src-var">$usedPercent </span>? <span class="src-var">$usedPercent </span>: <span class="src-num">1</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a185"></a>            <span class="src-var">$eWedge </span>= <span class="src-num">360</span><span class="src-sym">;</span></li>
+<li><a name="a186"></a>        <span class="src-sym">}</span></li>
+<li><a name="a187"></a>&nbsp;</li>
+<li><a name="a188"></a>        <span class="src-comm">// setup image and main colours</span></li>
+<li><a name="a189"></a>        <span class="src-var">$im </span>= <span class="src-sym">@</span><span class="src-id">ImageCreateTrueColor</span><span class="src-sym">(</span><span class="src-var">$wStart</span><span class="src-sym">, </span><span class="src-var">$hStart </span>+ <span class="src-var">$sStart</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a190"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$im</span><span class="src-sym">)</span></li>
+<li><a name="a191"></a>        <span class="src-sym">{</span></li>
+<li><a name="a192"></a>            <span class="src-var">$cBg </span>= <span class="src-id">ImageColorAllocate</span><span class="src-sym">(</span><span class="src-var">$im</span><span class="src-sym">, </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gBackColour">gBackColour</a><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span><span class="src-sym">, </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gBackColour">gBackColour</a><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">, </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gBackColour">gBackColour</a><span class="src-sym">[</span><span class="src-num">2</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a193"></a>            <span class="src-var">$cUsed </span>= <span class="src-id">ImageColorAllocate</span><span class="src-sym">(</span><span class="src-var">$im</span><span class="src-sym">, </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gUsedColour">gUsedColour</a><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span><span class="src-sym">, </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gUsedColour">gUsedColour</a><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">, </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gUsedColour">gUsedColour</a><span class="src-sym">[</span><span class="src-num">2</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a194"></a>            <span class="src-var">$cQuota </span>= <span class="src-id">ImageColorAllocate</span><span class="src-sym">(</span><span class="src-var">$im</span><span class="src-sym">, </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gQuotaColour">gQuotaColour</a><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span><span class="src-sym">, </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gQuotaColour">gQuotaColour</a><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">, </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gQuotaColour">gQuotaColour</a><span class="src-sym">[</span><span class="src-num">2</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a195"></a>            <span class="src-id">ImageFill</span><span class="src-sym">(</span><span class="src-var">$im</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-var">$cBg</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a196"></a>&nbsp;</li>
+<li><a name="a197"></a>            <span class="src-comm">// work out 3D look if needs be</span></li>
+<li><a name="a198"></a>            <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$g3DHeight">g3DHeight</a><span class="src-sym">)</span></li>
+<li><a name="a199"></a>            <span class="src-sym">{</span></li>
+<li><a name="a200"></a>                <span class="src-comm">// process colours</span></li>
+<li><a name="a201"></a>                <span class="src-var">$qDarkArray </span>= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gQuotaColour">gQuotaColour</a><span class="src-sym">;</span></li>
+<li><a name="a202"></a>                <span class="src-key">for </span><span class="src-sym">(</span><span class="src-var">$i</span>=<span class="src-num">0</span><span class="src-sym">; </span><span class="src-var">$i</span>&lt;<span class="src-num">3</span><span class="src-sym">; </span><span class="src-var">$i</span>++<span class="src-sym">)</span></li>
+<li><a name="a203"></a>                <span class="src-sym">{</span></li>
+<li><a name="a204"></a>                    <span class="src-sym">(</span><span class="src-var">$qDarkArray</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">] </span>&gt; <span class="src-num">99</span><span class="src-sym">) </span>? <span class="src-var">$qDarkArray</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">] </span>-= <span class="src-num">100 </span>: <span class="src-var">$qDarkArray</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">] </span>= <span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a205"></a>                <span class="src-sym">}</span></li>
+<li><a name="a206"></a>                <span class="src-var">$uDarkArray </span>= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gUsedColour">gUsedColour</a><span class="src-sym">;</span></li>
+<li><a name="a207"></a>                <span class="src-key">for </span><span class="src-sym">(</span><span class="src-var">$i</span>=<span class="src-num">0</span><span class="src-sym">; </span><span class="src-var">$i</span>&lt;<span class="src-num">3</span><span class="src-sym">; </span><span class="src-var">$i</span>++<span class="src-sym">)</span></li>
+<li><a name="a208"></a>                <span class="src-sym">{</span></li>
+<li><a name="a209"></a>                    <span class="src-sym">(</span><span class="src-var">$uDarkArray</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">] </span>&gt; <span class="src-num">99</span><span class="src-sym">) </span>? <span class="src-var">$uDarkArray</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">] </span>-= <span class="src-num">100 </span>: <span class="src-var">$uDarkArray</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">] </span>= <span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a210"></a>                <span class="src-sym">}</span></li>
+<li><a name="a211"></a>                <span class="src-var">$cQuotaDark </span>= <span class="src-id">ImageColorAllocate</span><span class="src-sym">(</span><span class="src-var">$im</span><span class="src-sym">, </span><span class="src-var">$qDarkArray</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span><span class="src-sym">, </span><span class="src-var">$qDarkArray</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">, </span><span class="src-var">$qDarkArray</span><span class="src-sym">[</span><span class="src-num">2</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a212"></a>                <span class="src-var">$cUsedDark </span>= <span class="src-id">ImageColorAllocate</span><span class="src-sym">(</span><span class="src-var">$im</span><span class="src-sym">, </span><span class="src-var">$uDarkArray</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span><span class="src-sym">, </span><span class="src-var">$uDarkArray</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">, </span><span class="src-var">$uDarkArray</span><span class="src-sym">[</span><span class="src-num">2</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a213"></a>&nbsp;</li>
+<li><a name="a214"></a>                <span class="src-comm">// add 3D look</span></li>
+<li><a name="a215"></a>                <span class="src-var">$shadow_start </span>= <span class="src-sym">(</span><span class="src-var">$hStart</span>/<span class="src-num">2</span><span class="src-sym">) </span>+ <span class="src-var">$sStart</span><span class="src-sym">;</span></li>
+<li><a name="a216"></a>                <span class="src-var">$shadow_end </span>= <span class="src-var">$hStart</span>/<span class="src-num">2</span><span class="src-sym">;</span></li>
+<li><a name="a217"></a>                <span class="src-key">for </span><span class="src-sym">(</span><span class="src-var">$i</span>=<span class="src-var">$shadow_start</span><span class="src-sym">; </span><span class="src-var">$i</span>&gt;<span class="src-var">$shadow_end</span><span class="src-sym">; </span><span class="src-var">$i</span>--<span class="src-sym">)</span></li>
+<li><a name="a218"></a>                <span class="src-sym">{</span></li>
+<li><a name="a219"></a>                    <span class="src-id">ImageFilledArc</span><span class="src-sym">(</span><span class="src-var">$im</span><span class="src-sym">, </span><span class="src-sym">(</span><span class="src-var">$wStart</span>/<span class="src-num">2</span><span class="src-sym">)</span><span class="src-sym">, </span><span class="src-var">$i</span><span class="src-sym">, </span><span class="src-var">$wStart</span><span class="src-sym">, </span><span class="src-var">$hStart</span><span class="src-sym">,  </span><span class="src-var">$sWedge</span><span class="src-sym">, </span><span class="src-var">$mWedge</span><span class="src-sym">, </span><span class="src-var">$cUsedDark</span><span class="src-sym">, </span><span class="src-id">IMG_ARC_PIE</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a220"></a>                    <span class="src-id">ImageFilledArc</span><span class="src-sym">(</span><span class="src-var">$im</span><span class="src-sym">, </span><span class="src-sym">(</span><span class="src-var">$wStart</span>/<span class="src-num">2</span><span class="src-sym">)</span><span class="src-sym">, </span><span class="src-var">$i</span><span class="src-sym">, </span><span class="src-var">$wStart</span><span class="src-sym">, </span><span class="src-var">$hStart</span><span class="src-sym">, </span><span class="src-var">$mWedge</span><span class="src-sym">, </span><span class="src-var">$eWedge</span><span class="src-sym">, </span><span class="src-var">$cQuotaDark</span><span class="src-sym">, </span><span class="src-id">IMG_ARC_PIE</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a221"></a>                <span class="src-sym">}</span></li>
+<li><a name="a222"></a>            <span class="src-sym">}</span></li>
+<li><a name="a223"></a>&nbsp;</li>
+<li><a name="a224"></a>            <span class="src-comm">// now do the top of the graph</span></li>
+<li><a name="a225"></a>            <span class="src-id">ImageFilledArc</span><span class="src-sym">(</span><span class="src-var">$im</span><span class="src-sym">, </span><span class="src-sym">(</span><span class="src-var">$wStart</span>/<span class="src-num">2</span><span class="src-sym">)</span><span class="src-sym">, </span><span class="src-sym">(</span><span class="src-var">$hStart</span>/<span class="src-num">2</span><span class="src-sym">)</span><span class="src-sym">, </span><span class="src-var">$wStart</span><span class="src-sym">, </span><span class="src-var">$hStart</span><span class="src-sym">, </span><span class="src-var">$sWedge</span><span class="src-sym">, </span><span class="src-var">$mWedge</span><span class="src-sym">, </span><span class="src-var">$cUsed</span><span class="src-sym">, </span><span class="src-id">IMG_ARC_PIE</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a226"></a>            <span class="src-id">ImageFilledArc</span><span class="src-sym">(</span><span class="src-var">$im</span><span class="src-sym">, </span><span class="src-sym">(</span><span class="src-var">$wStart</span>/<span class="src-num">2</span><span class="src-sym">)</span><span class="src-sym">, </span><span class="src-sym">(</span><span class="src-var">$hStart</span>/<span class="src-num">2</span><span class="src-sym">)</span><span class="src-sym">, </span><span class="src-var">$wStart</span><span class="src-sym">, </span><span class="src-var">$hStart</span><span class="src-sym">, </span><span class="src-var">$mWedge</span><span class="src-sym">, </span><span class="src-var">$eWedge</span><span class="src-sym">, </span><span class="src-var">$cQuota</span><span class="src-sym">, </span><span class="src-id">IMG_ARC_PIE</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a227"></a>&nbsp;</li>
+<li><a name="a228"></a>            <span class="src-comm">// now create a legend image if needs be</span></li>
+<li><a name="a229"></a>            <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gLegend">gLegend</a><span class="src-sym">)</span></li>
+<li><a name="a230"></a>            <span class="src-sym">{</span></li>
+<li><a name="a231"></a>                <span class="src-comm">// the legend variables</span></li>
+<li><a name="a232"></a>                <span class="src-var">$lHeight </span>= <span class="src-var">$lWidth </span>= <span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a233"></a>                <span class="src-var">$spacer </span>= <span class="src-num">10</span><span class="src-sym">;</span></li>
+<li><a name="a234"></a>&nbsp;</li>
+<li><a name="a235"></a>                <span class="src-comm">// build quota strings</span></li>
+<li><a name="a236"></a>                <span class="src-var">$qText</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">] </span>= <span class="src-str">'Quota: ' </span>. <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">_formatSize</span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qQuota">qQuota</a><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a237"></a>                <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qUser">qUser</a><span class="src-sym">) </span><span class="src-var">$qText</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">] </span>= <span class="src-str">'       (' </span>. <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qUser">qUser</a> . <span class="src-str">')'</span><span class="src-sym">;</span></li>
+<li><a name="a238"></a>                <span class="src-key">else </span><span class="src-var">$qText</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">] </span>= <span class="src-str">''</span><span class="src-sym">;</span></li>
+<li><a name="a239"></a>                <span class="src-var">$uText</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">] </span>= <span class="src-str">'Used : ' </span>. <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">_formatSize</span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$qUsed">qUsed</a><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a240"></a>                <span class="src-var">$uText</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">] </span>= <span class="src-str">'       (' </span>. <a href="http://www.php.net/number_format">number_format</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">oPercent</span><span class="src-sym">,</span><span class="src-num">2</span><span class="src-sym">) </span>. <span class="src-str">'%)'</span><span class="src-sym">;</span></li>
+<li><a name="a241"></a>&nbsp;</li>
+<li><a name="a242"></a>                <span class="src-comm">// space + line + spacer + line</span></li>
+<li><a name="a243"></a>                <span class="src-var">$lHeight </span>= <span class="src-sym">(</span><span class="src-id">ImageFontHeight</span><span class="src-sym">(</span><span class="src-num">2</span><span class="src-sym">) </span>* <span class="src-sym">(</span><span class="src-var">$qText</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">] </span>== <span class="src-str">'' </span>? <span class="src-num">3 </span>: <span class="src-num">4</span><span class="src-sym">)) </span>+ <span class="src-var">$spacer</span><span class="src-sym">;</span></li>
+<li><a name="a244"></a>&nbsp;</li>
+<li><a name="a245"></a>                <span class="src-comm">// get biggest string length and add spacer to it - legend block is size of font height (square)</span></li>
+<li><a name="a246"></a>                <span class="src-var">$qMax </span>= <span class="src-sym">(</span><a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$qText</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span><span class="src-sym">) </span>&gt; <a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$qText</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">)) </span>? <a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$qText</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span><span class="src-sym">) </span>: <a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$qText</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a247"></a>                <span class="src-var">$uMax </span>= <span class="src-sym">(</span><a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$uText</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span><span class="src-sym">) </span>&gt; <a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$uText</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">)) </span>? <a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$uText</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span><span class="src-sym">) </span>: <a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$uText</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a248"></a>                <span class="src-var">$tMax </span>= <span class="src-sym">(</span><span class="src-var">$qMax </span>&gt; <span class="src-var">$uMax </span>? <span class="src-var">$qMax </span>: <span class="src-var">$uMax</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a249"></a>                <span class="src-var">$lWidth </span>= <span class="src-sym">(</span><span class="src-var">$tMax </span>* <span class="src-id">ImageFontWidth</span><span class="src-sym">(</span><span class="src-num">2</span><span class="src-sym">)) </span>+ <span class="src-var">$spacer </span>+ <span class="src-id">ImageFontHeight</span><span class="src-sym">(</span><span class="src-num">2</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a250"></a>&nbsp;</li>
+<li><a name="a251"></a>                <span class="src-comm">// now create the image</span></li>
+<li><a name="a252"></a>                <span class="src-var">$lim </span>= <span class="src-id">ImageCreateTrueColor</span><span class="src-sym">(</span><span class="src-var">$lWidth</span><span class="src-sym">, </span><span class="src-var">$lHeight</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a253"></a>                <span class="src-id">ImageFill</span><span class="src-sym">(</span><span class="src-var">$lim</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-var">$cBg</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a254"></a>                <span class="src-var">$cText </span>= <span class="src-id">ImageColorAllocate</span><span class="src-sym">(</span><span class="src-var">$lim</span><span class="src-sym">, </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gTextColour">gTextColour</a><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span><span class="src-sym">, </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gTextColour">gTextColour</a><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">, </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../userQuota/userQuota.html#var$gTextColour">gTextColour</a><span class="src-sym">[</span><span class="src-num">2</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a255"></a>                <span class="src-var">$lx </span>= <span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a256"></a>                <span class="src-var">$ly </span>= <span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a257"></a>&nbsp;</li>
+<li><a name="a258"></a>                <span class="src-comm">// write out the 'quota' legend</span></li>
+<li><a name="a259"></a>                <span class="src-id">ImageFilledRectangle</span><span class="src-sym">(</span><span class="src-var">$lim</span><span class="src-sym">, </span><span class="src-var">$lx</span><span class="src-sym">, </span><span class="src-var">$ly</span><span class="src-sym">, </span><span class="src-sym">(</span><span class="src-var">$lx </span>+ <span class="src-id">ImageFontHeight</span><span class="src-sym">(</span><span class="src-num">2</span><span class="src-sym">))</span><span class="src-sym">, </span><span class="src-sym">(</span><span class="src-var">$ly </span>+ <span class="src-id">ImageFontHeight</span><span class="src-sym">(</span><span class="src-num">2</span><span class="src-sym">))</span><span class="src-sym">, </span><span class="src-var">$cQuota</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a260"></a>                <span class="src-id">ImageString</span><span class="src-sym">(</span><span class="src-var">$lim</span><span class="src-sym">, </span><span class="src-num">2</span><span class="src-sym">, </span><span class="src-sym">(</span><span class="src-var">$lx </span>+ <span class="src-id">ImageFontHeight</span><span class="src-sym">(</span><span class="src-num">2</span><span class="src-sym">) </span>+ <span class="src-var">$spacer</span><span class="src-sym">)</span><span class="src-sym">, </span><span class="src-var">$ly</span><span class="src-sym">, </span><span class="src-var">$qText</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span><span class="src-sym">, </span><span class="src-var">$cText</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a261"></a>                <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$qText</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">] </span>!= <span class="src-str">''</span><span class="src-sym">)</span></li>
+<li><a name="a262"></a>                <span class="src-sym">{</span></li>
+<li><a name="a263"></a>                    <span class="src-var">$ly </span>+= <span class="src-id">ImageFontHeight</span><span class="src-sym">(</span><span class="src-num">2</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a264"></a>                    <span class="src-id">ImageString</span><span class="src-sym">(</span><span class="src-var">$lim</span><span class="src-sym">, </span><span class="src-num">2</span><span class="src-sym">, </span><span class="src-sym">(</span><span class="src-var">$lx </span>+ <span class="src-id">ImageFontHeight</span><span class="src-sym">(</span><span class="src-num">2</span><span class="src-sym">) </span>+ <span class="src-var">$spacer</span><span class="src-sym">)</span><span class="src-sym">, </span><span class="src-var">$ly</span><span class="src-sym">, </span><span class="src-var">$qText</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">, </span><span class="src-var">$cText</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a265"></a>                <span class="src-sym">}</span></li>
+<li><a name="a266"></a>&nbsp;</li>
+<li><a name="a267"></a>                <span class="src-var">$ly </span>+= <span class="src-sym">(</span><span class="src-var">$spacer </span>+ <span class="src-id">ImageFontHeight</span><span class="src-sym">(</span><span class="src-num">2</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+<li><a name="a268"></a>&nbsp;</li>
+<li><a name="a269"></a>                <span class="src-comm">// write out the 'used' legend</span></li>
+<li><a name="a270"></a>                <span class="src-id">ImageFilledRectangle</span><span class="src-sym">(</span><span class="src-var">$lim</span><span class="src-sym">, </span><span class="src-var">$lx</span><span class="src-sym">, </span><span class="src-var">$ly</span><span class="src-sym">, </span><span class="src-sym">(</span><span class="src-var">$lx </span>+ <span class="src-id">ImageFontHeight</span><span class="src-sym">(</span><span class="src-num">2</span><span class="src-sym">))</span><span class="src-sym">, </span><span class="src-sym">(</span><span class="src-var">$ly </span>+ <span class="src-id">ImageFontHeight</span><span class="src-sym">(</span><span class="src-num">2</span><span class="src-sym">))</span><span class="src-sym">, </span><span class="src-var">$cUsed</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a271"></a>                <span class="src-id">ImageString</span><span class="src-sym">(</span><span class="src-var">$lim</span><span class="src-sym">, </span><span class="src-num">2</span><span class="src-sym">, </span><span class="src-sym">(</span><span class="src-var">$lx </span>+ <span class="src-id">ImageFontHeight</span><span class="src-sym">(</span><span class="src-num">2</span><span class="src-sym">) </span>+ <span class="src-var">$spacer</span><span class="src-sym">)</span><span class="src-sym">, </span><span class="src-var">$ly</span><span class="src-sym">, </span><span class="src-var">$uText</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span><span class="src-sym">, </span><span class="src-var">$cText</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a272"></a>                <span class="src-var">$ly </span>+= <span class="src-id">ImageFontHeight</span><span class="src-sym">(</span><span class="src-num">2</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a273"></a>                <span class="src-id">ImageString</span><span class="src-sym">(</span><span class="src-var">$lim</span><span class="src-sym">, </span><span class="src-num">2</span><span class="src-sym">, </span><span class="src-sym">(</span><span class="src-var">$lx </span>+ <span class="src-id">ImageFontHeight</span><span class="src-sym">(</span><span class="src-num">2</span><span class="src-sym">) </span>+ <span class="src-var">$spacer</span><span class="src-sym">)</span><span class="src-sym">, </span><span class="src-var">$ly</span><span class="src-sym">, </span><span class="src-var">$uText</span><span class="src-sym">[</span><span class="src-num">1</span><span class="src-sym">]</span><span class="src-sym">, </span><span class="src-var">$cText</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a274"></a>&nbsp;</li>
+<li><a name="a275"></a>                <span class="src-comm">// now merge the two images into the final one</span></li>
+<li><a name="a276"></a>&nbsp;</li>
+<li><a name="a277"></a>                <span class="src-comm">// anti-aliasing look</span></li>
+<li><a name="a278"></a>                <span class="src-var">$gsx </span>= <span class="src-id">ImageSX</span><span class="src-sym">(</span><span class="src-var">$im</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a279"></a>                <span class="src-var">$gsy </span>= <span class="src-id">ImageSY</span><span class="src-sym">(</span><span class="src-var">$im</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a280"></a>                <span class="src-var">$lsx </span>= <span class="src-id">ImageSX</span><span class="src-sym">(</span><span class="src-var">$lim</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a281"></a>                <span class="src-var">$lsy </span>= <span class="src-id">ImageSY</span><span class="src-sym">(</span><span class="src-var">$lim</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a282"></a>                <span class="src-var">$gnx </span>= <span class="src-sym">(</span><span class="src-var">$gsx </span>&gt;&gt; <span class="src-num">1</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a283"></a>                <span class="src-var">$gny </span>= <span class="src-sym">(</span><span class="src-var">$gsy </span>&gt;&gt; <span class="src-num">1</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a284"></a>                <span class="src-var">$fx </span>= <span class="src-sym">(</span><span class="src-var">$gnx </span>&gt; <span class="src-var">$lsx</span><span class="src-sym">) </span>? <span class="src-var">$gnx </span>: <span class="src-var">$lsx</span><span class="src-sym">;</span></li>
+<li><a name="a285"></a>                <span class="src-var">$fy </span>= <span class="src-var">$gny </span>+ <span class="src-var">$lsy </span>+ <span class="src-sym">(</span><span class="src-var">$spacer </span>* <span class="src-num">2</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a286"></a>                <span class="src-var">$final </span>= <span class="src-id">ImageCreateTrueColor</span><span class="src-sym">(</span><span class="src-var">$fx</span><span class="src-sym">, </span><span class="src-var">$fy</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a287"></a>                <span class="src-id">ImageFill</span><span class="src-sym">(</span><span class="src-var">$final</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-var">$cBg</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a288"></a>                <span class="src-id">ImageCopyResampled</span><span class="src-sym">(</span><span class="src-var">$final</span><span class="src-sym">, </span><span class="src-var">$im</span><span class="src-sym">, </span><span class="src-sym">((</span><span class="src-var">$fx</span>/<span class="src-num">2</span><span class="src-sym">)</span>-<span class="src-sym">(</span><span class="src-var">$gnx</span>/<span class="src-num">2</span><span class="src-sym">))</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-var">$gnx</span><span class="src-sym">, </span><span class="src-var">$gny</span><span class="src-sym">, </span><span class="src-var">$gsx</span><span class="src-sym">, </span><span class="src-var">$gsy</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a289"></a>                <span class="src-id">ImageCopyResampled</span><span class="src-sym">(</span><span class="src-var">$final</span><span class="src-sym">, </span><span class="src-var">$lim</span><span class="src-sym">, </span><span class="src-sym">((</span><span class="src-var">$fx</span>/<span class="src-num">2</span><span class="src-sym">)</span>-<span class="src-sym">(</span><span class="src-var">$lsx</span>/<span class="src-num">2</span><span class="src-sym">))</span><span class="src-sym">, </span><span class="src-var">$gny </span>+ <span class="src-sym">(</span><span class="src-var">$spacer </span>* <span class="src-num">2</span><span class="src-sym">)</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-var">$lsx</span><span class="src-sym">, </span><span class="src-var">$lsy</span><span class="src-sym">, </span><span class="src-var">$lsx</span><span class="src-sym">, </span><span class="src-var">$lsy</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a290"></a>                <span class="src-id">ImageDestroy</span><span class="src-sym">(</span><span class="src-var">$lim</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a291"></a>            <span class="src-sym">}</span></li>
+<li><a name="a292"></a>            <span class="src-key">else</span></li>
+<li><a name="a293"></a>            <span class="src-sym">{</span></li>
+<li><a name="a294"></a>                <span class="src-comm">// we do not have a legend, so just reample graph</span></li>
+<li><a name="a295"></a>                <span class="src-var">$sx </span>= <span class="src-id">ImageSX</span><span class="src-sym">(</span><span class="src-var">$im</span><span class="src-sym">)</span><span class="src-sym">; </span></li>
+<li><a name="a296"></a>                <span class="src-var">$sy </span>= <span class="src-id">ImageSY</span><span class="src-sym">(</span><span class="src-var">$im</span><span class="src-sym">)</span><span class="src-sym">; </span></li>
+<li><a name="a297"></a>                <span class="src-var">$nx </span>= <span class="src-sym">(</span><span class="src-var">$sx</span>&gt;&gt;<span class="src-num">1</span><span class="src-sym">)</span><span class="src-sym">; </span></li>
+<li><a name="a298"></a>                <span class="src-var">$ny </span>= <span class="src-sym">(</span><span class="src-var">$sy</span>&gt;&gt;<span class="src-num">1</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a299"></a>                <span class="src-var">$final </span>= <span class="src-id">ImageCreateTrueColor</span><span class="src-sym">(</span><span class="src-var">$nx</span><span class="src-sym">, </span><span class="src-var">$ny</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a300"></a>                <span class="src-id">ImageCopyResampled</span><span class="src-sym">(</span><span class="src-var">$final</span><span class="src-sym">, </span><span class="src-var">$im</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-var">$nx</span><span class="src-sym">, </span><span class="src-var">$ny</span><span class="src-sym">, </span><span class="src-var">$sx</span><span class="src-sym">, </span><span class="src-var">$sy</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a301"></a>            <span class="src-sym">}</span></li>
+<li><a name="a302"></a>&nbsp;</li>
+<li><a name="a303"></a>            <span class="src-comm">// flush image</span></li>
+<li><a name="a304"></a>            <a href="http://www.php.net/header">header</a><span class="src-sym">(</span><span class="src-str">&quot;Content-type: image/jpeg&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a305"></a>            <span class="src-id">ImageJPEG</span><span class="src-sym">(</span><span class="src-var">$final</span><span class="src-sym">, </span><span class="src-id">NULL</span><span class="src-sym">, </span><span class="src-num">100</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a306"></a>            <span class="src-id">ImageDestroy</span><span class="src-sym">(</span><span class="src-var">$im</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a307"></a>            <span class="src-id">ImageDestroy</span><span class="src-sym">(</span><span class="src-var">$final</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a308"></a>        <span class="src-sym">}</span></li>
+<li><a name="a309"></a>    <span class="src-sym">}</span></li>
+<li><a name="a310"></a>&nbsp;</li>
+<li><a name="a311"></a>    <span class="src-comm">//</span></li>
+<li><a name="a312"></a>    <span class="src-comm">// make the size of the quota values more human readable</span></li>
+<li><a name="a313"></a>    <span class="src-comm">//</span></li>
+<li><a name="a313"></a>    </li>
+<li><a name="a314"></a>    <span class="src-key">function </span><span class="src-id">_formatSize</span><span class="src-sym">(</span><span class="src-var">$size </span>= <span class="src-num">0</span><span class="src-sym">)</span></li>
+<li><a name="a315"></a>    <span class="src-sym">{</span></li>
+<li><a name="a316"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$size </span>&gt;= <span class="src-num">1073741824</span><span class="src-sym">) </span><span class="src-var">$size </span>= <a href="http://www.php.net/round">round</a><span class="src-sym">(</span><span class="src-var">$size</span>/<span class="src-num">1073741824</span>*<span class="src-num">100</span><span class="src-sym">)</span>/<span class="src-num">100 </span>. <span class="src-str">&quot; Gb&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a317"></a>        <span class="src-key">else </span><span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$size </span>&gt;= <span class="src-num">1048576</span><span class="src-sym">) </span><span class="src-var">$size </span>= <a href="http://www.php.net/round">round</a><span class="src-sym">(</span><span class="src-var">$size</span>/<span class="src-num">1048576</span>*<span class="src-num">100</span><span class="src-sym">)</span>/<span class="src-num">100 </span>. <span class="src-str">&quot; Mb&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a318"></a>        <span class="src-key">else </span><span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$size </span>&gt;= <span class="src-num">1024</span><span class="src-sym">) </span><span class="src-var">$size </span>= <a href="http://www.php.net/round">round</a><span class="src-sym">(</span><span class="src-var">$size</span>/<span class="src-num">1024</span>*<span class="src-num">100</span><span class="src-sym">)</span>/<span class="src-num">100 </span>. <span class="src-str">&quot; kb&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a319"></a>        <span class="src-key">else </span><span class="src-var">$size </span>= <span class="src-var">$size </span>. <span class="src-str">&quot; bytes&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a320"></a>        <span class="src-key">return </span><span class="src-var">$size</span><span class="src-sym">;</span></li>
+<li><a name="a321"></a>    <span class="src-sym">}</span></li>
+<li><a name="a322"></a>&nbsp;</li>
+<li><a name="a323"></a><span class="src-sym">}</span></li>
+<li><a name="a324"></a>&nbsp;</li>
+<li><a name="a325"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:31:53 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</body>
+</html>

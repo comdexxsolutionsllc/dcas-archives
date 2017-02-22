@@ -1,0 +1,58 @@
+<Search>
+
+  <Page>
+    <URL>../php-bin/main.php?SITE=page1</URL>
+    <DATA>../contents/page1.htmlinc.php</DATA>
+    <DESCRIP>BasicA :: Page-1 This's tt introz :p</DESCRIP>
+  </Page>
+
+  <Page>
+    <URL>../php-bin/main.php?SITE=page2</URL>
+    <DATA>../contents/page2.htmlinc.php</DATA>
+    <DESCRIP>BasicA :: Page-2</DESCRIP>
+  </Page>
+
+  <Page>
+    <URL>../php-bin/main.php?SITE=page3</URL>
+    <DATA>../contents/page3.htmlinc.php</DATA>
+    <DESCRIP>BasicA :: Page-3</DESCRIP>
+  </Page>
+
+  <Page>
+    <URL>../php-bin/main.php?SITE=page4</URL>
+    <DATA>../contents/page4.htmlinc.php</DATA>
+    <DESCRIP>BasicA :: Page-4</DESCRIP>
+  </Page>
+
+  <Page>
+    <URL>../php-bin/main.php?SITE=page5</URL>
+    <DATA>../contents/page5.htmlinc.php</DATA>
+    <DESCRIP>BasicA :: Page-5</DESCRIP>
+  </Page>
+
+  <Page>
+    <URL>../php-bin/main.php?SITE=page6</URL>
+    <DATA>../contents/page6.htmlinc.php</DATA>
+    <DESCRIP>BasicA :: Page-6</DESCRIP>
+  </Page>
+
+  <Page>
+    <URL>../php-bin/main.php?SITE=page7</URL>
+    <DATA>../contents/page7.htmlinc.php</DATA>
+    <DESCRIP>BasicA :: Page-7</DESCRIP>
+  </Page>
+
+  <Page>
+    <URL>../php-bin/main.php?SITE=page8</URL>
+    <DATA>../contents/page8.htmlinc.php</DATA>
+    <DESCRIP>BasicA :: Page-8</DESCRIP>
+  </Page>
+
+  <Page>
+    <URL>../php-bin/main.php?SITE=page9</URL>
+    <DATA>../contents/page9.htmlinc.php</DATA>
+    <DESCRIP>BasicA :: Page-9</DESCRIP>
+  </Page>
+
+</Search>
+

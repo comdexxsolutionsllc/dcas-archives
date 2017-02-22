@@ -1,0 +1,183 @@
+php_flag register_globals off
+php_flag short_open_tag off
+php_flag magic_quotes_gpc on
+php_flag magic_quotes_runtime on
+php_flag magic_quotes_sybase on
+#php_flag auto_append_file /MoondayFramework/_append_files/append.inc.php
+
+ErrorDocument 502 /MoondayFramework/error_docs/bad_gateway.html
+ErrorDocument 400 /MoondayFramework/error_docs/bad_request.html
+ErrorDocument 409 /MoondayFramework/error_docs/conflicting_request.html
+ErrorDocument 411 /MoondayFramework/error_docs/content_length_required.html
+ErrorDocument 403 /MoondayFramework/error_docs/forbidden.html
+ErrorDocument 410 /MoondayFramework/error_docs/gone.html
+ErrorDocument 500 /MoondayFramework/error_docs/internal_server_error.html
+ErrorDocument 405 /MoondayFramework/error_docs/method_not_allowed.html
+ErrorDocument 204 /MoondayFramework/error_docs/no_content.html
+ErrorDocument 406 /MoondayFramework/error_docs/not_acceptable.html
+ErrorDocument 404 /MoondayFramework/error_docs/not_found.html
+ErrorDocument 501 /MoondayFramework/error_docs/not_implemented.html
+ErrorDocument 206 /MoondayFramework/error_docs/partial_content.html
+ErrorDocument 412 /MoondayFramework/error_docs/precondition_failed.html
+ErrorDocument 407 /MoondayFramework/error_docs/proxy_authentication_required.html
+ErrorDocument 413 /MoondayFramework/error_docs/request-entity_too_long.html
+ErrorDocument 414 /MoondayFramework/error_docs/request-uri_too_long.html
+ErrorDocument 408 /MoondayFramework/error_docs/request_timed_out.html
+ErrorDocument 205 /MoondayFramework/error_docs/reset_content.html
+ErrorDocument 503 /MoondayFramework/error_docs/service_unavailable.html
+ErrorDocument 401 /MoondayFramework/error_docs/unauthorized.html
+ErrorDocument 415 /MoondayFramework/error_docs/unsupported_media_type.html
+
+# (00) Change THIS to ReSECURE the Project-Map
+AuthUserFile C:\xampp\htdocs\MoondayFramework\.htpasswd
+AuthName "managedNOC 2010"
+AuthType Basic
+
+<Limit GET>
+require valid-user
+</Limit>
+# End Notation 00
+
+# .htaccess options
+# set timezone
+SetEnv TZ America/Chicago
+# set server admin's e-mail
+SetEnv SERVER_ADMIN admin@localhost
+# turn serversignature off
+ServerSignature Off
+# set default charset
+AddDefaultCharset utf-8
+# set the default language
+DefaultLanguage en-US
+# protect against DOS attacks by limiting file upload size (16MB)
+LimitRequestBody 16777216
+
+
+# activate SSI for HTML and or SHTML file types
+AddType text/html .html
+AddType text/html .shtml
+AddHandler server-parsed .html
+AddHandler server-parsed .shtml
+AddHandler server-parsed .htm
+
+
+# automatically corect simple speling erors
+<IfModule mod_speling.so>
+ CheckSpelling On
+</IfModule>
+
+
+AddOutputFilterByType DEFLATE text/html text/plain text/xml application/x-javascript image/gif image/png image/jpg image/jpeg text/css
+
+# cache text, css, and javascript files for one week
+<FilesMatch ".(js|css|pdf|txt)$">
+Header set Cache-Control "max-age=604800"
+</FilesMatch>
+
+# cache html and htm files for one day
+<FilesMatch ".(html|htm)$">
+Header set Cache-Control "max-age=43200"
+</FilesMatch>
+
+# implement minimal caching during site development
+<FilesMatch "\.(flv|gif|jpg|jpeg|png|ico|js|css|pdf|swf|html|htm|txt)$">
+Header set Cache-Control "max-age=5"
+</FilesMatch>
+
+# explicitly disable caching for scripts and other dynamic files
+<FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
+Header unset Cache-Control
+</FilesMatch>
+
+<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+Header set Expires "Thu, 01 Jan 2060 12:00:00 GMT"
+</FilesMatch>
+
+Header unset ETag
+FileETag None
+
+# Add File Restriction Rules
+<FilesMatch "\.(htaccess|htpasswd|ini|phps|fla|psd|log|sh)$">
+ Order Allow,Deny
+ Deny from all
+</FilesMatch>
+
+<Files error.log.php>
+Order allow,deny
+Allow from 127.0.0.1 localhost
+</Files>
+
+<Files rewrite-log.txt>
+Order allow,deny
+Allow from 127.0.0.1 localhost
+</Files>
+
+<Files showsource.php>
+Order allow,deny
+Allow from 127.0.0.1 localhost
+</Files>
+
+<Files pastebin.php>
+Order allow,deny
+Allow from 127.0.0.1 localhost
+</Files>
+
+<Files test.php>
+Order allow,deny
+Allow from 127.0.0.1 localhost
+</Files>
+
+<Files phpinfo.php>
+Order allow,deny
+Allow from 127.0.0.1 localhost
+</Files>
+
+# Add mod_rewrite Rules
+Options +FollowSymLinks -MultiViews -Indexes
+RewriteEngine on
+
+RewriteBase /managedNOC
+
+RewriteRule \.(gif¦jpg¦png¦bmp)$ - [NC,L]
+RewriteRule \.(css)$ - [NC,L]
+
+RewriteRule login/client/$ /managedNOC/index.php?user= [L]
+RewriteRule login/(.*)/admin-lostpassword/$ /managedNOC/admin/content/admin-lostpassword.php [L]
+RewriteRule login/(.*)/$ /managedNOC/index.php?user=$1 [L]
+RewriteRule user.(.*)/page/(.*)/$ /managedNOC/index.php?user=$1&page=$2
+
+RewriteRule privacy/$ /managedNOC/w3c/policy.html
+
+RewriteRule branches/$ /managedNOC/branches/ [F]
+RewriteRule engine/$ /managedNOC/engine/ [F]
+RewriteRule tags/$ /managedNOC/tags/ [F]
+RewriteRule trunk/$ /managedNOC/trunk/ [F]
+RewriteRule _notes/$ /managedNOC/_notes/ [F]
+RewriteRule cache/$ /managedNOC/cache/ [F]
+RewriteRule dbbackups/$ /managedNOC/dbbackups/ [F]
+RewriteRule settings/$ /managedNOC/settings/ [F]
+RewriteRule tmp/$ /managedNOC/tmp/ [F]
+
+# require SSL
+#SSLOptions +StrictRequire
+#SSLRequireSSL
+#SSLRequire %{HTTP_HOST} eq "localhost"
+#ErrorDocument 403 https://localhost/MoondayFramework/error_docs/forbidden.html
+
+# Block Robots, Site-rippers, Offline Browsers
+RewriteCond %{HTTP_USER_AGENT} ^Anarchie [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ASPSeek [OR]
+RewriteCond %{HTTP_USER_AGENT} ^attach [OR]
+RewriteCond %{HTTP_USER_AGENT} ^autoemailspider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Xaldon\ WebSpider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Xenu [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Zeus.*Webster [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Zeus
+RewriteRule ^.* - [F,L]
+
+#Checks to see if the user is attempting to access a valid file,
+#such as an image or css document, if this isn't true it sends the
+#request to index.php
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ index.php?/$1 [L]

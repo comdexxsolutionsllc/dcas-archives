@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+	<head>
+	<link rel="stylesheet" type="text/css" href="../../../../../css/maindoc.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+	<h2 class="titre">ClassFuncDoc : <em>Automatic documentation</em></h2>
+		<div class="path">
+		<span class="acc"><a class="acc" href="../../../index.html" title="Home">Home</a></span> -> <span class="acc"><a class="acc" href="../index.html" title="city">city</a></span><br /><br />
+		<span><a class="other" href="..//class_.html" alt=""></a> -> <a class="current" href="class_oajax.html" alt="oajax">oajax</a> ->
+		</span>
+		</div>
+		<div class="menu">			<ul>Methods
+				<li><a class="other" href="buildAjax.html" title="buildAjax">buildAjax</a></li>
+				<li><a class="other" href="search.html" title="search">search</a></li>
+				<li><a class="other" href="setFooter.html" title="setFooter">setFooter</a></li>
+				<li><a class="other" href="setHeader.html" title="setHeader">setHeader</a></li>
+				</ul>
+		</ul>
+		</div>
+		<div class="content">
+				<span class="name">oajax</span><br /><br />
+				<span class="definition">user-defined   class oajax </span><br /><br />
+					<span class="file">defined in C:\wamp\www\cls\doc\classes\city\oajax.cls.php from line 2 to line 55</span><br /><br/>
+					<a class="other" href="javascript: void(0);" title="See code" onclick="document.getElementById('code').style.display = (document.getElementById('code').style.display == 'block')?'none':'block';">See code</a><br />
+					<div class="code" id="code"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">oajax&nbsp;</span><span style="color: #007700">{<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">setHeader&nbsp;</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$sString&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;HTML<br /></span><span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&nbsp;type="text/javascript"&gt;<br /></span><span style="color: #007700">HTML;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$sString</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">setFooter&nbsp;</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$sString&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;HTML<br /></span><span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;<br /></span><span style="color: #007700">HTML;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$sString</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">buildAjax&nbsp;</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$sString&nbsp;</span><span style="color: #007700">=&lt;&lt;&lt;HTML<br /></span><span style="color: #0000BB"><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(window.XMLHttpRequest)&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB"><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oXmlhttp&nbsp;=&nbsp;new&nbsp;XMLHttpRequest();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}</span><span style="color: #0000BB">&nbsp;else&nbsp;if&nbsp;(window.ActiveXObject)&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB"><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oXmlhttp&nbsp;=&nbsp;new&nbsp;ActiveXObject("Microsoft.XMLHTTP");<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}</span><span style="color: #0000BB"><br /><br /></span><span style="color: #007700">HTML;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$sString</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">search&nbsp;</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$sString&nbsp;</span><span style="color: #007700">=&lt;&lt;&lt;HTML<br /></span><span style="color: #0000BB">function&nbsp;search&nbsp;(sS,&nbsp;bSort)&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB"><br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(sS&nbsp;!=&nbsp;'')&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB"><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oXmlhttp.open('POST','</span><span style="color: #007700">{</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'PHP_SELF'</span><span style="color: #007700">]}</span><span style="color: #0000BB">');<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oXmlhttp.onreadystatechange=function()&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB"><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(oXmlhttp.readyState==4&nbsp;&amp;&amp;&nbsp;oXmlhttp.status&nbsp;==&nbsp;200)&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB"><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//document.body.innerHTML&nbsp;=&nbsp;oXmlhttp.responseText;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById&nbsp;('divContent').innerHTML&nbsp;=&nbsp;oXmlhttp.responseText;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}</span><span style="color: #0000BB"><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}</span><span style="color: #0000BB"><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oXmlhttp.setRequestHeader("Content-type",&nbsp;"application/x-www-form-urlencoded");<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;data&nbsp;=&nbsp;'data='+sS+'&amp;sort='+bSort;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oXmlhttp.send&nbsp;(data);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}</span><span style="color: #0000BB"><br /></span><span style="color: #007700">}</span><span style="color: #0000BB"><br /><br /></span><span style="color: #007700">HTML;<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$sString</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>&nbsp;?&gt;</span>
+</code></div><br /><br />
+				<span class="owns">
+					<ul>Methods
+						<li>4</li>
+					</ul>
+					<ul>Properties
+						<li>0</li>
+					</ul>
+					<ul>Constants
+						<li>0</li>
+					</ul>
+				</span><br /><br />
+		</div>
+	</body>
+</html>

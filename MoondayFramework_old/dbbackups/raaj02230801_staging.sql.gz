@@ -1,0 +1,778 @@
+-- phpMyAdmin SQL Dump
+-- version 2.10.1
+-- http://www.phpmyadmin.net
+-- 
+-- Host: localhost
+-- Generation Time: Apr 07, 2008 at 09:47 PM
+-- Server version: 5.0.45
+-- PHP Version: 5.2.5
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Database: `raaj02230801_staging`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `admin_abuse_queue`
+-- 
+-- Creation: Apr 07, 2008 at 10:16 AM
+-- 
+
+DROP TABLE IF EXISTS `admin_abuse_queue`;
+CREATE TABLE IF NOT EXISTS `admin_abuse_queue` (
+  `id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment Queue Ticket ID',
+  `ticket_id` bigint(20) NOT NULL,
+  `account_id` bigint(20) NOT NULL,
+  `server_ids` bigint(20) NOT NULL,
+  `ticket_owner` longtext NOT NULL,
+  `ticket_staffowner` longtext NOT NULL,
+  `ticket_status` bigint(20) NOT NULL,
+  `ticket_group` bigint(20) NOT NULL,
+  `ticket_location` bigint(20) NOT NULL,
+  `ticket_historyid` bigint(20) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  `comment` longtext COMMENT 'Queue Ticket Comment',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `ticket_id` (`ticket_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `admin_abuse_queue`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `admin_accounting_queue`
+-- 
+-- Creation: Apr 07, 2008 at 10:16 AM
+-- 
+
+DROP TABLE IF EXISTS `admin_accounting_queue`;
+CREATE TABLE IF NOT EXISTS `admin_accounting_queue` (
+  `id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment Queue Ticket ID',
+  `ticket_id` bigint(20) NOT NULL,
+  `account_id` bigint(20) NOT NULL,
+  `server_ids` bigint(20) NOT NULL,
+  `ticket_owner` longtext NOT NULL,
+  `ticket_staffowner` longtext NOT NULL,
+  `ticket_status` bigint(20) NOT NULL,
+  `ticket_group` bigint(20) NOT NULL,
+  `ticket_location` bigint(20) NOT NULL,
+  `ticket_historyid` bigint(20) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  `comment` longtext COMMENT 'Queue Ticket Comment',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `ticket_id` (`ticket_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `admin_accounting_queue`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `admin_billing_queue`
+-- 
+-- Creation: Apr 07, 2008 at 10:16 AM
+-- 
+
+DROP TABLE IF EXISTS `admin_billing_queue`;
+CREATE TABLE IF NOT EXISTS `admin_billing_queue` (
+  `id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment Queue Ticket ID',
+  `ticket_id` bigint(20) NOT NULL,
+  `account_id` bigint(20) NOT NULL,
+  `server_ids` bigint(20) NOT NULL,
+  `ticket_owner` longtext NOT NULL,
+  `ticket_staffowner` longtext NOT NULL,
+  `ticket_status` bigint(20) NOT NULL,
+  `ticket_group` bigint(20) NOT NULL,
+  `ticket_location` bigint(20) NOT NULL,
+  `ticket_historyid` bigint(20) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  `comment` longtext COMMENT 'Queue Ticket Comment',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `ticket_id` (`ticket_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `admin_billing_queue`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `admin_cancellations_queue`
+-- 
+-- Creation: Apr 07, 2008 at 10:16 AM
+-- 
+
+DROP TABLE IF EXISTS `admin_cancellations_queue`;
+CREATE TABLE IF NOT EXISTS `admin_cancellations_queue` (
+  `id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment Queue Ticket ID',
+  `ticket_id` bigint(20) NOT NULL,
+  `account_id` bigint(20) NOT NULL,
+  `server_ids` bigint(20) NOT NULL,
+  `ticket_owner` longtext NOT NULL,
+  `ticket_staffowner` longtext NOT NULL,
+  `ticket_status` bigint(20) NOT NULL,
+  `ticket_group` bigint(20) NOT NULL,
+  `ticket_location` bigint(20) NOT NULL,
+  `ticket_historyid` bigint(20) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  `comment` longtext COMMENT 'Queue Ticket Comment',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `ticket_id` (`ticket_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `admin_cancellations_queue`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `admin_chargebacks_queue`
+-- 
+-- Creation: Apr 07, 2008 at 10:16 AM
+-- 
+
+DROP TABLE IF EXISTS `admin_chargebacks_queue`;
+CREATE TABLE IF NOT EXISTS `admin_chargebacks_queue` (
+  `id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment Queue Ticket ID',
+  `ticket_id` bigint(20) NOT NULL,
+  `account_id` bigint(20) NOT NULL,
+  `server_ids` bigint(20) NOT NULL,
+  `ticket_owner` longtext NOT NULL,
+  `ticket_staffowner` longtext NOT NULL,
+  `ticket_status` bigint(20) NOT NULL,
+  `ticket_group` bigint(20) NOT NULL,
+  `ticket_location` bigint(20) NOT NULL,
+  `ticket_historyid` bigint(20) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  `comment` longtext COMMENT 'Queue Ticket Comment',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `ticket_id` (`ticket_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `admin_chargebacks_queue`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `admin_development_queue`
+-- 
+-- Creation: Apr 07, 2008 at 10:16 AM
+-- 
+
+DROP TABLE IF EXISTS `admin_development_queue`;
+CREATE TABLE IF NOT EXISTS `admin_development_queue` (
+  `id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment Queue Ticket ID',
+  `ticket_id` bigint(20) NOT NULL,
+  `account_id` bigint(20) NOT NULL,
+  `server_ids` bigint(20) NOT NULL,
+  `ticket_owner` longtext NOT NULL,
+  `ticket_staffowner` longtext NOT NULL,
+  `ticket_status` bigint(20) NOT NULL,
+  `ticket_group` bigint(20) NOT NULL,
+  `ticket_location` bigint(20) NOT NULL,
+  `ticket_historyid` bigint(20) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  `comment` longtext COMMENT 'Queue Ticket Comment',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `ticket_id` (`ticket_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `admin_development_queue`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `admin_hardware_queue`
+-- 
+-- Creation: Apr 07, 2008 at 10:16 AM
+-- 
+
+DROP TABLE IF EXISTS `admin_hardware_queue`;
+CREATE TABLE IF NOT EXISTS `admin_hardware_queue` (
+  `id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment Queue Ticket ID',
+  `ticket_id` bigint(20) NOT NULL,
+  `account_id` bigint(20) NOT NULL,
+  `server_ids` bigint(20) NOT NULL,
+  `ticket_owner` longtext NOT NULL,
+  `ticket_staffowner` longtext NOT NULL,
+  `ticket_status` bigint(20) NOT NULL,
+  `ticket_group` bigint(20) NOT NULL,
+  `ticket_location` bigint(20) NOT NULL,
+  `ticket_historyid` bigint(20) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  `comment` longtext COMMENT 'Queue Ticket Comment',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `ticket_id` (`ticket_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `admin_hardware_queue`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `admin_legal_queue`
+-- 
+-- Creation: Apr 07, 2008 at 10:16 AM
+-- 
+
+DROP TABLE IF EXISTS `admin_legal_queue`;
+CREATE TABLE IF NOT EXISTS `admin_legal_queue` (
+  `id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment Queue Ticket ID',
+  `ticket_id` bigint(20) NOT NULL,
+  `account_id` bigint(20) NOT NULL,
+  `server_ids` bigint(20) NOT NULL,
+  `ticket_owner` longtext NOT NULL,
+  `ticket_staffowner` longtext NOT NULL,
+  `ticket_status` bigint(20) NOT NULL,
+  `ticket_group` bigint(20) NOT NULL,
+  `ticket_location` bigint(20) NOT NULL,
+  `ticket_historyid` bigint(20) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  `comment` longtext COMMENT 'Queue Ticket Comment',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `ticket_id` (`ticket_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `admin_legal_queue`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `admin_maintenance_queue`
+-- 
+-- Creation: Apr 07, 2008 at 10:16 AM
+-- 
+
+DROP TABLE IF EXISTS `admin_maintenance_queue`;
+CREATE TABLE IF NOT EXISTS `admin_maintenance_queue` (
+  `id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment Queue Ticket ID',
+  `ticket_id` bigint(20) NOT NULL,
+  `account_id` bigint(20) NOT NULL,
+  `server_ids` bigint(20) NOT NULL,
+  `ticket_owner` longtext NOT NULL,
+  `ticket_staffowner` longtext NOT NULL,
+  `ticket_status` bigint(20) NOT NULL,
+  `ticket_group` bigint(20) NOT NULL,
+  `ticket_location` bigint(20) NOT NULL,
+  `ticket_historyid` bigint(20) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  `comment` longtext COMMENT 'Queue Ticket Comment',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `ticket_id` (`ticket_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `admin_maintenance_queue`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `admin_modules`
+-- 
+-- Creation: Apr 06, 2008 at 04:17 PM
+-- 
+
+DROP TABLE IF EXISTS `admin_modules`;
+CREATE TABLE IF NOT EXISTS `admin_modules` (
+  `module_id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment ModuleID',
+  `access_id` bigint(8) NOT NULL COMMENT 'AccessID needed to access module',
+  `module_path` longtext NOT NULL COMMENT 'Module Path including admin,client',
+  `comment` longtext COMMENT 'Module Comment',
+  PRIMARY KEY  (`module_id`),
+  KEY `access_id` (`access_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Module Table Correlation to Access ID' AUTO_INCREMENT=9 ;
+
+-- 
+-- Dumping data for table `admin_modules`
+-- 
+
+INSERT INTO `admin_modules` (`module_id`, `access_id`, `module_path`, `comment`) VALUES 
+(1, 0, './admin/content/_accounting.php, /page/accounting_view/', 'Accounting'),
+(2, 0, './admin/content/_hardware.php, /page/hardware_view/', 'Hardware'),
+(3, 0, './admin/content/_network.php, /page/network_view/', 'Network'),
+(4, 0, './admin/content/_sales.php, /page/sales_view/', 'Sales'),
+(5, 0, './admin/content/_security.php, /page/security_view/', 'Security'),
+(6, 0, './admin/content/_services.php, /page/services_view/', 'Services'),
+(7, 0, './admin/content/_reports.php, /page/reports_view/', 'Reports'),
+(8, 0, './admin/content/_management.php, /page/management_view/', 'Management');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `admin_monitoring_queue`
+-- 
+-- Creation: Apr 07, 2008 at 10:16 AM
+-- 
+
+DROP TABLE IF EXISTS `admin_monitoring_queue`;
+CREATE TABLE IF NOT EXISTS `admin_monitoring_queue` (
+  `id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment Queue Ticket ID',
+  `ticket_id` bigint(20) NOT NULL,
+  `account_id` bigint(20) NOT NULL,
+  `server_ids` bigint(20) NOT NULL,
+  `ticket_owner` longtext NOT NULL,
+  `ticket_staffowner` longtext NOT NULL,
+  `ticket_status` bigint(20) NOT NULL,
+  `ticket_group` bigint(20) NOT NULL,
+  `ticket_location` bigint(20) NOT NULL,
+  `ticket_historyid` bigint(20) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  `comment` longtext COMMENT 'Queue Ticket Comment',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `ticket_id` (`ticket_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `admin_monitoring_queue`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `admin_network_queue`
+-- 
+-- Creation: Apr 07, 2008 at 10:16 AM
+-- 
+
+DROP TABLE IF EXISTS `admin_network_queue`;
+CREATE TABLE IF NOT EXISTS `admin_network_queue` (
+  `id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment Queue Ticket ID',
+  `ticket_id` bigint(20) NOT NULL,
+  `account_id` bigint(20) NOT NULL,
+  `server_ids` bigint(20) NOT NULL,
+  `ticket_owner` longtext NOT NULL,
+  `ticket_staffowner` longtext NOT NULL,
+  `ticket_status` bigint(20) NOT NULL,
+  `ticket_group` bigint(20) NOT NULL,
+  `ticket_location` bigint(20) NOT NULL,
+  `ticket_historyid` bigint(20) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  `comment` longtext COMMENT 'Queue Ticket Comment',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `ticket_id` (`ticket_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `admin_network_queue`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `admin_sales_queue`
+-- 
+-- Creation: Apr 07, 2008 at 10:16 AM
+-- 
+
+DROP TABLE IF EXISTS `admin_sales_queue`;
+CREATE TABLE IF NOT EXISTS `admin_sales_queue` (
+  `id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment Queue Ticket ID',
+  `ticket_id` bigint(20) NOT NULL,
+  `account_id` bigint(20) NOT NULL,
+  `server_ids` bigint(20) NOT NULL,
+  `ticket_owner` longtext NOT NULL,
+  `ticket_staffowner` longtext NOT NULL,
+  `ticket_status` bigint(20) NOT NULL,
+  `ticket_group` bigint(20) NOT NULL,
+  `ticket_location` bigint(20) NOT NULL,
+  `ticket_historyid` bigint(20) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  `comment` longtext COMMENT 'Queue Ticket Comment',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `ticket_id` (`ticket_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `admin_sales_queue`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `admin_sla_queue`
+-- 
+-- Creation: Apr 07, 2008 at 10:16 AM
+-- 
+
+DROP TABLE IF EXISTS `admin_sla_queue`;
+CREATE TABLE IF NOT EXISTS `admin_sla_queue` (
+  `id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment Queue Ticket ID',
+  `ticket_id` bigint(20) NOT NULL,
+  `account_id` bigint(20) NOT NULL,
+  `server_ids` bigint(20) NOT NULL,
+  `ticket_owner` longtext NOT NULL,
+  `ticket_staffowner` longtext NOT NULL,
+  `ticket_status` bigint(20) NOT NULL,
+  `ticket_group` bigint(20) NOT NULL,
+  `ticket_location` bigint(20) NOT NULL,
+  `ticket_historyid` bigint(20) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  `comment` longtext COMMENT 'Queue Ticket Comment',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `ticket_id` (`ticket_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `admin_sla_queue`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `admin_support_queue`
+-- 
+-- Creation: Apr 07, 2008 at 10:16 AM
+-- 
+
+DROP TABLE IF EXISTS `admin_support_queue`;
+CREATE TABLE IF NOT EXISTS `admin_support_queue` (
+  `id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment Queue Ticket ID',
+  `ticket_id` bigint(20) NOT NULL,
+  `account_id` bigint(20) NOT NULL,
+  `server_ids` bigint(20) NOT NULL,
+  `ticket_owner` longtext NOT NULL,
+  `ticket_staffowner` longtext NOT NULL,
+  `ticket_status` bigint(20) NOT NULL,
+  `ticket_group` bigint(20) NOT NULL,
+  `ticket_location` bigint(20) NOT NULL,
+  `ticket_historyid` bigint(20) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  `comment` longtext COMMENT 'Queue Ticket Comment',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `ticket_id` (`ticket_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `admin_support_queue`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `admin_sysadmin_queue`
+-- 
+-- Creation: Apr 07, 2008 at 10:16 AM
+-- 
+
+DROP TABLE IF EXISTS `admin_sysadmin_queue`;
+CREATE TABLE IF NOT EXISTS `admin_sysadmin_queue` (
+  `id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment Queue Ticket ID',
+  `ticket_id` bigint(20) NOT NULL,
+  `account_id` bigint(20) NOT NULL,
+  `server_ids` bigint(20) NOT NULL,
+  `ticket_owner` longtext NOT NULL,
+  `ticket_staffowner` longtext NOT NULL,
+  `ticket_status` bigint(20) NOT NULL,
+  `ticket_group` bigint(20) NOT NULL,
+  `ticket_location` bigint(20) NOT NULL,
+  `ticket_historyid` bigint(20) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  `comment` longtext COMMENT 'Queue Ticket Comment',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `ticket_id` (`ticket_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `admin_sysadmin_queue`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `admin_systems_queue`
+-- 
+-- Creation: Apr 07, 2008 at 10:16 AM
+-- 
+
+DROP TABLE IF EXISTS `admin_systems_queue`;
+CREATE TABLE IF NOT EXISTS `admin_systems_queue` (
+  `id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment Queue Ticket ID',
+  `ticket_id` bigint(20) NOT NULL,
+  `account_id` bigint(20) NOT NULL,
+  `server_ids` bigint(20) NOT NULL,
+  `ticket_owner` longtext NOT NULL,
+  `ticket_staffowner` longtext NOT NULL,
+  `ticket_status` bigint(20) NOT NULL,
+  `ticket_group` bigint(20) NOT NULL,
+  `ticket_location` bigint(20) NOT NULL,
+  `ticket_historyid` bigint(20) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  `comment` longtext COMMENT 'Queue Ticket Comment',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `ticket_id` (`ticket_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `admin_systems_queue`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `client_modules`
+-- 
+-- Creation: Apr 06, 2008 at 04:23 PM
+-- 
+
+DROP TABLE IF EXISTS `client_modules`;
+CREATE TABLE IF NOT EXISTS `client_modules` (
+  `module_id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment ModuleID',
+  `access_id` bigint(8) NOT NULL COMMENT 'AccessID needed to access module',
+  `module_path` longtext NOT NULL COMMENT 'Module Path including admin,client',
+  `comment` longtext COMMENT 'Module Comment',
+  PRIMARY KEY  (`module_id`),
+  KEY `access_id` (`access_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Module Table Correlation to Access ID' AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `client_modules`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `groups`
+-- 
+-- Creation: Apr 06, 2008 at 08:58 PM
+-- 
+
+DROP TABLE IF EXISTS `groups`;
+CREATE TABLE IF NOT EXISTS `groups` (
+  `id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment ID',
+  `group_id` bigint(8) NOT NULL COMMENT 'Group ID',
+  `r_md5sum` varchar(255) NOT NULL COMMENT 'Random MD5 Hash',
+  `comment` longtext NOT NULL COMMENT 'Group ID Comment',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Group ID Table' AUTO_INCREMENT=17 ;
+
+-- 
+-- Dumping data for table `groups`
+-- 
+
+INSERT INTO `groups` (`id`, `group_id`, `r_md5sum`, `comment`) VALUES 
+(1, 13575, 'B5372551AB1E3ED1A1F29E467A6FE6BE', 'Abuse'),
+(2, 38709, '17C8973266C5DA00BD0FC10322114C82', 'Accounting'),
+(3, 59150, 'E8EC1C704A629F6FB5083ADDB53C048F', 'Billing'),
+(4, 72492, '12B968ED6626623B745B807051D90BAD', 'Cancellations'),
+(5, 94253, '6D2DA23208303494460141C584364944', 'Chargebacks'),
+(6, 22300, '9B21585262CDBD14CB14D612116916A6', 'Development'),
+(7, 43792, '81F996B89653FD7EE04D3772CB18CD4D', 'Hardware'),
+(8, 67635, '154DA3135D7ED256C4D44B9796EC4FA8', 'Maintenance'),
+(9, 86536, '632A191553B3D2EA5F273CBE7D3B2DDF', 'Monitoring'),
+(10, 65484, '0A939D881EE389F3399E8C080C8DD638', 'Network'),
+(11, 53396, '090B7430A02227D398735E81CBD491A2', 'SLA'),
+(12, 99635, '48441E89F1047FA8F404D0D1A5E1DCCF', 'Sales'),
+(13, 62638, 'D756030A074BBD2966C6FF9798B539EB', 'Support'),
+(14, 33761, 'CB3236CF23D5D52BAF080F67B5479F0D', 'SysAdmin'),
+(15, 49867, '3AA7C093D6DEE0A529F55F0DA88F4416', 'Systems'),
+(16, 12205, '14FDFA98855BA591F71D8DAEE043551A', 'Legal');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `queues`
+-- 
+-- Creation: Apr 07, 2008 at 09:03 AM
+-- 
+
+DROP TABLE IF EXISTS `queues`;
+CREATE TABLE IF NOT EXISTS `queues` (
+  `id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment ID',
+  `queue_id` bigint(8) NOT NULL COMMENT 'Queue ID',
+  `queue_name` varchar(255) NOT NULL COMMENT 'Queue Name',
+  `r_md5sum` varchar(255) NOT NULL COMMENT 'Random MD5 Hash',
+  `comment` longtext NOT NULL COMMENT 'Queue Comment',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Queue -> Group' AUTO_INCREMENT=17 ;
+
+-- 
+-- Dumping data for table `queues`
+-- 
+
+INSERT INTO `queues` (`id`, `queue_id`, `queue_name`, `r_md5sum`, `comment`) VALUES 
+(1, 196700, 'Abuse', '8ad2f8c5a262efc82076117e07e66bc7', ''),
+(2, 195024, 'Accounting', 'ecca11da529450546423bc7ac9527020', ''),
+(3, 192682, 'Billing', '2ffb2c859ec54b9692288068d87c568b', ''),
+(4, 195668, 'Cancellations', '06894dcdccd138ea961b6da007540212', ''),
+(5, 198786, 'Chargebacks', 'e6179d85c7ebafe230791a91d8ced0b3', ''),
+(6, 196709, 'Development', '282536df7e73e417d09ab1936d57a949', ''),
+(7, 195988, 'Hardware', '1ffb9a135ecf3fd10d4c07b9db5a9ec2', ''),
+(8, 192935, 'Maintenance', 'b9bf5c60509b17e1a3ed3bd04eb8d000', ''),
+(9, 190101, 'Monitoring', 'e2841f6b8f7ecc49088e74bd680b26bc', ''),
+(10, 197434, 'Network', 'd302a217c1244e767e1b3053d366a266', ''),
+(11, 191598, 'SLA', 'be2e983ca16b0a4e798e769380f8e277', ''),
+(12, 192919, 'Sales', '4e3f612d14f6ff6af101a4788f4edc49', ''),
+(13, 191542, 'Support', 'c2949d5daf750e8a53d27cb5f6a63807', ''),
+(14, 194258, 'SysAdmin', 'd62b3e38a7de75caf383acfaae8a7e4b', ''),
+(15, 197327, 'Systems', '9bd207c11c11d18dc22590c22cf2672d', ''),
+(16, 199242, 'Legal', 'ff5f722adcfd037e93cc2663323b8cd6', '');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `ticket_status`
+-- 
+-- Creation: Apr 07, 2008 at 11:27 AM
+-- 
+
+DROP TABLE IF EXISTS `ticket_status`;
+CREATE TABLE IF NOT EXISTS `ticket_status` (
+  `id` bigint(8) unsigned NOT NULL auto_increment,
+  `status_id` bigint(8) NOT NULL,
+  `status_name` varchar(255) NOT NULL,
+  `r_md5sum` longtext NOT NULL,
+  `comment` longtext NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+-- 
+-- Dumping data for table `ticket_status`
+-- 
+
+INSERT INTO `ticket_status` (`id`, `status_id`, `status_name`, `r_md5sum`, `comment`) VALUES 
+(1, 3145, 'OPEN', '', ''),
+(2, 5386, 'CLOSED', '', ''),
+(3, 7994, 'ASSIGNED', '', ''),
+(4, 9999, 'HOLD', '', '');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `users`
+-- 
+-- Creation: Mar 12, 2008 at 01:28 PM
+-- 
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `user_id` int(8) unsigned NOT NULL auto_increment,
+  `client_id` int(8) unsigned NOT NULL default '1',
+  `level_id` int(8) unsigned NOT NULL default '1',
+  `first_name` varchar(35) NOT NULL default 'Update Name Please',
+  `last_name` varchar(35) NOT NULL default 'Update Name Please',
+  `start_date` date NOT NULL default '0000-00-00',
+  `timestamp` int(20) NOT NULL default '0',
+  `theme` varchar(50) NOT NULL default 'default',
+  `lang` varchar(25) NOT NULL default '',
+  `title` varchar(50) NOT NULL default '',
+  `sig` text NOT NULL,
+  `email1` varchar(75) NOT NULL default '',
+  `email2` varchar(75) NOT NULL default '',
+  `email1_updates` enum('0','1') NOT NULL default '1',
+  `email2_updates` enum('0','1') NOT NULL default '1',
+  `nickname` varchar(150) NOT NULL default '',
+  `password` varchar(75) NOT NULL default '',
+  `prefs` varchar(15) NOT NULL default '0,0,0',
+  `limit_ip_login` enum('0','1') NOT NULL default '0',
+  `limit_ip_data` varchar(20) NOT NULL default '',
+  `aim` varchar(50) NOT NULL default '',
+  `phone` varchar(35) NOT NULL default '',
+  `alt_phone` varchar(35) NOT NULL default '',
+  `active` enum('0','1') NOT NULL default '1',
+  `comments` mediumtext NOT NULL,
+  `salt` varchar(255) default NULL,
+  PRIMARY KEY  (`user_id`),
+  KEY `client_id` (`client_id`),
+  KEY `first_name` (`first_name`,`last_name`),
+  KEY `user` (`email1`,`email2`,`nickname`),
+  KEY `phone` (`phone`,`alt_phone`),
+  KEY `email` (`email1`,`email2`),
+  KEY `name` (`first_name`,`last_name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- 
+-- Dumping data for table `users`
+-- 
+
+INSERT INTO `users` (`user_id`, `client_id`, `level_id`, `first_name`, `last_name`, `start_date`, `timestamp`, `theme`, `lang`, `title`, `sig`, `email1`, `email2`, `email1_updates`, `email2_updates`, `nickname`, `password`, `prefs`, `limit_ip_login`, `limit_ip_data`, `aim`, `phone`, `alt_phone`, `active`, `comments`, `salt`) VALUES 
+(1, 1, 100, 'Admin', 'User', '2008-01-01', 0, 'default', 'english', '', '<br \\>\r\n-- <br \\>\r\n==============================<br \\>\r\n[self.first_name] [self.last_name], [self.title]<br \\>\r\n[users_info.company]<br \\>\r\n[users_info.division] Division:  [users_info.subdivision]<br \\>\r\n[users_info.email_username]@[users_info.email_domain]<br \\>\r\n[self.phone] (office)<br \\>\r\n[self.alt_phone] (cell)<br \\>\r\n[users_info.facsimile_number] (fax)<br \\>\r\n==============================<br \\>', 'admin@mydediserver.com', 'administrator@mydediserver.com', '1', '1', '', 'f31f042741684168ff6286bb9498654f', '0,0,0', '0', '', 'mydediserver', '5555555555', '4444444444', '1', '', '+rz');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `usertypes`
+-- 
+-- Creation: Apr 06, 2008 at 04:43 PM
+-- 
+
+DROP TABLE IF EXISTS `usertypes`;
+CREATE TABLE IF NOT EXISTS `usertypes` (
+  `id` bigint(8) unsigned NOT NULL auto_increment COMMENT 'Auto-Increment ID',
+  `type_id` bigint(8) NOT NULL COMMENT 'User Type ID',
+  `level_id` int(3) NOT NULL COMMENT 'Level ID',
+  `user_type` longtext NOT NULL COMMENT 'User Type - Text',
+  `comment` longtext NOT NULL COMMENT 'User Type Comment',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `type_id` (`type_id`,`level_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='User Types Correspond to Users.Level_ID and *_modules' AUTO_INCREMENT=14 ;
+
+-- 
+-- Dumping data for table `usertypes`
+-- 
+
+INSERT INTO `usertypes` (`id`, `type_id`, `level_id`, `user_type`, `comment`) VALUES 
+(1, 100, 100, 'MASTER_USR', 'Master Level (Root Access)'),
+(2, 0, 0, 'SYSTEM_USR', 'System User'),
+(3, 1, 1, 'GUEST_USR', 'Guest (Minimal Access - View ONLY)'),
+(4, 5, 5, 'BASE_USR', 'Base User (Support, Software Access ONLY)'),
+(5, 85, 85, 'TOPLEVEL_USR', 'Top-Level User (All-User Access, No Admin Panel Access)'),
+(6, 80, 80, 'TOPLEVEL_SANSADMIN_USR', 'Top-Level-SansAdmin User (All-User Access [Minus Administrative], No Admin Panel Access)'),
+(7, 75, 75, 'SANSADMIN_SANSHARDWARE_USR', 'SansAdmin-SansHardware User (All-User Access [Minus Administrative], No Admin Panel Access)'),
+(8, 70, 70, 'SANSHARDWARE_SANSSECURITY_USR', 'SansHardware-SansSecurity User (All-User Access [Minus Administrative,Hardware,Security], No Admin Panel Access)'),
+(9, 65, 65, 'SANSSECURITY_SANSPUBLIC_USR', 'SansSecurity-SansPublic User (All-User Access [Minus Administrative,Hardware,Security,Public], No Admin Panel Access)'),
+(10, 60, 60, 'SANSPUBLIC_SANSPRIVATE_USR', 'SansPublic-SansPrivate User (All-User Access [Minus Administrative,Hardware,Security,Public,Private], No Admin Panel Access)'),
+(11, 55, 55, 'SANSPRIVATE_SANSSUPPORT_USR', 'SansPrivate-SansSupport User (All-User Access [Minus Administrative,Hardware,Security,Public,Private,Support], No Admin Panel Access)'),
+(12, 50, 50, 'SANSSUPPORT_SANSSOFTWARE_USR', 'SansSupport-SansSoftware User (All-User Access [Minus Administrative,Hardware,Security,Public,Private,Support,Software], No Admin Panel Access)'),
+(13, 45, 45, 'SANSSOFTWARE_SANSSALES_USR', 'SansSoftware-SansSales User (All-User Access [Minus Administrative,Hardware,Security,Public,Private,Support], No Admin Panel Access)');

@@ -1,0 +1,1 @@
+<br><hr><center><font face=verdana size=2><b>©BasicA 2001</b></font></center>

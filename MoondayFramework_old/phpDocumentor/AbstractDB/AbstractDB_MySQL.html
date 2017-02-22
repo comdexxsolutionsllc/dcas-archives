@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class AbstractDB_MySQL</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class AbstractDB_MySQL</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">AbstractDB MySQL Driver Class</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_abstractdb_drivers_abstractdb_mysql_php.html">/abstractdb/drivers/abstractdb_mysql.php</a> (line <span class="field"><a href="..//__filesource/fsource_AbstractDB__abstractdbdriversabstractdb_mysql.php.html#a26">26</a></span>)
+		</p>
+		
+				
+		<pre><a href="../AbstractDB/AbstractDB_Driver.html">AbstractDB_Driver</a>
+   |
+   --AbstractDB_MySQL</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+								
+				<div class="method-definition">
+											<span class="method-result">AbstractDB_MySQL</span>
+										<a href="#AbstractDB_MySQL" title="details" class="method-name">AbstractDB_MySQL</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$arguments</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#AffectedRows" title="details" class="method-name">AffectedRows</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#Close" title="details" class="method-name">Close</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#Connect" title="details" class="method-name">Connect</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#DataSeek" title="details" class="method-name">DataSeek</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$row_num</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#FetchAssoc" title="details" class="method-name">FetchAssoc</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$rs</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#FetchField" title="details" class="method-name">FetchField</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$rs</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#FetchObject" title="details" class="method-name">FetchObject</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$rs</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#FetchRow" title="details" class="method-name">FetchRow</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$rs</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#FieldCount" title="details" class="method-name">FieldCount</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$rs</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#FieldNames" title="details" class="method-name">FieldNames</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">&$fields</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#FreeResult" title="details" class="method-name">FreeResult</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$rs</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#InsertID" title="details" class="method-name">InsertID</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#Query" title="details" class="method-name">Query</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$sql</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#Replace" title="details" class="method-name">Replace</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$table</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$fields</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#RowCount" title="details" class="method-name">RowCount</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$rs</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#SetDatabase" title="details" class="method-name">SetDatabase</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$dbName</span>)
+									</div>
+							</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../AbstractDB/AbstractDB_Driver.html">AbstractDB_Driver</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../AbstractDB/AbstractDB_Driver.html#var$Support">AbstractDB_Driver::$Support</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodAbstractDB_MySQL" id="AbstractDB_MySQL"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor AbstractDB_MySQL</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbdriversabstractdb_mysql.php.html#a35">35</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">AbstractDB MySQL Driver Constructor</p>
+<p class="description"><p>Initilises an instance of the AbstractDB MySQL Driver class.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">AbstractDB_MySQL</span>
+		<span class="method-name">
+			AbstractDB_MySQL
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$arguments</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodAffectedRows" id="AffectedRows"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">AffectedRows</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbdriversabstractdb_mysql.php.html#a47">47</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			AffectedRows
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../AbstractDB/AbstractDB_Driver.html#methodAffectedRows">AbstractDB_Driver::AffectedRows()</a></dt>
+						<dd>Gets the Number of Affected Rows</dd>
+					</dl>
+		
+	</div>
+<a name="methodClose" id="Close"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Close</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbdriversabstractdb_mysql.php.html#a53">53</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			Close
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../AbstractDB/AbstractDB_Driver.html#methodClose">AbstractDB_Driver::Close()</a></dt>
+						<dd>Closes the Database Connection</dd>
+					</dl>
+		
+	</div>
+<a name="methodConnect" id="Connect"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Connect</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbdriversabstractdb_mysql.php.html#a244">244</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			Connect
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodDataSeek" id="DataSeek"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">DataSeek</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbdriversabstractdb_mysql.php.html#a76">76</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			DataSeek
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$row_num</span>)
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../AbstractDB/AbstractDB_Driver.html#methodDataSeek">AbstractDB_Driver::DataSeek()</a></dt>
+						<dd>Move a Result Pointer to the Specified Row</dd>
+					</dl>
+		
+	</div>
+<a name="methodFetchAssoc" id="FetchAssoc"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">FetchAssoc</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbdriversabstractdb_mysql.php.html#a82">82</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			FetchAssoc
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$rs</span>)
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../AbstractDB/AbstractDB_Driver.html#methodFetchAssoc">AbstractDB_Driver::FetchAssoc()</a></dt>
+						<dd>Fetches a Result Row as an Associative Array</dd>
+					</dl>
+		
+	</div>
+<a name="methodFetchField" id="FetchField"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">FetchField</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbdriversabstractdb_mysql.php.html#a88">88</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			FetchField
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$rs</span>)
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../AbstractDB/AbstractDB_Driver.html#methodFetchField">AbstractDB_Driver::FetchField()</a></dt>
+						<dd>Fetches the First Field Value</dd>
+					</dl>
+		
+	</div>
+<a name="methodFetchObject" id="FetchObject"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">FetchObject</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbdriversabstractdb_mysql.php.html#a97">97</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			FetchObject
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$rs</span>)
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../AbstractDB/AbstractDB_Driver.html#methodFetchObject">AbstractDB_Driver::FetchObject()</a></dt>
+						<dd>Fetches a Result Row as an Object</dd>
+					</dl>
+		
+	</div>
+<a name="methodFetchRow" id="FetchRow"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">FetchRow</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbdriversabstractdb_mysql.php.html#a103">103</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			FetchRow
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$rs</span>)
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../AbstractDB/AbstractDB_Driver.html#methodFetchRow">AbstractDB_Driver::FetchRow()</a></dt>
+						<dd>Fetches a Result Row</dd>
+					</dl>
+		
+	</div>
+<a name="methodFieldCount" id="FieldCount"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">FieldCount</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbdriversabstractdb_mysql.php.html#a109">109</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			FieldCount
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$rs</span>)
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../AbstractDB/AbstractDB_Driver.html#methodFieldCount">AbstractDB_Driver::FieldCount()</a></dt>
+						<dd>Gets the Number of Fields</dd>
+					</dl>
+		
+	</div>
+<a name="methodFieldNames" id="FieldNames"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">FieldNames</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbdriversabstractdb_mysql.php.html#a115">115</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			FieldNames
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">&$fields</span>)
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../AbstractDB/AbstractDB_Driver.html#methodFieldNames">AbstractDB_Driver::FieldNames()</a></dt>
+						<dd>Gets the Field Names of a Query</dd>
+					</dl>
+		
+	</div>
+<a name="methodFreeResult" id="FreeResult"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">FreeResult</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbdriversabstractdb_mysql.php.html#a130">130</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			FreeResult
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$rs</span>)
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../AbstractDB/AbstractDB_Driver.html#methodFreeResult">AbstractDB_Driver::FreeResult()</a></dt>
+						<dd>Frees a Result Resource</dd>
+					</dl>
+		
+	</div>
+<a name="methodInsertID" id="InsertID"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">InsertID</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbdriversabstractdb_mysql.php.html#a145">145</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			InsertID
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../AbstractDB/AbstractDB_Driver.html#methodInsertID">AbstractDB_Driver::InsertID()</a></dt>
+						<dd>Gets the Last Inserted AUTO_INCREMENT ID</dd>
+					</dl>
+		
+	</div>
+<a name="methodQuery" id="Query"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Query</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbdriversabstractdb_mysql.php.html#a155">155</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			Query
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$sql</span>)
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../AbstractDB/AbstractDB_Driver.html#methodQuery">AbstractDB_Driver::Query()</a></dt>
+						<dd>Executes an SQL Statement.</dd>
+					</dl>
+		
+	</div>
+<a name="methodReplace" id="Replace"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Replace</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbdriversabstractdb_mysql.php.html#a167">167</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			Replace
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$table</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$fields</span>)
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../AbstractDB/AbstractDB_Driver.html#methodReplace">AbstractDB_Driver::Replace()</a></dt>
+						<dd>Executes an SQL Replace Query</dd>
+					</dl>
+		
+	</div>
+<a name="methodRowCount" id="RowCount"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">RowCount</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbdriversabstractdb_mysql.php.html#a223">223</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			RowCount
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$rs</span>)
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../AbstractDB/AbstractDB_Driver.html#methodRowCount">AbstractDB_Driver::RowCount()</a></dt>
+						<dd>Gets the Number of Rows</dd>
+					</dl>
+		
+	</div>
+<a name="methodSetDatabase" id="SetDatabase"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">SetDatabase</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbdriversabstractdb_mysql.php.html#a229">229</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			SetDatabase
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$dbName</span>)
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../AbstractDB/AbstractDB_Driver.html#methodSetDatabase">AbstractDB_Driver::SetDatabase()</a></dt>
+						<dd>Sets the Current Active Database</dd>
+					</dl>
+		
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../AbstractDB/AbstractDB_Driver.html">AbstractDB_Driver</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../AbstractDB/AbstractDB_Driver.html#methodAbstractDB_Driver">AbstractDB_Driver::AbstractDB_Driver()</a></span><br>
+													<span class="method-name"><a href="../AbstractDB/AbstractDB_Driver.html#methodAffectedRows">AbstractDB_Driver::AffectedRows()</a></span><br>
+													<span class="method-name"><a href="../AbstractDB/AbstractDB_Driver.html#methodClose">AbstractDB_Driver::Close()</a></span><br>
+													<span class="method-name"><a href="../AbstractDB/AbstractDB_Driver.html#methodDataSeek">AbstractDB_Driver::DataSeek()</a></span><br>
+													<span class="method-name"><a href="../AbstractDB/AbstractDB_Driver.html#methodFetchAssoc">AbstractDB_Driver::FetchAssoc()</a></span><br>
+													<span class="method-name"><a href="../AbstractDB/AbstractDB_Driver.html#methodFetchField">AbstractDB_Driver::FetchField()</a></span><br>
+													<span class="method-name"><a href="../AbstractDB/AbstractDB_Driver.html#methodFetchObject">AbstractDB_Driver::FetchObject()</a></span><br>
+													<span class="method-name"><a href="../AbstractDB/AbstractDB_Driver.html#methodFetchRow">AbstractDB_Driver::FetchRow()</a></span><br>
+													<span class="method-name"><a href="../AbstractDB/AbstractDB_Driver.html#methodFieldCount">AbstractDB_Driver::FieldCount()</a></span><br>
+													<span class="method-name"><a href="../AbstractDB/AbstractDB_Driver.html#methodFieldNames">AbstractDB_Driver::FieldNames()</a></span><br>
+													<span class="method-name"><a href="../AbstractDB/AbstractDB_Driver.html#methodFreeResult">AbstractDB_Driver::FreeResult()</a></span><br>
+													<span class="method-name"><a href="../AbstractDB/AbstractDB_Driver.html#methodGetLastError">AbstractDB_Driver::GetLastError()</a></span><br>
+													<span class="method-name"><a href="../AbstractDB/AbstractDB_Driver.html#methodInsertID">AbstractDB_Driver::InsertID()</a></span><br>
+													<span class="method-name"><a href="../AbstractDB/AbstractDB_Driver.html#methodQuery">AbstractDB_Driver::Query()</a></span><br>
+													<span class="method-name"><a href="../AbstractDB/AbstractDB_Driver.html#methodReplace">AbstractDB_Driver::Replace()</a></span><br>
+													<span class="method-name"><a href="../AbstractDB/AbstractDB_Driver.html#methodRowCount">AbstractDB_Driver::RowCount()</a></span><br>
+													<span class="method-name"><a href="../AbstractDB/AbstractDB_Driver.html#methodSetDatabase">AbstractDB_Driver::SetDatabase()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:30:46 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</div></body>
+</html>

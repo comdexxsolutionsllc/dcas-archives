@@ -1,0 +1,118 @@
+/**
+ * Stylesheet file for treenode application
+ * 
+ * @author      Marko Manninen <marko@multimediastudio.fi>
+ * @copyright   Copyright (c) 2006, Multimediastudio 
+ * @license     LGPL - Lesser General Public License
+ * @version     v. 1.0 2006/21/03 <marko@multimediastudio.fi>
+ * @access 		public
+ */
+
+/* standard html tag styles */
+body {
+	font-family: Verdana;
+	font-size: 0.9em;
+}
+h4 {
+	margin: 0; padding: 0; border: 0;
+	background: url(fieldsetarrow.gif) #eeeeee;
+	padding-left: 30px;
+	background-repeat: no-repeat;
+	background-position: 1px 2px;
+	border-bottom: 1px #999999 solid;
+}
+h4 a {
+	text-decoration: none;
+	display: block;
+}
+fieldset {
+	margin: 0; padding: 10px; border: 0;
+	background: #f8f8f8;
+	display: block;
+}
+fieldset#connection, fieldset#actions, fieldset#debug {
+	display: none;
+}
+
+/* contextual pop up menu styles */
+.contextual_menu {
+	margin: 0; padding: 0;  border: 0;
+	display: none;
+	z-index: 10;
+	position: absolute;
+	background-color: #f8f8f8;
+	border: 1px #999999 solid;
+	border-right-color: #cccccc; 
+	border-bottom-color: #cccccc; 
+}
+.contextual_menu a {
+	margin: 0; padding: 1px; border: 0;
+	border-bottom: 1px #999999 solid;
+	border-right: 1px #999999 solid;
+	padding: 2px 2px 2px 20px;
+	display: block;
+	width: 125px;
+	text-decoration: none;
+	font-size: 0.8em;
+	background: url(edit.gif) #f8f8f8;
+	background-repeat: no-repeat;
+	background-position: 1px 3px;
+}
+.contextual_menu a:hover {
+	border-right-color: #666666;
+	border-bottom-color: #666666;
+	border-left-color: #cccccc;
+	border-top-color: #cccccc; 
+	text-decoration: underline;
+	background-color: #eeeeee;
+	/*background: url(edit.gif) #eeeeee;*/
+	background-repeat: no-repeat;
+	background-position: 1px 2px;
+}
+
+/* ul tree styles */
+.selected_node {
+	background: #EE8E00;
+	color: #f8f8f8;
+	padding: 0px 2px 0px 2px;
+	margin: 0;
+	text-decoration: none;
+}
+#u_tree {
+	z-index: 9;
+}
+ul {
+	padding-left: 24px;
+	display: block;
+}
+li, li.open {
+	/*list-style: none;*/
+	list-style-image: url(minus.gif);
+}
+li.close {
+	list-style: none;
+	list-style-image: url(plus.gif);
+}
+li:hover {
+	background: #eeeeee;
+	cursor: pointer;
+	background-position: 105px 100px;
+	list-style-image: url(plus.gif);
+}
+
+/* tree debug textarea console styles */
+#tree_debug {
+	width: 780px;
+	height: 400px;
+}
+/* */
+.message_ok {
+	margin: 0; padding: 10px;  border: 0;
+	background-color: #009933;
+	color: #f8f8f8;
+}
+.message_fail {
+	margin: 0; padding: 10px;  border: 0;
+	background-color: #FF3333;
+	color: #f8f8f8;
+}

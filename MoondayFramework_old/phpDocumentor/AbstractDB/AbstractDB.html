@@ -1,0 +1,1538 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class AbstractDB</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class AbstractDB</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">AbstractDB Main Class</p>
+<p class="description"><p>The main AbstractDB class used to interact with various DBMS packages via the  use of driver classes.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_abstractdb_abstractdb_class_php.html">/abstractdb/abstractdb.class.php</a> (line <span class="field"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a21">21</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+								<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$Support" title="details" class="var-name">$Support</a>
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+								
+				<div class="method-definition">
+											<span class="method-result">AbstractDB</span>
+										<a href="#AbstractDB" title="details" class="method-name">AbstractDB</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$arguments</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#Close" title="details" class="method-name">Close</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#FetchNextResultAssoc" title="details" class="method-name">FetchNextResultAssoc</a>
+											(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$assoc</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#FetchNextResultObject" title="details" class="method-name">FetchNextResultObject</a>
+											(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">object</span>&nbsp;<span class="var-name">&$object</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#FetchNextResultRow" title="details" class="method-name">FetchNextResultRow</a>
+											(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$row</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#FetchResultAssoc" title="details" class="method-name">FetchResultAssoc</a>
+											(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$assoc</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#FetchResultAssocAll" title="details" class="method-name">FetchResultAssocAll</a>
+											(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$all</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#FetchResultColumn" title="details" class="method-name">FetchResultColumn</a>
+											(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$column</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#FetchResultField" title="details" class="method-name">FetchResultField</a>
+											(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">&$field</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#FetchResultObject" title="details" class="method-name">FetchResultObject</a>
+											(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">object</span>&nbsp;<span class="var-name">&$object</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#FetchResultObjectAll" title="details" class="method-name">FetchResultObjectAll</a>
+											(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$all</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#FetchResultRow" title="details" class="method-name">FetchResultRow</a>
+											(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$row</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#FetchResultRowAll" title="details" class="method-name">FetchResultRowAll</a>
+											(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$all</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#FetchSeekResultAssoc" title="details" class="method-name">FetchSeekResultAssoc</a>
+											(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$row_num</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$assoc</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#FetchSeekResultObject" title="details" class="method-name">FetchSeekResultObject</a>
+											(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$row_num</span>, <span class="var-type">object</span>&nbsp;<span class="var-name">&$object</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#FetchSeekResultRow" title="details" class="method-name">FetchSeekResultRow</a>
+											(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$row_num</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$row</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#FreeResult" title="details" class="method-name">FreeResult</a>
+											(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#GetAffectedRows" title="details" class="method-name">GetAffectedRows</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#GetDatabase" title="details" class="method-name">GetDatabase</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#GetFieldCount" title="details" class="method-name">GetFieldCount</a>
+											(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#GetFieldNames" title="details" class="method-name">GetFieldNames</a>
+											(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$fields</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#GetInsertID" title="details" class="method-name">GetInsertID</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#GetLastError" title="details" class="method-name">GetLastError</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#GetRowCount" title="details" class="method-name">GetRowCount</a>
+											(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">resource</span>
+										<a href="#Query" title="details" class="method-name">Query</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#QueryAssoc" title="details" class="method-name">QueryAssoc</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$assoc</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#QueryAssocAll" title="details" class="method-name">QueryAssocAll</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$all</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#QueryColumn" title="details" class="method-name">QueryColumn</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$column</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#QueryField" title="details" class="method-name">QueryField</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">&$field</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#QueryObject" title="details" class="method-name">QueryObject</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">object</span>&nbsp;<span class="var-name">&$object</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#QueryObjectAll" title="details" class="method-name">QueryObjectAll</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$all</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#QueryRow" title="details" class="method-name">QueryRow</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$row</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#QueryRowAll" title="details" class="method-name">QueryRowAll</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$all</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#Replace" title="details" class="method-name">Replace</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$fields</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#SetDatabase" title="details" class="method-name">SetDatabase</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$dbName</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">bool</span>
+										<a href="#SetErrorHandler" title="details" class="method-name">SetErrorHandler</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$functionName</span>)
+									</div>
+							</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$Support" id="$Support"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$Support</span>
+						(line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a55">55</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">List of supported features of the currently loaded driver.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodAbstractDB" id="AbstractDB"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor AbstractDB</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a96">96</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">AbstractDB Constructor</p>
+<p class="description"><p>Initilises an instance of the AbstractDB class.</p></p>
+	<ul class="tags">
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">AbstractDB</span>
+		<span class="method-name">
+			AbstractDB
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$arguments</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$arguments</span><span class="var-description">: <p>Database connection and driver specific arguments.</p><p>Arguments must be supplied as an associative array containing one of the following:</p><p>ConnectionString:</p><p>A string composed of the connection arguments and optional or driver specific options in the form  of <strong>Type</strong>://<strong>Username</strong>:<strong>Password</strong>@<strong>Hostname</strong>:<strong>Port</strong>/<strong>Database</strong>?<strong>Options</strong>/option1=value1&amp;<strong>Options</strong>/option2=value2</p><p>e.g. $args = array(&quot;ConnectionString&quot; =&gt; &quot;mysql://root:pass@localhost/MyDatabase?Options/Persistent=1&quot;);</p><p>or</p><p>Type: The type of database to connect to. AbstractDB is currently only distributed with a MySQL driver.</p><p>Username: The database username.</p><p>Password: The database password.</p><p>Hostname: The database hostname or IP Address.</p><p>Database: The name of the database.</p><p>Options: An associative array of optional or driver specific options. See individual driver  documentation for a potential list of driver specific options. The value for Port should be  specified in this list, otherwise the default port for the database type will be used.</p><p>e.g. $args = array(&quot;Type&quot; =&gt; &quot;mysql&quot;, &quot;Username&quot; =&gt; &quot;root&quot;, &quot;Password&quot; =&gt; &quot;pass&quot;, &quot;Hostname&quot; =&gt; &quot;localhost&quot;, &quot;Database&quot; =&gt; &quot;MyDatabase&quot;, &quot;Options&quot; =&gt; array(&quot;Persistent&quot; =&gt; 1));</p><p>Type and Database are required parameters and must be specified.</p></span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodClose" id="Close"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Close</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a109">109</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Closes the Database Connection</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the database connection was successfully closed, otherwise false.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			Close
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodFetchNextResultAssoc" id="FetchNextResultAssoc"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">FetchNextResultAssoc</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a124">124</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches the Next Row as an Associative Array</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			FetchNextResultAssoc
+		</span>
+					(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$assoc</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">resource</span>
+				<span class="var-name">$rs</span><span class="var-description">: A reference to a resource handle returned by executing a query.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$assoc</span><span class="var-description">: A reference to an array that will contain the result row.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodFetchNextResultObject" id="FetchNextResultObject"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">FetchNextResultObject</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a146">146</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches the Next Row as an Object</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			FetchNextResultObject
+		</span>
+					(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">object</span>&nbsp;<span class="var-name">&$object</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">resource</span>
+				<span class="var-name">$rs</span><span class="var-description">: A reference to a resource handle returned by executing a query.</span>			</li>
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$object</span><span class="var-description">: A reference to an object that will contain the result row.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodFetchNextResultRow" id="FetchNextResultRow"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">FetchNextResultRow</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a168">168</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches the Next Row</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			FetchNextResultRow
+		</span>
+					(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$row</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">resource</span>
+				<span class="var-name">$rs</span><span class="var-description">: A reference to a resource handle returned by executing a query.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$row</span><span class="var-description">: A reference to an array that will contain the result row.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodFetchResultAssoc" id="FetchResultAssoc"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">FetchResultAssoc</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a189">189</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches a Row as an Associative Array</p>
+<p class="description"><p>Fetches the first row as an associative array and then frees the result set.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			FetchResultAssoc
+		</span>
+					(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$assoc</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">resource</span>
+				<span class="var-name">$rs</span><span class="var-description">: A reference to a resource handle returned by executing a query.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$assoc</span><span class="var-description">: A reference to an array that will contain the result row.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodFetchResultAssocAll" id="FetchResultAssocAll"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">FetchResultAssocAll</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a212">212</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches All Rows as Associative Arrays</p>
+<p class="description"><p>Fetches all rows as associative arrays and then frees the result set.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			FetchResultAssocAll
+		</span>
+					(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$all</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">resource</span>
+				<span class="var-name">$rs</span><span class="var-description">: A reference to a resource handle returned by executing a query.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$all</span><span class="var-description">: A reference to an array that will contain the result rows.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodFetchResultColumn" id="FetchResultColumn"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">FetchResultColumn</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a237">237</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches a Result Column</p>
+<p class="description"><p>Fetches all rows of the first column and then frees the result set.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			FetchResultColumn
+		</span>
+					(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$column</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">resource</span>
+				<span class="var-name">$rs</span><span class="var-description">: A reference to a resource handle returned by executing a query.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$column</span><span class="var-description">: A reference to an array that will contain the result column rows.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodFetchResultField" id="FetchResultField"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">FetchResultField</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a262">262</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches a Result Field</p>
+<p class="description"><p>Fetches the value in the first column of the first row and then frees the result set.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			FetchResultField
+		</span>
+					(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">&$field</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">resource</span>
+				<span class="var-name">$rs</span><span class="var-description">: A reference to a resource handle returned by executing a query.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$field</span><span class="var-description">: A reference to a variable that will contain the field value.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodFetchResultObject" id="FetchResultObject"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">FetchResultObject</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a285">285</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches a Row as an Object</p>
+<p class="description"><p>Fetches the first row as an object and then frees the result set.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			FetchResultObject
+		</span>
+					(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">object</span>&nbsp;<span class="var-name">&$object</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">resource</span>
+				<span class="var-name">$rs</span><span class="var-description">: A reference to a resource handle returned by executing a query.</span>			</li>
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$object</span><span class="var-description">: A reference to an object that will contain the result row.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodFetchResultObjectAll" id="FetchResultObjectAll"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">FetchResultObjectAll</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a308">308</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches All Rows as Objects</p>
+<p class="description"><p>Fetches all rows as objects and then frees the result set.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			FetchResultObjectAll
+		</span>
+					(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$all</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">resource</span>
+				<span class="var-name">$rs</span><span class="var-description">: A reference to a resource handle returned by executing a query.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$all</span><span class="var-description">: A reference to an array that will contain the result rows.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodFetchResultRow" id="FetchResultRow"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">FetchResultRow</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a333">333</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches a Row</p>
+<p class="description"><p>Fetches the first row and then frees the result set.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			FetchResultRow
+		</span>
+					(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$row</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">resource</span>
+				<span class="var-name">$rs</span><span class="var-description">: A reference to a resource handle returned by executing a query.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$row</span><span class="var-description">: A reference to an array that will contain the result row.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodFetchResultRowAll" id="FetchResultRowAll"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">FetchResultRowAll</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a356">356</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches All Rows</p>
+<p class="description"><p>Fetches all rows and then frees the result set.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			FetchResultRowAll
+		</span>
+					(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$all</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">resource</span>
+				<span class="var-name">$rs</span><span class="var-description">: A reference to a resource handle returned by executing a query.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$all</span><span class="var-description">: A reference to an array that will contain the result rows.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodFetchSeekResultAssoc" id="FetchSeekResultAssoc"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">FetchSeekResultAssoc</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a382">382</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches a Row as an Associative Array</p>
+<p class="description"><p>Fetches the row at the specified position in the result set as an associative array.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			FetchSeekResultAssoc
+		</span>
+					(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$row_num</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$assoc</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">resource</span>
+				<span class="var-name">$rs</span><span class="var-description">: A reference to a resource handle returned by executing a query.</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$row_num</span><span class="var-description">: The position in the result set of the row to return.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$assoc</span><span class="var-description">: A reference to an array that will contain the result row.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodFetchSeekResultObject" id="FetchSeekResultObject"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">FetchSeekResultObject</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a410">410</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches a Row as an Object</p>
+<p class="description"><p>Fetches the row at the specified position in the result set as an object.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			FetchSeekResultObject
+		</span>
+					(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$row_num</span>, <span class="var-type">object</span>&nbsp;<span class="var-name">&$object</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">resource</span>
+				<span class="var-name">$rs</span><span class="var-description">: A reference to a resource handle returned by executing a query.</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$row_num</span><span class="var-description">: The position in the result set of the row to return.</span>			</li>
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$object</span><span class="var-description">: A reference to an object that will contain the result row.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodFetchSeekResultRow" id="FetchSeekResultRow"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">FetchSeekResultRow</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a438">438</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetches a Row</p>
+<p class="description"><p>Fetches the row at the specified position in the result set.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			FetchSeekResultRow
+		</span>
+					(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$row_num</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$row</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">resource</span>
+				<span class="var-name">$rs</span><span class="var-description">: A reference to a resource handle returned by executing a query.</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$row_num</span><span class="var-description">: The position in the result set of the row to return.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$row</span><span class="var-description">: A reference to an array that will contain the result row.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodFreeResult" id="FreeResult"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">FreeResult</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a463">463</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Frees a Result Resource</p>
+<p class="description"><p>Frees the resources associated with the given result handle returned by executing a query.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the resource handle was successfully freed.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			FreeResult
+		</span>
+					(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">resource</span>
+				<span class="var-name">$rs</span><span class="var-description">: A reference to a resource handle returned by executing a query.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodGetAffectedRows" id="GetAffectedRows"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">GetAffectedRows</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a480">480</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the Number of Affected Rows</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns the number of rows affected by the last executed query, or false if the  driver does not support this feature.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			GetAffectedRows
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodGetDatabase" id="GetDatabase"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">GetDatabase</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a496">496</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the Name of the Current Database</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The name of the current database.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			GetDatabase
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodGetFieldCount" id="GetFieldCount"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">GetFieldCount</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a510">510</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the Number of Fields</p>
+<p class="description"><p>Gets the number of fields returned by the given result handle.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns the number of fields returned by the last executed query.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			GetFieldCount
+		</span>
+					(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">resource</span>
+				<span class="var-name">$rs</span><span class="var-description">: A reference to a resource handle returned by executing a query.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodGetFieldNames" id="GetFieldNames"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">GetFieldNames</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a529">529</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the Field Names of a Query</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			GetFieldNames
+		</span>
+					(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$fields</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">resource</span>
+				<span class="var-name">$rs</span><span class="var-description">: A reference to a resource handle returned by executing a query.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$fields</span><span class="var-description">: A reference to an array that will contain the field names.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodGetInsertID" id="GetInsertID"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">GetInsertID</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a547">547</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the Last Insert ID</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns either the ID of the last inserted AUTO_INCREMENT record, or -1 if the  last query was not an insert, or false if the driver does not support this feature.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			GetInsertID
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodGetLastError" id="GetLastError"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">GetLastError</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a563">563</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the Last Error.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The last error message.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			GetLastError
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodGetRowCount" id="GetRowCount"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">GetRowCount</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a577">577</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the Number of Rows</p>
+<p class="description"><p>Gets the number of rows returned by the last query of the given result handle.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns the number of rows returned by the last executed query.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			GetRowCount
+		</span>
+					(<span class="var-type">resource</span>&nbsp;<span class="var-name">&$rs</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">resource</span>
+				<span class="var-name">$rs</span><span class="var-description">: A reference to a resource handle returned by executing a query.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodQuery" id="Query"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Query</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a599">599</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes an SQL Statement</p>
+<p class="description"><p>Executes the given SQL statement.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The result handle for use in fetch result functions.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">resource</span>
+		<span class="method-name">
+			Query
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: The SQL statement to be executed.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodQueryAssoc" id="QueryAssoc"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">QueryAssoc</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a617">617</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes an SQL Statement</p>
+<p class="description"><p>Executes the given SQL statement and retrieves the first result row as an associative array, then  frees the result set.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			QueryAssoc
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$assoc</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: The SQL statement to be executed.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$assoc</span><span class="var-description">: A reference to an array that will contain the result row.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodQueryAssocAll" id="QueryAssocAll"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">QueryAssocAll</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a636">636</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes an SQL Statement</p>
+<p class="description"><p>Executes the given SQL statement and retrieves all result rows as associative arrays, then  frees the result set.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			QueryAssocAll
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$all</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: The SQL statement to be executed.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$all</span><span class="var-description">: A reference to an array that will contain the result rows.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodQueryColumn" id="QueryColumn"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">QueryColumn</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a656">656</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes an SQL Statement</p>
+<p class="description"><p>Executes the given SQL statement and retrieves all rows of the first result column, then  frees the result set.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			QueryColumn
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$column</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: The SQL statement to be executed.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$column</span><span class="var-description">: A reference to an array that will contain the result column rows.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodQueryField" id="QueryField"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">QueryField</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a676">676</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes an SQL Statement</p>
+<p class="description"><p>Executes the given SQL statement and retrieves the value in the first column of the first  row, then frees the result set.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			QueryField
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">&$field</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: The SQL statement to be executed.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$field</span><span class="var-description">: A reference to a variable that will contain the field value.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodQueryObject" id="QueryObject"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">QueryObject</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a695">695</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes an SQL Statement</p>
+<p class="description"><p>Executes the given SQL statement and retrieves the first result row as an object, then  frees the result set.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			QueryObject
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">object</span>&nbsp;<span class="var-name">&$object</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: The SQL statement to be executed.</span>			</li>
+					<li>
+				<span class="var-type">object</span>
+				<span class="var-name">$object</span><span class="var-description">: A reference to an object that will contain the result row.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodQueryObjectAll" id="QueryObjectAll"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">QueryObjectAll</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a714">714</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes an SQL Statement</p>
+<p class="description"><p>Executes the given SQL statement and retrieves all result rows as objects, then  frees the result set.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			QueryObjectAll
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$all</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: The SQL statement to be executed.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$all</span><span class="var-description">: A reference to an array that will contain the result rows.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodQueryRow" id="QueryRow"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">QueryRow</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a733">733</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes an SQL Statement</p>
+<p class="description"><p>Executes the given SQL statement and retrieves the first result row, then  frees the result set.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			QueryRow
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$row</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: The SQL statement to be executed.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$row</span><span class="var-description">: A reference to an array that will contain the result row.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodQueryRowAll" id="QueryRowAll"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">QueryRowAll</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a751">751</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes an SQL Statement</p>
+<p class="description"><p>Executes the given SQL statement and retrieves all result rows, then frees the result set.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			QueryRowAll
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$sql</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$all</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$sql</span><span class="var-description">: The SQL statement to be executed.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$all</span><span class="var-description">: A reference to an array that will contain the result rows.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodReplace" id="Replace"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Replace</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a779">779</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes an SQL Replace Query</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the operation was successful, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			Replace
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$fields</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$table</span><span class="var-description">: The name of the table to execute the replace query on.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$fields</span><span class="var-description">: <p>An associative array of field definitions. Keys should be the field names and  values should be an associative array containing the following keys:</p><p>Key =&gt; bool indicating that this field is the primary key or part of a unique index. Key values must not be NULL.</p><p>Type =&gt; either &quot;text&quot;, &quot;numeric&quot;, &quot;bool&quot;.</p><p>Value =&gt; the value of the field.</p><p>Null =&gt; bool indicating if the value of the field should be set to NULL.</p><p>e.g. $fields = array(&quot;Field1&quot; =&gt; array(&quot;Key&quot; =&gt; true, &quot;Type&quot; =&gt; &quot;numeric&quot;, &quot;Value&quot; =&gt; 123, &quot;Null&quot; =&gt; false));</p></span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodSetDatabase" id="SetDatabase"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">SetDatabase</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a793">793</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the Current Database</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The old database name that was set before calling this method, or false if an error occurred.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			SetDatabase
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$dbName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$dbName</span><span class="var-description">: The name of the new database to perform queries on.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodSetErrorHandler" id="SetErrorHandler"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">SetErrorHandler</span> (line <span class="line-number"><a href="..//__filesource/fsource_AbstractDB__abstractdbabstractdb.class.php.html#a810">810</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets an Error Handling Function.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns true if the error handling function was successfully set, otherwise false.</li>
+				<li><span class="field">example:</span> example not found</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			SetErrorHandler
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$functionName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$functionName</span><span class="var-description">: The name of a function to be called when an error occurs.</span>			</li>
+				</ul>
+		
+		
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:30:34 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,370 @@
+1d0
+<             
+18c17,19
+< <link href="/managedNOC/admin/css/default.css" rel="stylesheet" type="text/css" /><link rel="Alternate" href="?translation=es" hreflang="es" title="Spanish Translation" />
+---
+> <link href="../css/default.css" rel="stylesheet" type="text/css" />
+> 
+> <link rel="Alternate" href="?translation=es" hreflang="es" title="Spanish Translation" />
+41c42
+<     <td width="13" height="97" background="/managedNOC//admin/images/header_left_slice.gif" class="bg_fixed" ><img alt="" src="/managedNOC//admin/images/spacer.gif" width="13" height="8"></img></td>
+---
+>     <td width="13" height="97" background="../images/header_left_slice.gif" class="bg_fixed" ><img alt="" src="../images/spacer.gif" width="13" height="8"></img></td>
+43c44
+<     <td background="/managedNOC//admin/images/header_bg_slice.gif"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+---
+>     <td background="../images/header_bg_slice.gif"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+45c46
+<         <td width="33%"><img alt="" src="/managedNOC//admin/images/logo.gif" width="265" height="50"></img></td>
+---
+>         <td width="33%"><img alt="" src="../images/logo.gif" width="265" height="50"></img></td>
+51,52c52,53
+<                 <td width="70" align="center"><a href="#"><img alt="" src="/managedNOC//admin/images/btn_home.gif" width="36" height="30" border="0"></img></a></td>
+<                 <td width="70" align="center"><a href="http://mydediserver.com/#redirect__panel"><img alt="" src="/managedNOC//admin/images/btn_mydediserver.gif" width="82" height="30" border="0"></img></a></td>
+---
+>                 <td width="70" align="center"><a href="#"><img alt="" src="../images/btn_home.gif" width="36" height="30" border="0"></img></a></td>
+>                 <td width="70" align="center"><a href="http://mydediserver.com/#redirect__panel"><img alt="" src="../images/btn_mydediserver.gif" width="82" height="30" border="0"></img></a></td>
+54,55c55,56
+<                 <td width="70" align="center"><a href="#"><img alt="" src="/managedNOC//admin/images/btn_support.gif" width="53" height="30" border="0"></img></a></td>
+<                 <td width="70" align="center"><a href="#"><img alt="" src="/managedNOC//admin/images/btn_mini.gif" width="28" height="30" border="0"></img></a></td>
+---
+>                 <td width="70" align="center"><a href="#"><img alt="" src="../images/btn_support.gif" width="53" height="30" border="0"></img></a></td>
+>                 <td width="70" align="center"><a href="#"><img alt="" src="../images/btn_mini.gif" width="28" height="30" border="0"></img></a></td>
+65c66
+<                   <a href="#"><img alt="" src="/managedNOC//admin/images/btn_search.gif" width="52" height="18" border="0" ></img></a></td>
+---
+>                   <a href="#"><img alt="" src="../images/btn_search.gif" width="52" height="18" border="0" ></img></a></td>
+84c85
+<     <td width="13" height="97" background="/managedNOC//admin/images/header_right_slice.gif" class="bg_fixed"><img alt="" src="/managedNOC//admin/images/spacer.gif" width="13" height="1"></img></td>
+---
+>     <td width="13" height="97" background="../images/header_right_slice.gif" class="bg_fixed"><img alt="" src="../images/spacer.gif" width="13" height="1"></img></td>
+92c93
+<     <td><img alt="" src="/managedNOC//admin/images/spacer.gif" width="2" height="10"></img>
+---
+>     <td><img alt="" src="../images/spacer.gif" width="2" height="10"></img>
+98c99,102
+<               <td width="210"><table border="0" cellpadding="0" cellspacing="0" width="210">
+---
+>               <td width="210">
+> 
+>               
+>               <table border="0" cellpadding="0" cellspacing="0" width="210">
+100c104
+<     <td class="bg_fixed" align="left" background="/managedNOC//admin/images/customer-login_heading_bg4.gif" height="32" valign="top"><span class="text_login_h"><img alt="" src="/managedNOC//admin/images/spacer.gif" height="20" width="16"></img>User Information </span> </td>
+---
+>     <td class="bg_fixed" align="left" background="../images/customer-login_heading_bg4.gif" height="32" valign="top"><span class="text_login_h"><img alt="" src="../images/spacer.gif" height="20" width="16"></img>User Information </span> </td>
+103,110c107
+<     <td class="bg_fixed_repeat_y" align="left" background="/managedNOC//admin/images/customer-login_headingline_bg3.gif" valign="middle"><table align="center" border="0" cellpadding="0" cellspacing="0" width="195">
+<         <tr>
+<           <td class="text_login_h_grey_smallsa" height="160" width="195"><img alt="" src="/managedNOC//admin/images/bullet-green.gif" height="9" width="19"></img><strong>Active User:</strong> <span class="style1"><strong>John Smith</strong></span> <br />
+< 
+<               <img alt="" src="/managedNOC//admin/images/bullet-green.gif" height="9" width="19"></img><strong>Assigned Tickets:</strong> <span class="style1">0</span><br />
+<               <img alt="" src="/managedNOC//admin/images/bullet-green.gif" height="9" width="19"></img><strong>Yellow Tickets:</strong> <span class="style1">0</span><br />
+<               <img alt="" src="/managedNOC//admin/images/bullet-green.gif" height="9" width="19"></img><strong>Date:</strong><br />
+<               <img alt="" src="/managedNOC//admin/images/bullet-green.gif" height="9" width="19"></img><strong>TZ:</strong> <span class="style1">America/Chicago</span> <br />
+---
+>     <td class="bg_fixed_repeat_y" align="left" background="../images/customer-login_headingline_bg3.gif" valign="middle"><table align="center" border="0" cellpadding="0" cellspacing="0" width="195">
+112c109,116
+<               <img alt="" src="/managedNOC//admin/images/bullet-green.gif" height="9" width="19"></img><strong>ChangeLog:</strong> <span class="style1">ChangeLog (0)</span> <br />
+---
+>         <tr>
+>           <td class="text_login_h_grey_smallsa" height="160" width="195"><img alt="" src="../images/bullet-green.gif" height="9" width="19"></img><strong>Active User:</strong> <span class="style1"><strong>John Smith</strong></span> <br />
+>               <img alt="" src="../images/bullet-green.gif" height="9" width="19"></img><strong>Assigned Tickets:</strong> <span class="style1">0</span><br />
+>               <img alt="" src="../images/bullet-green.gif" height="9" width="19"></img><strong>Yellow Tickets:</strong> <span class="style1">0</span><br />
+> 
+>               <img alt="" src="../images/bullet-green.gif" height="9" width="19"></img><strong>Date:</strong><br />
+>               <img alt="" src="../images/bullet-green.gif" height="9" width="19"></img><strong>TZ:</strong> <span class="style1">America/Chicago</span> <br />
+>               <img alt="" src="../images/bullet-green.gif" height="9" width="19"></img><strong>ChangeLog:</strong> <span class="style1">ChangeLog (0)</span> <br />
+114c118,119
+<               <img alt="" src="/managedNOC//admin/images/bullet-green.gif" height="9" width="19"></img><strong class="style1">Forum Login</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt="" src="/managedNOC//admin/images/bullet-green.gif" height="9" width="19"></img> <strong class="style1"><a href="/managedNOC/user.admin/page/logout/">Logout</a></strong> </td>
+---
+> 
+>               <img alt="" src="../images/bullet-green.gif" height="9" width="19"></img><strong class="style1">Forum Login</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt="" src="../images/bullet-green.gif" height="9" width="19"></img> <strong class="style1"><a href="/managedNOC/user.admin/page/logout/">Logout</a></strong> </td>
+117d121
+< 
+120c124
+<     <td class="bg_fixed" align="left" background="/managedNOC//admin/images/customer-login_btm_bg3.gif" height="31" valign="top"></td>
+---
+>     <td class="bg_fixed" align="left" background="../images/customer-login_btm_bg3.gif" height="31" valign="top"></td>
+121a126
+> 
+127,128c132
+<     <td class="bg_fixed" align="left" background="/managedNOC//admin/images/customer-login_heading_bg4.gif" height="32" valign="top"><span class="text_login_h"><img alt="" src="/managedNOC//admin/images/spacer.gif" height="20" width="16"></img>Ticket Status </span> </td>
+< 
+---
+>     <td class="bg_fixed" align="left" background="../images/customer-login_heading_bg4.gif" height="32" valign="top"><span class="text_login_h"><img alt="" src="../images/spacer.gif" height="20" width="16"></img>Ticket Status </span> </td>
+131c135
+<     <td class="bg_fixed_repeat_y" align="left" background="/managedNOC//admin/images/customer-login_headingline_bg3.gif" valign="middle"><table align="center" border="0" cellpadding="0" cellspacing="0" width="200">
+---
+>     <td class="bg_fixed_repeat_y" align="left" background="../images/customer-login_headingline_bg3.gif" valign="middle"><table align="center" border="0" cellpadding="0" cellspacing="0" width="200">
+132a137
+> 
+135c140
+<                 <td align="left" width="93"><img alt="" src="/managedNOC//admin/images/bullet-green2.gif" height="14" width="11"></img>ChargesBacks: </td>
+---
+>                 <td align="left" width="93"><img alt="" src="../images/bullet-green2.gif" height="14" width="11"></img>ChargesBacks: </td>
+137d141
+< 
+139a144
+> 
+142c147
+<                 <td align="left"><img alt="" src="/managedNOC//admin/images/bullet-green2.gif" height="14" width="11"></img>Development:</td>
+---
+>                 <td align="left"><img alt="" src="../images/bullet-green2.gif" height="14" width="11"></img>Development:</td>
+144d148
+< 
+146a151
+> 
+149c154
+<                 <td align="left"><img alt="" src="/managedNOC//admin/images/bullet-green2.gif" height="14" width="11"></img>Maintenance:</td>
+---
+>                 <td align="left"><img alt="" src="../images/bullet-green2.gif" height="14" width="11"></img>Maintenance:</td>
+151d155
+< 
+153a158
+> 
+156c161
+<                 <td align="left"><img alt="" src="/managedNOC//admin/images/bullet-green2.gif" height="14" width="11"></img>Monitoring:</td>
+---
+>                 <td align="left"><img alt="" src="../images/bullet-green2.gif" height="14" width="11"></img>Monitoring:</td>
+158d162
+< 
+161a166
+> 
+163c168
+<                 <td align="left"><img alt="" src="/managedNOC//admin/images/bullet-green2.gif" height="14" width="11"></img>Network:</td>
+---
+>                 <td align="left"><img alt="" src="../images/bullet-green2.gif" height="14" width="11"></img>Network:</td>
+166d170
+< 
+170c174,175
+<                 <td align="left"><img alt="" src="/managedNOC//admin/images/bullet-green2.gif" height="14" width="11"></img>SLA:</td>
+---
+> 
+>                 <td align="left"><img alt="" src="../images/bullet-green2.gif" height="14" width="11"></img>SLA:</td>
+174d178
+< 
+177c181,182
+<                 <td align="left"><img alt="" src="/managedNOC//admin/images/bullet-green2.gif" height="14" width="11"></img>Sales:</td>
+---
+>                 <td align="left"><img alt="" src="../images/bullet-green2.gif" height="14" width="11"></img>Sales:</td>
+> 
+182d186
+< 
+184c188
+<                 <td align="left"><img alt="" src="/managedNOC//admin/images/bullet-green2.gif" height="14" width="11"></img>Support:</td>
+---
+>                 <td align="left"><img alt="" src="../images/bullet-green2.gif" height="14" width="11"></img>Support:</td>
+185a190
+> 
+190,191c195
+< 
+<                 <td align="left"><img alt="" src="/managedNOC//admin/images/bullet-green2.gif" height="14" width="11"></img>SysAdmin:</td>
+---
+>                 <td align="left"><img alt="" src="../images/bullet-green2.gif" height="14" width="11"></img>SysAdmin:</td>
+193a198
+> 
+197,198c202
+<                 <td align="left"><img alt="" src="/managedNOC//admin/images/bullet-green2.gif" height="14" width="11"></img>Systems</td>
+< 
+---
+>                 <td align="left"><img alt="" src="../images/bullet-green2.gif" height="14" width="11"></img>Systems</td>
+201a206
+> 
+206d210
+< 
+209c213
+<     <td class="bg_fixed" align="left" background="/managedNOC//admin/images/customer-login_btm_bg3.gif" height="31" valign="top"></td>
+---
+>     <td class="bg_fixed" align="left" background="../images/customer-login_btm_bg3.gif" height="31" valign="top"></td>
+211a216
+> 
+216,217c221
+<     <td class="bg_fixed" align="left" background="/managedNOC//admin/images/customer-login_heading_bg4.gif" height="32" valign="top"><span class="text_login_h"><img alt="" src="/managedNOC//admin/images/spacer.gif" height="20" width="16"></img>Transaction status</span> </td>
+< 
+---
+>     <td class="bg_fixed" align="left" background="../images/customer-login_heading_bg4.gif" height="32" valign="top"><span class="text_login_h"><img alt="" src="../images/spacer.gif" height="20" width="16"></img>Transaction status</span> </td>
+220c224
+<     <td class="bg_fixed_repeat_y" align="left" background="/managedNOC//admin/images/customer-login_headingline_bg3.gif" valign="middle"><table align="center" border="0" cellpadding="0" cellspacing="0" width="200">
+---
+>     <td class="bg_fixed_repeat_y" align="left" background="../images/customer-login_headingline_bg3.gif" valign="middle"><table align="center" border="0" cellpadding="0" cellspacing="0" width="200">
+221a226
+> 
+224c229
+<                 <td align="left" valign="middle" width="0"><p> <img alt="" src="/managedNOC//admin/images/bullet-green2.gif" height="14" width="11"></img>Pending Assignment:<br />
+---
+>                 <td align="left" valign="middle" width="0"><p> <img alt="" src="../images/bullet-green2.gif" height="14" width="11"></img>Pending Assignment:<br />
+226d230
+< 
+230c234,235
+<                 <td align="left" valign="middle"><img alt="" src="/managedNOC//admin/images/bullet-green2.gif" height="14" width="11"></img>Pending Charges:<br /></td>
+---
+> 
+>                 <td align="left" valign="middle"><img alt="" src="../images/bullet-green2.gif" height="14" width="11"></img>Pending Charges:<br /></td>
+234,235c239
+< 
+<                 <td align="left" valign="middle"><img alt="" src="/managedNOC//admin/images/bullet-green2.gif" height="14" width="11"></img>Overdue: **<br /></td>
+---
+>                 <td align="left" valign="middle"><img alt="" src="../images/bullet-green2.gif" height="14" width="11"></img>Overdue: **<br /></td>
+237a242
+> 
+239c244
+<                 <td align="left" valign="middle"><img alt="" src="/managedNOC//admin/images/bullet-green2.gif" height="14" width="11"></img>Running:<br /></td>
+---
+>                 <td align="left" valign="middle"><img alt="" src="../images/bullet-green2.gif" height="14" width="11"></img>Running:<br /></td>
+242d246
+< 
+244c248
+<                 <td align="left" valign="middle"><img alt="" src="/managedNOC//admin/images/bullet-green2.gif" height="14" width="11"></img>Total:</td>
+---
+>                 <td align="left" valign="middle"><img alt="" src="../images/bullet-green2.gif" height="14" width="11"></img>Total:</td>
+245a250
+> 
+251d255
+< 
+253c257
+<     <td class="bg_fixed" align="left" background="/managedNOC//admin/images/customer-login_btm_bg3.gif" height="31" valign="top"></td>
+---
+>     <td class="bg_fixed" align="left" background="../images/customer-login_btm_bg3.gif" height="31" valign="top"></td>
+255a260
+> 
+260c265
+<     <td class="bg_fixed" align="left" background="/managedNOC//admin/images/customer-login_heading_bg4.gif" height="32" valign="top"><span class="text_login_h"><img alt="" src="/managedNOC//admin/images/spacer.gif" height="20" width="16"></img>Common Links </span> </td>
+---
+>     <td class="bg_fixed" align="left" background="../images/customer-login_heading_bg4.gif" height="32" valign="top"><span class="text_login_h"><img alt="" src="../images/spacer.gif" height="20" width="16"></img>Common Links </span> </td>
+262d266
+< 
+264c268
+<     <td class="bg_fixed_repeat_y" align="left" background="/managedNOC//admin/images/customer-login_headingline_bg3.gif" valign="middle"><table align="center" border="0" cellpadding="0" cellspacing="0" width="195">
+---
+>     <td class="bg_fixed_repeat_y" align="left" background="../images/customer-login_headingline_bg3.gif" valign="middle"><table align="center" border="0" cellpadding="0" cellspacing="0" width="195">
+266,276d269
+<           <td class="text_login_h2_grey" height="160" valign="top" width="195"><img alt="" src="/managedNOC//admin/images/bullet-green3.gif" height="20" width="10"></img>Ticket Search<br />
+<               <img alt="" src="/managedNOC//admin/images/bullet-green3.gif" height="20" width="10"></img>Hardware Search<br />
+<               <img alt="" src="/managedNOC//admin/images/bullet-green3.gif" height="20" width="10"></img>Customer Search<br />
+<               <img alt="" src="/managedNOC//admin/images/bullet-green3.gif" height="20" width="10"></img>Support Wiki<br />
+< 
+<               <img alt="" src="/managedNOC//admin/images/bullet-green3.gif" height="20" width="10"></img>Emergency Contact<br />
+<               <img alt="" src="/managedNOC//admin/images/bullet-green3.gif" height="20" width="10"></img>Employee List<br />
+<               <img alt="" src="/managedNOC//admin/images/bullet-green3.gif" height="20" width="10"></img>Tutorial<br />
+<               <img alt="" src="/managedNOC//admin/images/bullet-green3.gif" height="20" width="10"></img>Links<br />
+<               <img alt="" src="/managedNOC//admin/images/bullet-green3.gif" height="20" width="10"></img>Forums</td>
+<         </tr>
+277a271,281
+>           <td class="text_login_h2_grey" height="160" valign="top" width="195"><img alt="" src="../images/bullet-green3.gif" height="20" width="10"></img>Ticket Search<br />
+>               <img alt="" src="../images/bullet-green3.gif" height="20" width="10"></img>Hardware Search<br />
+>               <img alt="" src="../images/bullet-green3.gif" height="20" width="10"></img>Customer Search<br />
+>               <img alt="" src="../images/bullet-green3.gif" height="20" width="10"></img>Support Wiki<br />
+>               <img alt="" src="../images/bullet-green3.gif" height="20" width="10"></img>Emergency Contact<br />
+>               <img alt="" src="../images/bullet-green3.gif" height="20" width="10"></img>Employee List<br />
+> 
+>               <img alt="" src="../images/bullet-green3.gif" height="20" width="10"></img>Tutorial<br />
+>               <img alt="" src="../images/bullet-green3.gif" height="20" width="10"></img>Links<br />
+>               <img alt="" src="../images/bullet-green3.gif" height="20" width="10"></img>Forums</td>
+>         </tr>
+281c285,286
+<     <td class="bg_fixed" align="left" background="/managedNOC//admin/images/customer-login_btm_bg3.gif" height="31" valign="top"></td>
+---
+> 
+>     <td class="bg_fixed" align="left" background="../images/customer-login_btm_bg3.gif" height="31" valign="top"></td>
+283,285c288
+< </table></td>
+< <!-- End Page::View(commonlinks-mainpanel) -->
+< <!-- Start Page::View(breadcrumbs-mainpanel) -->
+---
+> </table></td><!-- END-->
+287,289c290
+<               <td valign="top">
+< 
+<               <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+---
+>               <td valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+291,293c292,295
+<                   <td width="19" align="left"><img alt="" src="/managedNOC//admin/images/employee_left_part.gif" width="19" height="26"></img></td>
+<                   <td width="1005" align="left" background="/managedNOC//admin/images/link_mid_strip.gif"><span class="text_login_h">Link: None </span></td>
+<                   <td width="19" align="right"><img alt="" src="/managedNOC//admin/images/employee_ryt_part.gif" width="19" height="26"></img></td>
+---
+>                   <td width="19" align="left"><img alt="" src="../images/employee_left_part.gif" width="19" height="26"></img></td>
+>                   <td width="1005" align="left" background="../images/link_mid_strip.gif"><span class="text_login_h">Link: None </span></td>
+>                   <td width="19" align="right"><img alt="" src="../images/employee_ryt_part.gif" width="19" height="26"></img></td>
+> 
+296,299c298,300
+<                   <td width="19" height="25"><img alt="" src="/managedNOC//admin/images/left_side.jpg" width="19" height="25"></img></td>
+< 
+<                   <td height="25" background="/managedNOC//admin/images/employee_2_mid.jpg"><span class="text_login_h">Current: Employee portal </span></td>
+<                   <td height="25" align="right"><img alt="" src="/managedNOC//admin/images/ryt_side.jpg" width="19" height="25"></img></td>
+---
+>                   <td width="19" height="25"><img alt="" src="../images/left_side.jpg" width="19" height="25"></img></td>
+>                   <td height="25" background="../images/employee_2_mid.jpg"><span class="text_login_h">Current: Employee portal </span></td>
+>                   <td height="25" align="right"><img alt="" src="../images/ryt_side.jpg" width="19" height="25"></img></td>
+301,303d301
+< 
+< <!-- End Page::View(breadcrumbs-mainpanel) -->
+< <!-- Start Page::View(links-mainpanel) -->        
+306,317d303
+<             <tr>
+<               <td width="4" style=" background-image:url(/managedNOC//admin/images/bg_mid_strip.jpg); background-repeat:repeat-y; background-position:left;">&nbsp;</td>
+< 
+<               <td width="86" height="27" valign="top"><img alt="" src="/managedNOC//admin/images/spacer.gif" width="5" ></img><img alt="" src="/managedNOC//admin/images/btn_sections.gif" height="27" width="78"></img></td>
+<               <td width="101"><a href="#"><img alt="" src="/managedNOC//admin/images/btn_accounting.gif" border="0" height="27" width="101"></img></a></td>
+<               <td width="89"><a href="#"><img alt="" src="/managedNOC//admin/images/btn_hardware1.gif" border="0" height="27" width="89"></img></a></td>
+<               <td width="78"><a href="#"><img alt="" src="/managedNOC//admin/images/btn_network.gif" border="0" height="27" width="78"></img></a></td>
+<               <td width="70"><a href="#"><img alt="" src="/managedNOC//admin/images/btn_sales1.gif" border="0" height="27" width="70"></img></a></td>
+<               <td width="80"><a href="#"><img alt="" src="/managedNOC//admin/images/btn_security1.gif" border="0" height="27" width="80"></img></a></td>
+<               <td width="80"><a href="#"><img alt="" src="/managedNOC//admin/images/btn_services.gif" border="0" height="27" width="80"></img></a></td>
+<               <td width="80"><a href="#"><img alt="" src="/managedNOC//admin/images/btn_reports.gif" border="0" height="27" width="80"></img></a></td>
+<               <td width="364"><a href="#"><img alt="" src="/managedNOC//admin/images/btn_managments.gif" border="0" height="27" width="107"></img></a></td>
+319c305,317
+<               <td width="11" style=" background-image:url(/managedNOC//admin/images/bg_mid_strip.jpg); background-repeat:repeat-y; background-position:right;">&nbsp;</td>
+---
+>             <tr>
+>               <td width="4" style=" background-image:url(../images/bg_mid_strip.jpg); background-repeat:repeat-y; background-position:left;">&nbsp;</td>
+>               <td width="86" height="27" valign="top"><img alt="" src="../images/spacer.gif" width="5" ></img><img alt="" src="../images/btn_sections.gif" height="27" width="78"></img></td>
+>               <td width="101"><a href="#"><img alt="" src="../images/btn_accounting.gif" border="0" height="27" width="101"></img></a></td>
+>               <td width="89"><a href="#"><img alt="" src="../images/btn_hardware1.gif" border="0" height="27" width="89"></img></a></td>
+>               <td width="78"><a href="#"><img alt="" src="../images/btn_network.gif" border="0" height="27" width="78"></img></a></td>
+>               <td width="70"><a href="#"><img alt="" src="../images/btn_sales1.gif" border="0" height="27" width="70"></img></a></td>
+>               <td width="80"><a href="#"><img alt="" src="../images/btn_security1.gif" border="0" height="27" width="80"></img></a></td>
+>               <td width="80"><a href="#"><img alt="" src="../images/btn_services.gif" border="0" height="27" width="80"></img></a></td>
+> 
+>               <td width="80"><a href="#"><img alt="" src="../images/btn_reports.gif" border="0" height="27" width="80"></img></a></td>
+>               <td width="364"><a href="#"><img alt="" src="../images/btn_managments.gif" border="0" height="27" width="107"></img></a></td>
+>               <td width="11" style=" background-image:url(../images/bg_mid_strip.jpg); background-repeat:repeat-y; background-position:right;">&nbsp;</td>
+323,329d320
+< <!-- End Page::View(links-mainpanel) -->
+< 
+< <!-- Start Page::View(home-mainpanel) -->
+<  
+< <!-- Emd Page::View(home-mainpanel) -->
+< <!-- Start Page::View(footer-mainpanel) -->
+< 
+330a322,323
+>                   <td colspan="3" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+>                     <tr>
+331a325,331
+>                       <td width="4" style=" background-image:url(../images/bg_mid_strip.jpg); background-repeat:repeat-y; background-position:left;">&nbsp;</td>
+>                       <td width="775" valign="top" class="welcome_text">Welcome to the Employee Managment Portal</td>
+>                       <td width="4" style=" background-image:url(../images/bg_mid_strip.jpg); background-repeat:repeat-y; background-position:right;">&nbsp;</td>
+>                     </tr>
+>                   </table></td>
+>                 </tr>
+>                 <tr>
+332a333
+> 
+341d341
+< 
+342a343
+> 
+349d349
+< 
+352a353
+> 
+359d359
+< 
+369,370c369
+< </html>
+< <!-- End Page::View(footer-mainpanel) -->
+\ No newline at end of file
+---
+> </html>
+\ No newline at end of file

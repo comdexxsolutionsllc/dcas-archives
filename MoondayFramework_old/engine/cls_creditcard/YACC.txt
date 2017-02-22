@@ -1,0 +1,66 @@
+
+Usage
+We use the class to perform the following actions:-
+1) Check the card number is valid  ie passes the Luhn modulo 10 check
+2) To identify the card type from the supplied number.
+3) Check the Valid From date is less than or equal to today
+   (expressed as mm/yy ie April 2003 is 04/03)
+4) Check the Valid To date is greater than or equal to today
+   (expressed as mm/yy ie June 2007 is 06/07)
+* Therefore by definition you cannot have a valid from date that is greater
+  than the valid to date. If that were to happen either or both will report
+  an error.
+
+Note:
+* The Valid From date is not provided on all cards, therefore null is valid.
+  If you know that you will never handle a null valid from date then it can
+  be safely removed.
+* The valid from date also acts as an Issue No placeholder for some cards
+  (eg bank ATM / EFT [electronic funds transfer] cards such as Switch. There
+  is however a complication in that not all Switch cards (for example) have
+  an Issue number (some have a Valid From date).
+* At present most of the sites are also mandated to require a telephone
+  number, and Cardholders name (if the name is different to the person
+  receiving the goods). I would expect you to implement those and any other
+  such checks within the main validation section, not in the class itself.
+i. As yet the only telephone validation we do is to ensure the number is
+   numeric and at least 11 digits, beyond that I am not aware of any viable
+   validation algorithm.
+ii. The bank requires the phone number to be a conventional phone number
+    (IE not a mobile / handy / cellular). Although this can be done for
+    UK mobiles (ie those starting with 07, (international +44 7) we ignore
+    that element of the banks requirements.
+
+Implementation
+After including the class in the target script:-
+Include (..<pathtoclass>/cls_CreditCard.php);
+Call the class:-
+<$fieldname>=credit_card::check(<$creditcard>,<$validfrom>,<$validto);
+Example:	$CCData= credit_card::check($CCNo,$VFr,$VTo);
+where
+<$fieldname>	is the holder of class functions return variable
+<$creditcard>	is the variable holding the credit card number to be checked. This can be either all numeric or including the spacing typed in by the user, the class strips out any non numeric digits in the supplied number.
+<$validfrom>    is the variable containing the Valid From in the form mm/yy
+                OR the Issue No, or nothing (ie NULL).
+<$validto>      is the variable containing the Valid To in the form mm/yy.
+
+the credit_card::check function returns a parameter array containing the
+following:-
+<$fieldname>[Valid]	indicates if the card passes the luhn modulo 10 check
+<$fieldname>[CanAccept] indicates if the card is acceptable to your
+                        installation.
+<$fieldname>[Index] 	indicates the card type, see the class for details
+                        - count starts from 11,
+                        unless it is unknown, in which case it is 0.
+<$fieldname>[Type]	returns a text string identifying the card
+                        eg VISA, Switch / Maestro etc....
+<$fieldname>[VFr]	returns TRUE is there is an error with the Valid From
+                        / Issue No, else returns FALSE
+<$fieldname>[VTo]	returns TRUE is there is an error with the Valid To,
+                        else returns FALSE
+
+You can also call
+Credit_card::clean_no(<$creditcard>) which will return the credit card
+stripped of any non numeric elements. The other functions can be called in the
+class, but the intended gateway to the class is:
+credit_card::check(<$creditcard>,<$validfrom>,<$validto);

@@ -1,0 +1,67 @@
+<?php if(!@$_SESSION['loggedin']) header("Location: logout.php"); ?>
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td colspan="2"><img src="/img/red_arrow.jpg" alt="">&nbsp;<b>Human Resources<b></b></b></td>
+			</tr>
+			<tr>
+				<td width="10">&nbsp;</td>
+
+				<td>
+                    <a href="/employee/modify_employee.html?action=add" class="linkN">Add Employee</a><br>
+                    <a href="/mgmt/ipriv_employee_access.html" class="linkN">Employee Portal Access</a><br>
+                    <a href="/employee/hr_doc_mgmt.html" class="linkN">HR Docs</a><br>
+                    <a href="/employee/emp_internal_details.html" class="linkN">Employee Internal Details</a><br>
+				</td>
+			</tr>
+
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr>
+				<td colspan="2"><img src="/img/red_arrow.jpg" alt="">&nbsp;<b>Permissions<b></b></b></td>
+			</tr>
+			<tr>
+				<td width="10">&nbsp;</td>
+				<td>
+                	<a href="/mgmt/ipriv_su_mgmt.html" class="linkN">Superuser Admin</a><br>
+
+                	<a href="/mgmt/ipriv_skey_mgmt.html" class="linkN">Secret Key Management</a><br>
+                	<a href="/mgmt/ipriv_mgmt.html" class="linkN">Permission Management</a><br>
+				</td>
+			</tr>
+        </tbody></table><br>
+		</td>
+		<td align="left" valign="top" width="30%">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+			<tbody><tr>
+				<td colspan="2"><img src="/img/red_arrow.jpg" alt="">&nbsp;<b>Notification<b></b></b></td>
+			</tr>
+			<tr>
+				<td width="10">&nbsp;</td>
+				<td>
+                    <a href="/notes/enote_mgmt.html" class="linkN">Portal Emergency Notification</a><br>
+                    <a href="/notes/change_log_mgmt.html" class="linkN">Change Log Management</a><br>
+
+                    <a href="/network/manage_portal_network_status.html" class="linkN">Portal Network Status</a><br>
+                    <a href="/mgmt/index_edit.html" class="linkN">Group Index Page Mangement</a><br>
+				</td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+        </tbody></table>
+		</td>
+		<td align="left" valign="top">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+			<tbody><tr>
+				<td colspan="2"><img src="/img/red_arrow.jpg" alt="">&nbsp;<b>Database Administration<b></b></b></td>
+			</tr>
+			<tr>
+				<td width="10">&nbsp;</td>
+				<td>
+                    <a href="/database_administration/index.html" class="linkN">DB Admin (ticket group, emp titles, etc..)</a><br>
+                    <a href="/items/index.html" class="linkN">Signup Form Administration</a><br>
+
+                    <a href="/database_administration/service_resource_administration.html?dispatch=ServiceResourceAdministration/index" class="linkN">Service Resource Administration</a><br>
+				</td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+        </tbody></table>

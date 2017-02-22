@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for abstractdb_driver.class.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file abstractdb_driver.class.php</h1>
+<p>Documentation is available at <a href="../AbstractDB/_abstractdb_abstractdb_driver_class_php.html">abstractdb_driver.class.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a><span class="src-doc">/**</span></li>
+<li><a name="a3"></a><span class="src-doc">* </span><span class="src-doc-coretag">@package</span><span class="src-doc"> AbstractDB</span></li>
+<li><a name="a4"></a><span class="src-doc">* </span><span class="src-doc-coretag">@author</span><span class="src-doc"> Joshua Abbott, WiseGene Project (NKommunikation)</span></li>
+<li><a name="a5"></a><span class="src-doc">* </span><span class="src-doc-coretag">@copyright</span><span class="src-doc"> (C) 2006 NKommunikation. All Rights Reserved.</span></li>
+<li><a name="a6"></a><span class="src-doc">* </span><span class="src-doc-tag">@desc</span><span class="src-doc"> AbstractDB is used to interact with various</span></li>
+<li><a name="a7"></a><span class="src-doc">*        DBMS packages via the use of &quot;driver&quot; classes</span></li>
+<li><a name="a8"></a><span class="src-doc">* </span><span class="src-doc-coretag">@uses</span></li>
+<li><a name="a9"></a><span class="src-doc">* </span><span class="src-doc-coretag">@example</span></li>
+<li><a name="a10"></a><span class="src-doc">* </span><span class="src-doc-tag">@files</span></li>
+<li><a name="a11"></a><span class="src-doc">*/</span></li>
+<li><a name="a12"></a>&nbsp;</li>
+<li><a name="a13"></a><span class="src-doc">/**</span></li>
+<li><a name="a14"></a><span class="src-doc">* AbstractDB Driver included constant.</span></li>
+<li><a name="a15"></a><span class="src-doc">* </span></li>
+<li><a name="a16"></a><span class="src-doc">* Flag that indicates that the driver base class file has been included.</span></li>
+<li><a name="a17"></a><span class="src-doc">* </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a18"></a><span class="src-doc">*/</span></li>
+<li><a name="a19"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">&quot;ABSTRACTDB_DRIVER_INCLUDED&quot;</span><span class="src-sym">, </span><span class="src-id">true</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a20"></a>&nbsp;</li>
+<li><a name="a21"></a><span class="src-doc">/**</span></li>
+<li><a name="a22"></a><span class="src-doc">* AbstractDB Driver Base Class</span></li>
+<li><a name="a23"></a><span class="src-doc">* </span></li>
+<li><a name="a24"></a><span class="src-doc">* Driver base class from which all other AbstractDB drivers extend.</span></li>
+<li><a name="a25"></a><span class="src-doc">* </span><span class="src-doc-coretag">@package</span><span class="src-doc"> AbstractDB</span></li>
+<li><a name="a26"></a><span class="src-doc">* </span><span class="src-doc-coretag">@abstract</span></li>
+<li><a name="a27"></a><span class="src-doc">*/</span></li>
+<li><a name="a28"></a><span class="src-key">class </span><a href="../AbstractDB/AbstractDB_Driver.html">AbstractDB_Driver</a> </li>
+<li><a name="a29"></a><span class="src-sym">{</span></li>
+<li><a name="a30"></a>    <span class="src-comm">/* PRIVATE FIELDS */</span></li>
+<li><a name="a31"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a32"></a><span class="src-doc">    * List of connection and driver specific arguments.</span></li>
+<li><a name="a33"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> private</span></li>
+<li><a name="a34"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">array </span></li>
+<li><a name="a35"></a><span class="src-doc">    */</span></li>
+<li><a name="a36"></a>    <span class="src-key">var </span><span class="src-var">$_arguments</span><span class="src-sym">;</span></li>
+<li><a name="a37"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a38"></a><span class="src-doc">    * Database connection handle.</span></li>
+<li><a name="a39"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> private</span></li>
+<li><a name="a40"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">resource </span></li>
+<li><a name="a41"></a><span class="src-doc">    */</span></li>
+<li><a name="a42"></a>    <span class="src-key">var </span><span class="src-var">$_connection</span><span class="src-sym">;</span></li>
+<li><a name="a43"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a44"></a><span class="src-doc">    * The last error message.</span></li>
+<li><a name="a45"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> private</span></li>
+<li><a name="a46"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">string </span></li>
+<li><a name="a47"></a><span class="src-doc">    */</span></li>
+<li><a name="a48"></a>    <span class="src-key">var </span><span class="src-var">$_error</span><span class="src-sym">;</span></li>
+<li><a name="a49"></a>&nbsp;</li>
+<li><a name="a50"></a>    <span class="src-comm">/* PUBLIC PROPERTIES */</span></li>
+<li><a name="a51"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a52"></a><span class="src-doc">    * List of supported features of the currently loaded driver.</span></li>
+<li><a name="a53"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a54"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@var </span><span class="src-doc-type">array </span></li>
+<li><a name="a55"></a><span class="src-doc">    */</span></li>
+<li><a name="a56"></a>    <span class="src-key">var </span><a href="../AbstractDB/AbstractDB_Driver.html#var$Support">$Support</a><span class="src-sym">;</span></li>
+<li><a name="a57"></a>    </li>
+<li><a name="a58"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a59"></a><span class="src-doc">    * AbstractDB Driver Constructor</span></li>
+<li><a name="a60"></a><span class="src-doc">    * </span></li>
+<li><a name="a61"></a><span class="src-doc">    * Initilises an instance of the AbstractDB Driver base class.</span></li>
+<li><a name="a62"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a63"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@internal</span><span class="src-doc"> Stores the arguments parameter as a local field.</span></li>
+<li><a name="a64"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">array </span><span class="src-doc-var">$arguments </span><span class="src-doc">A list of connection and driver specific arguments.</span></li>
+<li><a name="a65"></a><span class="src-doc">    *  See </span><span class="src-doc-inlinetag">{@link AbstractDB}</span><span class="src-doc"> for details concerning connection arguments.</span></li>
+<li><a name="a66"></a><span class="src-doc">    */</span></li>
+<li><a name="a67"></a>    <span class="src-key">function </span><a href="../AbstractDB/AbstractDB_Driver.html#methodAbstractDB_Driver">AbstractDB_Driver</a><span class="src-sym">(</span><span class="src-var">$arguments</span><span class="src-sym">)</span></li>
+<li><a name="a68"></a>    <span class="src-sym">{</span></li>
+<li><a name="a69"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">ClearError</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a70"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">_arguments </span>= <span class="src-var">$arguments</span><span class="src-sym">;</span></li>
+<li><a name="a71"></a>    <span class="src-sym">}</span></li>
+<li><a name="a72"></a>&nbsp;</li>
+<li><a name="a73"></a>    <span class="src-comm">/* PUBLIC FUNCTIONS */</span></li>
+<li><a name="a74"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a75"></a><span class="src-doc">    * Gets the Number of Affected Rows</span></li>
+<li><a name="a76"></a><span class="src-doc">    * </span></li>
+<li><a name="a77"></a><span class="src-doc">    * Gets the number of rows affected by the last query.</span></li>
+<li><a name="a78"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a79"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@internal</span><span class="src-doc"> This method must be overriden in extended classes with a call to parent if this feature is supported.</span></li>
+<li><a name="a80"></a><span class="src-doc">    * </span></li>
+<li><a name="a81"></a><span class="src-doc">    *  If this feature is not supported an error should be set explaining this.</span></li>
+<li><a name="a82"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">int </span><span class="src-doc">Returns the number of rows affected by the last executed query.</span></li>
+<li><a name="a83"></a><span class="src-doc">    */</span></li>
+<li><a name="a84"></a>    <span class="src-key">function </span><a href="../AbstractDB/AbstractDB_Driver.html#methodAffectedRows">AffectedRows</a><span class="src-sym">(</span><span class="src-sym">)</span></li>
+<li><a name="a85"></a>    <span class="src-sym">{</span></li>
+<li><a name="a86"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">ClearError</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a87"></a>        <span class="src-key">return </span><span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a88"></a>    <span class="src-sym">}</span></li>
+<li><a name="a89"></a>    </li>
+<li><a name="a90"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a91"></a><span class="src-doc">    * Closes the Database Connection</span></li>
+<li><a name="a92"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a93"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@internal</span><span class="src-doc"> This method must be overriden in extended classes with a call to parent if this feature is supported.</span></li>
+<li><a name="a94"></a><span class="src-doc">    * </span></li>
+<li><a name="a95"></a><span class="src-doc">    *  If this feature is not supported this method should return a default value of true.</span></li>
+<li><a name="a96"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">bool </span><span class="src-doc">Returns true if the database connection was successfully closed, otherwise false.</span></li>
+<li><a name="a97"></a><span class="src-doc">    */</span></li>
+<li><a name="a98"></a>    <span class="src-key">function </span><a href="../AbstractDB/AbstractDB_Driver.html#methodClose">Close</a><span class="src-sym">(</span><span class="src-sym">)</span></li>
+<li><a name="a99"></a>    <span class="src-sym">{</span></li>
+<li><a name="a100"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">ClearError</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a101"></a>        <span class="src-key">return </span><span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a102"></a>    <span class="src-sym">}</span></li>
+<li><a name="a103"></a>    </li>
+<li><a name="a104"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a105"></a><span class="src-doc">    * Move a Result Pointer to the Specified Row</span></li>
+<li><a name="a106"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a107"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@internal</span><span class="src-doc"> This method must be overriden in extended classes with a call to parent if this feature is supported.</span></li>
+<li><a name="a108"></a><span class="src-doc">    * </span></li>
+<li><a name="a109"></a><span class="src-doc">    *  If this feature is not supported an error should be set explaining this.</span></li>
+<li><a name="a110"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">resource </span><span class="src-doc-var">$rs </span><span class="src-doc">A reference to a result handle returned by executing a query.</span></li>
+<li><a name="a111"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">int </span><span class="src-doc-var">$row_num </span><span class="src-doc">The 0 based index of the row that the result pointer should move to.</span></li>
+<li><a name="a112"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">bool </span><span class="src-doc">Returns true if the operation was successful, otherwise false.</span></li>
+<li><a name="a113"></a><span class="src-doc">    */</span></li>
+<li><a name="a114"></a>    <span class="src-key">function </span><a href="../AbstractDB/AbstractDB_Driver.html#methodDataSeek">DataSeek</a><span class="src-sym">(</span><span class="src-sym">&amp;</span><span class="src-var">$rs</span><span class="src-sym">, </span><span class="src-var">$row_num</span><span class="src-sym">)</span></li>
+<li><a name="a115"></a>    <span class="src-sym">{</span></li>
+<li><a name="a116"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">ClearError</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a117"></a>        <span class="src-key">return </span><span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a118"></a>    <span class="src-sym">}</span></li>
+<li><a name="a119"></a>    </li>
+<li><a name="a120"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a121"></a><span class="src-doc">    * Fetches a Result Row as an Associative Array</span></li>
+<li><a name="a122"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a123"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@internal</span><span class="src-doc"> This method must be overriden in extended classes with a call to parent if this feature is supported.</span></li>
+<li><a name="a124"></a><span class="src-doc">    * </span></li>
+<li><a name="a125"></a><span class="src-doc">    *  If this feature is not supported an error should be set explaining this.</span></li>
+<li><a name="a126"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">resource </span><span class="src-doc">A reference to a resource handle returned by executing a query.</span></li>
+<li><a name="a127"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">array </span><span class="src-doc">Returns an associative array if the operation was successful, otherwise false.</span></li>
+<li><a name="a128"></a><span class="src-doc">    */</span></li>
+<li><a name="a129"></a>    <span class="src-key">function </span><a href="../AbstractDB/AbstractDB_Driver.html#methodFetchAssoc">FetchAssoc</a><span class="src-sym">(</span><span class="src-sym">&amp;</span><span class="src-var">$rs</span><span class="src-sym">)</span></li>
+<li><a name="a130"></a>    <span class="src-sym">{</span></li>
+<li><a name="a131"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">ClearError</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a132"></a>        <span class="src-key">return </span><span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a133"></a>    <span class="src-sym">}</span></li>
+<li><a name="a134"></a>    </li>
+<li><a name="a135"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a136"></a><span class="src-doc">    * Fetches the First Field Value</span></li>
+<li><a name="a137"></a><span class="src-doc">    * </span></li>
+<li><a name="a138"></a><span class="src-doc">    * Fetches the value from the first field of a result row.</span></li>
+<li><a name="a139"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a140"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@internal</span><span class="src-doc"> This method must be overriden in extended classes with a call to parent.</span></li>
+<li><a name="a141"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">resource </span><span class="src-doc">A reference to a resource handle returned by executing a query.</span></li>
+<li><a name="a142"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">mixed </span><span class="src-doc">Returns the field value if the operation was successful, otherwise false.</span></li>
+<li><a name="a143"></a><span class="src-doc">    */</span></li>
+<li><a name="a144"></a>    <span class="src-key">function </span><a href="../AbstractDB/AbstractDB_Driver.html#methodFetchField">FetchField</a><span class="src-sym">(</span><span class="src-sym">&amp;</span><span class="src-var">$rs</span><span class="src-sym">)</span></li>
+<li><a name="a145"></a>    <span class="src-sym">{</span></li>
+<li><a name="a146"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">ClearError</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a147"></a>        <span class="src-key">return </span><span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a148"></a>    <span class="src-sym">}</span></li>
+<li><a name="a149"></a>&nbsp;</li>
+<li><a name="a150"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a151"></a><span class="src-doc">    * Fetches a Result Row as an Object</span></li>
+<li><a name="a152"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a153"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@internal</span><span class="src-doc"> This method must be overriden in extended classes with a call to parent if this feature is supported.</span></li>
+<li><a name="a154"></a><span class="src-doc">    * </span></li>
+<li><a name="a155"></a><span class="src-doc">    *  If this feature is not supported an error should be set explaining this.</span></li>
+<li><a name="a156"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">resource </span><span class="src-doc">A reference to a resource handle returned by executing a query.</span></li>
+<li><a name="a157"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">object </span><span class="src-doc-type">Returns </span><span class="src-doc">an object if the operation was successful, otherwise false.</span></li>
+<li><a name="a158"></a><span class="src-doc">    */</span></li>
+<li><a name="a159"></a>    <span class="src-key">function </span><a href="../AbstractDB/AbstractDB_Driver.html#methodFetchObject">FetchObject</a><span class="src-sym">(</span><span class="src-sym">&amp;</span><span class="src-var">$rs</span><span class="src-sym">)</span></li>
+<li><a name="a160"></a>    <span class="src-sym">{</span></li>
+<li><a name="a161"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">ClearError</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a162"></a>        <span class="src-key">return </span><span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a163"></a>    <span class="src-sym">}</span></li>
+<li><a name="a164"></a>    </li>
+<li><a name="a165"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a166"></a><span class="src-doc">    * Fetches a Result Row</span></li>
+<li><a name="a167"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a168"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@internal</span><span class="src-doc"> This method must be overriden in extended classes with a call to parent.</span></li>
+<li><a name="a169"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">resource </span><span class="src-doc">A reference to a resource handle returned by executing a query.</span></li>
+<li><a name="a170"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">array </span><span class="src-doc">Returns an array if the operation was successful, otherwise false.</span></li>
+<li><a name="a171"></a><span class="src-doc">    */</span></li>
+<li><a name="a172"></a>    <span class="src-key">function </span><a href="../AbstractDB/AbstractDB_Driver.html#methodFetchRow">FetchRow</a><span class="src-sym">(</span><span class="src-sym">&amp;</span><span class="src-var">$rs</span><span class="src-sym">)</span></li>
+<li><a name="a173"></a>    <span class="src-sym">{</span></li>
+<li><a name="a174"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">ClearError</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a175"></a>        <span class="src-key">return </span><span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a176"></a>    <span class="src-sym">}</span></li>
+<li><a name="a177"></a>    </li>
+<li><a name="a178"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a179"></a><span class="src-doc">    * Gets the Number of Fields</span></li>
+<li><a name="a180"></a><span class="src-doc">    * </span></li>
+<li><a name="a181"></a><span class="src-doc">    * Gets the number of fields returned by given result handle.</span></li>
+<li><a name="a182"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a183"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@internal</span><span class="src-doc"> This method must be overriden in extended classes with a call to parent.</span></li>
+<li><a name="a184"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">resource </span><span class="src-doc-var">$rs </span><span class="src-doc">A reference to a resource handle returned by executing a query.</span></li>
+<li><a name="a185"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">int </span><span class="src-doc">Returns the number of fields returned by the last executed query.</span></li>
+<li><a name="a186"></a><span class="src-doc">    */</span></li>
+<li><a name="a187"></a>    <span class="src-key">function </span><a href="../AbstractDB/AbstractDB_Driver.html#methodFieldCount">FieldCount</a><span class="src-sym">(</span><span class="src-sym">&amp;</span><span class="src-var">$rs</span><span class="src-sym">) </span></li>
+<li><a name="a188"></a>    <span class="src-sym">{</span></li>
+<li><a name="a189"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">ClearError</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a190"></a>        <span class="src-key">return </span><span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a191"></a>    <span class="src-sym">}</span></li>
+<li><a name="a192"></a>    </li>
+<li><a name="a193"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a194"></a><span class="src-doc">    * Gets the Field Names of a Query</span></li>
+<li><a name="a195"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a196"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@internal</span><span class="src-doc"> This method must be overriden in extended classes with a call to parent.</span></li>
+<li><a name="a197"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">resource </span><span class="src-doc-var">$rs </span><span class="src-doc">A reference to a resource handle returned by executing a query.</span></li>
+<li><a name="a198"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">array </span><span class="src-doc-var">$fields </span><span class="src-doc">A reference to an array that will contain the field names.</span></li>
+<li><a name="a199"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">bool </span><span class="src-doc">Returns true if the operation was successful, otherwise false.</span></li>
+<li><a name="a200"></a><span class="src-doc">    */</span></li>
+<li><a name="a201"></a>    <span class="src-key">function </span><a href="../AbstractDB/AbstractDB_Driver.html#methodFieldNames">FieldNames</a><span class="src-sym">(</span><span class="src-sym">&amp;</span><span class="src-var">$rs</span><span class="src-sym">, </span><span class="src-sym">&amp;</span><span class="src-var">$fields</span><span class="src-sym">)</span></li>
+<li><a name="a202"></a>    <span class="src-sym">{</span></li>
+<li><a name="a203"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">ClearError</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a204"></a>        <span class="src-key">return </span><span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a205"></a>    <span class="src-sym">}</span></li>
+<li><a name="a206"></a>    </li>
+<li><a name="a207"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a208"></a><span class="src-doc">    * Frees a Result Resource</span></li>
+<li><a name="a209"></a><span class="src-doc">    * </span></li>
+<li><a name="a210"></a><span class="src-doc">    * Frees the resources associated with the given result handle.</span></li>
+<li><a name="a211"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a212"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@internal</span><span class="src-doc"> This method must be overriden in extended classes with a call to parent if this feature is supported.</span></li>
+<li><a name="a213"></a><span class="src-doc">    * </span></li>
+<li><a name="a214"></a><span class="src-doc">    *  If this feature is not supported the method should return a default value of true.</span></li>
+<li><a name="a215"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">resource </span><span class="src-doc">A reference to a resource handle returned by executing a query.</span></li>
+<li><a name="a216"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">bool </span><span class="src-doc">Returns true if the resource handle was successfully freed.</span></li>
+<li><a name="a217"></a><span class="src-doc">    */</span></li>
+<li><a name="a218"></a>    <span class="src-key">function </span><a href="../AbstractDB/AbstractDB_Driver.html#methodFreeResult">FreeResult</a><span class="src-sym">(</span><span class="src-sym">&amp;</span><span class="src-var">$rs</span><span class="src-sym">)</span></li>
+<li><a name="a219"></a>    <span class="src-sym">{</span></li>
+<li><a name="a220"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">ClearError</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a221"></a>        <span class="src-key">return </span><span class="src-id">true</span><span class="src-sym">;</span></li>
+<li><a name="a222"></a>    <span class="src-sym">}</span></li>
+<li><a name="a223"></a>    </li>
+<li><a name="a224"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a225"></a><span class="src-doc">    * Gets the Last Error.</span></li>
+<li><a name="a226"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a227"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">string </span><span class="src-doc">The last error message.</span></li>
+<li><a name="a228"></a><span class="src-doc">    */</span></li>
+<li><a name="a229"></a>    <span class="src-key">function </span><a href="../AbstractDB/AbstractDB_Driver.html#methodGetLastError">GetLastError</a><span class="src-sym">(</span><span class="src-sym">)</span></li>
+<li><a name="a230"></a>    <span class="src-sym">{</span></li>
+<li><a name="a231"></a>        <span class="src-key">return </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">_error</span><span class="src-sym">;</span></li>
+<li><a name="a232"></a>    <span class="src-sym">}</span></li>
+<li><a name="a233"></a>    </li>
+<li><a name="a234"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a235"></a><span class="src-doc">    * Gets the Last Inserted AUTO_INCREMENT ID</span></li>
+<li><a name="a236"></a><span class="src-doc">    * </span></li>
+<li><a name="a237"></a><span class="src-doc">    * Gets the ID of the last AUTO_INCREMENT record inserted into the databse.</span></li>
+<li><a name="a238"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a239"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@internal</span><span class="src-doc"> This method must be overriden in extended classes with a call to parent if this feature is supported.</span></li>
+<li><a name="a240"></a><span class="src-doc">    * </span></li>
+<li><a name="a241"></a><span class="src-doc">    *  If this feature is not supported an error should be set explaining this.</span></li>
+<li><a name="a242"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">mixed </span><span class="src-doc">Returns either the ID of the last inserted AUTO_INCREMENT record, or -1 if the</span></li>
+<li><a name="a243"></a><span class="src-doc">    *  last query was not an insert.</span></li>
+<li><a name="a244"></a><span class="src-doc">    */</span></li>
+<li><a name="a245"></a>    <span class="src-key">function </span><a href="../AbstractDB/AbstractDB_Driver.html#methodInsertID">InsertID</a><span class="src-sym">(</span><span class="src-sym">)</span></li>
+<li><a name="a246"></a>    <span class="src-sym">{</span></li>
+<li><a name="a247"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">ClearError</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a248"></a>        <span class="src-key">return </span>-<span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a249"></a>    <span class="src-sym">}</span></li>
+<li><a name="a250"></a>    </li>
+<li><a name="a251"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a252"></a><span class="src-doc">    * Executes an SQL Statement.</span></li>
+<li><a name="a253"></a><span class="src-doc">    * </span></li>
+<li><a name="a254"></a><span class="src-doc">    * Executes an SQL statement passed in as a parameter.</span></li>
+<li><a name="a255"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a256"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@internal</span><span class="src-doc"> This method must be overriden in extended classes or it will cause</span></li>
+<li><a name="a257"></a><span class="src-doc">    *  the script to exit.</span></li>
+<li><a name="a258"></a><span class="src-doc">    * </span></li>
+<li><a name="a259"></a><span class="src-doc">    *  If the query fails an error should be set that explains as best as possible the</span></li>
+<li><a name="a260"></a><span class="src-doc">    *  reason for the query failure.</span></li>
+<li><a name="a261"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">string </span><span class="src-doc-var">$sql </span><span class="src-doc">The SQL statement to execute on the database.</span></li>
+<li><a name="a262"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">resource </span><span class="src-doc">If the query was successful, the result handle of the query</span></li>
+<li><a name="a263"></a><span class="src-doc">    *  used in result fetching functions, otherwise false.</span></li>
+<li><a name="a264"></a><span class="src-doc">    */</span></li>
+<li><a name="a265"></a>    <span class="src-key">function </span><a href="../AbstractDB/AbstractDB_Driver.html#methodQuery">Query</a><span class="src-sym">(</span><span class="src-var">$sql</span><span class="src-sym">)</span></li>
+<li><a name="a266"></a>    <span class="src-sym">{</span></li>
+<li><a name="a267"></a>        <span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">&quot;Method AbstractDB_Driver::Query() must be redefined in extended classes without calling parent.&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a268"></a>    <span class="src-sym">}</span></li>
+<li><a name="a269"></a>    </li>
+<li><a name="a270"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a271"></a><span class="src-doc">    * Executes an SQL Replace Query</span></li>
+<li><a name="a272"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a273"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@internal</span><span class="src-doc"> This method must be overriden in extended classes with a call to parent if this feature is supported.</span></li>
+<li><a name="a274"></a><span class="src-doc">    * </span></li>
+<li><a name="a275"></a><span class="src-doc">    *  If this feature is not supported an error should be set explaining this.</span></li>
+<li><a name="a276"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">string </span><span class="src-doc-var">$table </span><span class="src-doc">The name of the table to execute the replace query on.</span></li>
+<li><a name="a277"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">array </span><span class="src-doc-var">$fields </span><span class="src-doc">An associative array of field definitions. Keys should be the field names and</span></li>
+<li><a name="a278"></a><span class="src-doc">    *  values should be an associative array containing the following keys:</span></li>
+<li><a name="a279"></a><span class="src-doc">    * </span></li>
+<li><a name="a280"></a><span class="src-doc">    *  Key =&gt; bool indicating that this field is the primary key or part of a unique index. Key values must not be NULL.</span></li>
+<li><a name="a281"></a><span class="src-doc">    * </span></li>
+<li><a name="a282"></a><span class="src-doc">    *  Type =&gt; either &quot;text&quot;, &quot;numeric&quot;, &quot;bool&quot;.</span></li>
+<li><a name="a283"></a><span class="src-doc">    * </span></li>
+<li><a name="a284"></a><span class="src-doc">    *  Value =&gt; the value of the field.</span></li>
+<li><a name="a285"></a><span class="src-doc">    * </span></li>
+<li><a name="a286"></a><span class="src-doc">    *  Null =&gt; bool indicating if the value of the field should be set to NULL.</span></li>
+<li><a name="a287"></a><span class="src-doc">    * </span></li>
+<li><a name="a288"></a><span class="src-doc">    *  e.g. $fields = array(&quot;Field1&quot; =&gt; array(&quot;Key&quot; =&gt; true, &quot;Type&quot; =&gt; &quot;numeric&quot;, &quot;Value&quot; =&gt; 123, &quot;Null&quot; =&gt; false));</span></li>
+<li><a name="a289"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">resource </span><span class="src-doc">If the replace query was successful, the result handle of the query, otherwise false.</span></li>
+<li><a name="a290"></a><span class="src-doc">    */</span></li>
+<li><a name="a291"></a>    <span class="src-key">function </span><a href="../AbstractDB/AbstractDB_Driver.html#methodReplace">Replace</a><span class="src-sym">(</span><span class="src-var">$table</span><span class="src-sym">, </span><span class="src-var">$fields</span><span class="src-sym">)</span></li>
+<li><a name="a292"></a>    <span class="src-sym">{</span></li>
+<li><a name="a293"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">ClearError</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a294"></a>        <span class="src-key">return </span><span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a295"></a>    <span class="src-sym">}</span></li>
+<li><a name="a296"></a>    </li>
+<li><a name="a297"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a298"></a><span class="src-doc">    * Gets the Number of Rows</span></li>
+<li><a name="a299"></a><span class="src-doc">    * </span></li>
+<li><a name="a300"></a><span class="src-doc">    * Gets the number of rows returned by given result handle.</span></li>
+<li><a name="a301"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a302"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@internal</span><span class="src-doc"> This method must be overriden in extended classes with a call to parent.</span></li>
+<li><a name="a303"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">resource </span><span class="src-doc-var">$rs </span><span class="src-doc">A reference to a resource handle returned by executing a query.</span></li>
+<li><a name="a304"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">int </span><span class="src-doc">Returns the number of fields returned by the last executed query.</span></li>
+<li><a name="a305"></a><span class="src-doc">    */</span></li>
+<li><a name="a306"></a>    <span class="src-key">function </span><a href="../AbstractDB/AbstractDB_Driver.html#methodRowCount">RowCount</a><span class="src-sym">(</span><span class="src-sym">&amp;</span><span class="src-var">$rs</span><span class="src-sym">)</span></li>
+<li><a name="a307"></a>    <span class="src-sym">{</span></li>
+<li><a name="a308"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">ClearError</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a309"></a>        <span class="src-key">return </span><span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a310"></a>    <span class="src-sym">}</span></li>
+<li><a name="a311"></a>    </li>
+<li><a name="a312"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a313"></a><span class="src-doc">    * Sets the Current Active Database</span></li>
+<li><a name="a314"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> public</span></li>
+<li><a name="a315"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@internal</span><span class="src-doc"> This method must be overriden in extended classes with a call to parent.</span></li>
+<li><a name="a316"></a><span class="src-doc">    * </span></li>
+<li><a name="a317"></a><span class="src-doc">    *  If this operation fails an error should be set explaining as best as possible the reason for the failure.</span></li>
+<li><a name="a318"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">string </span><span class="src-doc-var">$dbName </span><span class="src-doc">The name of the database to set active.</span></li>
+<li><a name="a319"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">mixed </span><span class="src-doc">The name of the previously active database, or false if an error occured.</span></li>
+<li><a name="a320"></a><span class="src-doc">    */</span></li>
+<li><a name="a321"></a>    <span class="src-key">function </span><a href="../AbstractDB/AbstractDB_Driver.html#methodSetDatabase">SetDatabase</a><span class="src-sym">(</span><span class="src-var">$dbName</span><span class="src-sym">)</span></li>
+<li><a name="a322"></a>    <span class="src-sym">{</span></li>
+<li><a name="a323"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">ClearError</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a324"></a>        <span class="src-key">return </span><span class="src-id">false</span><span class="src-sym">;</span></li>
+<li><a name="a325"></a>    <span class="src-sym">}</span></li>
+<li><a name="a326"></a>    </li>
+<li><a name="a327"></a>    <span class="src-comm">/* PRIVATE FUNCTIONS */</span></li>
+<li><a name="a328"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a329"></a><span class="src-doc">    * Clears the latest error message.</span></li>
+<li><a name="a330"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> private</span></li>
+<li><a name="a331"></a><span class="src-doc">    */</span></li>
+<li><a name="a332"></a>    <span class="src-key">function </span><span class="src-id">ClearError</span><span class="src-sym">(</span><span class="src-sym">)</span></li>
+<li><a name="a333"></a>    <span class="src-sym">{</span></li>
+<li><a name="a334"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">_error </span>= <span class="src-str">&quot;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a335"></a>    <span class="src-sym">}</span></li>
+<li><a name="a336"></a>    </li>
+<li><a name="a337"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a338"></a><span class="src-doc">    * Opens a Database Connection</span></li>
+<li><a name="a339"></a><span class="src-doc">    * </span></li>
+<li><a name="a340"></a><span class="src-doc">    * Attempts to connect to the database using the parameters given in the constructor.</span></li>
+<li><a name="a341"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> private</span></li>
+<li><a name="a342"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@internal</span><span class="src-doc"> This method must be overriden in extended classes or it will cause</span></li>
+<li><a name="a343"></a><span class="src-doc">    *  the script to exit.</span></li>
+<li><a name="a344"></a><span class="src-doc">    * </span></li>
+<li><a name="a345"></a><span class="src-doc">    *  The _connection field should be set to hold the resource link.</span></li>
+<li><a name="a346"></a><span class="src-doc">    * </span></li>
+<li><a name="a347"></a><span class="src-doc">    *  If the connection fails an error should be set that explains as best as possible the</span></li>
+<li><a name="a348"></a><span class="src-doc">    *  reason for the connection failure.</span></li>
+<li><a name="a349"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@return </span><span class="src-doc-type">bool </span><span class="src-doc">Returns true if the connection was successfully made, otherwise false.</span></li>
+<li><a name="a350"></a><span class="src-doc">    */</span></li>
+<li><a name="a351"></a>    <span class="src-key">function </span><span class="src-id">Connect</span><span class="src-sym">(</span><span class="src-sym">)</span></li>
+<li><a name="a352"></a>    <span class="src-sym">{</span></li>
+<li><a name="a353"></a>        <span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">&quot;Method AbstractDB_Driver::Connect() must be redefined in extended classes without calling parent.&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a354"></a>    <span class="src-sym">}</span></li>
+<li><a name="a355"></a>&nbsp;</li>
+<li><a name="a356"></a>    <span class="src-doc">/**</span></li>
+<li><a name="a357"></a><span class="src-doc">    * Sets the Error Message</span></li>
+<li><a name="a358"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@access</span><span class="src-doc"> private</span></li>
+<li><a name="a359"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">string </span><span class="src-doc-var">$scope </span><span class="src-doc">The scope of the error, generally the function in which it occured.</span></li>
+<li><a name="a360"></a><span class="src-doc">    * </span><span class="src-doc-coretag">@param </span><span class="src-doc-type">string </span><span class="src-doc-var">$message </span><span class="src-doc">The actual error message.</span></li>
+<li><a name="a361"></a><span class="src-doc">    */</span></li>
+<li><a name="a362"></a>    <span class="src-key">function </span><span class="src-id">SetError</span><span class="src-sym">(</span><span class="src-var">$scope</span><span class="src-sym">, </span><span class="src-var">$message</span><span class="src-sym">)</span></li>
+<li><a name="a363"></a>    <span class="src-sym">{</span></li>
+<li><a name="a364"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-var">_error </span>= <span class="src-str">&quot;</span><span class="src-str"><span class="src-var">$scope</span>: <span class="src-var">$message</span></span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a365"></a>    <span class="src-sym">}</span></li>
+<li><a name="a366"></a><span class="src-sym">}</span></li>
+<li><a name="a367"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 19 Jul 2010 20:30:41 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</body>
+</html>
